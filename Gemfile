@@ -26,6 +26,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+# Yoomee gems
+gem 'ym_core', :git => 'git@gitlab.yoomee.com:yoomee/ym_core.git', :branch => 'rails-4'
+# gem 'ym_core', :path => '~/Rails/Gems/ym_core'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
