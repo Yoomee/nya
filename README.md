@@ -26,7 +26,11 @@ rake db:setup
 
 ## Tests
 
-TODO
+Run cucumber tests with:
+
+```
+rake cucumber
+```
 
 ## Deployment
 
