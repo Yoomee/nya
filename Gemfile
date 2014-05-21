@@ -30,6 +30,11 @@ gem 'spring',        group: :development
 gem 'ym_core', :git => 'git@gitlab.yoomee.com:yoomee/ym_core.git', :branch => 'rails-4'
 # gem 'ym_core', :path => '~/Rails/Gems/ym_core'
 
+
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
