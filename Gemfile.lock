@@ -1,6 +1,6 @@
 GIT
   remote: git@gitlab.yoomee.com:yoomee/ym_core.git
-  revision: 3778b11f48b2421d7ba1e0dcdfbac9e5bc291562
+  revision: be724f9e9a848f33a14030e4872050eacd505931
   branch: rails-4
   specs:
     ym_core (1.1.10)
@@ -22,13 +22,55 @@ GIT
       will_paginate (~> 3.0.3)
 
 GIT
+  remote: git@gitlab.yoomee.com:yoomee/ym_notifications.git
+  revision: a4ad9d79d01763497e08e8d645fb8ed079fc34a0
+  branch: rails-4
+  specs:
+    ym_notifications (1.0.13)
+      ym_core (~> 1.0)
+      ym_users (~> 1.0)
+
+GIT
+  remote: git@gitlab.yoomee.com:yoomee/ym_posts.git
+  revision: 78ee2cf715b6ce86b4eaa6148a24e4112a043374
+  branch: rails-4
+  specs:
+    ym_posts (1.0.6)
+      jquery-rails
+      remotipart (~> 1.0)
+      ym_core (~> 1.0)
+      ym_notifications (~> 1.0)
+      ym_tags (~> 1.0)
+      ym_users (~> 1.0)
+      ym_videos (~> 1.0)
+
+GIT
+  remote: git@gitlab.yoomee.com:yoomee/ym_tags.git
+  revision: 7e00fa34a775d6125cfe906164289b879169df1f
+  branch: rails-4
+  specs:
+    ym_tags (1.0.4)
+      acts-as-taggable-on (~> 3.2.1)
+      rails3-jquery-autocomplete
+      ym_core (~> 1.0)
+
+GIT
   remote: git@gitlab.yoomee.com:yoomee/ym_users.git
-  revision: 8c825419d2c8900066c244909be746e69fc573de
+  revision: ffa450e4b1d79fbff68c12a6ee28848a191f929c
   branch: rails-4
   specs:
     ym_users (1.1.2)
       cancancan (~> 1.8)
       devise (~> 3.2.4)
+      ym_core (~> 1.0)
+
+GIT
+  remote: git@gitlab.yoomee.com:yoomee/ym_videos.git
+  revision: 89558b909053f92a4684103edd5b0799264d9a8e
+  branch: rails-4
+  specs:
+    ym_videos (1.0.2)
+      video_info (= 0.4.0)
       ym_core (~> 1.0)
 
 GEM
@@ -60,6 +102,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    acts-as-taggable-on (3.2.3)
+      actionpack (>= 3, < 5)
+      activerecord (>= 3, < 5)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.7)
     bootstrap-sass (3.1.1.1)
@@ -128,6 +173,7 @@ GEM
       haml (>= 3.1, < 5.0)
       railties (>= 4.0.1)
     hike (1.2.3)
+    hpricot (0.8.6)
     html_truncator (0.4.0)
       nokogiri (~> 1.5)
     i18n (0.6.9)
@@ -168,6 +214,8 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.1)
       sprockets-rails (~> 2.0)
+    rails3-jquery-autocomplete (1.0.14)
+      rails (>= 3.0)
     rails_config (0.2.7)
       activesupport (>= 3.0)
     railties (4.1.1)
@@ -182,6 +230,7 @@ GEM
       rake
     rdoc (4.1.1)
       json (~> 1.4)
+    remotipart (1.2.1)
     rinku (1.7.3)
     rspec-core (2.14.8)
     rspec-expectations (2.14.5)
@@ -235,6 +284,8 @@ GEM
     uglifier (2.5.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    video_info (0.4.0)
+      hpricot (~> 0.8.4)
     warden (1.2.3)
       rack (>= 1.0)
     websocket (1.0.7)
@@ -263,4 +314,8 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   ym_core!
+  ym_notifications!
+  ym_posts!
+  ym_tags!
   ym_users!
+  ym_videos!

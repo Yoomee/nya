@@ -9,6 +9,10 @@
 #= require masonry-min
 #= require jquery-custom
 #= require ym_core
+#= require ym_posts
+#= require ym_tags
+
+YmComments.Form.init({submitOnEnter: true})
 
 
 

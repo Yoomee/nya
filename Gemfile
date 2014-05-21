@@ -31,6 +31,14 @@ gem 'ym_core', :git => 'git@gitlab.yoomee.com:yoomee/ym_core.git', :branch => 'r
 # gem 'ym_core', :path => '~/Rails/Gems/ym_core'
 gem 'ym_users', :git => 'git@gitlab.yoomee.com:yoomee/ym_users.git', :branch => 'rails-4'
 # gem 'ym_users', :path => '~/Rails/Gems/ym_users'
+gem 'ym_notifications', :git => 'git@gitlab.yoomee.com:yoomee/ym_notifications.git', :branch => 'rails-4'
+# gem 'ym_notifications', :path => '~/Rails/Gems/ym_notifications'
+gem 'ym_videos', :git => 'git@gitlab.yoomee.com:yoomee/ym_videos.git', :branch => 'rails-4'
+# gem 'ym_videos', :path => '~/Rails/Gems/ym_videos'
+gem 'ym_tags', :git => 'git@gitlab.yoomee.com:yoomee/ym_tags.git', :branch => 'rails-4'
+# gem 'ym_tags', :path => '~/Rails/Gems/ym_tags'
+gem 'ym_posts', :git => 'git@gitlab.yoomee.com:yoomee/ym_posts.git', :branch => 'rails-4'
+# gem 'ym_posts', :path => '~/Rails/Gems/ym_posts'
 
 
 group :development, :test do
