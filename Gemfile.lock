@@ -21,6 +21,16 @@ GIT
       sass-rails (>= 3.2)
       will_paginate (~> 3.0.3)
 
+GIT
+  remote: git@gitlab.yoomee.com:yoomee/ym_users.git
+  revision: 8c825419d2c8900066c244909be746e69fc573de
+  branch: rails-4
+  specs:
+    ym_users (1.1.2)
+      cancancan (~> 1.8)
+      devise (~> 3.2.4)
+      ym_core (~> 1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -51,11 +61,13 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    bcrypt (3.1.7)
     bootstrap-sass (3.1.1.1)
       sass (~> 3.2)
     bootstrap-will_paginate (0.0.10)
       will_paginate
     builder (3.2.2)
+    cancancan (1.8.0)
     capybara (2.2.1)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -84,6 +96,12 @@ GEM
       nokogiri (~> 1.5)
       rails (>= 3, < 5)
     database_cleaner (1.2.0)
+    devise (3.2.4)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     diff-lcs (1.2.5)
     dragonfly (0.9.15)
       multi_json (~> 1.0)
@@ -132,6 +150,7 @@ GEM
     multi_test (0.1.1)
     nokogiri (1.6.2.1)
       mini_portile (= 0.6.0)
+    orm_adapter (0.5.0)
     pg (0.17.1)
     polyglot (0.3.4)
     rack (1.5.2)
@@ -216,6 +235,8 @@ GEM
     uglifier (2.5.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    warden (1.2.3)
+      rack (>= 1.0)
     websocket (1.0.7)
     will_paginate (3.0.5)
     xpath (2.0.0)
@@ -242,3 +263,4 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   ym_core!
+  ym_users!

@@ -29,6 +29,8 @@ gem 'spring',        group: :development
 # Yoomee gems
 gem 'ym_core', :git => 'git@gitlab.yoomee.com:yoomee/ym_core.git', :branch => 'rails-4'
 # gem 'ym_core', :path => '~/Rails/Gems/ym_core'
+gem 'ym_users', :git => 'git@gitlab.yoomee.com:yoomee/ym_users.git', :branch => 'rails-4'
+# gem 'ym_users', :path => '~/Rails/Gems/ym_users'
 
 
 group :development, :test do
