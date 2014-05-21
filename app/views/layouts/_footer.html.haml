@@ -1,0 +1,30 @@
+.container
+.footer
+  .container.p-tb
+    .col-md-12
+      .row
+        .col-md-4.col-xs-6
+          %h4 Sitemap
+          %ul.p-0.clear
+            %li=link_to('Home', 'home-signedin')
+            %li=link_to('Discover','discover')
+            %li=link_to('Forums','forum')
+            %li=link_to('Search','search')
+
+        .col-md-4.col-xs-6
+          %h4 Help & Support
+          %ul.p-0.clear
+            %li=link_to('About', 'about')
+            %li=link_to('FAQ','faq')
+            %li=link_to('Live Chat','live-chat')
+            %li=link_to('Contact','contact')
+
+#myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4#myModalLabel.modal-title You have to be signed in to do that!
+      .modal-footer
+        =link_to('Sign up', 'signup', :class => 'btn btn-default')
+        =link_to('Sign in', 'signup', :class => 'btn btn-primary')

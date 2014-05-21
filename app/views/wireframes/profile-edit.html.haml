@@ -1,0 +1,54 @@
+.container
+  %section#profile
+#personal-header.pb-10.pt-10
+  .container
+    .personal-inner.col-md-12.pl-0
+      .col-md-3.col-sm-3.col-xs-3.avatar
+        .avatar-wrap
+          =link_to('', '#', :class => 'edit', :icon => 'pencil')
+          =image_tag("profile-thumb.png")
+        .rewards
+          %span 8 badges
+          %i.fa.fa-circle
+          %span 20 points
+      .col-md-9.profile-info.edit
+        .row
+          .i-input.col-md-8
+            %i.fa.fa-user
+            %input.form-control.name{'placeholder' => 'User'}
+        .row
+          .i-input.col-md-6.half
+            %i.fa.fa-map-marker
+            %input.form-control.location{'placeholder' => 'Location'}
+        .row
+          .i-input.col-md-6.half
+            %i.fa.fa-twitter
+            %input.form-control.twitter{'placeholder' => '@username'}
+          .i-input.col-md-6.half.pull
+            %i.fa.fa-facebook
+            %input.form-control.facebook{'placeholder' => 'facebook url'}
+        .row
+          .i-input.col-md-6.half
+            %i.fa.fa-globe
+            %input.form-control.website{'placeholder' => 'Website url'}
+        .row
+          .col-md-8
+            %h3 Interests
+            %ul.tags.interests
+              %li=link_to('Dance', 'category', :class => 'checked', :icon => 'check')
+              %li=link_to('Art', 'category', :class => 'checked', :icon => 'check')
+              %li=link_to('Sport & Leisure', 'category')
+              %li=link_to('Arts & crafts', 'category')
+              %li=link_to('Games', 'category')
+              %li=link_to('Health & Environment', 'category')
+              %li=link_to('Arts & Crafts', 'category')
+              %li=link_to('Food', 'category')
+              %li=link_to('Music', 'category')
+              %li=link_to('Space & Exploration', 'category')
+            %h3 Skills
+            %ul.tags.skills
+              %li=link_to('Breakdancing', 'category')
+              %li=link_to('Ballet', 'category')
+
+      .usr-action-top.btn-clear
+        =link_to('Done editing', 'profile',  :class => 'btn btn-lg btn-gry visible col-xs-11 ml-3', :icon => 'check')

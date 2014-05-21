@@ -1,0 +1,149 @@
+
+.card-wrap{
+  border-radius: 5px;
+  box-shadow:0 1px 10px rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.1), 0 -1px 1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #fff;
+  .card-top{
+    background:$g-1;
+    padding:9px 10px;
+    time{
+      padding:0 5px;
+      color:$g-2;
+    }
+    .usr-link span{
+      text-indent: -9999px;
+      display: inline-block;
+    }
+    .usr-link .fa{
+      float:right;
+      padding: 0px 5px;
+      font-size: 1.2em;
+      color:$g-3;
+      line-height: 1;
+      &:hover{
+        color:$g-4;
+      }
+    }
+    .usr-link .fa.active{
+      color:$g-4;
+    }
+  }
+  .image-wrapper{
+    position:relative;
+    max-height: 210px;
+    overflow: hidden;
+    a{
+      display: block;
+    }
+    img{
+      width:100%;
+    }
+    .feat-nya img{
+      position: absolute;
+      top:0;
+      right:0;
+      width:auto;
+    }
+  }
+  .card-info{
+    padding:0 20px 20px 20px;
+    margin-top:-1px;
+    h3{
+      margin-bottom: 0;
+    }
+    p{
+      padding-top:10px;
+    }
+    .author{
+      display: block;
+    }
+  }
+  .card-tags {
+    a{
+      font-size: 0.9em;
+      border-bottom: 3px solid #ccc;
+      padding-bottom: 3px;
+    }
+    .tags{
+      list-style: none;
+      padding: 0;
+      margin: 5px 5px 5px 0;
+      li{
+        float: left;
+        margin-right: 5px;
+      }
+    }
+  }
+  .card-footer{
+    background: $g-1;
+    display: inline-block;
+    margin-bottom: -7px;
+    overflow: hidden;
+    width: 100%;
+    .foot-link{
+      padding:15px;
+      font-size: 1em;
+      margin:0;
+      text-align: center;
+    }
+    .foot-link.location{
+      border-right:1px solid #ddd;
+    }
+  }
+}
+.card-add{
+  min-height: 515px;
+  .card-wrap{
+    border:2px dashed $g-2;
+      background: $g-1;
+  }
+  .add-project{
+    margin:46% auto;
+    display: block;
+    width:300px;
+    text-align: center;
+    color:$g-2;
+    .fa{
+      font-size: 7em;
+    }
+    .text{
+      font-weight:bold;
+      font-size: 1.6em;
+    }
+  }
+}
+.card a.liked{
+  color:#d5571d;
+}
+.card a{
+  color:$g-4;
+  text-decoration: none;
+  outline: none !important;
+  cursor: pointer;
+  &:hover{
+    color:$g-3;
+  }
+}
+.usr-link{
+  display: none;
+}
+
+/* =======================================================================
+Timeline cards
+======================================================================= */
+
+.timeline .card-wrap:after{
+  border-bottom: 15px solid rgba(0, 0, 0, 0);
+  border-right: 15px solid $g-1;
+  border-top: 15px solid rgba(0, 0, 0, 0);
+  content: "";
+  height: 0;
+  left: 5px;
+  position: absolute;
+  top: 3px;
+  width: 0;
+}
+.card-info.card-comments{
+  padding-top:20px; 
+}

@@ -1,0 +1,38 @@
+.user-comment{
+  padding: 0;
+}
+.user-comment li{
+  padding:15px;
+  list-style:none;
+  &:nth-child(even){
+    background:$g-1;
+  }
+  h3{
+    margin-top:0;
+    font-size: 1.2em;
+  }
+  .usr-link{
+    position: absolute;
+    top:20px;
+    right:20px;
+    span{
+      text-indent:-9999px;
+      display: block;
+    }
+  }
+}
+.text-comment{
+  background: #fff;
+}
+.comment-input{
+  display:none;
+  .form-control{
+    font-size: 1.2em;
+    height: 50px;
+    padding:10px;
+  }
+}
+.expand{
+  display:block;
+  clear: both;
+}

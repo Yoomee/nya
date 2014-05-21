@@ -1,0 +1,40 @@
+.container
+.strip.strip-smll.relative
+  .container.hero-holder.relative
+    %h1.pt-3.center Discover: Food
+    %p.col-md-8.col-md-offset-2.center.pb-3
+      Discover, and help out on projects tagged with food, or
+      =link_to('start your own.','start-project')
+.section
+  .container
+    .row.js-masonry{ :data => { :masonry_options => { :itemSelector => '.col-md-4' }}}
+      -12.times do
+        .col-md-4.mb-3
+          .card-wrap
+            .image-wrapper
+              =link_to 'project' do
+                %span.feat-star
+                =image_tag('http://lorempixel.com/400/200/food')
+            .card-info.col-md-12
+              %h3.project-title
+                =link_to('Project Name', 'profile')
+              %span.author 
+                by
+                =link_to('User', 'profile')
+              .card-tags.col-md-10.p-0
+                %ul.tags
+                  %li=link_to('Food', 'category')
+                  %li=link_to('Baking', 'category')
+              .card-likes.col-md-2.right.p-0
+                =link_to('3', '#', :class => 'likes', :icon => 'heart')
+            .card-footer
+              .foot-link.location.col-md-6.col-xs-6
+                =link_to('Sheffield', 'category', :icon => 'map-marker')
+              .foot-link.helpers.col-md-6.col-xs-6.right
+                =link_to('2 helpers', 'category', :icon => 'users')
+
+#discover-action.p-tb.section
+  .container
+    .row
+      .col-md-12.center
+        =link_to('Start your project', 'start-project',  :class => 'btn btn-lg btn-gry')

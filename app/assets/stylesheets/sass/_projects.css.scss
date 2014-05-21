@@ -1,0 +1,198 @@
+.project-image{
+  padding:30px 0;
+  img{
+    width: 100%;
+  }
+}
+#project .tags li{
+  float:left;
+}
+.author.meta{
+  float: left;
+  margin-right: 30px;
+}
+.time.meta{
+  display: block;
+  clear: both;
+  color:#ccc;
+}
+.promotion-lrg{
+  background: $g-1;
+  border-radius: 5px;
+  margin: 0 0 30px 0;
+  height: 90px;
+  border:1px solig $g-3;
+  h3 {
+    float: left;
+    line-height: 0.2em;
+  }
+}
+.usr-action-top{
+  position: absolute;
+  top: 0px;
+  right:0px;
+  .btn-gry{
+    @include media-query (xs-max){
+      display: none;
+    }
+  }
+  .btn-gry.visible{
+    @include media-query (xs-max){
+      display: block;
+    }
+  }
+}
+.footer
+  h4{
+    float: left;
+  }
+.soc-link{
+  float: right;
+  a{
+    color:#fff;
+    margin: 0 5px;
+    span{
+      display: none;
+    }
+  }
+}
+#project #home .share-btn{
+  height: 48px;
+  p{
+    float: left;
+    color: #fff;
+  }
+}
+#project #home .project-tags  {
+  .tags{
+    margin-top:-7px;
+    display: inline-block;
+    a{
+    margin-right: 5px;
+    }
+  }
+  a{
+  float: left;
+  margin-right: 20px;
+  }
+}
+#project #home ul{
+  list-style: disc;
+}
+#project #home a.liked,
+.project-head a.liked{
+  background:#d5571d;
+  color:#fff;
+}
+
+/* Dropdown */
+
+.project-head .dropdown-menu.settings a{
+  font-size: 1.3em;
+  padding:10px;
+  color: #fff;
+  &:hover{
+    background:#222;
+  }
+}
+.project-head .dropdown-menu.settings{
+  background: #333333;
+  border: 0 none;
+  margin-top: 10px;
+  left:-56px;
+  &:after{
+    border-bottom: 5px solid #333;
+    border-left: 5px solid rgba(0, 0, 0, 0);
+    border-right: 5px solid rgba(0, 0, 0, 0);
+    content: "";
+    height: 0;
+    left: 76px;
+    position: absolute;
+    top: -5px;
+    width: 0;
+  }
+}
+
+/* =======================================================================
+Comments
+======================================================================= */
+
+.helper-comment {
+  margin:0;
+  padding:0;
+  .avatar{
+    float:left;
+    padding-right: 20px;
+    margin: 0;
+  }
+  h3{
+    background:#ccc;
+    padding: 10px 10px 0 10px;
+    margin:0;
+    font-size: 1.2em;
+  }
+  .comment{
+    background:#fff;
+    border-radius:5px;
+    padding: 0;
+    p{
+      padding:20px 30px;
+    }
+  }
+  .top{
+    background: $g-1;
+    padding: 11px 30px;
+    border-radius:5px 5px 0 0;
+  }
+  .rewards{
+    padding:2px;
+    font-size: 0.9em;
+  }
+  .name{
+    float: left;
+    margin-right: 5px;
+  }
+}
+.tri-top:after {
+  border-bottom: 10px solid rgba(0, 0, 0, 0);
+  border-right: 10px solid $g-1;
+  border-top: 10px solid rgba(0, 0, 0, 0);
+  content: "";
+  height: 0;
+  left: -9px;
+  position: absolute;
+  top: 11px;
+  width: 0;
+}
+
+/* =======================================================================
+Timeline
+======================================================================= */
+
+.circle {
+  background: $g-3;
+  border: 5px solid $g-0;
+  border-radius: 50%;
+  display: block;
+  height: 24px;
+  left: -54px;
+  margin-top: -10px;
+  position: absolute;
+  top: 17px;
+  width: 24px;
+  @include media-query (xs-max){
+    left:-14px;
+    top:8px;
+  }
+}
+.timeline {
+  border-left: 4px solid $g-1;
+  list-style: none outside none;
+  margin: 0 0 30px;
+  @include media-query (xs-max){
+    padding-left:2px;
+  }
+}
+.timeline .card {
+  padding-right: 0;
+}

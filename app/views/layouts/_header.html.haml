@@ -1,0 +1,38 @@
+.container
+%nav.navbar.navbar-default{role: "navigation"}
+  .container
+
+    .navbar-header
+      %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", type: "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      =link_to('NYA', '/', :class => 'navbar-brand') 
+
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li=link_to('Home', 'home-signedin', :class => 'nav-text-link')
+        %li=link_to('Discover', 'discover', :class => 'nav-text-link')
+        %li=link_to('Community', 'forum-landing', :class => 'nav-text-link')
+        %li
+          %input.global-search{'placeholder' => 'Search projects'}
+          =link_to('', 'search', :class => 'btn', :icon => 'search')
+        =#%li=link_to('Start a project', 'start-project', :class => 'btn btn-primary')
+        -#%li=link_to('1', '#', :class => 'notification-indicator')
+        %li.sm-float=link_to(image_tag('ryan.png'), 'profile', :class => 'nav-avatar')
+        %li.dropdown
+          =link_to('', '#', 'data-toggle' => 'dropdown', :class => 'dropdown-toggle', :icon => 'chevron-down')
+          %ul.dropdown-menu.settings.col-xs-8
+            %li=link_to('View profile', 'profile')
+            %li=link_to('Account settings', '#')
+            %li.divider
+            %li=link_to('Sign out', 'index')
+
+.navbar-spacer
+
+-#searchStrip.collapse
+  .container
+    .row
+      .col-sm-12.text-center
+        %input.global-search{'placeholder' => 'Type here and press enter to search...'}

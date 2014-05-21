@@ -1,0 +1,49 @@
+.container
+.strip-header.pv-6.mb-6.relative
+  .arrow-up
+  .container
+    .row
+      .col-md-12
+        %input.big-input{'placeholder' => 'Enter some keywords...'}
+        =link_to('Search', '#', :class => 'big-input-btn')
+        
+.container
+  .row
+    .col-xs-12.text-center.mb-5
+      %p.large-text
+        Showing results for
+        =succeed ',' do
+          %strong category term
+        tagged with
+        %select{name: "tags"}
+          %option{value: "Dance"} Dance
+          %option{value: "Breakdancing"} Breakdancing
+        in
+        %select{name: "location"}
+          %option{value: "Yorkshire"} Yorkshire
+        
+  .row.js-masonry{ :data => { :masonry_options => { :itemSelector => '.col-md-4' }}}
+    -6.times do
+      .col-md-4.mb-3
+        .card-wrap
+          .image-wrapper
+            =link_to 'project' do
+              %span.feat-star
+              =image_tag('http://placekitten.com/800/305')
+          .card-info.col-md-12
+            %h3.project-title
+              =link_to('Project Name', 'project')
+            %span.author 
+              by
+              =link_to('User', 'profile')
+            .card-tags.col-md-10.p-0
+              %ul.tags
+                %li=link_to('Breakdancing', 'category')
+                %li=link_to('Ballet', 'category')
+            .card-likes.col-md-2.right.p-0
+              =link_to('3', '#', :class => 'likes', :icon => 'heart')
+          .card-footer
+            .foot-link.location.col-md-6.col-xs-6
+              =link_to('Sheffield', 'category', :icon => 'map-marker')
+            .foot-link.helpers.col-md-6.col-xs-6.right
+              =link_to('2 helpers', 'category', :icon => 'users')

@@ -1,0 +1,57 @@
+#personal-header  .main-tabs{
+  position: absolute;
+  bottom: 0;
+  margin-left:0px;
+  a{
+    padding: 20px 98px 20px 17px;
+    text-align: left;
+    color:$g-4;
+    background: $g-1;
+    @include media-query (xs-max){
+      padding: 12px 15px;
+    }
+    .badge{
+      position: absolute;
+      right:15px;
+      @include media-query (xs-max){
+      display:none;
+      }
+    }
+  }
+  .active a{
+    background: $g-0;
+  }
+}
+.nav-tabs{
+  border:0;
+}
+.main-input{
+  .nav-tabs{
+    background: $g-5;
+    a{
+      padding:15px 20px;
+      @include media-query (xs-max){
+        font-size: 1em;
+      }
+    }
+    @include media-query (xs-max){
+      span{
+        display: none;
+      }
+    }
+  }
+  .form-group{
+    border:1px solid $g-5;
+    border-top:0;
+  }
+  input.form-control{
+    width:100%;
+    height:60px;
+    font-size: 1.3em;
+    border:0;
+    box-shadow: 0 0 0;
+    @include media-query (xs-max){
+      font-size: 0.9em;
+    }
+  }
+}
