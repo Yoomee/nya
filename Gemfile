@@ -23,13 +23,6 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-group :development do
-  gem 'spring'
-  gem 'spring-commands-rspec'
-  gem 'spring-commands-cucumber'
-end
-
 # Yoomee gems
 gem 'ym_core', :git => 'git@gitlab.yoomee.com:yoomee/ym_core.git', :branch => 'rails-4'
 # gem 'ym_core', :path => '~/Rails/Gems/ym_core'
@@ -44,6 +37,13 @@ gem 'ym_tags', :git => 'git@gitlab.yoomee.com:yoomee/ym_tags.git', :branch => 'r
 gem 'ym_posts', :git => 'git@gitlab.yoomee.com:yoomee/ym_posts.git', :branch => 'rails-4'
 # gem 'ym_posts', :path => '~/Rails/Gems/ym_posts'
 
+
+# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+group :development do
+  gem 'spring'
+  gem 'spring-commands-rspec'
+  gem 'spring-commands-cucumber'
+end
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
