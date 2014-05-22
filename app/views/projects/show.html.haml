@@ -1,0 +1,230 @@
+.container
+  %section
+#personal-header.pb-10.pt-10.mb-3
+  .container.project-head
+    .personal-inner.col-md-12.pl-0
+      %h1.personal-name
+        =@project.title
+      .author.meta
+        by
+        =link_to(@project.user.full_name, user_path(@project.user))
+      .location.meta
+        =link_to('Mars', '#', :icon => 'map-marker')
+      .time.meta
+        %time{datetime: short_date(@project.created_at)}
+          =long_date(@project.created_at)
+      .usr-action-top
+        =link_to('', '',  :class => 'btn btn-lg btn-gry visible dropdown', :icon => 'cog', 'data-toggle' => 'dropdown')
+        %ul.dropdown-menu.settings
+          %li=link_to('Edit', 'project-edit', :icon => 'pencil')
+          %li=link_to('Pin', 'profile#projects', :icon => 'thumb-tack')
+          %li=link_to('Delete', '#', :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
+    %ul.nav.nav-tabs.main-tabs
+      %li.active
+        =link_to('#home', 'data-toggle' => 'tab') do
+          Home
+      %li
+        =link_to('#blog', 'data-toggle' => 'tab') do
+          Blog
+      %li
+        =link_to('#comments', 'data-toggle' => 'tab') do
+          %span.badge.pull-right.ml-6
+            3
+          Comments
+.container#project
+  .tab-content
+    #home.tab-pane.active.fade.in
+      .row.promotion-lrg
+        .col-md-12.p-2
+          %h3 ThinkBig can help fund your project
+      .col-md-8.col-md-offset-2.pb-10
+        .row.usr-action.col-md-offset-2
+          =link_to('#',  :class => 'btn btn-lg btn-gry like-us col-md-5 mb-1 col-xs-12 mr-1') do
+            %span.pull-left 37 like us
+            %i.fa.fa-heart.pull-right
+          =link_to('#',  :class => 'btn btn-lg btn-gry col-md-5 col-xs-12') do
+            %span.pull-left Help us
+            %i.fa.fa-hand-o-up.pull-right
+        .row
+          .project-image
+            =image_placeholder('760x307#')
+        .row.project-tags
+          =link_to('Tags', '#',:icon => 'tags')
+          %ul.tags
+            %li=link_to('Breakdancing', '#')
+            %li=link_to('Environment and Sustainability', '#')
+        .row
+          %h3 Description
+          =@project.description
+        .row
+          %h3 Things I need help with
+          =@project.help_needed
+        .row
+          %h3 Purpose of the project
+          =@project.purpose
+        .row
+          %h3 Project deadline
+          %p
+            =long_date(@project.deadline)
+        .row.usr-action.col-md-offset-2
+          .col-md-5.col-xs-12.mr-1.mb-1.btn.btn-lg.btn-gry.share-btn
+            %p Share
+            %span.soc-link
+              =link_to('<span>Twitter</span>'.html_safe,'#', :icon => 'twitter-square')
+              =link_to('<span>Facebook</span>'.html_safe,'#', :icon => 'facebook-square')
+              =link_to('<span>Pinterest</span>'.html_safe,'#', :icon => 'pinterest-square')
+          =link_to('#',  :class => 'btn btn-lg btn-gry col-md-5 col-xs-12') do
+            %span.pull-left Help us
+            %i.fa.fa-hand-o-up.pull-right
+    #blog.tab-pane.fade.in
+      .col-md-8.col-md-offset-2
+        .row
+          .col-md-12.main-input.pb-3
+            %ul.nav.nav-tabs
+              %li.active
+                =link_to('<span>Write</span>'.html_safe,'#write', :icon => 'pencil', 'data-toggle' => 'tab')
+              %li
+                =link_to('<span>Image</span>'.html_safe,'#image', :icon => 'camera', 'data-toggle' => 'tab')
+              %li
+                =link_to('<span>Link</span>'.html_safe,'#link', :icon => 'link', 'data-toggle' => 'tab')
+
+            .tab-content
+              #write.tab-pane.fade.in.active
+                %form.form-inline{role: "form"}
+                  .form-group.col-md-12.col-sm-12
+                    %label.sr-only{for: "comment"} What do you want to talk about?
+                    %input.form-control{placeholder: "What do you want to talk about?", type: "text"}
+
+              #image.tab-pane.fade.in
+                %form.form-inline{role: "form"}
+                  .form-group.col-md-12
+                    %label.sr-only{for: "comment"} Drag and drop an image
+                    %input.form-control{placeholder: "Drag and drop an image into this area", type: "text"}
+              #promote.tab-pane.fade.in
+                %form.form-inline{role: "form"}
+                  .form-group.col-md-12
+                    %label.sr-only{for: "comment"} Start typing the name of the project you want to promote
+                    %input.form-control{placeholder: "Start typing the name of the project you want to promote", type: "text"}
+              #link.tab-pane.fade.in
+                %form.form-inline{role: "form"}
+                  .form-group.col-md-12
+                    %label.sr-only{for: "comment"} Paste a link into this area
+                    %input.form-control{placeholder: "Paste a link into this area", type: "text"}
+
+
+        %ul.row.timeline
+          -2.times do
+            %li
+              .col-md-12.col-sm-12.col-xs-12.photo.card.pb-3
+                %span.circle
+                .card-wrap
+                  .card-top
+                    %time{datetime: "2009-03-29"}
+                    29
+                    %sup th
+                    March 2014
+                    =link_to('<span>Trash</span>'.html_safe,'#', :class => 'usr-link', :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
+                  .image-wrapper
+                    =image_tag('http://www.lorempixum.com/g/800/400/city')
+                  .card-comments.card-info.col-md-6.col-xs-9.pt-2
+                    =link_to('2 users commented','#', :class => 'comments', :icon => 'comments')
+                  .card-likes.col-md-6.col-xs-3.right.pt-2
+                    =link_to('3', '#', :class => 'likes', :icon => 'heart')
+                  .comment-input
+                    %form.form-inline{role: "form"}
+                    .form-group.col-md-12
+                      %label.sr-only{for: "comment"} Write your comment
+                      %input.form-control{placeholder: "Write your comment", type: "text"}
+                    %ul.user-comment
+                      -3.times do
+                        %li.col-md-12.relative
+                          .col-md-2.col-sm-2.avatar
+                            .avatar-wrap
+                              =image_tag("profile-thumb.png")
+                          %h3.profile-name.mb-0
+                            =link_to('User', 'profile')
+                          =link_to('<span>Trash</span>'.html_safe,'#', :class => 'usr-link', :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
+                          .time
+                            replied
+                            %time{datetime: "2009-03-29"}
+                            30
+                            %sup th
+                            March 2014
+                          %p That photo is really cool
+
+            %li
+              .col-md-12.col-sm-12.col-xs-12.text.card.pb-3
+                %span.circle
+                .card-wrap
+                  .card-top
+                    %time{datetime: "2009-03-29"}
+                    29
+                    %sup th
+                    March 2014
+                    =link_to('<span>Trash</span>'.html_safe,'#', :class => 'usr-link', :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
+                  .text-comment.col-md-12.p-2
+                    %p
+                      This a short piece of text to illustrate how smaller bits of text look
+                  .card-comments.card-info.col-md-6.col-xs-9.pt-2
+                    =link_to('Write the first comment', '#', :class => 'comments', :icon => 'comments')
+                  .card-likes.col-md-6.col-xs-3.right.pt-2
+                    =link_to('3', '#', :class => 'likes', :icon => 'heart')
+                  .comment-input
+                    %form.form-inline{role: "form"}
+                    .form-group.col-md-12
+                      %label.sr-only{for: "comment"} Write your comment
+                      %input.form-control{placeholder: "Write your comment", type: "text"}
+          %li
+            -2.times do
+              .col-md-12.col-sm-12.col-xs-12.text.card.pb-3
+                %span.circle
+                .card-wrap
+                  .card-top
+                    %time{datetime: "2009-03-29"}
+                    29
+                    %sup th
+                    March 2014
+                    =link_to('<span>Trash</span>'.html_safe,'#', :class => 'usr-link', :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
+                  .text-comment.col-md-12.p-2
+                    %p
+                      My dance project went really well, didn’t get the funding but thanks to all those that helped. I’m thinking of starting another project along the same lines, but getting involved with younger people this time. What do you think?
+                  .card-comments.card-info.col-md-6.col-xs-9.pt-2
+                    =link_to('Write the first comment', '#', :class => 'comments', :icon => 'comments')
+                  .card-likes.col-md-6.col-xs-3.right.pt-2
+                    =link_to('3', '#', :class => 'likes', :icon => 'heart')
+                  .comment-input
+                    %form.form-inline{role: "form"}
+                    .form-group.col-md-12
+                      %label.sr-only{for: "comment"} Write your comment
+                      %input.form-control{placeholder: "Write your comment", type: "text"}
+
+    #comments.tab-pane.fade.in
+      .col-md-8.col-md-offset-2
+        .row
+          %form.form-inline{role: "form"}
+          .form-group.col-md-12
+            %label.sr-only{for: "comment"} Add a comment
+            %input.form-text.col-md-12{placeholder: "Add a comment", type: "text"}
+        .row
+          %ul.helper-comment.p-0.m-0
+            -3.times do
+              %li.col-md-12.mb-3.relative
+                .col-md-2.col-sm-2.avatar
+                  .avatar-wrap
+                    =image_tag("profile-thumb.png")
+
+                .col-md-10.comment.tri-top
+                  .top
+                    =link_to('<span>Trash</span>'.html_safe,'#', :class => 'usr-link pull-right', :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
+                    .name=link_to('User', 'profile')
+                    .time
+                      replied
+                      %time{datetime: "2009-03-29"}
+                      30
+                      %sup th
+                      March 2014
+                  %p
+                    I would really like to be part of your project.
+                    I  am an enthusiastic dancer with a background in dance for theater. It’s a bit different to your project, but I would love to try something different!
+                    Let me know if you’d like me to become involved.
+                  =link_to('Reply','#', :class => 'pull-right pr-3 pb-2 reply', :icon => 'reply')

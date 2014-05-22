@@ -71,7 +71,7 @@ case Rails.env
       user: User.find_by(email: 'david@yoomee.com'),
       help_needed: "Example help needed text",
       purpose: "Example purpose text",
-      deadline: "2014-05-22 13:59:18"
+      deadline: "2014-10-22 13:59:18"
     )
 
 end

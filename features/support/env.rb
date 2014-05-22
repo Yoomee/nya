@@ -58,3 +58,5 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 
 # make factory girl methods available
 World(FactoryGirl::Syntax::Methods)
+# helpers
+World(ApplicationHelper)
