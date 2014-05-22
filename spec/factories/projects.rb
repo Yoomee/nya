@@ -8,7 +8,7 @@ FactoryGirl.define do
     lng 1.5
     image_uid "MyString"
     image_name "MyString"
-    user nil
+    user
     help_needed "Example help needed text"
     purpose "Example purpose text"
     deadline "2014-05-22 13:59:18"
