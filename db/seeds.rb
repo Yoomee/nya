@@ -22,24 +22,30 @@ DEFAULT_USERS   = [
     :first_name => 'Matt',
     :last_name  => 'Atkins',
     :email      => 'matt@yoomee.com',
-    :role       => 'admin'    
+    :role       => 'admin'
   },
   {
     :first_name => 'Andy',
     :last_name  => 'Mayer',
     :email      => 'andy@yoomee.com',
-    :role       => 'admin'    
+    :role       => 'admin'
   },
   {
     :first_name => 'Nicola',
     :last_name  => 'Mayer',
     :email      => 'nicola@yoomee.com',
-    :role       => 'admin'    
+    :role       => 'admin'
   },
   {
     :first_name => 'Edward',
     :last_name  => 'Andrews',
     :email      => 'edward@yoomee.com',
+    :role       => 'admin'
+  },
+  {
+    :first_name => 'David',
+    :last_name  => 'Thompson',
+    :email      => 'david@yoomee.com',
     :role       => 'admin'
   }
 ]
