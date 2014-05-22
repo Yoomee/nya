@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   resources :pages
 
-  resources :projects, :path => "/discover"
+  resources :projects, :path => "/discover", only: :index
+  resources :projects, except: :index
 
   ym_users_routes
 
