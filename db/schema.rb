@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140521161715) do
+ActiveRecord::Schema.define(version: 20140522125918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,12 +57,22 @@ ActiveRecord::Schema.define(version: 20140521161715) do
 
   add_index "posts", ["target_id", "target_type"], name: "index_posts_on_target_id_and_target_type", using: :btree
 
-  create_table "redactor_uploads", force: true do |t|
-    t.string   "file_uid"
-    t.string   "file_type"
+  create_table "projects", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.float    "lat"
+    t.float    "lng"
+    t.string   "image_uid"
+    t.string   "image_name"
+    t.integer  "user_id"
+    t.text     "help_needed"
+    t.text     "purpose"
+    t.datetime "deadline"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "projects", ["user_id"], name: "index_projects_on_user_id", using: :btree
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"
