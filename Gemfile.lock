@@ -105,6 +105,7 @@ GEM
     acts-as-taggable-on (3.2.3)
       actionpack (>= 3, < 5)
       activerecord (>= 3, < 5)
+    addressable (2.3.6)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.7)
     bootstrap-sass (3.1.1.1)
@@ -186,6 +187,8 @@ GEM
     jquery-ui-rails (4.2.1)
       railties (>= 3.2.16)
     json (1.8.1)
+    launchy (2.4.2)
+      addressable (~> 2.3)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -307,6 +310,7 @@ DEPENDENCIES
   factory_girl_rails
   jbuilder (~> 2.0)
   jquery-rails
+  launchy
   pg
   rails (= 4.1.1)
   rspec-rails (~> 2.0)
