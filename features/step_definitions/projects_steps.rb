@@ -8,7 +8,7 @@ end
 
 Then(/^I see the projects$/) do
   @projects.each do |project|
-    expect(page).to have_content(project.title)
-    expect(page).to have_content(project.user.full_name)
+    page.should have_content(project.title)
+    page.should have_content(project.user.full_name)
   end
 end
