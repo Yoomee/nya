@@ -9,7 +9,7 @@
         =link_to(project.title, project)
       %span.author
         by
-        =link_to(project.user.full_name, 'profile')
+        =link_to(project.user.full_name, user_path(project.user))
       .card-tags.col-md-10.p-0
         %ul.tags
           %li=link_to('Breakdancing', 'category')
