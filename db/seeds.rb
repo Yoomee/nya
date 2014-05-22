@@ -50,8 +50,28 @@ DEFAULT_USERS   = [
   }
 ]
 
-DEFAULT_USERS.each do |user_attrs|
-  user = User.new(user_attrs)
-  user.encrypted_password = "$2a$10$0I7i6.g2JMYLoLzYpAZPcujZpGhQ/oJ41RaaMm.8Ff.1k9thCALIm"
-  user.save(:validate => false)
+if (User.count == 0)
+  DEFAULT_USERS.each do |user_attrs|
+    user = User.new(user_attrs)
+    user.encrypted_password = "$2a$10$0I7i6.g2JMYLoLzYpAZPcujZpGhQ/oJ41RaaMm.8Ff.1k9thCALIm"
+    user.save(:validate => false)
+  end
+end
+
+# project seed data
+case Rails.env
+  when "development"
+    Project.create(
+      title: "Example project title",
+      description: "Example project description",
+      lat: 1.5,
+      lng: 1.5,
+      image_uid: "MyString",
+      image_name: "MyString",
+      user: User.find_by(email: 'david@yoomee.com'),
+      help_needed: "Example help needed text",
+      purpose: "Example purpose text",
+      deadline: "2014-05-22 13:59:18"
+    )
+
 end

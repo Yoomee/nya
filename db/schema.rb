@@ -68,6 +68,23 @@ ActiveRecord::Schema.define(version: 20140522130506) do
 
   add_index "posts", ["target_id", "target_type"], name: "index_posts_on_target_id_and_target_type", using: :btree
 
+  create_table "projects", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.float    "lat"
+    t.float    "lng"
+    t.string   "image_uid"
+    t.string   "image_name"
+    t.integer  "user_id"
+    t.text     "help_needed"
+    t.text     "purpose"
+    t.datetime "deadline"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "projects", ["user_id"], name: "index_projects_on_user_id", using: :btree
+
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"

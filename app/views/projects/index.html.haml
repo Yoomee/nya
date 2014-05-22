@@ -1,0 +1,50 @@
+.container
+.strip.strip-hero.relative
+  .container.hero-discover.hero-holder.relative
+    %h1.pt-3.center Discover projects
+    -# %p.col-md-8.col-lg-6.col-md-offset-2.col-lg-offset-3.center.pb-3
+    -#   Even if you havent got any ideas of your own, pick a subject that interests you and help out other like-minded people on ther projects. You never know where it could lead.
+    -# %ul.lrg-tags.col-md-8.col-lg-6.col-md-offset-2.col-lg-offset-3.center
+    -#   %li
+    -#     =link_to('Dance', 'category')
+    -#   %li
+    -#     =link_to('Sport & Leisure', 'category')
+    -#   %li
+    -#     =link_to('Music', 'category')
+    -#   %li
+    -#     =link_to('Health & Environment', 'category')
+    -#   %li
+    -#     =link_to('Music', 'category')
+    -#   %li
+    -#     =link_to('Space & Exploration', 'category')
+    -#   %li
+    -#     =link_to('Arts & Crafts', 'category')
+    -#   %li
+    -#     =link_to('Food', 'category')
+    -#   %li
+    -#     =link_to('Technology', 'category')
+    -#   %li
+    -#     =link_to('Games', 'category')
+.section
+  .container
+    .row.js-masonry{ :data => { :masonry_options => { :itemSelector => '.col-md-4' }}}
+      = render @projects
+
+#action-quote.pt-10.section
+  .container
+    .row.relative
+      .col-md-5
+        =image_tag('testimonial-figure.png', :class => 'pull-left testimonial-figure')
+      %blockquote.col-md-7.pull-right
+        =image_tag('quote-l.png', :class => 'pull-left')
+        %p
+          Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla vitae elit libero, a pharetra augue.
+        =image_tag('quote-r.png', :class => 'pull-right')
+      =link_to('Start your own', 'start-project',  :class => 'btn btn-lg btn-gry pull-right col-md-3')
+
+
+#discover-action.p-tb.section
+  .container
+    .row
+      .col-md-12.center
+        =link_to('Start your project', 'start-project',  :class => 'btn btn-lg btn-gry')
