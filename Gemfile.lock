@@ -1,6 +1,6 @@
 GIT
   remote: git@gitlab.yoomee.com:yoomee/ym_core.git
-  revision: be724f9e9a848f33a14030e4872050eacd505931
+  revision: 800c6e69f083a3130774e97f515d6e7e71229df1
   branch: rails-4
   specs:
     ym_core (1.1.10)
