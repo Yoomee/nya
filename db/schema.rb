@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140521161715) do
+ActiveRecord::Schema.define(version: 20140522130506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,17 @@ ActiveRecord::Schema.define(version: 20140521161715) do
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "content_pages", force: true do |t|
+    t.string   "title"
+    t.string   "subtitle"
+    t.text     "text"
+    t.string   "slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "content_pages", ["slug"], name: "index_content_pages_on_slug", unique: true, using: :btree
 
   create_table "notifications", force: true do |t|
     t.integer  "user_id"
@@ -56,13 +67,6 @@ ActiveRecord::Schema.define(version: 20140521161715) do
   end
 
   add_index "posts", ["target_id", "target_type"], name: "index_posts_on_target_id_and_target_type", using: :btree
-
-  create_table "redactor_uploads", force: true do |t|
-    t.string   "file_uid"
-    t.string   "file_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"

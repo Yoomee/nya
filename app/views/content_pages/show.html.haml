@@ -1,0 +1,10 @@
+.container
+.strip.strip-hero.relative
+  .container.hero-discover.hero-holder.relative.pt-10
+    %h1.pt-10.center=@content_page.title
+    %p.col-md-6.col-md-offset-3.center.pb-3
+      =@content_page.subtitle
+.container.section.pb-10
+  .col-md-8.col-md-offset-2
+    .row.p-tb-3
+      =raw @content_page.text
