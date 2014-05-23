@@ -10,5 +10,6 @@ Then(/^I see the projects$/) do
   @projects.each do |project|
     page.should have_content(project.title)
     page.should have_content(project.user.full_name)
+    page.should have_content(project.city)
   end
 end

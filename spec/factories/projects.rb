@@ -6,6 +6,7 @@ FactoryGirl.define do
     description "Example project description"
     latitude 1.5
     longitude 1.5
+    city 'York'
     image_uid "MyString"
     image_name "MyString"
     user
