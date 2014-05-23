@@ -6,18 +6,17 @@
         .col-md-4.col-xs-6
           %h4 Sitemap
           %ul.p-0.clear
-            %li=link_to('Home', 'home-signedin')
-            %li=link_to('Discover','discover')
+            %li=link_to('Home', root_path)
+            %li=link_to('Discover', discover_path)
             %li=link_to('Forums','forum')
             %li=link_to('Search','search')
 
         .col-md-4.col-xs-6
           %h4 Help & Support
           %ul.p-0.clear
-            %li=link_to('About', 'about')
-            %li=link_to('FAQ','faq')
-            %li=link_to('Live Chat','live-chat')
-            %li=link_to('Contact','contact')
+            %li=link_to_slug('about')
+            %li=link_to_slug('faq')
+            %li=link_to_slug('contact')
 
 #myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
   .modal-dialog

@@ -3,7 +3,7 @@
   .container.hero-discover.hero-holder.relative.pt-10
     %h1.pt-10.center=@content_page.title
     %p.col-md-6.col-md-offset-3.center.pb-3
-      =@content_page.subtitle
+      =@content_page.subtitle.html_safe
 .container.section.pb-10
   .col-md-8.col-md-offset-2
     .row.p-tb-3
