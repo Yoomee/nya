@@ -4,8 +4,8 @@ FactoryGirl.define do
   factory :project do
     title "Example project title"
     description "Example project description"
-    lat 1.5
-    lng 1.5
+    latitude 1.5
+    longitude 1.5
     image_uid "MyString"
     image_name "MyString"
     user
