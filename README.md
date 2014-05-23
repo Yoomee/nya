@@ -30,10 +30,16 @@ rake db:setup
 
 ## Tests
 
-Run cucumber tests with:
+Run cucumber tests with spring using:
 
 ```
-rake cucumber
+./bin/cucumber
+```
+
+If the project requires a restart do:
+
+```
+./bin/spring stop
 ```
 
 ## Deployment
