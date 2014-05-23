@@ -3,13 +3,18 @@ When(/^I go to the project create page$/) do
 end
 
 Then(/^I can create a project$/) do
-  pending # express the regexp above with the code you wish you had
+  project_title = 'Create project test title'
+  @project = build(:project,  title: project_title)
+  fill_in 'project_title', :with => @project[:title]
+  fill_in 'project_purpose', :with => @project[:purpose]
+  fill_in 'project_description', :with => @project[:description]
+  fill_in 'project_help_needed', :with => @project[:help_needed]
+  fill_in 'project_deadline', :with => @project[:deadline]
+  fill_in 'project_city', :with => @project[:city]
+  click_button 'Create your project'
+  @project = Project.find_by_title(project_title)
 end
 
-Then(/^I should see the show project page$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^I be redirected to the signup page$/) do
-  pending # express the regexp above with the code you wish you had
+Then(/^I am redirected to the signup page$/) do
+  page.current_path.should == new_user_session_path
 end
