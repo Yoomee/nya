@@ -8,3 +8,8 @@
   .col-md-8.col-md-offset-2
     .row.p-tb-3
       =raw @content_page.text
+  .row
+    .col-md-8.col-md-offset-2
+      =options_panel do
+        =link_if_can('edit', [:edit, @content_page])
+        =link_if_can(:delete, @content_page, method: :delete)

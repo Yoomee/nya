@@ -22,9 +22,18 @@ Feature: Content pages
     And I update the about page
     Then I should see the about page
 
+    Scenario: Deleting a page
+    Given that I am logged in as an admin
+    And there are 3 content_pages
+    And there is an about page
+    When I go to the about page
+    And I click on the 'delete' link
+    Then the about page should be deleted
+    And I should see a list of all the pages
+
     Scenario: Listing all pages
     Given that I am logged in as an admin
     And there are 3 content_pages
     When I go to the admin page
-    And click on the 'Manage pages' link
+    And I click on the 'Manage pages' link
     Then I should see a list of all the pages

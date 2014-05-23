@@ -9,6 +9,11 @@ class ContentPagesController < ApplicationController
     end
   end
 
+  def destroy
+    @content_page.destroy
+    redirect_to content_pages_path, message: 'Page deleted'
+  end
+
   def edit
   end
 
