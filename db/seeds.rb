@@ -67,8 +67,6 @@ case Rails.env
       latitude: 1.5,
       longitude: 1.5,
       city: 'Sheffield',
-      image_uid: "MyString",
-      image_name: "MyString",
       user: User.find_by(email: 'david@yoomee.com'),
       help_needed: "Example help needed text",
       purpose: "Example purpose text",

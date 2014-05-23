@@ -3,7 +3,10 @@
     .image-wrapper
       =link_to project do
         %span.feat-star
-        =image_tag('http://lorempixel.com/400/200/')
+        -if project.image
+          =image_for(project, '400x')
+        -else
+          =image_tag('http://lorempixel.com/400/200/')
     .card-info.col-md-12
       %h3.project-title
         =link_to(project.title, project)
