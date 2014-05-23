@@ -48,6 +48,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'debugger'
   gem 'rspec-rails', '~> 2.0'
   gem 'factory_girl_rails'
 end
@@ -69,5 +70,3 @@ end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
