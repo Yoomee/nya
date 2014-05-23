@@ -34,6 +34,6 @@ Feature: Content pages
     Scenario: Listing all pages
     Given that I am logged in as an admin
     And there are 3 content_pages
-    When I go to the admin page
+    When I go to the admin area
     And I click on the 'Manage pages' link
     Then I should see a list of all the pages
