@@ -20,14 +20,25 @@
               .progress
                 .progress-bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "20", role: "progressbar", style: "width: 20%;"}
                   %span.sr-only 20% Complete
-              %label.form-label Project name
-              %p This is some help text which can occupy as many lines as it needs to.
-              %input.form-input{'placeholder' => 'Some placeholder text'}
-            %hr
-            .p3
-              %label.form-label Project tags
-              %p This is some help text which can occupy as many lines as it needs to.
-              %input.form-input{'placeholder' => 'Some placeholder text'}
+
+              =semantic_form_for @project do |f|
+                =f.inputs do
+                  =f.input :title, label: "Project name", hint: "What is your project called?"
+                  -# TODO: add tags and image
+                  -# %hr
+                  -# .p3
+                  -#   %label.form-label Project tags
+                  -#   %p This is some help text which can occupy as many lines as it needs to.
+                  -#   %input.form-input{'placeholder' => 'Some placeholder text'}
+                  =f.input :purpose, label: "Purpose", hint: "What do you want to achieve with your project?"
+                  =f.input :description, label: "Description", hint: "Tell us what your project is about"
+                  =f.input :help_needed, label: "Help needed", hint: "What kind of help do you need to make this work?"
+                  =f.input :deadline, label: "Project deadline"
+                  =f.input :city, label: "The city or town where this project is based"
+                  =f.input :image, as: :image
+                =f.actions
+
+
             =link_to('Next', '#', :class => 'form-input-btn btn-block')
 
           #preview.tab-pane
