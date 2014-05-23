@@ -9,11 +9,22 @@ class ContentPagesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def new
   end
 
   def show
     puts params[:id]
+  end
+
+  def update
+    if @content_page.update(content_page_params)
+      redirect_to "/#{@content_page.slug}"
+    else
+      render :edit
+    end
   end
 
   private

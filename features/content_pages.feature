@@ -14,3 +14,10 @@ Feature: Content pages
     When I go to the new content_page page
     And I fill in the content_page form appropriately
     Then I should see the new page
+
+    Scenario: Editing a page
+    Given that I am logged in as an admin
+    And there is an about page
+    When I go to edit the about page
+    And I update the about page
+    Then I should see the about page
