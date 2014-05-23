@@ -33,10 +33,11 @@
                   =f.input :purpose, label: "Purpose", hint: "What do you want to achieve with your project?"
                   =f.input :description, label: "Description", hint: "Tell us what your project is about"
                   =f.input :help_needed, label: "Help needed", hint: "What kind of help do you need to make this work?"
-                  =f.input :deadline, label: "Project deadline"
+                  =f.input :deadline, label: "Project deadline", as: :date_picker
                   =f.input :city, label: "The city or town where this project is based"
-                  =f.input :image, as: :image
-                =f.actions
+                  -# =f.input :image, as: :image
+                =f.actions do
+                  =f.action :submit, label: 'Create your project'
 
 
             =link_to('Next', '#', :class => 'form-input-btn btn-block')

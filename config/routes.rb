@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :projects, :path => "/discover", only: :index
-  resources :projects, except: :index
+  get 'discover', to: 'projects#index', as: :discover
+  resources :projects
 
   get 'admin', to: 'admin#index', as: :admin_to_avoid_content_pages
 

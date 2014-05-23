@@ -7,9 +7,9 @@ Feature: Create a project
     Given that I am logged in
     When I go to the project create page
     Then I can create a project
-    Then I should see the show project page
+    Then I see the project details
 
   Scenario: Creating a project as an anonymous user
     Given that I am not logged in
     When I go to the project create page
-    Then I be redirected to the signup page
+    Then I am redirected to the signup page
