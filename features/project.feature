@@ -7,4 +7,3 @@ Feature: View project page
     Given a project
     When I go to the project
     Then I see the project details
-    Then I see the project image

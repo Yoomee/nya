@@ -45,9 +45,10 @@
           =link_to('#',  :class => 'btn btn-lg btn-gry col-md-5 col-xs-12') do
             %span.pull-left Help us
             %i.fa.fa-hand-o-up.pull-right
-        .row
-          .project-image
-            =image_placeholder('760x307#')
+        -if @project.image
+          .row
+            .project-image
+              =image_for(@project, '720x')
         .row.project-tags
           =link_to('Tags', '#',:icon => 'tags')
           %ul.tags
