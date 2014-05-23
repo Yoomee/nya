@@ -14,5 +14,9 @@ Then(/^I see the project details$/) do
   page.should have_content(long_date(@project.created_at))
   page.should have_content(@project.purpose)
   page.should have_content(@project.help_needed)
-  # TODO: image, location
+  page.should have_content(@project.city)
+end
+
+Then(/^I see the project image$/) do
+  pending
 end

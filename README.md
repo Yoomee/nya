@@ -2,6 +2,10 @@
 
 This is a Rails 4/Ruby 2 application for the NYA
 
+## Wireframes
+
+Wireframes are available at: http://nya-prototype.herokuapp.com/
+
 ## Dev environment (Mac OSX Mavericks)
 
 Download and install postgres.app from http://postgresapp.com/

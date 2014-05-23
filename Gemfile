@@ -37,6 +37,9 @@ gem 'ym_tags', :git => 'git@gitlab.yoomee.com:yoomee/ym_tags.git', :branch => 'r
 gem 'ym_posts', :git => 'git@gitlab.yoomee.com:yoomee/ym_posts.git', :branch => 'rails-4'
 # gem 'ym_posts', :path => '~/Rails/Gems/ym_posts'
 
+# Extra gems
+gem 'geocoder'
+
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 group :development do
   gem 'spring'
@@ -68,4 +71,3 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-

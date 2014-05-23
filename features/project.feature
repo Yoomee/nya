@@ -6,4 +6,5 @@ Feature: View project page
   Scenario: Viewing a project
     Given a project
     When I go to the project
-    Then I see the project details 
+    Then I see the project details
+    Then I see the project image
