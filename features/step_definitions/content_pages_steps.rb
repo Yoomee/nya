@@ -20,12 +20,9 @@ When(/^I fill in the content_page form appropriately$/) do
   click_button 'Save'
 end
 
-Then(/^I should see the new page$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^I should see the about page$/) do
+Then(/^I should see the (\w+) page$/) do |found_page|
   page.should have_content(@content_page.title)
   page.should have_content(@content_page.subtitle)
   page.should have_content(@content_page.text)  
 end
+
