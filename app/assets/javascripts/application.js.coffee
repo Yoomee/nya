@@ -11,8 +11,11 @@
 #= require ym_core
 #= require ym_posts
 #= require ym_tags
+#= require redactor
 
-YmComments.Form.init({submitOnEnter: true})
+$ ->
+  YmComments.Form.init({submitOnEnter: true})
+  Redactor.init()
 
 
 

@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get 'admin', to: 'admin#index', as: :admin_to_avoid_content_pages
 
+  resources :content_pages, path: :pages, except: :show
+
   get ':id', to: 'content_pages#show'
 
 end

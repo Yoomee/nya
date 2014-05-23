@@ -8,3 +8,9 @@ Feature: Content pages
     Given there is an about page
     When I go to the about page
     Then I should see the about page
+
+    Scenario: Creating a new page
+    Given that I am logged in as an admin
+    When I go to the new content_page page
+    And I fill in the content_page form appropriately
+    Then I should see the new page
