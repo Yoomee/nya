@@ -2,14 +2,22 @@
   .col-md-12
     %h1.page-title
       %i.fa.fa-cogs
-      =title "Admin"
-.row  
+      =title 'Admin'
+.row
   .col-md-4
     .well
       %h2
         %i.fa.fa-users
         Users
       %ul.list-unstyled
-        %li=link_to "Manage users", manage_users_path
-        %li=link_to "User stats", stats_users_path, :class => "ml-2"
-        %li=link_to "New user", new_user_path
+        %li=link_to 'Manage users', manage_users_path
+        %li=link_to 'User stats', stats_users_path, :class => 'ml-2'
+        %li=link_to 'New user', new_user_path
+  .col-md-4
+    .well
+      %h2
+        %i.fa.fa-files-o
+        Pages
+      %ul.list-unstyled
+        %li=link_to 'Manage pages', content_pages_path
+        %li=link_to 'New page', new_content_page_path

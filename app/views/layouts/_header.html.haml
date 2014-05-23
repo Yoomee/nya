@@ -26,7 +26,7 @@
             =link_to('', '#', 'data-toggle' => 'dropdown', :class => 'dropdown-toggle', :icon => 'chevron-down')
             %ul.dropdown-menu.settings.col-xs-8
               -if current_user.admin?
-                %li=link_to('admin', admin_path)
+                %li=link_to('Admin', admin_path)
               %li=link_to('View profile', current_user)
               %li=link_to('Account settings', edit_user_path(current_user))
               %li.divider
