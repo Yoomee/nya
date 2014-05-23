@@ -1,6 +1,14 @@
+Given(/^there are (\d+) content_pages$/) do |x|
+  @content_pages = create_list(:content_page, x.to_i)
+end
+
 Given(/^there is an about page$/) do
   # pending # express the regexp above with the code you wish you had
   @content_page = create(:content_page, title: 'About', slug: 'about')
+end
+
+When(/^click on the 'Manage pages' link$/) do
+  click_link 'Manage pages'
 end
 
 When(/^I go to the about page$/) do
@@ -34,9 +42,14 @@ When(/^I update the about page$/) do
   click_button 'Save'
 end
 
+Then(/^I should see a list of all the pages$/) do
+  @content_pages.each do |content_page|
+    page.should have_link(content_page.title, href: "/#{content_page.slug}")
+  end
+end
+
 Then(/^I should see the (\w+) page$/) do |found_page|
   page.should have_content(@content_page.title)
   page.should have_content(@content_page.subtitle)
   page.should have_content(@content_page.text)  
 end
-

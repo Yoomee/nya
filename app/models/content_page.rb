@@ -9,6 +9,10 @@ class ContentPage < ActiveRecord::Base
     slug
   end
 
+  def to_s
+    title
+  end
+
   private
   def parameterize_slug
     self.slug = slug.parameterize

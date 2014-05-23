@@ -3,6 +3,6 @@ FactoryGirl.define do
     title "MyString"
     subtitle "MyString"
     text "MyText"
-    slug "MyString#{Time.now.to_s}"
+    sequence(:slug) { |n| "slug-#{n}" }
   end
 end

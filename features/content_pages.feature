@@ -21,3 +21,10 @@ Feature: Content pages
     When I go to edit the about page
     And I update the about page
     Then I should see the about page
+
+    Scenario: Listing all pages
+    Given that I am logged in as an admin
+    And there are 3 content_pages
+    When I go to the admin page
+    And click on the 'Manage pages' link
+    Then I should see a list of all the pages
