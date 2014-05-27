@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :project_category do
-    name "Art"
+    sequence(:name) { |n| "name-#{n}" }
     sequence(:slug) { |n| "slug-#{n}" }
     description "Category description"
   end
