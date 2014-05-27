@@ -8,6 +8,17 @@
   .col-md-8.col-md-offset-2
     .row.p-tb-3
       =raw @content_page.text
+      -if @content_page.slug == 'contact'
+        %h4 Send us a message
+        -@contact_enquiry ||= ContactEnquiry.new(email: current_user.try(:email), name: current_user.try(:full_name))
+        =semantic_form_for @contact_enquiry do |form|
+          =form.inputs do
+            =form.input :name
+            =form.input :email
+            =form.input :message,as: :text
+          =form.actions do
+            =form.action :submit, label: 'Send'
+
   .row
     .col-md-8.col-md-offset-2
       =options_panel do

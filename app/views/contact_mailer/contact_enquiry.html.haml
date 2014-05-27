@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %meta{:content => 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type'}/
+  %body
+    %p
+      You've got a message from
+      =@contact_enquiry.name
+      =mail_to @contact_enquiry.email
+    %p
+      %h2 Message
+      %hr
+      =@contact_enquiry.message
+      %hr
+    %p
+      Thanks
+      %br
+      =Settings.site_name
+      Team
+
+
+

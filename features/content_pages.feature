@@ -7,3 +7,10 @@ Feature: Content pages
     Given there is an about page
     When I go to the about page
     Then I should see the about page
+
+  Scenario: Sending a message to the site owners
+    Given there is a contact page
+    When I go to the contact page
+    And I submit the contact form
+    Then I should see the thank you page
+    And my message should be sent to the site owners
