@@ -66,6 +66,11 @@ case Rails.env
       slug: "art",
       description: "Example category description"
     )
+    ProjectCategory.create(
+      name: "Music",
+      slug: "music",
+      description: "Example category description"
+    )
     Project.create(
       title: "Example project title",
       description: "Example project description",
