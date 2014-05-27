@@ -17,3 +17,7 @@
 
 # Ignore dragonfly file
 /data/dragonfly/development/*
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
