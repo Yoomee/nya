@@ -14,7 +14,7 @@
       %ul.nav.navbar-nav.navbar-right
         %li=link_to('Home', root_path, :class => 'nav-text-link')
         %li=link_to('Discover', discover_path, :class => 'nav-text-link')
-        %li=link_to('Community', 'forum-landing', :class => 'nav-text-link')
+        %li=link_to('Community', forums_path, :class => 'nav-text-link')
         %li
           %input.global-search{'placeholder' => 'Search projects'}
           =link_to('', 'search', :class => 'btn', :icon => 'search')
