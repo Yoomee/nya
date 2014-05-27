@@ -1,7 +1,7 @@
 Feature: Forums
-  In order to allow users to communicate and share information
   As an admin
   I want to create, update and delete forums
+  In order to allow users to communicate and share information
 
     Scenario: Creating a new forum
     Given that I am logged in as an admin

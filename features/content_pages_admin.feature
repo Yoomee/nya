@@ -1,7 +1,7 @@
 Feature: Content pages
-  In order provide information 
   As an admin
   I want to create, update and delete pages
+  In order provide information 
 
     Scenario: Creating a new page
     Given that I am logged in as an admin
