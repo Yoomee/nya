@@ -6,7 +6,7 @@ class ProjectCategoriesController < ApplicationController
   end
 
   def show
-    @project_category = ProjectCategory.find_by_slug(params[:slug])
+    @project_category = ProjectCategory.includes(:projects).find_by_slug(params[:slug])
   end
 
 end
