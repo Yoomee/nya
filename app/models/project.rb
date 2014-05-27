@@ -13,4 +13,8 @@ class Project < ActiveRecord::Base
     "#{city}, UK"
   end
 
+  def to_param
+    "#{id} #{title}".parameterize
+  end
+
 end
