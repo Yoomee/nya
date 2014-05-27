@@ -1,5 +1,7 @@
 class ProjectCategory < ActiveRecord::Base
 
+  has_many :projects
+
   validates :name, :slug, presence: true
   validates :slug, uniqueness: true
 

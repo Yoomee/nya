@@ -11,6 +11,7 @@ Then(/^I can create a project$/) do
   fill_in 'project_help_needed', :with => @project[:help_needed]
   fill_in 'project_deadline', :with => @project[:deadline]
   fill_in 'project_city', :with => @project[:city]
+  select @project_categories.first.name, from: 'project_project_category_id'
   click_button 'Create your project'
   @project = Project.find_by_title(project_title)
 end

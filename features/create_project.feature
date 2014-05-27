@@ -5,6 +5,7 @@ Feature: Create a project
 
   Scenario: Creating a project as a logged in user
     Given that I am logged in
+    And there are 1 project categories
     When I go to the project create page
     Then I can create a project
     Then I see the project details

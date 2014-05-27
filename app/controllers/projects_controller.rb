@@ -34,7 +34,8 @@ class ProjectsController < ApplicationController
       :image,
       :help_needed,
       :purpose,
-      :deadline
+      :deadline,
+      :project_category_id
     )
   end
 
