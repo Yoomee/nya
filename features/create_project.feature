@@ -8,6 +8,7 @@ Feature: Create a project
     When I go to the project create page
     Then I can create a project
     Then I see the project details
+    Then the project location is geocoded
 
   Scenario: Creating a project as an anonymous user
     Given that I am not logged in

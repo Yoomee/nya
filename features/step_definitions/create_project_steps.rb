@@ -18,3 +18,8 @@ end
 Then(/^I am redirected to the signup page$/) do
   page.current_path.should == new_user_session_path
 end
+
+Then(/^the project location is geocoded$/) do
+  expect(@project.latitude).to eq(53.9599651)
+  expect(@project.longitude).to eq(-1.0872979)
+end
