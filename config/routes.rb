@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   resources :content_pages, path: :pages, except: :show
   resources :contact_enquiries, only: :create
 
+  resources :forums, path: 'forum'
+
   get ':id', to: 'content_pages#show'
 
 end

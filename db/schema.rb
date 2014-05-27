@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140527102304) do
+ActiveRecord::Schema.define(version: 20140527131545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,14 @@ ActiveRecord::Schema.define(version: 20140527102304) do
   end
 
   add_index "content_pages", ["slug"], name: "index_content_pages_on_slug", unique: true, using: :btree
+
+  create_table "forums", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "image_uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "notifications", force: true do |t|
     t.integer  "user_id"

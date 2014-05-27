@@ -1,0 +1,178 @@
+.container
+.strip.strip-smll.relative
+  .container.hero-discover.hero-holder.relative
+    .col-md-8.col-md-offset-2.relative
+      .usr-action-top
+        =link_to('Follow', '#',  :class => 'btn btn-lg btn-gry btn-follow mr-3')
+      %h1.pt-4.center=@forum.name
+      %p.col-md-8.col-md-offset-2.center=raw(@forum.description)
+.split.section
+  .container
+    .col-md-8.col-md-offset-2.p-0
+      %h3.col-md-12.pb-3.m-0
+        Say hello to new members of the
+        =@forum.name.downcase
+        community
+      .col-md-12.col-sm-12.col-xs-12
+        %ul.new-members
+          -3.times do
+            %li.col-md-4.col-sm-6.col-xs-12.mb-3.relative
+              .col-lg-3.col-md-4.col-sm-3.col-xs-3.avatar
+                .avatar-wrap
+                  =image_tag("profile-thumb.png")
+              .col-md-8.col-lg-9
+                =link_to('User', 'profile', :class=> 'large-txt')
+                %p Joined 1st April 2014
+                =link_to('Sheffield','category', :icon => 'map-marker')
+
+.section
+  .container
+    .col-md-8.col-md-offset-2
+      .row.pb-3
+        .col-md-12
+          %h3 Write something about sports
+        .col-md-12.main-input
+          %ul.nav.nav-tabs
+            %li.active
+              =link_to('<span>Write</span>'.html_safe,'#write', :icon => 'pencil', 'data-toggle' => 'tab')
+            %li
+              =link_to('<span>Image</span>'.html_safe,'#image', :icon => 'camera', 'data-toggle' => 'tab')
+            %li
+              =link_to('<span>Link</span>'.html_safe,'#link', :icon => 'link', 'data-toggle' => 'tab')
+          .tab-content
+            #write.tab-pane.fade.in.active
+              %form.form-inline{role: "form"}
+                .form-group.col-md-12.col-sm-12
+                  %label.sr-only{for: "comment"} What do you want to talk about?
+                  %input.form-control{placeholder: "What do you want to talk about?", type: "text"}
+
+            #image.tab-pane.fade.in
+              %form.form-inline{role: "form"}
+                .form-group.col-md-12
+                  %label.sr-only{for: "comment"} Drag and drop an image
+                  %input.form-control{placeholder: "Drag and drop an image into this area", type: "text"}
+            #promote.tab-pane.fade.in
+              %form.form-inline{role: "form"}
+                .form-group.col-md-12
+                  %label.sr-only{for: "comment"} Start typing the name of the project you want to promote
+                  %input.form-control{placeholder: "Start typing the name of the project you want to promote", type: "text"}
+            #link.tab-pane.fade.in
+              %form.form-inline{role: "form"}
+                .form-group.col-md-12
+                  %label.sr-only{for: "comment"} Paste a link into this area
+                  %input.form-control{placeholder: "Paste a link into this area", type: "text"}
+      .row
+        .col-md-12
+          %h3 Activity feed
+      .row
+        .col-md-12.col-sm-12.col-xs-12.photo.card.pb-3
+          .card-wrap
+            .card-top
+              %time{datetime: "2009-03-29"}
+              29
+              %sup th
+              March 2014
+            .image-wrapper
+              =image_tag('http://www.lorempixum.com/g/750/400/sports')
+            .card-comments.card-info.col-md-6.col-xs-9
+              =link_to('2 users commented','#', :class => 'comments', :icon => 'comments')
+            .card-likes.col-md-6.col-xs-3.right.pt-2
+              =link_to('3', '#', :class => 'likes', :icon => 'heart')
+            .comment-input
+              %form.form-inline{role: "form"}
+              .form-group.col-md-12
+                %label.sr-only{for: "comment"} Write your comment
+                %input.form-control{placeholder: "Write your comment", type: "text"}
+              %ul.user-comment
+                -3.times do
+                  %li.col-md-12.relative
+                    .col-md-1.col-sm-2.avatar
+                      .avatar-wrap
+                        =image_tag("profile-thumb.png")
+                    %h3.profile-name.mb-0
+                      =link_to('User', 'profile')
+                    =link_to('<span>Trash</span>'.html_safe,'#', :class => 'usr-link', :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
+                    .time
+                      replied
+                      %time{datetime: "2009-03-29"}
+                      30
+                      %sup th
+                      March 2014
+                    %p That photo is really cool
+      .row
+        -2.times do
+          .col-md-12.col-sm-12.col-xs-12.text.card.pb-3
+            .card-wrap
+              .card-top
+                %time{datetime: "2009-03-29"}
+                29
+                %sup th
+                March 2014
+                =link_to('<span>Trash</span>'.html_safe,'#', :class => 'usr-link', :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
+              .text-comment.col-md-12.p-2
+                %p
+                  My sports project went really well, didn’t get the funding but thanks to all those that helped. I’m thinking of starting another project along the same lines, but getting involved with younger people this time. What do you think?
+              .card-comments.card-info.col-md-10.col-xs-9
+                =link_to('Write the first comment', '#', :class => 'comments', :icon => 'comments')
+              .card-likes.col-md-2.col-xs-3.right.pt-2
+                =link_to('3', '#', :class => 'likes', :icon => 'heart')
+              .comment-input
+                %form.form-inline{role: "form"}
+                .form-group.col-md-12
+                  %label.sr-only{for: "comment"} Write your comment
+                  %input.form-control{placeholder: "Write your comment", type: "text"}
+
+.section
+  .container
+    .col-md-8.col-md-offset-2.p-0
+      .col-md-12
+        %h3 Latest projects in sports
+      -2.times do
+        .col-md-6.col-sm-12.col-xs-12.project.card.pb-3
+          .card-wrap
+            .image-wrapper
+              =link_to 'project' do
+                =image_tag('http://www.lorempixum.com/g/600/400/sports')
+            .card-info.col-md-12
+              %h3.project-title
+                =link_to('Project Name', 'project')
+              %span.author 
+                by
+                =link_to('User', 'profile')
+              .card-tags.col-md-10.col-xs-9.p-0
+                %ul.tags
+                  %li=link_to('Breakdancing', 'category')
+                  %li=link_to('Zumba', 'category')
+              .card-likes.col-md-2.col-xs-3.right.p-0
+                =link_to('3', '#', :class => 'likes', :icon => 'heart')
+            .card-footer
+              .foot-link.location.col-md-6.col-xs-6
+                =link_to('Birmingham', 'category', :icon => 'map-marker')
+              .foot-link.helpers.col-md-6.right
+                =link_to('2 helpers', 'category', :icon => 'users') 
+
+.section
+  .container
+    .col-md-8.col-md-offset-2
+      .row
+        -2.times do
+          .col-md-12.col-sm-12.col-xs-12.text.card.pb-3
+            .card-wrap
+              .card-top
+                %time{datetime: "2009-03-29"}
+                29
+                %sup th
+                March 2014
+                =link_to('<span>Trash</span>'.html_safe,'#', :class => 'usr-link', :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
+              .text-comment.col-md-12.p-2
+                %p
+                  My sports project went really well, didn’t get the funding but thanks to all those that helped. I’m thinking of starting another project along the same lines, but getting involved with younger people this time. What do you think?
+              .card-comments.card-info.col-md-10.col-xs-9
+                =link_to('Write the first comment', '#', :class => 'comments', :icon => 'comments')
+              .card-likes.col-md-2.col-xs-3.right.pt-2
+                =link_to('3', '#', :class => 'likes', :icon => 'heart')
+              .comment-input
+                %form.form-inline{role: "form"}
+                .form-group.col-md-12
+                  %label.sr-only{for: "comment"} Write your comment
+                  %input.form-control{placeholder: "Write your comment", type: "text"}
