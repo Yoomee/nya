@@ -1,5 +1,4 @@
 When(/^I go to the new project category page$/) do
-  pending
   visit new_project_category_path
 end
 
