@@ -2,7 +2,7 @@
   =form.inputs do
     =form.input :title
     =form.input :subtitle
-    =form.input :text, input_html: { class: 'redactor' }
+    =form.input :text, as: :redactor
     =form.input :link_text, hint: 'The text used in a navigation link'
     =form.input :slug, label: 'Url'
   =form.actions do
