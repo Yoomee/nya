@@ -7,6 +7,8 @@ class Ability
 
     # open ability
     can :show, ContentPage
+    can :show, Project
+    can [:index, :show], ProjectCategory
 
     if user.try(:admin?)
       can :manage, :all
