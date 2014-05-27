@@ -5,3 +5,5 @@
         %h1 Edit
         =@project_category.name
         =render 'form'
+        %hr
+        =button_to 'Delete', project_category_path(@project_category), method: :delete, class: 'btn btn-primary'

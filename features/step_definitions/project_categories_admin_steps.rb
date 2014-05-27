@@ -28,11 +28,17 @@ When(/^I go to edit the project category$/) do
 end
 
 When(/^I update the project category$/) do
-  pending # express the regexp above with the code you wish you had
+  @project_category[:name] = 'The Name'
+  @project_category[:description] = 'Describe Me'
+  @project_category[:slug] = 'thename'
+  fill_in 'project_category_name', with: @project_category[:name]
+  fill_in 'project_category_description', with: @project_category[:description]
+  fill_in 'project_category_slug', with: @project_category[:slug]
+  click_button 'Save'
 end
 
 When(/^I click on the 'delete' button$/) do
-  pending # express the regexp above with the code you wish you had
+  click_button 'Delete'
 end
 
 Then(/^the project category should be deleted$/) do

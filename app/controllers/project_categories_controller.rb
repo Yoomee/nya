@@ -33,6 +33,11 @@ class ProjectCategoriesController < ApplicationController
     end
   end
 
+  def destroy
+    @project_category.destroy
+    redirect_to discover_path, message: 'Project category deleted'
+  end
+
   private
 
   def project_category_params
