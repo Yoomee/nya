@@ -1,0 +1,21 @@
+.container
+.strip.strip-smll.relative
+  .container.hero-holder.relative
+    %h1.pt-3.center
+      Discover
+      =@project_category.name
+    %p.col-md-8.col-md-offset-2.center.pb-3
+      Discover, and help out on projects tagged with
+      =@project_category.name
+      , or
+      =link_to('start your own.', new_project_path)
+.section
+  .container
+    .row.js-masonry{ :data => { :masonry_options => { :itemSelector => '.col-md-4' }}}
+      = render @project_category.projects
+
+#discover-action.p-tb.section
+  .container
+    .row
+      .col-md-12.center
+        =link_to('Start your project', new_project_path,  :class => 'btn btn-lg btn-gry')

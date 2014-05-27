@@ -1,5 +1,5 @@
-Given(/^a list of project categories$/) do
-  @project_categories = create_list(:project_categories, x.to_i)
+Given(/^there are (\d+) project categories$/) do |x|
+  @project_categories = create_list(:project_category, x.to_i)
 end
 
 When(/^I select a project category$/) do

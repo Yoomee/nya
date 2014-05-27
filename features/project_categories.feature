@@ -4,7 +4,7 @@ Feature: Browsing projects by category
   I can see projects by category
 
   Scenario: Viewing a list of projects by category
-    Given a list of project categories
+    Given there are 3 project categories
     When I go to the list of projects
     And I select a project category
     Then I can see projects for the selected category

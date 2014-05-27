@@ -13,7 +13,7 @@
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-right
         %li=link_to('Home', root_path, :class => 'nav-text-link')
-        %li=link_to('Discover', discover_path, :class => 'nav-text-link')
+        %li=link_to('Discover', project_categories_path, :class => 'nav-text-link')
         %li=link_to('Community', 'forum-landing', :class => 'nav-text-link')
         %li
           %input.global-search{'placeholder' => 'Search projects'}

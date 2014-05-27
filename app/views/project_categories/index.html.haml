@@ -2,29 +2,10 @@
 .strip.strip-hero.relative
   .container.hero-discover.hero-holder.relative
     %h1.pt-3.center Discover projects
-    -# %p.col-md-8.col-lg-6.col-md-offset-2.col-lg-offset-3.center.pb-3
-    -#   Even if you havent got any ideas of your own, pick a subject that interests you and help out other like-minded people on ther projects. You never know where it could lead.
-    -# %ul.lrg-tags.col-md-8.col-lg-6.col-md-offset-2.col-lg-offset-3.center
-    -#   %li
-    -#     =link_to('Dance', 'category')
-    -#   %li
-    -#     =link_to('Sport & Leisure', 'category')
-    -#   %li
-    -#     =link_to('Music', 'category')
-    -#   %li
-    -#     =link_to('Health & Environment', 'category')
-    -#   %li
-    -#     =link_to('Music', 'category')
-    -#   %li
-    -#     =link_to('Space & Exploration', 'category')
-    -#   %li
-    -#     =link_to('Arts & Crafts', 'category')
-    -#   %li
-    -#     =link_to('Food', 'category')
-    -#   %li
-    -#     =link_to('Technology', 'category')
-    -#   %li
-    -#     =link_to('Games', 'category')
+    %p.col-md-8.col-lg-6.col-md-offset-2.col-lg-offset-3.center.pb-3
+      Even if you havent got any ideas of your own, pick a subject that interests you and help out other like-minded people on ther projects. You never know where it could lead.
+    %ul.lrg-tags.col-md-8.col-lg-6.col-md-offset-2.col-lg-offset-3.center
+      = render @project_categories
 .section
   .container
     .row.js-masonry{ :data => { :masonry_options => { :itemSelector => '.col-md-4' }}}

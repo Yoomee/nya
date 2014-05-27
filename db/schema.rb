@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140523105024) do
+ActiveRecord::Schema.define(version: 20140527100245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,16 @@ ActiveRecord::Schema.define(version: 20140523105024) do
   end
 
   add_index "posts", ["target_id", "target_type"], name: "index_posts_on_target_id_and_target_type", using: :btree
+
+  create_table "project_categories", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
+  end
+
+  add_index "project_categories", ["slug"], name: "index_project_categories_on_slug", unique: true, using: :btree
 
   create_table "projects", force: true do |t|
     t.string   "title"

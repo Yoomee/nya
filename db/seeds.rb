@@ -61,6 +61,11 @@ end
 # project seed data
 case Rails.env
   when "development"
+    ProjectCategory.create(
+      name: "Art",
+      slug: "art",
+      description: "Example category description"
+    )
     Project.create(
       title: "Example project title",
       description: "Example project description",

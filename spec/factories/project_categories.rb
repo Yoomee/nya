@@ -1,6 +1,9 @@
+# Read about factories at https://github.com/thoughtbot/factory_girl
+
 FactoryGirl.define do
   factory :project_category do
-    title "Art"
-    description "Example category description"
+    name "Art"
+    sequence(:slug) { |n| "slug-#{n}" }
+    description "Category description"
   end
 end
