@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :forum do
-    name 'Sport & Leisure'
+    name 'Dance'
     description 'Talk about your sport & leisure project here. Share ideas, give encouragement and help each other.'
   end
 end

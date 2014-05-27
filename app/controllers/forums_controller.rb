@@ -9,12 +9,31 @@ class ForumsController < ApplicationController
     end
   end
 
+  def destroy
+    @forum.destroy
+    redirect_to forums_path
+  end
+
+  def edit
+  end
+
   def new
+  end
+
+  def show
+  end
+
+  def update
+    if @forum.update(forum_params)
+      redirect_to @forum
+    else
+      render :edit
+    end
   end
 
   private
   def forum_params
-    params.require(:forum).permit(:name, :description, :image)
+    params.require(:forum).permit(:name, :description, :image, :remove_image)
   end
 
 end
