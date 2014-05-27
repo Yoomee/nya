@@ -61,15 +61,24 @@ end
 # project seed data
 case Rails.env
   when "development"
+    ProjectCategory.create(
+      name: "Art",
+      slug: "art",
+      description: "Example category description"
+    )
+    ProjectCategory.create(
+      name: "Music",
+      slug: "music",
+      description: "Example category description"
+    )
     Project.create(
       title: "Example project title",
       description: "Example project description",
       latitude: 1.5,
       longitude: 1.5,
       city: 'Sheffield',
-      image_uid: "MyString",
-      image_name: "MyString",
       user: User.find_by(email: 'david@yoomee.com'),
+      project_category: ProjectCategory.first,
       help_needed: "Example help needed text",
       purpose: "Example purpose text",
       deadline: "2014-10-22"

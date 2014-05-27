@@ -4,7 +4,7 @@
     %h1.pt-3.center Discover: Food
     %p.col-md-8.col-md-offset-2.center.pb-3
       Discover, and help out on projects tagged with food, or
-      =link_to('start your own.','start-project')
+      =link_to('start your own.',new_project_path)
 .section
   .container
     .row.js-masonry{ :data => { :masonry_options => { :itemSelector => '.col-md-4' }}}
@@ -18,7 +18,7 @@
             .card-info.col-md-12
               %h3.project-title
                 =link_to('Project Name', 'profile')
-              %span.author 
+              %span.author
                 by
                 =link_to('User', 'profile')
               .card-tags.col-md-10.p-0
@@ -37,4 +37,4 @@
   .container
     .row
       .col-md-12.center
-        =link_to('Start your project', 'start-project',  :class => 'btn btn-lg btn-gry')
+        =link_to('Start your project', new_project_path,  :class => 'btn btn-lg btn-gry')

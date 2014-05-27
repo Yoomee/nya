@@ -16,7 +16,3 @@ Then(/^I see the project details$/) do
   page.should have_content(@project.help_needed)
   page.should have_content(@project.city)
 end
-
-Then(/^I see the project image$/) do
-  pending
-end

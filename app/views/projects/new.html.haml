@@ -10,7 +10,7 @@
     .col-sm-6.col-sm-offset-3
       %ul.form-tabs
         %li.active=link_to('My project', '#myproject', 'data-toggle' => 'tab')
-        %li=link_to('Preview', '#preview', 'data-toggle' => 'tab')
+        -# %li=link_to('Preview', '#preview', 'data-toggle' => 'tab')
         .clearfix
 
       .form-container
@@ -24,7 +24,8 @@
               =semantic_form_for @project do |f|
                 =f.inputs do
                   =f.input :title, label: "Project name", hint: "What is your project called?"
-                  -# TODO: add tags and image
+                  =f.input :project_category, label: "Category", hint: "Choose a category for your project"
+                  -# TODO: add tags
                   -# %hr
                   -# .p3
                   -#   %label.form-label Project tags
@@ -37,10 +38,9 @@
                   =f.input :city, label: "The city or town where this project is based"
                   =f.input :image, as: :image
                 =f.actions do
-                  =f.action :submit, label: 'Create your project'
+                  =f.action :submit, label: 'Create your project', button_html: { class: 'form-input-btn btn-block' }
 
-
-            =link_to('Next', '#', :class => 'form-input-btn btn-block')
+            -# =link_to('Next', '#', :class => 'form-input-btn btn-block')
 
           #preview.tab-pane
             .p3

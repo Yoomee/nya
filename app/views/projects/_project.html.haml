@@ -3,7 +3,10 @@
     .image-wrapper
       =link_to project do
         %span.feat-star
-        =image_tag('http://lorempixel.com/400/200/')
+        -if project.image
+          =image_for(project, '360x')
+        -else
+          =image_tag('http://lorempixel.com/400/200/')
     .card-info.col-md-12
       %h3.project-title
         =link_to(project.title, project)
@@ -12,12 +15,12 @@
         =link_to(project.user.full_name, user_path(project.user))
       .card-tags.col-md-10.p-0
         %ul.tags
-          %li=link_to('Breakdancing', 'category')
-          %li=link_to('Ballet', 'category')
+          %li=link_to('Breakdancing', '#')
+          %li=link_to('Ballet', '#')
       .card-likes.col-md-2.right.p-0
         =link_to('3', '#', :class => 'likes', :icon => 'heart')
     .card-footer
       .foot-link.location.col-md-6.col-xs-6
-        =link_to(project.city, 'category', :icon => 'map-marker')
+        =link_to(project.city, '#', :icon => 'map-marker')
       .foot-link.helpers.col-md-6.col-xs-6.right
-        =link_to('2 helpers', 'category', :icon => 'users')
+        =link_to('2 helpers', '#', :icon => 'users')

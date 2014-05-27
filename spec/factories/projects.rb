@@ -10,6 +10,7 @@ FactoryGirl.define do
     image_uid "MyString"
     image_name "MyString"
     user
+    project_category
     help_needed "Example help needed text"
     purpose "Example purpose text"
     deadline "2014-05-22"
