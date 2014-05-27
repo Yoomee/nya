@@ -9,7 +9,7 @@ Given(/^that I am logged in as an admin$/) do
   sign_in_admin
 end
 
-Then(/^I should see the access denied page$/) do
+Then(/^I should see the access denied message$/) do
   page.should have_content "You are not authorized to access this page."
 end
 
