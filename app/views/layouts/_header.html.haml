@@ -18,8 +18,6 @@
         %li
           %input.global-search{'placeholder' => 'Search projects'}
           =link_to('', 'search', :class => 'btn', :icon => 'search')
-        =#%li=link_to('Start a project', 'start-project', :class => 'btn btn-primary')
-        -#%li=link_to('1', '#', :class => 'notification-indicator')
         -if current_user
           %li.sm-float=link_to(image_for(current_user, '40x40#'), 'profile', :class => 'nav-avatar')
           %li.dropdown

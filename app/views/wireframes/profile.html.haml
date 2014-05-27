@@ -15,7 +15,7 @@
           .col-md-12
             %h1.personal-name User
         .row
-          .col-md-12  
+          .col-md-12
             .location.meta
               =link_to('Sheffield', 'search', :icon => 'map-marker')
         .row
@@ -42,7 +42,7 @@
       %li
         =link_to('#projects', 'data-toggle' => 'tab') do
           %span.badge.pull-right.ml-6
-            2 
+            2
           Projects
       %li
         =link_to('#rewards', 'data-toggle' => 'tab') do
@@ -90,7 +90,7 @@
             %li
               =link_to('<span>Link</span>'.html_safe,'#link', :icon => 'link', 'data-toggle' => 'tab')
             %li
-              =link_to('<span>Add event</span>'.html_safe,'#event', :icon => 'calendar', 'data-toggle' => 'tab')          
+              =link_to('<span>Add event</span>'.html_safe,'#event', :icon => 'calendar', 'data-toggle' => 'tab')
           .tab-content
             #write.tab-pane.fade.in.active
               %form.form-inline{role: "form"}
@@ -269,7 +269,7 @@
                 =image_tag('http://www.lorempixum.com/g/800/400/sport')
             .card-info.col-md-12
               %h3.project-title
-                =link_to('Project Name', 'project') 
+                =link_to('Project Name', 'project')
               %p.desc This is an excerpt of the project description maximum of 150 characters
               .card-tags.col-md-10.p-0
                 %ul.tags
@@ -285,7 +285,7 @@
 
 
         .col-md-4.col-sm-12.col-xs-12.card-add.pb-3
-          =link_to('start-project') do
+          =link_to('start-project', new_project_path) do
             .card-wrap.col-md-12
               .add-project
                 %i.fa.fa-plus-circle
@@ -386,13 +386,3 @@
             %li.col-md-2
               =image_tag("badge-slot.png")
               %p Helped out on a project
-
-
-
-
-
-
-
-
-
-
