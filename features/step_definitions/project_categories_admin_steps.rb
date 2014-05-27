@@ -10,7 +10,7 @@ When(/^I fill in the project category form$/) do
   click_button 'Save'
 end
 
-Then(/^I should see the new project category$/) do
+Then(/^I should see the project category$/) do
   visit discover_project_category_path(@project_category)
 end
 
@@ -22,26 +22,19 @@ Given(/^there is an (\w+) project category$/) do |category_name|
   )
 end
 
-When(/^I go to edit the art project category$/) do
+When(/^I go to edit the project category$/) do
+  visit discover_project_category_path(@project_category)
+  click_link 'edit'
+end
+
+When(/^I update the project category$/) do
   pending # express the regexp above with the code you wish you had
 end
 
-When(/^I update the art project category$/) do
+When(/^I click on the 'delete' button$/) do
   pending # express the regexp above with the code you wish you had
 end
 
-When(/^I go to the art project category$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^the art project category should be deleted$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^I should see the art project category$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^I should see a list of all the project categories$/) do
+Then(/^the project category should be deleted$/) do
   pending # express the regexp above with the code you wish you had
 end
