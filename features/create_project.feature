@@ -1,7 +1,7 @@
 Feature: Create a project
-  In order to create a project
   As a logged in user
   I can create a new project
+  In order to create a project
 
   Scenario: Creating a project as a logged in user
     Given that I am logged in

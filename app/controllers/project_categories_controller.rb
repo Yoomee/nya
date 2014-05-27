@@ -14,4 +14,22 @@ class ProjectCategoriesController < ApplicationController
   def new
   end
 
+  def create
+    if @project_category.save
+      redirect_to discover_project_category_path(@project_category)
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def project_category_params
+    params.require(:project_category).permit(
+      :name,
+      :description,
+      :slug
+    )
+  end
+
 end

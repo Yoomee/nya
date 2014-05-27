@@ -5,10 +5,10 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :projects
-  get '/discover' => 'project_categories#index', as: :project_categories
-  get '/discover/:slug' => 'project_categories#show', as: :project_category
-  resources :project_categories, except: [:show, :index]
+  resources :projects, except: :index
+  get '/discover' => 'project_categories#index', as: :discover
+  get '/discover/:slug' => 'project_categories#show', as: :discover_project_category
+  resources :project_categories
 
   get 'admin', to: 'admin#index', as: :admin_to_avoid_content_pages
 

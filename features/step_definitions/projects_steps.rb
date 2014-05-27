@@ -3,7 +3,7 @@ Given(/^there are (\d+) projects$/) do |x|
 end
 
 When(/^I go to the list of projects$/) do
-  visit project_categories_path
+  visit discover_path
 end
 
 Then(/^I see the projects$/) do
