@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
 
   before_action :authenticate_user!, :only => [:destroy, :new]
+  load_and_authorize_resource
 
   def index
     @projects = Project.order('created_at DESC')

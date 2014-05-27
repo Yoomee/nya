@@ -8,6 +8,8 @@ class Ability
     # open ability
     can :show, ContentPage
     can :read, Forum
+    can :show, Project
+    can [:index, :show], ProjectCategory
 
     if user.try(:admin?)
       can :manage, :all
