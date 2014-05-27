@@ -10,7 +10,8 @@ Feature: Content pages
 
   Scenario: Sending a message to the site owners
     Given there is a contact page
+    And there is a thanks page
     When I go to the contact page
     And I submit the contact form
     Then I should see the thank you page
-    And my message should be sent to the site owners
+    And it should send a "new message from the contact page" email
