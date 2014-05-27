@@ -1,7 +1,7 @@
 Feature: Browsing projects by category
-  In order to see projects available
   As a visitor to the website
   I can see projects by category
+  In order to see projects available
 
   Scenario: Viewing a list of projects by category
     Given there are 3 project categories

@@ -1,7 +1,7 @@
 Feature: Project Categories Admin
-  In order to let users discover projects
   As an admin
   I want to create, update and delete project categories
+  In order to let users discover projects
 
     Scenario: Creating a project category
       Given that I am logged in as an admin
@@ -24,10 +24,3 @@ Feature: Project Categories Admin
       And I click on the 'delete' link
       Then the art project category should be deleted
       And I should see a list of all the project categories
-
-    Scenario: Listing all project categories
-      Given that I am logged in as an admin
-      And there are 3 project categories
-      When I go to the admin area
-      And I click on the 'Manage project categories' link
-      Then I should see a list of all the project categories
