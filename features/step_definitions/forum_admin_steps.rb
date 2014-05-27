@@ -3,8 +3,8 @@ Given(/^there are (\d+) forums$/) do |x|
   @forums = create_list(:forum, x.to_i)
 end
 
-Given(/^there is a sport forum$/) do
-  @forum = create(:forum, name: 'Sport')
+Given(/^there is a "(.*?)" forum$/) do |name|
+  @forum = create(:forum, name: name)
 end
 
 # WHEN
@@ -19,15 +19,20 @@ When(/^I fill in the forum form appropriately$/) do
   click_button 'Save'
 end
 
+When(/^I go to the home page for forums$/) do
+  visit forums_path
+end
+
 When(/^I go to the new forum page$/) do
   visit new_forum_path
 end
 
-When(/^I go to edit the sport forum$/) do
+When(/^I go to edit the "(.*?)" forum$/) do |name|
   visit edit_forum_path(@forum)
 end
 
-When(/^I go to the sport forum$/) do
+When(/^I go to the "(.*?)" forum$/) do |name|
+  @forum = Forum.find_by_name(name)
   visit forum_path(@forum)
 end
 
