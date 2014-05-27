@@ -73,6 +73,7 @@ case Rails.env
       longitude: 1.5,
       city: 'Sheffield',
       user: User.find_by(email: 'david@yoomee.com'),
+      project_category: ProjectCategory.first,
       help_needed: "Example help needed text",
       purpose: "Example purpose text",
       deadline: "2014-10-22"
