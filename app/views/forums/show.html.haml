@@ -39,9 +39,9 @@
           %h3
             Write something about
             =@forum.name
-          =render 'posts/remote_form', post: @forum.posts.build
-      -#
         .col-md-12.main-input
+          =render 'posts/remote_form', post: @forum.posts.build
+        -#
           %ul.nav.nav-tabs
             %li.active
               =link_to('<span>Write</span>'.html_safe,'#write', :icon => 'pencil', 'data-toggle' => 'tab')

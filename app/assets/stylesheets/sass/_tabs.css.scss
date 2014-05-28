@@ -44,7 +44,8 @@
     border:1px solid $g-5;
     border-top:0;
   }
-  input.form-control{
+  input.form-control,
+  input[type='file']{
     width:100%;
     height:60px;
     font-size: 1.3em;
