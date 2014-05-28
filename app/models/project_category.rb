@@ -1,6 +1,6 @@
 class ProjectCategory < ActiveRecord::Base
 
-  has_many :projects
+  has_many :projects, dependent: :restrict_with_error
 
   validates :name, :slug, presence: true
   validates :slug, uniqueness: true

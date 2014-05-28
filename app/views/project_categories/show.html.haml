@@ -4,6 +4,9 @@
     %h1.pt-3.center
       Discover
       =@project_category.name
+    -if admin_logged_in?
+      %p.col-md-8.col-md-offset-2.center.pb-3
+        =link_to 'edit', edit_project_category_path(@project_category)
     %p.col-md-8.col-md-offset-2.center.pb-3
       Discover, and help out on projects tagged with
       =@project_category.name
