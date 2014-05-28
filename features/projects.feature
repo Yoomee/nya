@@ -8,9 +8,10 @@ Feature: Discovering projects
     When I go to the list of projects
     Then I see the projects
 
+  @javascript
   Scenario: Paging the list of projects
-    Given there are 50 projects
+    Given there are 20 projects
     When I go to the list of projects
     Then there are 9 projects on the page
-    And I press the 'Load more' link
+    And I press the 'Show more' link
     Then there are 18 projects on the page

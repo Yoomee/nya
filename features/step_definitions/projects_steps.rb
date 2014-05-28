@@ -17,8 +17,11 @@ Then(/^I see the projects$/) do
   end
 end
 
-When(/^I press the 'Load more' link$/) do
-  pending # express the regexp above with the code you wish you had
+When(/^I press the 'Show more' link$/) do
+  click_link 'Show more'
+  Timeout.timeout(Capybara.default_wait_time) do
+    loop until page.evaluate_script('jQuery.active').zero?
+  end
 end
 
 Then(/^there are (\d+) projects on the page$/) do |num|
