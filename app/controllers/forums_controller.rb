@@ -11,10 +11,13 @@ class ForumsController < ApplicationController
 
   def destroy
     @forum.destroy
-    redirect_to forums_path
+    redirect_to manage_forums_path
   end
 
   def edit
+  end
+
+  def manage
   end
 
   def new

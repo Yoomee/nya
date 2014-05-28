@@ -1,0 +1,11 @@
+%h1
+  Forums
+  %small=link_to 'Add a forum', new_forum_path, icon: 'plus', class: 'ml-2'
+
+%table.table.table-striped
+  %tbody
+    -Forum.all.each do |forum|
+      %tr
+        %td=link_to_self forum
+        %td=link_to 'edit', edit_forum_path(forum), class: 'btn btn-primary'
+        %td=link_to 'delete', forum_path(forum), method: :delete, confirm: 'Are you sure?', class: 'btn btn-primary'
