@@ -42,5 +42,5 @@ When(/^I click on the 'delete' button$/) do
 end
 
 Then(/^the project category should be deleted$/) do
-  pending # express the regexp above with the code you wish you had
+  ProjectCategory.where(id: @project_category.id) == []
 end

@@ -19,6 +19,7 @@ Feature: Project Categories Admin
     Scenario: Deleting a project category
       Given that I am logged in as an admin
       And there are 3 project categories
+      And there are 3 projects
       And there is an art project category
       When I go to edit the project category
       And I click on the 'delete' button
