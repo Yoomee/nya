@@ -44,3 +44,11 @@ end
 Then(/^the project category should be deleted$/) do
   ProjectCategory.where(id: @project_category.id) == []
 end
+
+Given(/^the project category has at least 1 project$/) do
+  @project = create(:project, project_category: @project_category)
+end
+
+Then(/^the project category should not be deleted$/) do
+  ProjectCategory.find(@project_category.id).projects.count > 0
+end
