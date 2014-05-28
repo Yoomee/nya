@@ -11,5 +11,8 @@ Then(/^I see the projects$/) do
     page.should have_content(project.title)
     page.should have_content(project.user.full_name)
     page.should have_content(project.city)
+    project.tag_list.each do |tag|
+      page.should have_content(tag)
+    end
   end
 end
