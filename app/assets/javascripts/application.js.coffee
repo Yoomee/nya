@@ -7,6 +7,7 @@
 #= require jquery
 #= require jquery_ujs
 #= require masonry-min
+#= require imagesloaded
 #= require jquery-custom
 #= require ym_core
 #= require ym_posts
@@ -16,6 +17,3 @@
 $ ->
   YmComments.Form.init({submitOnEnter: true})
   Redactor.init()
-
-
-

@@ -1,4 +1,4 @@
-.col-md-4.mb-3
+.col-md-4.mb-3.project-card
   .card-wrap
     .image-wrapper
       =link_to project do
@@ -6,7 +6,7 @@
         -if project.image
           =image_for(project, '360x')
         -else
-          =image_tag('http://lorempixel.com/400/200/')
+          =image_tag('http://lorempixel.com/360/180/')
     .card-info.col-md-12
       %h3.project-title
         =link_to(project.title, project)
