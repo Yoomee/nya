@@ -3,7 +3,7 @@ Given(/^there are (\d+) content_pages$/) do |x|
 end
 
 When(/^I click on the 'delete' link$/) do
-  click_link 'delete'
+  click_link 'Delete'
 end
 
 When(/^I click on the 'Manage pages' link$/) do

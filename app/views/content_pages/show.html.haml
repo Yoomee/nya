@@ -1,6 +1,13 @@
 .container
 .strip.strip-hero.relative
   .container.hero-discover.hero-holder.relative.pt-10
+    .col-md-8.col-md-offset-2.relative
+      .usr-action-top
+        -if can?(:edit, @content_page)
+          =link_to('', '',  :class => 'btn btn-lg btn-gry visible dropdown', :icon => 'cog', 'data-toggle' => 'dropdown')
+          %ul.dropdown-menu.settings
+            %li=link_if_can('Edit', [:edit, @content_page], :icon => 'pencil')
+            %li=link_if_can('Delete', [:destroy, @content_page], method: :delete, confirm: 'Are you sure?', icon: 'trash-o')
     %h1.pt-10.center=@content_page.title
     %p.col-md-6.col-md-offset-3.center.pb-3
       =@content_page.subtitle.html_safe
@@ -18,9 +25,3 @@
             =form.input :message,as: :text
           =form.actions do
             =form.action :submit, label: 'Send'
-
-  .row
-    .col-md-8.col-md-offset-2
-      =options_panel do
-        =link_if_can('edit', [:edit, @content_page])
-        =link_if_can(:delete, @content_page, method: :delete)
