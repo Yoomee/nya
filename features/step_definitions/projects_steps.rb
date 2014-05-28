@@ -21,6 +21,6 @@ When(/^I press the 'Load more' link$/) do
   pending # express the regexp above with the code you wish you had
 end
 
-Then(/^there are (\d+) projects on the page$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+Then(/^there are (\d+) projects on the page$/) do |num|
+  page.all("div.project-card").count.should eql(num.to_i)
 end
