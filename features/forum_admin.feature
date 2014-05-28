@@ -14,7 +14,7 @@ Feature: Forums
     And there is a "sport" forum
     When I go to edit the "sport" forum
     And I update the sport forum
-    Then I should see the sport forum
+    Then I should see the updated sport forum
 
     Scenario: Deleting a forum
     Given that I am logged in as an admin

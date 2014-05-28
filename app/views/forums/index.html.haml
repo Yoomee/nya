@@ -7,28 +7,9 @@
     %p.col-md-8.col-lg-6.col-md-offset-2.col-lg-offset-3.center.pb-3
       To get started click on a skill or something that interests you below:
     %ul.lrg-tags.col-md-8.col-lg-6.col-md-offset-2.col-lg-offset-3.center
-      %li
-        =link_to('All', 'forum')
-      %li
-        =link_to('Dance', 'forum')
-      %li
-        =link_to('Sport & Leisure', 'forum')
-      %li
-        =link_to('Music', 'forum')        
-      %li
-        =link_to('Health & Environment', 'forum')
-      %li
-        =link_to('Music', 'forum')
-      %li
-        =link_to('Space & Exploration', 'forum')
-      %li
-        =link_to('Arts & Crafts', 'forum')
-      %li
-        =link_to('Food', 'forum')
-      %li
-        =link_to('Technology', 'forum')
-      %li
-        =link_to('Games', 'forum')
+      %li.active=link_to('All', forums_path)
+      -Forum.all.each do |forum|
+        %li=link_to_self forum
 .split.section
   .container
     .col-md-8.col-md-offset-2.p-0

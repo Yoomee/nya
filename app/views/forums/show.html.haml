@@ -11,6 +11,7 @@
             %li=link_if_can('Delete', [:destroy, @forum], method: :delete, confirm: 'Are you sure?', icon: 'trash-o')
       %h1.pt-4.center=@forum.name
       %p.col-md-8.col-md-offset-2.center=raw(@forum.description)
+
 .split.section
   .container
     .col-md-8.col-md-offset-2.p-0

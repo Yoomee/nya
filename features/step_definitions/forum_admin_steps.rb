@@ -57,7 +57,13 @@ Then(/^I should see the manage page for forums$/) do
   page.current_path.should eq(manage_forums_path)
 end
 
-Then(/^I should see the (\w+) forum$/) do |found_page|
+Then(/^I should see the ([^"].*?) forum$/) do |found_page|
+  page.should have_content(@forum.name)
+  page.should have_content(@forum.description)
+end
+
+Then(/^I should see the "(\w+)" forum$/) do |name|
+  @forum = Forum.find_by_name(name)
   page.should have_content(@forum.name)
   page.should have_content(@forum.description)
 end
