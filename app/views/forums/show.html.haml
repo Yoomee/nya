@@ -35,7 +35,11 @@
     .col-md-8.col-md-offset-2
       .row.pb-3
         .col-md-12
-          %h3 Write something about sports
+          %h3
+            Write something about
+            =@forum.name
+          =render 'posts/remote_form', post: @forum.posts.build
+      -#
         .col-md-12.main-input
           %ul.nav.nav-tabs
             %li.active
@@ -71,6 +75,8 @@
           %h3 Activity feed
       .row
         .col-md-12.col-sm-12.col-xs-12.photo.card.pb-3
+          =render 'posts/posts', posts: @forum.posts.paginate(page: params[:page])
+        -#
           .card-wrap
             .card-top
               %time{datetime: "2009-03-29"}
@@ -104,6 +110,7 @@
                       %sup th
                       March 2014
                     %p That photo is really cool
+    -#
       .row
         -2.times do
           .col-md-12.col-sm-12.col-xs-12.text.card.pb-3
