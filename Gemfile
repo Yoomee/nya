@@ -38,6 +38,7 @@ gem 'ym_posts', :git => 'git@gitlab.yoomee.com:yoomee/ym_posts.git', :branch => 
 # gem 'ym_posts', :path => '~/Rails/Gems/ym_posts'
 
 # Extra gems
+gem 'friendly_id', '~> 5.0.0'
 gem 'geocoder'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
