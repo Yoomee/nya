@@ -81,7 +81,8 @@ case Rails.env
       project_category: ProjectCategory.first,
       help_needed: "Example help needed text",
       purpose: "Example purpose text",
-      deadline: "2014-10-22"
+      deadline: "2014-10-22",
+      tag_list: "breakdancing, micropayments, app"
     )
 end
 

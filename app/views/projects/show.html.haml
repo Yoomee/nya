@@ -52,8 +52,7 @@
         .row.project-tags
           =link_to('Tags', '#',:icon => 'tags')
           %ul.tags
-            %li=link_to('Breakdancing', '#')
-            %li=link_to('Environment and Sustainability', '#')
+            =render :partial => 'tags/tag', :collection => @project.tags
         .row
           %h3 Description
           =@project.description

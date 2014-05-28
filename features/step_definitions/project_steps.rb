@@ -15,4 +15,7 @@ Then(/^I see the project details$/) do
   page.should have_content(@project.purpose)
   page.should have_content(@project.help_needed)
   page.should have_content(@project.city)
+  @project.tag_list.each do |tag|
+    page.should have_content(tag)
+  end
 end
