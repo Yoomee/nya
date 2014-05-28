@@ -16,3 +16,11 @@ Then(/^I see the projects$/) do
     end
   end
 end
+
+When(/^I press the 'Load more' link$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^there are (\d+) projects on the page$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
