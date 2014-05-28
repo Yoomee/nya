@@ -1,20 +1,23 @@
 class ContentPage < ActiveRecord::Base
 
-  validates :title, :slug, presence: true
-  validates :slug, uniqueness: true
+  extend FriendlyId
+  friendly_id :url, use: :slugged
 
-  before_validation :parameterize_slug
+  validates :link_text, :url, :title, presence: true
 
-  def to_param
-    slug
-  end
+  after_validation :move_friendly_id_error_to_url
 
   def to_s
     title
   end
 
   private
-  def parameterize_slug
-    self.slug = slug.parameterize
+  def move_friendly_id_error_to_url
+    errors.add :url, *errors.delete(:friendly_id) if errors[:friendly_id].present?
   end
+
+  def should_generate_new_friendly_id?
+    slug.blank? || url_changed?
+  end
+
 end

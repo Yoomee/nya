@@ -1,5 +1,5 @@
 class ContentPagesController < ApplicationController
-  load_and_authorize_resource :find_by => :slug
+  load_and_authorize_resource
 
   def create
     if @content_page.save
@@ -24,7 +24,6 @@ class ContentPagesController < ApplicationController
   end
 
   def show
-    puts params[:id]
   end
 
   def update
@@ -37,7 +36,7 @@ class ContentPagesController < ApplicationController
 
   private
   def content_page_params
-    params.require(:content_page).permit(:slug, :subtitle, :text, :title)
+    params.require(:content_page).permit(:link_text, :subtitle, :text, :title, :url)
   end
 
 end

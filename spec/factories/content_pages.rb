@@ -1,8 +1,9 @@
 FactoryGirl.define do
   factory :content_page do
-    title "MyString"
-    subtitle "MyString"
-    text "MyText"
-    sequence(:slug) { |n| "slug-#{n}" }
+    title "Page title"
+    subtitle "Page subtitle"
+    text "Lots of text here"
+    link_text "MyText link"
+    sequence(:url) { |n| "url-#{n}" }
   end
 end

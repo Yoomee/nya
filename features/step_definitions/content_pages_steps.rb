@@ -1,5 +1,5 @@
-Given(/^there is an? (\w+) page$/) do |slug|
-  @content_page = create(:content_page, title: 'About', slug: slug)
+Given(/^there is an? (\w+) page$/) do |url|
+  @content_page = create(:content_page, title: 'About', url: url)
 end
 
 When(/^I go to the (\w+) page$/) do |page|

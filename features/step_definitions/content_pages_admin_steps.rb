@@ -24,7 +24,8 @@ When(/^I fill in the content_page form appropriately$/) do
   fill_in 'content_page_title', with: @content_page[:title]
   fill_in 'content_page_subtitle', with: @content_page[:subtitle]
   fill_in 'content_page_text', with: @content_page[:text]
-  fill_in 'content_page_slug', with: @content_page[:slug]
+  fill_in 'content_page_link_text', with: @content_page[:link_text]
+  fill_in 'content_page_url', with: @content_page[:url]
   click_button 'Save'
 end
 
