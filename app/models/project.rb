@@ -11,6 +11,9 @@ class Project < ActiveRecord::Base
   geocoded_by :city_with_uk
   after_validation :geocode
 
+  # will_paginate default page number
+  self.per_page = 9
+
   def city_with_uk
     "#{city}, UK"
   end

@@ -71,19 +71,21 @@ case Rails.env
       slug: "music",
       description: "Example category description"
     )
-    Project.create(
-      title: "Example project title",
-      description: "Example project description",
-      latitude: 1.5,
-      longitude: 1.5,
-      city: 'Sheffield',
-      user: User.find_by(email: 'david@yoomee.com'),
-      project_category: ProjectCategory.first,
-      help_needed: "Example help needed text",
-      purpose: "Example purpose text",
-      deadline: "2014-10-22",
-      tag_list: "breakdancing, micropayments, app"
-    )
+    50.times { |i|
+      Project.create(
+        title: "Example project #{i}",
+        description: "Example project description",
+        latitude: 1.5,
+        longitude: 1.5,
+        city: 'Sheffield',
+        user: User.find_by(email: 'david@yoomee.com'),
+        project_category: ProjectCategory.first,
+        help_needed: "Example help needed text",
+        purpose: "Example purpose text",
+        deadline: "2014-10-22",
+        tag_list: "breakdancing, micropayments, app"
+      )      
+    }
 end
 
 ContentPage.create(title: 'What is the NYA social action tool?', link_text: 'About', subtitle: 'NYA social action tool is helps young people get their ideas up and running into socially engaging projects.', slug: 'about') unless ContentPage.find_by_slug('about').present?

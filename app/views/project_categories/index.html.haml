@@ -5,11 +5,19 @@
     %p.col-md-8.col-lg-6.col-md-offset-2.col-lg-offset-3.center.pb-3
       Even if you havent got any ideas of your own, pick a subject that interests you and help out other like-minded people on ther projects. You never know where it could lead.
     %ul.lrg-tags.col-md-8.col-lg-6.col-md-offset-2.col-lg-offset-3.center
-      = render @project_categories
+      =render @project_categories
 .section
   .container
-    .row.js-masonry{ :data => { :masonry_options => { :itemSelector => '.col-md-4' }}}
-      = render @projects
+    .row.js-masonry{ id: "projects-container", data: { masonry_options: { itemSelector: '.project-card' }}}
+      =render @projects
+
+.p-tb.section
+  .container
+    .row
+      .col-md-12.center
+        =link_to 'Show more', discover_path(:page => 2), :remote => true, :id => 'show_more_link', :class => 'btn btn-lg btn-gry'
+
+
 
 #action-quote.pt-10.section
   .container
