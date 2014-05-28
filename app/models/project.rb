@@ -2,6 +2,8 @@ class Project < ActiveRecord::Base
   belongs_to :user
   belongs_to :project_category
 
+  acts_as_taggable
+
   image_accessor :image
 
   validates :title, :description, :user_id, :project_category_id, :help_needed, :purpose, :deadline, :city, presence: true
