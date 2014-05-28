@@ -6,10 +6,8 @@ $('#projects-container').append($new_projects).masonry('appended', $new_projects
 // });
 $('#projects-container').imagesLoaded()
   .always( function( instance ) {
-    console.log('reloaded');
     $('#projects-container').masonry();
   })
-
 
 // Hide link if it is last page otherwise update link
 <% if @projects.total_pages == @projects.current_page %>

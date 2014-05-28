@@ -2,8 +2,16 @@ Given(/^there are (\d+) project categories$/) do |x|
   @project_categories = create_list(:project_category, x.to_i)
 end
 
+Given(/^there are (\d+) projects in a project category$/) do |x|
+  @project_category = create(:project_category)
+  x.to_i.times {
+    @project = create(:project, project_category: @project_category)
+  }
+end
+
 When(/^I visit a project category$/) do
-  visit "/discover/#{@project_categories.first.slug}"
+  pc = @project_category || @project_categories.first
+  visit "/discover/#{pc.slug}"
 end
 
 Then(/^I can see projects for the selected category$/) do

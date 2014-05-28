@@ -13,7 +13,11 @@ class ProjectCategoriesController < ApplicationController
 
   def show
     @project_category = ProjectCategory.includes(:projects).find_by_slug(params[:slug])
-    # TODO: add pagination
+    @projects = @project_category.projects.paginate(page: params[:page]).order('created_at DESC')
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new
