@@ -1,10 +1,14 @@
 // append projects with masonry
 var $new_projects = $("<%= escape_javascript(render @projects) %>");
 $('#projects-container').append($new_projects).masonry('appended', $new_projects);
-// $('#projects-container').imagesLoaded( function() {
-//   $("#projects-container").masonry('reloadItems');
-// });
 $('#projects-container').imagesLoaded()
   .always( function( instance ) {
     $('#projects-container').masonry();
   })
+
+// Hide link if it is last page otherwise update link
+<% if @projects.total_pages == @projects.current_page %>
+    $("#show_more_link").hide();
+<% else %>
+    $("#show_more_link").attr("href", path);
+<% end %>

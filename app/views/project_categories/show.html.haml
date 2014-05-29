@@ -18,13 +18,7 @@
     .row.js-masonry{ id: "projects-container", data: { masonry_options: { itemSelector: '.project-card' }}}
       =render @projects
 
--unless @projects.empty?
-  .p-tb.section
-    .container
-      .row
-        .col-md-12.center
-          -if @projects.total_pages > 1
-            =link_to 'Show more', discover_project_category_path(@project_category, :page => 2), :remote => true, :id => 'show_more_link', :class => 'btn btn-lg btn-gry'
+=render 'paging_controls', path: discover_project_category_path(@project_category, :page => 2)
 
 #discover-action.p-tb.section
   .container
