@@ -30,6 +30,7 @@ gem 'ym_posts', :git => 'git@gitlab.yoomee.com:yoomee/ym_posts.git', :branch => 
 gem 'friendly_id', '~> 5.0.0'
 gem 'geocoder'
 gem 'will_paginate'
+gem 'select2-rails'
 
 # development and test gems
 group :development do

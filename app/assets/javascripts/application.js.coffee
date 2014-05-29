@@ -13,6 +13,7 @@
 #= require ym_posts
 #= require ym_tags
 #= require redactor
+#= require select2
 
 $ ->
   YmComments.Form.init({submitOnEnter: true})
