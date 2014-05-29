@@ -16,7 +16,8 @@
       .usr-action-top
         =link_to('', '',  :class => 'btn btn-lg btn-gry visible dropdown', :icon => 'cog', 'data-toggle' => 'dropdown')
         %ul.dropdown-menu.settings
-          %li=link_to('Edit', 'project-edit', :icon => 'pencil')
+          -if can? :edit, @project
+            %li=link_to('Edit', edit_project_path(@project), :icon => 'pencil')
           %li=link_to('Pin', 'profile#projects', :icon => 'thumb-tack')
           %li=link_to('Delete', '#', :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
     %ul.nav.nav-tabs.main-tabs

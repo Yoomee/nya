@@ -1,0 +1,11 @@
+.container.section.pb-10
+  .col-md-8.col-md-offset-2
+    .row
+      .col-md-8
+        %h1
+          Edit
+          =@project.title
+
+        =render 'form', button_label: 'Save'
+        %hr
+        -# =button_to 'Delete', project_category_path(@project_category), method: :delete, class: 'btn btn-primary'

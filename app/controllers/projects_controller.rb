@@ -20,6 +20,22 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @project.update(project_params)
+      redirect_to @project
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @project.destroy
+    redirect_to discover_path, message: 'Project deleted'
+  end
+
   private
 
   def project_params
@@ -31,7 +47,9 @@ class ProjectsController < ApplicationController
       :help_needed,
       :purpose,
       :deadline,
-      :project_category_id
+      :project_category_id,
+      :retained_image,
+      :removed_image
     )
   end
 
