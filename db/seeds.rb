@@ -88,7 +88,7 @@ case Rails.env
     }
 end
 
-ContentPage.create(title: 'What is the NYA social action tool?', link_text: 'About', subtitle: 'NYA social action tool is helps young people get their ideas up and running into socially engaging projects.', slug: 'about') unless ContentPage.find_by_slug('about').present?
-ContentPage.create(title: 'Contact Us', link_text: 'Contact', subtitle: 'Get in touch', slug: 'contact') unless ContentPage.find_by_slug('contact').present?
-ContentPage.create(title: 'FAQ', link_text: 'FAQ', subtitle: %q(Browse our list of common frequently asked questions below. If it's not there, don't hesitate to <a href="contact">drop us a line</a>, and you'll get instant feedback!), slug: 'faq') unless ContentPage.find_by_slug('faq').present?
-ContentPage.create(title: 'Thanks', link_text: '', subtitle:'for your message', text: "We'll be in contact with you soon.", slug: 'thanks') unless ContentPage.find_by_slug('thanks').present?
+ContentPage.create(title: 'What is the NYA social action tool?', link_text: 'About', subtitle: 'NYA social action tool is helps young people get their ideas up and running into socially engaging projects.', url: 'about') unless ContentPage.find_by_slug('about').present?
+ContentPage.create(title: 'Contact Us', link_text: 'Contact', subtitle: 'Get in touch', url: 'contact') unless ContentPage.find_by_slug('contact').present?
+ContentPage.create(title: 'FAQ', link_text: 'FAQ', subtitle: %q(Browse our list of common frequently asked questions below. If it's not there, don't hesitate to <a href="contact">drop us a line</a>, and you'll get instant feedback!), url: 'faq') unless ContentPage.find_by_slug('faq').present?
+ContentPage.create(title: 'Thanks', link_text: 'thanks', subtitle:'for your message', text: "We'll be in contact with you soon.", url: 'thanks') unless ContentPage.find_by_slug('thanks').present?
