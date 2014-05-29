@@ -231,8 +231,13 @@ GEM
       sprockets-rails (~> 2.0)
     rails3-jquery-autocomplete (1.0.14)
       rails (>= 3.0)
+    rails_12factor (0.0.2)
+      rails_serve_static_assets
+      rails_stdout_logging
     rails_config (0.2.7)
       activesupport (>= 3.0)
+    rails_serve_static_assets (0.0.2)
+    rails_stdout_logging (0.0.3)
     railties (4.1.1)
       actionpack (= 4.1.1)
       activesupport (= 4.1.1)
@@ -329,6 +334,7 @@ DEPENDENCIES
   letter_opener
   pg
   rails (= 4.1.1)
+  rails_12factor
   rspec-rails (~> 2.0)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

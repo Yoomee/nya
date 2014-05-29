@@ -45,6 +45,20 @@ If the project requires a restart do:
 ./bin/spring stop
 ```
 
-## Deployment
+## Stage
 
-TODO
+The staging site is hosted on heroku under the developer@yoomee.com account.
+
+**To set up your dev environment to deploy to stage:**
+
+```
+heroku git:remote -a nya-stage
+```
+
+Login when prompted.
+
+**Deploying to stage from master branch**
+
+```
+git push heroku master
+```

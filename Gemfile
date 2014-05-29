@@ -1,3 +1,4 @@
+source "https://yoomee:wLjuGMTu30AvxVyIrq3datc73LVUkvo@gems.yoomee.com"
 source 'https://rubygems.org'
 
 
@@ -51,3 +52,6 @@ group :test do
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
 end
+
+# heroku gem
+gem 'rails_12factor', group: :production
