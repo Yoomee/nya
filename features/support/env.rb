@@ -5,6 +5,7 @@
 # files.
 
 require 'cucumber/rails'
+require_relative 'wait_for_ajax'
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
@@ -60,3 +61,4 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 World(FactoryGirl::Syntax::Methods)
 # helpers
 World(ApplicationHelper)
+World(WaitForAjax)
