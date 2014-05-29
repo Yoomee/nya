@@ -1,3 +1,7 @@
+Given(/^I have posted a message in the forum$/) do
+  puts @forum
+  @post = create(:post, text: 'This is a special message that I will delete', target: @forum, user: @user)
+end
 
 Given(/^there are (\d+) messages in the "(.*?)" forum$/) do |x, name|
   @forum = Forum.find_by_name(name)
@@ -23,4 +27,16 @@ end
 Then(/^I should be able to read my message$/) do
   visit forum_path(@forum)
   page.should have_content(@message)
+end
+
+Then(/^I should be able to delete my message$/) do
+  @posts_count = @forum.posts.count
+  within("#post#{@post.id}") do
+    click_link '', href: post_path(@post)
+  end
+  wait_for_ajax
+end
+
+Then(/^my message should be deleted$/) do
+  @forum.posts.count.should eq(@posts_count - 1)
 end
