@@ -19,7 +19,7 @@
           %input.global-search{'placeholder' => 'Search projects'}
           =link_to('', 'search', :class => 'btn', :icon => 'search')
         -if current_user
-          %li.sm-float=link_to(image_for(current_user, '40x40#'), 'profile', :class => 'nav-avatar')
+          %li.sm-float=link_to(image_for(current_user, '40x40#'), current_user, :class => 'nav-avatar')
           %li.dropdown
             =link_to('', '#', 'data-toggle' => 'dropdown', :class => 'dropdown-toggle', :icon => 'chevron-down')
             %ul.dropdown-menu.settings.col-xs-8

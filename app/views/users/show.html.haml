@@ -5,24 +5,23 @@
     .personal-inner.col-md-12.pl-0
       .col-md-3.col-sm-3.col-xs-3.avatar
         .avatar-wrap
-          =image_tag("profile-thumb.png")
+          =image_for(@user, '220x196#')
         .rewards
           %span 8 badges
-          %i.fa.fa-circle
-          %span 20 points
       .col-md-9.profile-info
         .row
           .col-md-12
-            %h1.personal-name User
-        .row
-          .col-md-12
-            .location.meta
-              =link_to('Sheffield', 'search', :icon => 'map-marker')
+            %h1.personal-name=@user.full_name
+        -if @user.city?
+          .row
+            .col-md-12
+              .location.meta
+                =link_to(@user.city, 'search', :icon => 'map-marker')
         .row
           .col-md-12
             .social
-              =link_to('', '#', :class => 'twitter', :icon => 'twitter')
-              =link_to('', '#', :class => 'facebook', :icon => 'facebook')
+              =link_to_twitter(@user)
+              =link_to_facebook(@user)
         .row
           .col-md-12
             %ul.tags.interests
@@ -33,7 +32,14 @@
               %li=link_to('Ballet', 'category')
       .usr-action-top
         =link_to('Request help', '',  :class => 'btn btn-lg btn-gry visible', :icon => 'hand-o-up')
-        =link_to('', 'profile-edit',  :class => 'btn btn-lg btn-gry visible', :icon => 'cog')
+        -if can?(:edit, @user)
+          =link_to('', '',  :class => 'btn btn-lg btn-gry visible dropdown', :icon => 'cog', 'data-toggle' => 'dropdown')
+          %ul.dropdown-menu.settings
+            %li=link_if_can('Edit', [:edit, @user], :icon => 'pencil')
+            %li=link_if_can('Delete', [:destroy, @user], method: :delete, confirm: 'Are you sure?', icon: 'trash-o')
+            -if (Rails.env.development? || current_user.try(:yoomee_staff?)) && current_user != @user
+              %li=link_to 'Super', super_morph_path(:user_id => @user.id), :method => :post, icon: 'empire'
+
 
     %ul.nav.nav-tabs.main-tabs
       %li.active
@@ -285,7 +291,7 @@
 
 
         .col-md-4.col-sm-12.col-xs-12.card-add.pb-3
-          =link_to('start-project', new_project_path) do
+          =link_to(new_project_path) do
             .card-wrap.col-md-12
               .add-project
                 %i.fa.fa-plus-circle
