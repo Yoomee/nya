@@ -74,6 +74,7 @@ GIT
       ym_core (~> 1.0)
 
 GEM
+  remote: https://yoomee:wLjuGMTu30AvxVyIrq3datc73LVUkvo@gems.yoomee.com/
   remote: https://rubygems.org/
   specs:
     actionmailer (4.1.1)
