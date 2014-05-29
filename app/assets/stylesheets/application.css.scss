@@ -7,7 +7,6 @@
  *= require jquery.ui.autocomplete
  *= require jquery.ui.datepicker
  *= require redactor
- *= require ym_posts
  *= require ym_tags
  *= require ym_notifications
 
@@ -24,7 +23,6 @@
 @import 'sass/home';
 @import 'sass/nav';
 @import 'sass/tabs';
-@import 'sass/comments';
 @import 'sass/card';
 @import 'sass/profile';
 @import 'sass/projects';
@@ -33,3 +31,5 @@
 @import 'sass/forum';
 @import 'sass/type';
 @import 'sass/forms';
+
+@import 'ym_posts';
