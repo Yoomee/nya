@@ -47,63 +47,6 @@
       .row
         .col-md-12.col-sm-12.col-xs-12.photo.card.pb-3
           =render 'posts/posts', posts: @forum.posts.paginate(page: params[:page])
-        -#
-          .card-wrap
-            .card-top
-              %time{datetime: "2009-03-29"}
-              29
-              %sup th
-              March 2014
-            .image-wrapper
-              =image_tag('http://www.lorempixum.com/g/750/400/sports')
-            .card-comments.card-info.col-md-6.col-xs-9
-              =link_to('2 users commented','#', :class => 'comments', :icon => 'comments')
-            .card-likes.col-md-6.col-xs-3.right.pt-2
-              =link_to('3', '#', :class => 'likes', :icon => 'heart')
-            .comment-input
-              %form.form-inline{role: "form"}
-              .form-group.col-md-12
-                %label.sr-only{for: "comment"} Write your comment
-                %input.form-control{placeholder: "Write your comment", type: "text"}
-              %ul.user-comment
-                -3.times do
-                  %li.col-md-12.relative
-                    .col-md-1.col-sm-2.avatar
-                      .avatar-wrap
-                        =image_tag("profile-thumb.png")
-                    %h3.profile-name.mb-0
-                      =link_to('User', 'profile')
-                    =link_to('<span>Trash</span>'.html_safe,'#', :class => 'usr-link', :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
-                    .time
-                      replied
-                      %time{datetime: "2009-03-29"}
-                      30
-                      %sup th
-                      March 2014
-                    %p That photo is really cool
-    -#
-      .row
-        -2.times do
-          .col-md-12.col-sm-12.col-xs-12.text.card.pb-3
-            .card-wrap
-              .card-top
-                %time{datetime: "2009-03-29"}
-                29
-                %sup th
-                March 2014
-                =link_to('<span>Trash</span>'.html_safe,'#', :class => 'usr-link', :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
-              .text-comment.col-md-12.p-2
-                %p
-                  My sports project went really well, didn’t get the funding but thanks to all those that helped. I’m thinking of starting another project along the same lines, but getting involved with younger people this time. What do you think?
-              .card-comments.card-info.col-md-10.col-xs-9
-                =link_to('Write the first comment', '#', :class => 'comments', :icon => 'comments')
-              .card-likes.col-md-2.col-xs-3.right.pt-2
-                =link_to('3', '#', :class => 'likes', :icon => 'heart')
-              .comment-input
-                %form.form-inline{role: "form"}
-                .form-group.col-md-12
-                  %label.sr-only{for: "comment"} Write your comment
-                  %input.form-control{placeholder: "Write your comment", type: "text"}
 
 .section
   .container
@@ -134,28 +77,3 @@
               .foot-link.helpers.col-md-6.right
                 =link_to('2 helpers', 'category', :icon => 'users') 
 
-.section
-  .container
-    .col-md-8.col-md-offset-2
-      .row
-        -2.times do
-          .col-md-12.col-sm-12.col-xs-12.text.card.pb-3
-            .card-wrap
-              .card-top
-                %time{datetime: "2009-03-29"}
-                29
-                %sup th
-                March 2014
-                =link_to('<span>Trash</span>'.html_safe,'#', :class => 'usr-link', :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
-              .text-comment.col-md-12.p-2
-                %p
-                  My sports project went really well, didn’t get the funding but thanks to all those that helped. I’m thinking of starting another project along the same lines, but getting involved with younger people this time. What do you think?
-              .card-comments.card-info.col-md-10.col-xs-9
-                =link_to('Write the first comment', '#', :class => 'comments', :icon => 'comments')
-              .card-likes.col-md-2.col-xs-3.right.pt-2
-                =link_to('3', '#', :class => 'likes', :icon => 'heart')
-              .comment-input
-                %form.form-inline{role: "form"}
-                .form-group.col-md-12
-                  %label.sr-only{for: "comment"} Write your comment
-                  %input.form-control{placeholder: "Write your comment", type: "text"}
