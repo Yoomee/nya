@@ -20,9 +20,6 @@ end
 When(/^I press the 'Show more' link$/) do
   click_link 'Show more'
   wait_for_ajax
-  # Timeout.timeout(Capybara.default_wait_time) do
-  #   loop until page.evaluate_script('jQuery.active').zero?
-  # end
 end
 
 Then(/^there are (\d+) projects on the page$/) do |num|
