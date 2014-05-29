@@ -11,11 +11,13 @@
     .row.js-masonry{ id: "projects-container", data: { masonry_options: { itemSelector: '.project-card' }}}
       =render @projects
 
-.p-tb.section
-  .container
-    .row
-      .col-md-12.center
-        =link_to 'Show more', discover_path(:page => 2), :remote => true, :id => 'show_more_link', :class => 'btn btn-lg btn-gry'
+-unless @projects.empty?
+  .p-tb.section
+    .container
+      .row
+        .col-md-12.center
+          -if @projects.total_pages > 1
+            =link_to 'Show more', discover_path(:page => 2), :remote => true, :id => 'show_more_link', :class => 'btn btn-lg btn-gry'
 
 #action-quote.pt-10.section
   .container
