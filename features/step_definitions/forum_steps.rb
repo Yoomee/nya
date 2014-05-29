@@ -22,10 +22,10 @@ Then(/^I should be able to post a message$/) do
   fill_in 'post_text', with: @message
   click_button 'Post'
   @forum.posts.count.should eq(post_count + 1)
+  wait_for_ajax
 end
 
 Then(/^I should be able to read my message$/) do
-  visit forum_path(@forum)
   page.should have_content(@message)
 end
 

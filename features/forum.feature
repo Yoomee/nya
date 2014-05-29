@@ -9,6 +9,7 @@ Feature: Forum
     When I go to the "sport" forum
     Then I should be see the 3 messages in the "sport" forum
 
+  @javascript
   Scenario: I can post a new message to a forum and then read it
     Given there is a "sport" forum
     And that I am logged in
