@@ -59,6 +59,8 @@ Login when prompted.
 
 **Deploying to stage from master branch**
 
+If you don't have it, you will need to install the heroku toolbelt - https://toolbelt.heroku.com/
+
 Checkout the heroku branch
 ```
 git checkout heroku
@@ -88,7 +90,11 @@ heroku run rake db:migrate
 ```
 
 
-***Dev note***
+***Dev notes***
+To package the default gems, the bundler version needs to be at least 1.6.2. If not -
+```
+gem update bundler
+```
 To stop the bundle being packaged into /vendor/cache once the yoomee gems are available on gems.yoomee.com
 ```
 rm -rf .bundle
