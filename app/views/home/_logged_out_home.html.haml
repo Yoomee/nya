@@ -25,90 +25,26 @@
     .row
       .col-md-12
         %ul.nav.nav-tabs.carousel-tabs
-          %li.active
-            =link_to('#food', 'data-toggle' => 'tab') do
-              %span Food
-          %li
-            =link_to('#sport', 'data-toggle' => 'tab') do
-              %span Sport
-          %li
-            =link_to('#digital', 'data-toggle' => 'tab') do
-              %span Digital
-          %li
-            =link_to('#art', 'data-toggle' => 'tab') do
-              %span Art
-          %li
-            =link_to('#music', 'data-toggle' => 'tab') do
-              %span Music
-          %li
-            =link_to('#travel', 'data-toggle' => 'tab') do
-              %span Travel
+          -ProjectCategory.all.each_with_index do |category, idx|
+            %li{ class: idx.zero? ? 'active' : '' }
+              =link_to("##{category.to_param}", 'data-toggle' => 'tab') do
+                %span=category.name
 #project-tabs-content.p-tb.section
   .container
     .row
       .tab-content
-        #food.tab-pane.active.fade.in
-          -3.times do
-            .col-md-4.col-sm-12.col-xs-12.card.pb-3
-              .card-wrap
-                .card-top
-                  %time{datetime: "2009-11-13"}
-                  13
-                  %sup th
-                  September 2014
-                .image-wrapper
-                  =link_to 'project' do
-                    =image_placeholder('360x207#')
-                .card-info.col-md-12
-                  %h3.project-title
-                    =link_to('Food project', 'project')
-                  %span.author
-                    by
-                    =link_to('User', 'profile')
-                  %p This is an excerpt of the project maximum of 150 chars
-                  .card-tags.col-md-10.p-0
-                    %ul.tags
-                      %li=link_to('Cake decoration', 'category')
-                      %li=link_to('Baking', 'category')
-                  .card-likes.col-md-2.right.p-0
-                    =link_to('3', '#', :class => 'likes', :icon => 'heart')
-                .card-footer
-                  .foot-link.location.col-md-6.col-xs-6
-                    =link_to('Sheffield', 'category', :icon => 'map-marker')
-                  .foot-link.helpers.col-md-6.col-xs-6.right
-                    =link_to('2 helpers', 'category', :icon => 'users')
-          =link_to('Show all 56 projects in food', 'category', :class => 'all-link pull-right')
-        #sport.tab-pane.fade.in
-          -3.times do
-            .col-md-4.col-sm-12.col-xs-12.card.pb-3
-              .card-wrap
-                .card-top
-                  %time{datetime: "2009-11-13"}
-                  13
-                  %sup th
-                  November 2014
-                .image-wrapper
-                  =link_to 'project' do
-                    =image_placeholder('360x207#')
-                .card-info.col-md-12
-                  %h3.project-title
-                    =link_to('Sport Project', 'project')
-                  %span.author
-                    by
-                    =link_to('User', 'profile')
-                  %p This is an excerpt of the project maximum of 150 chars
-                  .card-tags.col-md-10.p-0
-                    %ul.tags
-                      %li=link_to('Sport', 'category')
-                      %li=link_to('Ice Skating', 'category')
-                  .card-likes.col-md-2.right.p-0
-                    =link_to('3', '#', :class => 'likes', :icon => 'heart')
-                .card-footer
-                  .foot-link.location.col-md-6.col-xs-6
-                    =link_to('Sheffield', 'category', :icon => 'map-marker')
-                  .foot-link.helpers.col-md-6.col-xs-6.right
-                    =link_to('2 helpers', 'category', :icon => 'users')
-          =link_to('Show all 56 projects in sport', 'category', :class => 'all-link pull-right')
+        -ProjectCategory.all.each_with_index do |category, idx|
+          .tab-pane.fade{ id: category.to_param, class: idx.zero? ? 'active in' : '' }
+            -if category.projects.count.zero?
+              %p.lead.center
+                No
+                =category.name
+                projects yet
+                =link_to 'Start the first project', new_project_path, class: 'btn btn-lg btn-gry ml-6'
+            -else
+              =render category.projects.recent
+              =link_to("Show all #{category.projects.count} projects in #{category.name}", 'category', :class => 'all-link pull-right')
+
 #benefits.p-tb.section
   .container
     .row

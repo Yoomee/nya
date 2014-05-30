@@ -9,6 +9,12 @@ Given(/^there are (\d+) projects in a project category$/) do |x|
   }
 end
 
+Given(/^each project category has (\d+) projects$/) do |x|
+  @project_categories.each do |category|
+    create_list(:project, x.to_i, project_category: category)
+  end
+end
+
 When(/^I visit a project category$/) do
   pc = @project_category || @project_categories.first
   visit "/discover/#{pc.slug}"
