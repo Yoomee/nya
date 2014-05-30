@@ -32,8 +32,9 @@ Profile header
     @include media-query (md-max){
       margin: 0;
     }
-    .edit{
-      border-radius: 0 0 0 5px;
+    .add-image,
+    .edit-image,
+    .remove-image {
       color: $g-2;
       background: $g-4;
       font-size: 1.5em;
@@ -44,6 +45,13 @@ Profile header
       text-align: center;
       top: 0;
       width: 45px;
+    }
+    .add-image,
+    .remove-image {
+      border-radius: 0 0 0 5px;
+    }
+    .remove-image {
+      right: 45px;
     }
     img{
       width:100%;
@@ -71,7 +79,7 @@ Profile header
     margin: 10px 5px 10px 0;
     text-align: center;
     width: 44px;
-  } 
+  }
 }
 .rewards {
   background: #CCCCCC;
@@ -210,7 +218,10 @@ Profile edit
     margin:0 0 10px 0;
   }
 }
-.i-input{
+.formtastic .form-group{
+  .input-group-addon {
+    padding: 0;
+  }
   input{
     padding:10px;
     width: 80%;
@@ -230,7 +241,7 @@ Profile edit
     width: 50px;
   }
 }
-.i-input.half{
+.formtastic .form-group.half{
   input{
     width: 70%;
     @include media-query (sm-max){
@@ -238,7 +249,7 @@ Profile edit
     }
   }
 }
-.i-input.pull{
+.formtastic .form-group.pull{
   margin-left:-60px;
   @include media-query (sm-max){
     margin: 10px 0;

@@ -15,8 +15,6 @@ Rails.application.routes.draw do
   get 'login' => 'registrations#new', :login => true, :as => 'new_user_session'
   ym_users_routes(:devise => false)
 
-
-
   resources :projects, except: :index
   get '/discover' => 'project_categories#index', as: :discover
   get '/discover/:slug' => 'project_categories#show', as: :discover_project_category
@@ -28,7 +26,7 @@ Rails.application.routes.draw do
   resources :contact_enquiries, only: :create
 
   resources :forums, path: 'forum' do
-    get :manage, on: :collection    
+    get :manage, on: :collection
   end
 
   get ':id', to: 'content_pages#show'

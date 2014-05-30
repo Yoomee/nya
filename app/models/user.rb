@@ -6,9 +6,10 @@ class User < ActiveRecord::Base
 
   has_many :projects
 
-  validates_presence_of :first_name, :last_name
-  validates :email, :email => true, :presence => true, :uniqueness => true
-  validates_presence_of :password, :on => :create
+  validates :first_name, :last_name, presence: true
+  validates :email, email: true, presence: true, uniqueness: true
+  validates :website, url: true
+  validates_presence_of :password, on: :create
 
   geocoded_by :city_with_uk
   after_validation :geocode
