@@ -59,6 +59,39 @@ Login when prompted.
 
 **Deploying to stage from master branch**
 
+Checkout the heroku branch
 ```
-git push heroku master
+git checkout heroku
+```
+
+Merge your changes from master
+```
+git merge master
+```
+
+Bundle again, commit and push
+```
+bundle
+git add .
+git commit -m 'Bundled'
+git push origin heroku
+```
+
+Deploy to heroku
+```
+git push heroku heroku:master
+```
+
+If there are any migrations
+```
+heroku run rake db:migrate
+```
+
+
+***Dev note***
+To stop the bundle being packaged into /vendor/cache once the yoomee gems are available on gems.yoomee.com
+```
+rm -rf .bundle
+rm -rf vendor/cache
+bundle
 ```
