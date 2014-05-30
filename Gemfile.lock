@@ -56,7 +56,7 @@ GIT
 
 GIT
   remote: git@gitlab.yoomee.com:yoomee/ym_users.git
-  revision: 4ffc9b7681f1e8460c100aabed6467776e6ecc88
+  revision: d0d7fbe4470cdf73e093c5376bd66652aec39ab8
   branch: rails-4
   specs:
     ym_users (1.1.2)

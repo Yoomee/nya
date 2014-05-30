@@ -37,4 +37,6 @@ Rails.application.configure do
 
   # letteropener for emails
   config.action_mailer.delivery_method = :letter_opener
+
+  config.action_mailer.default_url_options = { host: 'http://ymlocal.com:3000' }
 end

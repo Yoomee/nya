@@ -1,0 +1,26 @@
+-login_class = params[:login] ? 'active' : ''
+-signup_class = params[:login] ? '' : 'active'
+
+.container
+.strip-header.pt-7.pb-10.relative
+  .container
+    .row
+      .col-md-12.center
+        %h1 Welcome
+.container
+  .row.negative-top.mb-6
+    .col-sm-6.col-sm-offset-3
+      %ul.form-tabs
+        %li{class: login_class }
+          =link_to('Sign in', '#login', 'data-toggle' => 'tab')
+        %li{class: signup_class }
+          =link_to('Sign up', '#signup', 'data-toggle' => 'tab')
+        .clearfix
+
+      .form-container
+        .tab-content
+          #login.tab-pane{class: login_class }
+            =render 'registrations/login'
+
+          #signup.tab-pane{class: signup_class }
+            =render 'signup'
