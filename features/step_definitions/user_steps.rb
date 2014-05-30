@@ -24,9 +24,11 @@ end
 
 def sign_in
   visit sign_in_path
-  fill_in 'user_email', :with => @user[:email]
-  fill_in 'user_password', :with => 'password'
-  click_button 'Login'
+  within('#login') do
+    fill_in 'user_email', :with => @user[:email]
+    fill_in 'user_password', :with => 'password'
+    click_button 'Sign in'
+  end
 end
 
 def sign_in_admin
