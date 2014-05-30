@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   geocoded_by :city_with_uk
   after_validation :geocode
 
+  scope :recent, -> { order(created_at: :desc).limit(3) }
+
   def city_with_uk
     return '' unless city?
     "#{city}, UK"

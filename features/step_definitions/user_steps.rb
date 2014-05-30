@@ -9,6 +9,10 @@ Given(/^that I am logged in as an admin$/) do
   sign_in_admin
 end
 
+Given(/^there are (\d+) users$/) do |x|
+  create_list(:user, x.to_i)
+end
+
 Then(/^I should see the access denied message$/) do
   page.should have_content "You are not authorized to access this page."
 end

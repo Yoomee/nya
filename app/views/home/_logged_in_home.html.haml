@@ -1,26 +1,29 @@
 .container
 .strip.strip-smll.relative
   .container.hero-discover.hero-holder.relative
-    %h1.center Welcome, User
+    %h1.center
+      Welcome,
+      =current_user.first_name
     .row
       .col-md-8.col-md-offset-3.pt-6
         =link_to('Discover', discover_path,  :class => 'btn btn-lg btn-l-gry col-md-4 mr-4 p-2')
         =link_to('Start a project', new_project_path,  :class => 'btn btn-lg btn-gry col-md-4 p-2')
+
 .split.section
   .container
     .col-md-8.col-md-offset-2
       %h3.col-md-12.pb-3.mt-0 Say hello to new members
       .col-md-12.col-sm-12.col-xs-12
         %ul.new-members
-          -3.times do
+          -User.recent.each do |user|
             %li.col-md-4.col-sm-6.col-xs-12.mb-3.relative
               .col-lg-3.col-md-4.col-sm-3.col-xs-3.avatar
                 .avatar-wrap
-                  =image_tag("profile-thumb.png")
+                  =image_for(user, '50x50#')
               .col-md-8.col-lg-9
-                =link_to('User', 'profile', :class=> 'large-txt')
+                =link_to_self(user, :class=> 'large-txt')
                 %p Joined 1st April 2014
-                =link_to('Sheffield','category', :icon => 'map-marker')
+                =link_to(user.city, 'category', :icon => 'map-marker') if user.city?
 
 
 .section.pt-0

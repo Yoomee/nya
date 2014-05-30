@@ -23,3 +23,10 @@ Then(/^I should see the most recent projects on the homepage$/) do
     end
   end
 end
+
+
+Then(/^I should see the most recent users on the homepage$/) do
+  User.recent.each do |user|
+    page.should have_content(user.full_name)
+  end
+end
