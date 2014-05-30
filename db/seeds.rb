@@ -13,9 +13,9 @@ DEFAULT_USERS   = [
     :role       => 'admin'
   },
   {
-    :first_name => 'Ian',
-    :last_name  => 'Mooney',
-    :email      => 'ian@yoomee.com',
+    :first_name => 'David',
+    :last_name  => 'Thompson',
+    :email      => 'david@yoomee.com',
     :role       => 'admin'
   },
   {
@@ -38,14 +38,32 @@ DEFAULT_USERS   = [
   },
   {
     :first_name => 'Edward',
-    :last_name  => 'Andrews',
+    :last_name  => 'Andrews-Hodgson',
     :email      => 'edward@yoomee.com',
     :role       => 'admin'
   },
   {
-    :first_name => 'David',
-    :last_name  => 'Thompson',
-    :email      => 'david@yoomee.com',
+    :first_name => 'Jon',
+    :last_name  => 'Kyte',
+    :email      => 'jon@yoomee.com',
+    :role       => 'admin'
+  },
+  {
+    :first_name => 'Tim',
+    :last_name  => 'Brazier',
+    :email      => 'tim@yoomee.com',
+    :role       => 'admin'
+  },
+  {
+    :first_name => 'Carrie',
+    :last_name  => 'Jackson',
+    :email      => 'carrie@yoomee.com',
+    :role       => 'admin'
+  },
+  {
+    :first_name => 'Greg',
+    :last_name  => 'Woodcock',
+    :email      => 'greg@yoomee.com',
     :role       => 'admin'
   }
 ]
@@ -84,7 +102,7 @@ case Rails.env
         purpose: "Example purpose text",
         deadline: "2014-10-22",
         tag_list: "breakdancing, micropayments, app"
-      )      
+      )
     }
   %w(Dance Music Sport).each { |name| Forum.create(name: name) }
 end
