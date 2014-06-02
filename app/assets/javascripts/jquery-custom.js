@@ -11,7 +11,10 @@ $(document).ready(function() {
     { dateFormat: "dd-mm-yy" }
   );
 
-    // activate select2
+  // activate select2
+  $('.select2tags').select2(
+    {tags:[]}
+  );
 
 //
 //   /* Update masonry on change tab  */

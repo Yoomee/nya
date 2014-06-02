@@ -105,6 +105,7 @@ case Rails.env
       )
     }
   %w(Dance Music Sport).each { |name| Forum.create(name: name) }
+  %w(Breakdancing Graffiti Gardening DJ).each { |tag| Tag.create(name: tag) }
 end
 
 ContentPage.create(title: 'What is the NYA social action tool?', link_text: 'About', subtitle: 'NYA social action tool is helps young people get their ideas up and running into socially engaging projects.', url: 'about') unless ContentPage.find_by_slug('about').present?

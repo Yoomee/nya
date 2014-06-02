@@ -49,7 +49,8 @@ class ProjectsController < ApplicationController
       :deadline,
       :project_category_id,
       :retained_image,
-      :removed_image
+      :removed_image,
+      :tag_list
     )
   end
 
