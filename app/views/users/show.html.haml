@@ -4,8 +4,8 @@
   .container
     .personal-inner.col-md-12.pl-0
       .col-md-3.col-sm-3.col-xs-3.avatar
-        .avatar-wrap
-          =image_for(@user, '220x196#')
+        .avatar-wrap#user-image
+          =render 'image', user: @user
         .rewards
           %span 8 badges
       .col-md-9.profile-info
@@ -393,3 +393,6 @@
             %li.col-md-2
               =image_tag("badge-slot.png")
               %p Helped out on a project
+
+  #image-modal.modal.fade
+    =render 'users/image_modal', user: @user

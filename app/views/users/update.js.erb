@@ -1,3 +1,6 @@
 $('#image-modal').modal('hide');
 $('#image-modal').html("<%=j render 'users/image_modal', user: @user %>");
-$('#user-image-edit').html("<%=j render 'users/edit_image', user: @user %>");
+$('#user-image').html("<%=j render 'users/image', user: @user %>");
+<% if current_user == @user %>
+  $('a.nav-avatar').html("<%=j image_for(@user, '40x40#') %>")
+<% end %>

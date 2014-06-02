@@ -1,6 +1,0 @@
--if user.image.present?
-  =link_to('', user_path(user, user: { remove_image: true }), method: :put, remote: true, :class => 'remove-image', :icon => 'trash-o')
-  =link_to('', '#', :class => 'edit-image', :icon => 'pencil', data: {toggle: :modal, target: '#image-modal' })
--else
-  =link_to('', '#', :class => 'add-image', :icon => 'plus', data: {toggle: :modal, target: '#image-modal' })
-=image_for(user, '220x196#')

@@ -5,8 +5,8 @@
     .personal-inner.col-md-12.pl-0
       .col-md-3.col-sm-3.col-xs-3.avatar
         -unless @user.new_record?
-          .avatar-wrap#user-image-edit
-            =render 'edit_image', user: @user
+          .avatar-wrap#user-image
+            =render 'image', user: @user
           .rewards
             %span 8 badges
       .col-md-9.profile-info.edit
@@ -51,7 +51,6 @@
             =button_tag(type: :submit, class: 'btn btn-lg btn-gry visible col-xs-11 ml-3') do
               %i.fa.fa-check
               Done editing
-
 
   #image-modal.modal.fade
     =render 'users/image_modal', user: @user
