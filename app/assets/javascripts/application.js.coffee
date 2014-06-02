@@ -14,6 +14,7 @@
 #= require ym_tags
 #= require redactor
 #= require select2
+#= require autocomplete
 
 $ ->
   YmComments.Form.init({submitOnEnter: true})
