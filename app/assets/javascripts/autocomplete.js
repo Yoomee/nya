@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('.select2tags').each(function() {
+    $('.autocomplete-tags').each(function() {
         var placeholder = $(this).data('placeholder');
         var url = $(this).data('url');
         var saved = $(this).data('saved');
@@ -14,7 +14,11 @@ $(document).ready(function() {
                 url: url,
                 dataType: 'json',
                 data:    function(term) { return { q: term }; },
-                results: function(data) { return { results: data }; }
+                results: function(data) {
+                  return {
+                    results: data
+                  };
+                }
             },
             createSearchChoice: function(term, data) {
                 if ($(data).filter(function() {

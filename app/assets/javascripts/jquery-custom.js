@@ -24,10 +24,6 @@ $(document).ready(function() {
   }
   $('a[data-toggle=tab]').on('shown.bs.tab', masonryUpdate);
 
-  // activate select2
-  $('.select2tags').select2(
-    {tags:[]}
-  );
 
 //
 //   /* Update masonry on change tab  */
