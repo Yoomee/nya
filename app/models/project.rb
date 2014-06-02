@@ -2,6 +2,9 @@ class Project < ActiveRecord::Base
   belongs_to :user
   belongs_to :project_category
 
+  has_many :posts, :as => :target, :dependent => :destroy
+
+
   acts_as_taggable
 
   image_accessor :image

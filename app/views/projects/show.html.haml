@@ -204,30 +204,6 @@
     #comments.tab-pane.fade.in
       .col-md-8.col-md-offset-2
         .row
-          %form.form-inline{role: "form"}
-          .form-group.col-md-12
-            %label.sr-only{for: "comment"} Add a comment
-            %input.form-text.col-md-12{placeholder: "Add a comment", type: "text"}
+          =render 'posts/remote_form', post: @project.posts.build
         .row
-          %ul.helper-comment.p-0.m-0
-            -3.times do
-              %li.col-md-12.mb-3.relative
-                .col-md-2.col-sm-2.avatar
-                  .avatar-wrap
-                    =image_tag("profile-thumb.png")
-
-                .col-md-10.comment.tri-top
-                  .top
-                    =link_to('<span>Trash</span>'.html_safe,'#', :class => 'usr-link pull-right', :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
-                    .name=link_to('User', 'profile')
-                    .time
-                      replied
-                      %time{datetime: "2009-03-29"}
-                      30
-                      %sup th
-                      March 2014
-                  %p
-                    I would really like to be part of your project.
-                    I  am an enthusiastic dancer with a background in dance for theater. It’s a bit different to your project, but I would love to try something different!
-                    Let me know if you’d like me to become involved.
-                  =link_to('Reply','#', :class => 'pull-right pr-3 pb-2 reply', :icon => 'reply')
+          =render 'posts/posts', posts: @project.posts.paginate(page: params[:page])
