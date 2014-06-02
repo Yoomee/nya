@@ -9,10 +9,12 @@
     -#   %label.form-label Project tags
     -#   %p This is some help text which can occupy as many lines as it needs to.
     -#   %input.form-input{'placeholder' => 'Some placeholder text'}
+    -# , :as => :select, :input_html => { :multiple => true }
+    =f.input :tag_list, label: "Tags", input_html: { class: "select2tags", }
     =f.input :purpose, label: "Purpose", hint: "What do you want to achieve with your project?"
     =f.input :description, label: "Description", hint: "Tell us what your project is about"
     =f.input :help_needed, label: "Help needed", hint: "What kind of help do you need to make this work?"
-    =f.input :deadline, label: "Project deadline", as: :date_picker
+    =f.input :deadline, as: :string, label: "Deadline", input_html: { class: "form-text hasdatepicker" }
     =f.input :city, label: "The city or town where this project is based"
     =f.input :image, as: :image
   =f.actions do

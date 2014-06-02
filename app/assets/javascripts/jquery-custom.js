@@ -3,22 +3,41 @@ $(document).ready(function() {
 
   $('#projects-container').imagesLoaded()
     .always( function( instance ) {
-      console.log('init');
       $('#projects-container').masonry();
     })
+
 
     $(function() {
       $('.hasdatepicker').datepicker();
     });
 
-  /* Update masonry on change tab  */
+  // activate datepickers
+  $('.hasdatepicker').datepicker(
+    { dateFormat: "dd-mm-yy" }
+  );
 
+  /* Update masonry on change tab  */
   var masonryUpdate = function() {
      setTimeout(function() {
          $('.row.js-masonry').masonry();
      }, 0);
   }
   $('a[data-toggle=tab]').on('shown.bs.tab', masonryUpdate);
+
+  // activate select2
+  $('.select2tags').select2(
+    {tags:[]}
+  );
+
+//
+//   /* Update masonry on change tab  */
+//
+//   var masonryUpdate = function() {
+//      setTimeout(function() {
+//          $('.row.js-masonry').masonry();
+//      }, 0);
+//   }
+//   $('a[data-toggle=tab]').on('shown.bs.tab', masonryUpdate);
 //
 //
 //   // Toggle comments
