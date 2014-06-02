@@ -10,15 +10,15 @@ $(document).ready(function() {
     $(function() {
       $('.hasdatepicker').datepicker();
     });
-//
-//   /* Update masonry on change tab  */
-//
-//   var masonryUpdate = function() {
-//      setTimeout(function() {
-//          $('.row.js-masonry').masonry();
-//      }, 0);
-//   }
-//   $('a[data-toggle=tab]').on('shown.bs.tab', masonryUpdate);
+
+  /* Update masonry on change tab  */
+
+  var masonryUpdate = function() {
+     setTimeout(function() {
+         $('.row.js-masonry').masonry();
+     }, 0);
+  }
+  $('a[data-toggle=tab]').on('shown.bs.tab', masonryUpdate);
 //
 //
 //   // Toggle comments

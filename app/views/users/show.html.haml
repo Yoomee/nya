@@ -49,7 +49,7 @@
       %li
         =link_to('#projects', 'data-toggle' => 'tab') do
           %span.badge.pull-right.ml-6
-            2
+            =@user.projects.count
           Projects
       %li
         =link_to('#rewards', 'data-toggle' => 'tab') do
@@ -232,64 +232,7 @@
 
 
       .row.js-masonry{ :data => { :masonry_options => { :itemSelector => '.col-md-4' }}}
-        .col-md-4.col-sm-12.col-xs-12.card.pb-3
-          .card-wrap
-            .card-top
-              %time{datetime: "2009-11-13"}
-              13
-              %sup th
-              November 2014
-              =link_to('<span>Trash</span>'.html_safe,'#', :class => 'usr-link', :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
-              =link_to('<span>Pin</span>'.html_safe,'#', :class => 'usr-link pin-it', :icon => 'thumb-tack')
-            .image-wrapper
-              =link_to 'project' do
-                =image_tag('http://www.lorempixum.com/g/400/400/food')
-            .card-info.col-md-12
-              %h3.project-title
-                =link_to('Project Name', 'project')
-              %p.desc This is an excerpt of the project description maximum of 150 characters
-              .card-tags.col-md-10.p-0
-                %ul.tags
-                  %li=link_to('Breakdancing', 'category')
-                  %li=link_to('Space & Exploration', 'category')
-              .card-likes.col-md-2.right.p-0
-                =link_to('3', '#', :class => 'likes', :icon => 'heart')
-            .card-footer
-              .foot-link.location.col-md-6.col-xs-6
-                =link_to('Birmingham', 'search', :icon => 'map-marker')
-              .foot-link.helpers.col-md-6.right
-                =link_to('2 helpers', 'search', :icon => 'users')
-
-        .col-md-4.col-sm-12.col-xs-12.card.feat.pb-3
-          .card-wrap
-            .card-top
-              %time{datetime: "2009-11-13"}
-              13
-              %sup th
-              November 2014
-              =link_to('<span>Trash</span>'.html_safe,'#', :class => 'usr-link', :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
-              =link_to('<span>Pin</span>'.html_safe,'#', :class => 'usr-link pin-it', :icon => 'thumb-tack')
-            .image-wrapper
-              =link_to 'project' do
-                .feat-nya
-                  =image_tag("feat-nya.png")
-                =image_tag('http://www.lorempixum.com/g/800/400/sport')
-            .card-info.col-md-12
-              %h3.project-title
-                =link_to('Project Name', 'project')
-              %p.desc This is an excerpt of the project description maximum of 150 characters
-              .card-tags.col-md-10.p-0
-                %ul.tags
-                  %li=link_to('Breakdancing', 'category')
-                  %li=link_to('Space & Exploration', 'category')
-              .card-likes.col-md-2.right.p-0
-                =link_to('3', '#', :class => 'likes', :icon => 'heart')
-            .card-footer
-              .foot-link.location.col-md-6.col-xs-6
-                =link_to('Birmingham', 'search', :icon => 'map-marker')
-              .foot-link.helpers.col-md-6.right
-                =link_to('2 helpers', 'search', :icon => 'users')
-
+        =render @user.projects
 
         .col-md-4.col-sm-12.col-xs-12.card-add.pb-3
           =link_to(new_project_path) do
