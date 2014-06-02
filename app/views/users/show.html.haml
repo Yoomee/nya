@@ -26,8 +26,8 @@
         .row
           .col-md-12
             %ul.tags.interests
-              %li=link_to('Dance', 'category')
-              %li=link_to('Art', 'category')
+              -@user.interests.each do |interest|
+                %li=link_to(interest, 'category')
             %ul.tags.skills
               %li=link_to('Breakdancing', 'category')
               %li=link_to('Ballet', 'category')

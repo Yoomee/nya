@@ -31,6 +31,8 @@
             .row
               .col-md-8
                 %h3 Interests
+                =form.input :interests, as: :check_boxes, label: false, collection: ProjectCategory.order(:name), class: 'checkbox-inline'
+              -#
                 %ul.tags.interests
                   %li=link_to('Dance', 'category', :class => 'checked', :icon => 'check')
                   %li=link_to('Art', 'category', :class => 'checked', :icon => 'check')

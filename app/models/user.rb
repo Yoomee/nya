@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   include YmUsers::User
 
   has_many :projects
+  has_many :user_interests, dependent: :destroy
+  has_many :interests, -> { uniq }, through: :user_interests, source: :project_category, class_name: 'ProjectCategory'
 
   validates :first_name, :last_name, presence: true
   validates :email, email: true, presence: true, uniqueness: true
@@ -13,6 +15,8 @@ class User < ActiveRecord::Base
 
   geocoded_by :city_with_uk
   after_validation :geocode
+
+  accepts_nested_attributes_for :interests
 
   scope :recent, -> { order(created_at: :desc).limit(3) }
 

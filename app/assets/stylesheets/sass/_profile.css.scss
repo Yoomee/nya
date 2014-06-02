@@ -255,3 +255,6 @@ Profile edit
     margin: 10px 0;
   }
 }
+#user_interests_input .checkbox {
+  @extend .checkbox-inline;
+}
