@@ -23,11 +23,7 @@
             .project-image
               =f.input :image, as: :image
           .row.project-tags
-            =link_to('Tags', '#',:icon => 'tags')
-            %ul.tags
-              %li=link_to('Breakdancing', '#')
-              %li=link_to('Environment and Sustainability', '#')
-              %li=link_to('','#', :icon => 'plus-circle')
+            =f.input :tag_list, as: :tag_list
           .row
             %h3 Project description
             =f.input :description, label: false, placeholder: "Tell us what your project is about", input_html: { class: "col-md-12 form-textarea", cols: 50, rows: 10 }

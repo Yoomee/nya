@@ -9,6 +9,7 @@
 #= require masonry-min
 #= require imagesloaded
 #= require jquery-custom
+#= require chosen
 #= require ym_core
 #= require ym_posts
 #= require ym_tags

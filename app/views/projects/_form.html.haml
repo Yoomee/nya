@@ -10,7 +10,8 @@
     -#   %p This is some help text which can occupy as many lines as it needs to.
     -#   %input.form-input{'placeholder' => 'Some placeholder text'}
     -# , :as => :select, :input_html => { :multiple => true }
-    =f.input :tag_list, label: "Tags", input_html: { class: "select2tags", }
+    =f.input :tag_list, :autocomplete => autocomplete_tags_path
+    -# =f.input :tag_list, label: "Tags", input_html: { data: { placeholder: "Enter tags", saved: f.object.tags.map{|t| {id: t.name, name: t.name}}.to_json, url: autocomplete_tags_path }, class: 'select2tags' }
     =f.input :purpose, label: "Purpose", hint: "What do you want to achieve with your project?"
     =f.input :description, label: "Description", hint: "Tell us what your project is about"
     =f.input :help_needed, label: "Help needed", hint: "What kind of help do you need to make this work?"
