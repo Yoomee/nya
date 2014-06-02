@@ -6,20 +6,26 @@ $(document).ready(function() {
         $(this).select2({
             tags: true,
             placeholder: placeholder,
-            minimumInputLength: 1,
+            minimumInputLength: 3,
             initSelection : function(element, callback){
-                saved && callback(saved);
+              saved && callback(saved);
             },
             ajax: {
-                url: url,
-                dataType: 'json',
-                data:    function(term) { return { q: term }; },
-                results: function(data) {
-                  return {
-                    results: data
-                  };
-                }
+              url: url,
+              dataType: 'json',
+              data: function(term) {
+                return {
+                  q: term };
+                },
+              results: function(data) {
+                return {
+                  results: data
+                };
+              }
             },
+            id: function(tag) {
+							return tag.name;
+						},
             createSearchChoice: function(term, data) {
                 if ($(data).filter(function() {
                     return this.name.localeCompare(term)===0;
@@ -27,8 +33,12 @@ $(document).ready(function() {
                     return { id: term, name: term };
                 }
             },
-            formatResult:    function(item, page){ return item.name; },
-            formatSelection: function(item, page){ return item.name; }
+            formatResult: function(item, page) {
+              return item.name;
+            },
+            formatSelection: function(item, page) {
+              return item.name;
+            }
         });
     });
 });
