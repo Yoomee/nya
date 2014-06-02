@@ -15,7 +15,7 @@ Then(/^I can update the project$/) do
   fill_in 'project_help_needed', with: @project[:help_needed]
   fill_in 'project_deadline', with: @project[:deadline]
   fill_in 'project_city', with: @project[:city]
-  click_button 'Save'
+  click_button 'Done editing'
   @project = Project.find_by_title(project_title)
 end
 

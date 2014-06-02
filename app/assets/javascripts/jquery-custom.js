@@ -6,6 +6,10 @@ $(document).ready(function() {
       console.log('init');
       $('#projects-container').masonry();
     })
+
+    $(function() {
+      $('.hasdatepicker').datepicker();
+    });
 //
 //   /* Update masonry on change tab  */
 //
@@ -89,8 +93,8 @@ $(document).ready(function() {
 //
 // // Date picker
 //
-//   $(function() {
-//     $('#datepicker').datepicker();
-//   });
+  // $(function() {
+  //   $('#datepicker').datepicker();
+  // });
 //
 }); // Document ready

@@ -1,11 +1,44 @@
-.container.section.pb-10
-  .col-md-8.col-md-offset-2
-    .row
-      .col-md-8
-        %h1
-          Edit
-          =@project.title
-
-        =render 'form', button_label: 'Save'
-        %hr
-        -# =button_to 'Delete', project_category_path(@project_category), method: :delete, class: 'btn btn-primary'
+.container
+  %section#profile
+=semantic_form_for @project do |f|
+  =f.inputs do
+    #personal-header.pb-10.pt-10.mb-3
+      .container
+        .personal-inner.col-md-12.pl-0
+          .col-md-9.profile-info.edit
+            .row
+              =f.input :title, label: false, placeholder: 'Project name', prepend: '<i class="fa fa-book"></i>'.html_safe, wrapper_html: { class: 'i-input col-md-8' }
+            .row
+              %h3.col-md-8 Project location
+              %p.col-md-8 Enter the city/town where your project is happening.
+              =f.input :city, label: false, placeholder: 'Location', prepend: '<i class="fa fa-map-marker"></i>'.html_safe, wrapper_html: { class: 'i-input col-md-6 half' }
+          .usr-action-top.btn-clear
+            =button_tag(type: :submit, class: 'btn btn-lg btn-gry visible col-xs-11 ml-3') do
+              %i.fa.fa-check
+              Done editing
+    .container#project
+      #home.tab-pane.active.fade.in
+        .col-md-8.col-md-offset-2.pb-10
+          .row
+            .project-image
+              =f.input :image, as: :image
+          .row.project-tags
+            =link_to('Tags', '#',:icon => 'tags')
+            %ul.tags
+              %li=link_to('Breakdancing', '#')
+              %li=link_to('Environment and Sustainability', '#')
+              %li=link_to('','#', :icon => 'plus-circle')
+          .row
+            %h3 Project description
+            =f.input :description, label: false, placeholder: "Tell us what your project is about", input_html: { class: "col-md-12 form-textarea", cols: 50, rows: 10 }
+          .row
+            %h3 Things I need help with
+            =f.input :help_needed, label: false, input_html: { class: "col-md-12 form-textarea", cols: 50, rows: 10 }
+            -# -10.times do
+            -#   %input.form-text{:placeholder => 'This is a list item', :class => 'form-text col-md-9 mb-1'}
+          .row
+            %h3 Purpose of the project
+            =f.input :purpose, label: false, input_html: { class: "col-md-12 form-textarea", cols: 50, rows: 8 }
+          .row
+            %h3 Project deadline
+            =f.input :deadline, as: :string, label: false, input_html: { class: "form-text hasdatepicker" }

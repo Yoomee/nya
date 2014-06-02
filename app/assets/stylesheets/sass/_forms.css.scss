@@ -101,3 +101,18 @@
 .main-input .form-group{
   background: #fff;
 }
+
+/* Image inputs */
+.formtastic .form-group div.image-inputs {
+  input {
+    font-size: 1em;
+  }
+  label.remove-image {
+    input {
+      width: auto;
+      height: auto;
+      float: none;
+      margin-left: 0;
+    }
+  }
+}
