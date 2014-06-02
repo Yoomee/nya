@@ -21,8 +21,8 @@ Then(/^I should be able to post a message$/) do
   @message = 'A new special message for testing'
   fill_in 'post_text', with: @message
   click_button 'Post'
-  @forum.posts.count.should eq(post_count + 1)
   wait_for_ajax
+  @forum.posts.count.should eq(post_count + 1)
 end
 
 Then(/^I should be able to read my message$/) do
