@@ -89,6 +89,11 @@ If there are any migrations
 heroku run rake db:migrate
 ```
 
+Don't forget to change back to your master branch!
+```
+git checkout master
+```
+
 
 ***Dev notes***
 To package the default gems, the bundler version needs to be at least 1.6.2. If not -
