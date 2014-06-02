@@ -3,13 +3,16 @@ $(document).ready(function() {
 
   $('#projects-container').imagesLoaded()
     .always( function( instance ) {
-      console.log('init');
       $('#projects-container').masonry();
     })
 
-    $(function() {
-      $('.hasdatepicker').datepicker();
-    });
+  // activate datepickers
+  $('.hasdatepicker').datepicker(
+    { dateFormat: "dd-mm-yy" }
+  );
+
+    // activate select2
+
 //
 //   /* Update masonry on change tab  */
 //
