@@ -10,6 +10,7 @@ class Ability
     can :read, Forum
     can :show, Project
     can [:index, :show], ProjectCategory
+    can :show, User
 
     if user.try(:admin?)
       can :manage, :all
