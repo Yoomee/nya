@@ -16,6 +16,7 @@ class Project < ActiveRecord::Base
   geocoded_by :city_with_uk
   after_validation :geocode
 
+  scope :homepage, -> { where(feature_on_homepage: true) }
   scope :recent, -> { order(created_at: :desc).limit(3) }
 
   # will_paginate default page number

@@ -2,8 +2,17 @@ Given(/^a project$/) do
   @project = create(:project)
 end
 
+Given(/^a project that is featured on the homepage$/) do
+    @project = create(:project, feature_on_homepage: true)
+end
+
+
 When(/^I go to the project$/) do
   visit project_path(@project)
+end
+
+When(/^I go edit to the project$/) do
+  visit edit_project_path(@project)
 end
 
 Then(/^I see the project details$/) do
