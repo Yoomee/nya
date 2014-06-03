@@ -3,7 +3,7 @@ Given(/^a project$/) do
 end
 
 When(/^I go to the project$/) do
-  visit project_url(@project)
+  visit project_path(@project)
 end
 
 Then(/^I see the project details$/) do

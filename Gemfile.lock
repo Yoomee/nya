@@ -32,7 +32,7 @@ GIT
 
 GIT
   remote: git@gitlab.yoomee.com:yoomee/ym_posts.git
-  revision: 576c083ef6dd521d50e7c93d571b3f8b0dd3bc48
+  revision: 1cd3c46e61e8a0303f79a2975b4b645fe026f7a2
   branch: rails-4
   specs:
     ym_posts (1.0.6)

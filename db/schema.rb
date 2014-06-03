@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140602095421) do
+ActiveRecord::Schema.define(version: 20140602161515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 20140602095421) do
     t.string   "file_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "context"
   end
 
   add_index "posts", ["target_id", "target_type"], name: "index_posts_on_target_id_and_target_type", using: :btree

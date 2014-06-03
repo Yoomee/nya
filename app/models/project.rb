@@ -3,6 +3,8 @@ class Project < ActiveRecord::Base
   belongs_to :project_category
 
   has_many :posts, :as => :target, :dependent => :destroy
+  has_many :project_comments, -> { where(context: 'project_comment') }, class_name: 'Post', :as => :target, :dependent => :destroy
+  has_many :project_blogs, -> { where(context: 'project_blog') }, class_name: 'Post', :as => :target, :dependent => :destroy
 
 
   acts_as_taggable
