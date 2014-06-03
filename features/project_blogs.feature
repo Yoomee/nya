@@ -10,7 +10,7 @@ Feature: Project posts
     Then I see the blog posts on the project
 
   @javascript
-  Scenario: Posting on a project
+  Scenario: Posting a blog post on a project
     Given that I am logged in
     And that I have 1 project
     When I go to the project
