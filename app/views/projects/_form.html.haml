@@ -3,14 +3,14 @@
   =f.inputs do
     =f.input :title, label: "Project name", hint: "What is your project called?"
     =f.input :project_category, label: "Category", hint: "Choose a category for your project"
-    -# TODO: add tags
-    -# %hr
-    -# .p3
-    -#   %label.form-label Project tags
-    -#   %p This is some help text which can occupy as many lines as it needs to.
-    -#   %input.form-input{'placeholder' => 'Some placeholder text'}
-    -# , :as => :select, :input_html => { :multiple => true }
-    =f.input :tag_list, label: "Tags", input_html: { data: { placeholder: "Enter tags", saved: f.object.tags.map{|t| {id: t.name, name: t.name}}.to_json, url: autocomplete_tags_path }, class: 'autocomplete-tags' }
+    %hr
+    .p3
+    =f.input :tag_list, label: "Tags",
+     input_html: { data: { placeholder: "Enter tags",
+      saved: f.object.tags.map{|t| {id: t.name,
+      name: t.name}}.to_json,
+      url: autocomplete_tags_path },
+      class: 'autocomplete-tags' }
     =f.input :purpose, label: "Purpose", hint: "What do you want to achieve with your project?"
     =f.input :description, label: "Description", hint: "Tell us what your project is about"
     =f.input :help_needed, label: "Help needed", hint: "What kind of help do you need to make this work?"
