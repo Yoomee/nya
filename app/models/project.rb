@@ -16,6 +16,7 @@ class Project < ActiveRecord::Base
   geocoded_by :city_with_uk
   after_validation :geocode
 
+  scope :community_homepage, -> { where(feature_on_community_homepage: true) }
   scope :homepage, -> { where(feature_on_homepage: true) }
   scope :recent, -> { order(created_at: :desc).limit(3) }
 

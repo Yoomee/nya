@@ -25,7 +25,7 @@
                 =link_to('User', 'profile', :class=> 'large-txt')
                 %p Joined 1st April 2014
                 =link_to('Sheffield','category', :icon => 'map-marker')
-             
+
 .section.pt-0
   .container
     .col-md-8.col-md-offset-2
@@ -95,54 +95,7 @@
     .col-md-8.col-md-offset-2.p-0
       .col-md-12
         %h3 Projects featured by NYA
-      .col-md-6.col-sm-12.col-xs-12.project.card
-        .card-wrap
-          .image-wrapper
-            .feat-nya
-              =image_tag("feat-nya.png")
-            =link_to 'project' do
-              =image_tag('http://www.lorempixum.com/g/600/400/food')
-          .card-info.col-md-12
-            %h3.project-title
-              =link_to('Project Name', 'project')
-            %span.author 
-              by
-              =link_to('User', 'profile')
-            .card-tags.col-md-10.col-xs-9.p-0
-              %ul.tags
-                %li=link_to('Food', 'category')
-                %li=link_to('Food show', 'category')
-            .card-likes.col-md-2.col-xs-3.right.p-0
-              =link_to('3', '#', :class => 'likes', :icon => 'heart')
-          .card-footer
-            .foot-link.location.col-md-6.col-xs-6
-              =link_to('Birmingham', 'category', :icon => 'map-marker')
-            .foot-link.helpers.col-md-6.right
-              =link_to('15 helpers', 'category', :icon => 'users') 
-      .col-md-6.col-sm-12.col-xs-12.project.card
-        .card-wrap
-          .image-wrapper
-            .feat-nya
-              =image_tag("feat-nya.png")
-            =link_to 'project' do
-              =image_tag('http://www.lorempixum.com/g/600/400/technics')
-          .card-info.col-md-12
-            %h3.project-title
-              =link_to('Project Name', 'project')
-            %span.author 
-              by
-              =link_to('User', 'profile')
-            .card-tags.col-md-10.col-xs-9.p-0
-              %ul.tags
-                %li=link_to('Technology', 'category')
-                %li=link_to('Science', 'category')
-            .card-likes.col-md-2.col-xs-3.right.p-0
-              =link_to('3', '#', :class => 'likes', :icon => 'heart')
-          .card-footer
-            .foot-link.location.col-md-6.col-xs-6
-              =link_to('Birmingham', 'category', :icon => 'map-marker')
-            .foot-link.helpers.col-md-6.right
-              =link_to('2 helpers', 'category', :icon => 'users')    
+      =render Project.community_homepage
 
 .section
   .container

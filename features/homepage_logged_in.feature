@@ -19,3 +19,9 @@ Feature: Home page
     And that I am logged in
     When I go to the homepage
     Then I should see the project on the homepage
+
+  Scenario: Viewing featured projects on the forum homepage
+    Given a project that is featured on the forum homepage
+    And that I am logged in
+    When I go to the home page for forums
+    Then I should see the project on the forum homepage

@@ -2,8 +2,12 @@ Given(/^a project$/) do
   @project = create(:project)
 end
 
+Given(/^a project that is featured on the forum homepage$/) do
+  @project = create(:project, feature_on_community_homepage: true)
+end
+
 Given(/^a project that is featured on the homepage$/) do
-    @project = create(:project, feature_on_homepage: true)
+  @project = create(:project, feature_on_homepage: true)
 end
 
 
