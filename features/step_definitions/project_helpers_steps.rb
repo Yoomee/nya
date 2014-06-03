@@ -1,5 +1,6 @@
 Then(/^I should see the thank you message$/) do
-  pending # express the regexp above with the code you wish you had
+  wait_for_ajax
+  page.should have_content('Thank you')
 end
 
 Then(/^it should send an "(.*?)" email to the project creator$/) do |arg1|
