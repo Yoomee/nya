@@ -1,15 +1,9 @@
 $(document).ready(function() {
-  // $('#projects-container').masonry();
 
   $('#projects-container').imagesLoaded()
     .always( function( instance ) {
       $('#projects-container').masonry();
-    })
-
-
-    $(function() {
-      $('.hasdatepicker').datepicker();
-    });
+  });
 
   // activate datepickers
   $('.hasdatepicker').datepicker(
@@ -22,8 +16,27 @@ $(document).ready(function() {
          $('.row.js-masonry').masonry();
      }, 0);
   }
+
   $('a[data-toggle=tab]').on('shown.bs.tab', masonryUpdate);
 
+  // handle project help form
+  // $(document).ready ->
+  //   $("#new_post").on("ajax:success", (e, data, status, xhr) ->
+  //     $("#new_post").append xhr.responseText
+  //   ).on "ajax:error", (e, xhr, status, error) ->
+  //     $("#new_post").append "<p>ERROR</p>"
+
+  $('#project-help').on('ajax:success', function(event, xhr, status) {
+    $('#help-modal .form-actions').hide();
+    $('#help-modal .alert-danger').hide();
+    $('#help-modal .alert-success').show();
+  });
+
+  $('#project-help').on('ajax:error', function(event, xhr, status) {
+    $('#help-modal .alert-danger').show();
+    $('#help-modal .form-actions input').removeClass('disabled').val('Send');
+
+  });
 
 //
 //   /* Update masonry on change tab  */

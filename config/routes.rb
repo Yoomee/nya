@@ -15,7 +15,11 @@ Rails.application.routes.draw do
   get 'login' => 'registrations#new', :login => true, :as => 'new_user_session'
   ym_users_routes(:devise => false)
 
-  resources :projects, except: :index
+  resources :projects, except: :index do
+    member do
+      post 'offer_help', to: 'projects#offer_help'
+    end
+  end
   get '/discover' => 'project_categories#index', as: :discover
   get '/discover/:slug' => 'project_categories#show', as: :discover_project_category
   resources :project_categories

@@ -23,7 +23,7 @@ class Ability
       can [:update, :destroy], Post, :user_id => user.id
       can [:create], Comment
       can :manage, User, :id => user.id
-      can :create, Project
+      can [:create, :offer_help], Project
       can [:edit, :update, :destroy], Project, :user_id => user.id
       can :create, Tag
     end
