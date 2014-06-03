@@ -5,6 +5,10 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @contact_enquiry = ContactEnquiry.new(
+      email: current_user.try(:email),
+      name: current_user.try(:full_name)
+    )
   end
 
   def new
@@ -34,6 +38,16 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     redirect_to discover_path, message: 'Project deleted'
+  end
+
+  def offer_help
+    @contact_enquiry = ContactEnquiry.new(params[:contact_enquiry])
+    if @contact_enquiry.valid?
+      HelpMailer.help_offer(@contact_enquiry, @project).deliver
+      render :json => @contact_enquiry.to_json
+    else
+      render :json => { :errors => @contact_enquiry.errors.full_messages }, :status => 422
+    end
   end
 
   private

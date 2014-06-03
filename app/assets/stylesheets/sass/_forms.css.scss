@@ -119,3 +119,13 @@
     }
   }
 }
+
+// help modal
+#help-modal {
+  .alert {
+    display: none;
+  }
+  .form-actions {
+    margin-bottom: 10px;
+  }
+}

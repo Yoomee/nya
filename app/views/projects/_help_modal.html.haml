@@ -1,0 +1,26 @@
+#help-modal.modal.fade{"aria-hidden" => "true", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      =semantic_form_for @contact_enquiry, html: { id: 'project-help' }, url: help_post_path, remote: true do |f|
+        .modal-header
+          %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} &#215;
+          %h4#help-title.modal-title
+            Help request
+        .modal-body
+          =f.inputs do
+            =f.input :name
+            =f.input :email
+            =f.input :message, as: :text, input_html: { class: "form-textarea", rows: 10 }
+        .modal-footer
+          =f.actions do
+            =f.action :submit, label: 'Send', class: 'btn btn-primary'
+          .alert.alert-success
+            %strong
+              Thank you
+            %span
+              Your message has been sent to the project creator
+          .alert.alert-danger
+            %strong
+              Oops
+            %span
+              Check you have completed all the form fields, and your email is valid

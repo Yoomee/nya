@@ -23,7 +23,12 @@
             .project-image
               =f.input :image, as: :image
           .row.project-tags
-            =f.input :tag_list, label: "Tags", input_html: { data: { placeholder: "Enter tags", saved: f.object.tags.map{|t| {id: t.name, name: t.name}}.to_json, url: autocomplete_tags_path }, class: 'autocomplete-tags' }
+            =f.input :tag_list, label: "Tags",
+             input_html: { data: { placeholder: "Enter tags",
+              saved: f.object.tags.map{|t| {id: t.name,
+              name: t.name}}.to_json,
+              url: autocomplete_tags_path },
+              class: 'autocomplete-tags' }
           .row
             %h3 Project description
             =f.input :description, label: false, placeholder: "Tell us what your project is about", input_html: { class: "col-md-12 form-textarea", cols: 50, rows: 10 }

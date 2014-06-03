@@ -44,9 +44,7 @@
           =link_to('#',  :class => 'btn btn-lg btn-gry like-us col-md-5 mb-1 col-xs-12 mr-1') do
             %span.pull-left 37 like us
             %i.fa.fa-heart.pull-right
-          =link_to('#',  :class => 'btn btn-lg btn-gry col-md-5 col-xs-12') do
-            %span.pull-left Help us
-            %i.fa.fa-hand-o-up.pull-right
+          =render 'help_button', link_id: 'link-help-1'
           .row
             .project-image
               -if @project.image
@@ -77,9 +75,7 @@
               =link_to('<span>Twitter</span>'.html_safe,'#', :icon => 'twitter-square')
               =link_to('<span>Facebook</span>'.html_safe,'#', :icon => 'facebook-square')
               =link_to('<span>Pinterest</span>'.html_safe,'#', :icon => 'pinterest-square')
-          =link_to('#',  :class => 'btn btn-lg btn-gry col-md-5 col-xs-12') do
-            %span.pull-left Help us
-            %i.fa.fa-hand-o-up.pull-right
+          =render 'help_button', link_id: 'link-help-2'
     #blog.tab-pane.fade.in
       .col-md-8.col-md-offset-2
         .row
@@ -94,3 +90,5 @@
           =render 'posts/remote_form', post: @project.project_comments.build
         .row
           =render 'posts/posts', posts: @project.project_comments.paginate(page: params[:page])
+
+=render 'help_modal', help_post_path: offer_help_project_path(@project)
