@@ -3,6 +3,7 @@ Feature: Helping on projects
   I want to offer my help on projects
   So that I can become involved
 
+  @javascript
   Scenario: Offering to help on a project
     Given that I am logged in
     And a project
