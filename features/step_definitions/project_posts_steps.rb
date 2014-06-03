@@ -11,7 +11,7 @@ Then(/^I can post on the project$/) do
   click_link('Comments')
   within('#comments') do
     fill_in 'post_text', with: @message
-    click_button 'Post'
+    page.execute_script("$('form#new_post').submit()")
   end
   wait_for_ajax
 end

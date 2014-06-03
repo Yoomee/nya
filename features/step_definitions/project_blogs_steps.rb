@@ -18,7 +18,7 @@ Then(/^I can post a blog post on the project$/) do
   click_link('Blog')
   within('#blog') do
     fill_in 'post_text', with: @message
-    click_button 'Post'
+    page.execute_script("$('form#new_post').submit()")
   end
   wait_for_ajax
 end
