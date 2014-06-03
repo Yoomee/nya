@@ -35,7 +35,6 @@ $(document).ready(function() {
   $('#project-help').on('ajax:error', function(event, xhr, status) {
     $('#help-modal .alert-danger').show();
     $('#help-modal .form-actions input').removeClass('disabled').val('Send');
-
   });
 
 //
