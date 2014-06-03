@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   validates :website, url: true
   validates_presence_of :password, on: :create
 
+  acts_as_taggable
+
   geocoded_by :city_with_uk
   after_validation :geocode
 

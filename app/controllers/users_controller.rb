@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
   private
   def permitted_user_parameters
-    [:bio, :city, :email, :facebook, :first_name, :image, :last_name, :remove_image, :retained_image, :twitter, :website, interest_ids: []]
+    [:bio, :city, :email, :facebook, :first_name, :image, :last_name, :remove_image, :retained_image, :twitter, :website, :tag_list, interest_ids: []]
   end
 
 end
