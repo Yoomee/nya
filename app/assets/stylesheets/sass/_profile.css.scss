@@ -258,3 +258,6 @@ Profile edit
 #user_interests_input .checkbox {
   @extend .checkbox-inline;
 }
+#user_interests_input .checkbox + .checkbox {
+  margin-top: 10px
+}

@@ -1,0 +1,25 @@
+-if can?((post.new_record? ? :create : :update), post)
+  =semantic_form_for(post, format: :js, remote: true, multipart: true, html: { class: "post_form#{post.errors.present? ? ' expanded' : ''}" }) do |form|
+    =form.inputs do
+      =form.hidden_field :target_type
+      =form.hidden_field :target_id
+      =form.hidden_field :retained_image
+      =form.hidden_field :retained_file
+      =form.hidden_field :context
+      %ul.nav.nav-tabs
+        %li.active=link_to('Write', '#write', data: { toggle: :tab }, icon: 'pencil')
+        %li=link_to('Image', '#image', data: { toggle: :tab }, icon: 'camera')
+        %li=link_to('Video', '#video', data: { toggle: :tab }, icon: 'video-camera')
+        %li=link_to('File', '#file', data: { toggle: :tab }, icon: 'file')
+      .tab-content
+        #write.tab-pane.fade.in.active
+          =form.input :text, label: false, input_html: { rows: 3, placeholder: 'Post something' }, class: 'mb-0'
+        #image.tab-pane.fade
+          =form.input :image, as: :file, label: false
+        #video.tab-pane.fade
+          =form.input :video_url, label: false, input_html: { placeholder: 'URL from YouTube or Vimeo' }
+        #file.tab-pane.fade
+          =form.input :file, as: :file, label: false
+      .not-expanded
+        =form.input :tag_list, label: false, input_html: { placeholder: 'Tags', data: { autocomplete: autocomplete_tags_path, delimiter: ', ' }}
+        =form.action :submit, label: 'Post', button_html: { class: 'btn btn-primary pull-right mb-1', data: { loading_text: 'Posting...' }}

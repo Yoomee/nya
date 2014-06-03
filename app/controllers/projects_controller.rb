@@ -57,6 +57,8 @@ class ProjectsController < ApplicationController
       :title,
       :description,
       :city,
+      :feature_on_community_homepage,
+      :feature_on_homepage,
       :image,
       :help_needed,
       :purpose,

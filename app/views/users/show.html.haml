@@ -29,8 +29,8 @@
               -@user.interests.each do |interest|
                 %li=link_to(interest, 'category')
             %ul.tags.skills
-              %li=link_to('Breakdancing', 'category')
-              %li=link_to('Ballet', 'category')
+              -@user.tags.each do |interest|
+                %li=link_to(interest, 'category')
       .usr-action-top
         =link_to('Request help', '',  :class => 'btn btn-lg btn-gry visible', :icon => 'hand-o-up')
         -if can?(:edit, @user)

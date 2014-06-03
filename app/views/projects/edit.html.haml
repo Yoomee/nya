@@ -43,3 +43,8 @@
           .row
             %h3 Project deadline
             =f.input :deadline, as: :string, label: false, input_html: { class: "form-text hasdatepicker" }
+          -if current_user.admin?
+            .row
+              %h3 Featured?
+              =f.input :feature_on_homepage
+              =f.input :feature_on_community_homepage

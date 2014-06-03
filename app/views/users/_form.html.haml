@@ -32,22 +32,8 @@
               .col-md-8
                 %h3 Interests
                 =form.input :interests, as: :check_boxes, label: false, collection: ProjectCategory.order(:name), class: 'checkbox-inline'
-              -#
-                %ul.tags.interests
-                  %li=link_to('Dance', 'category', :class => 'checked', :icon => 'check')
-                  %li=link_to('Art', 'category', :class => 'checked', :icon => 'check')
-                  %li=link_to('Sport & Leisure', 'category')
-                  %li=link_to('Arts & crafts', 'category')
-                  %li=link_to('Games', 'category')
-                  %li=link_to('Health & Environment', 'category')
-                  %li=link_to('Arts & Crafts', 'category')
-                  %li=link_to('Food', 'category')
-                  %li=link_to('Music', 'category')
-                  %li=link_to('Space & Exploration', 'category')
                 %h3 Skills
-                %ul.tags.skills
-                  %li=link_to('Breakdancing', 'category')
-                  %li=link_to('Ballet', 'category')
+                =form.input :tag_list, label: false, input_html: { data: { placeholder: "Enter tags", saved: form.object.tags.map{|t| {id: t.name, name: t.name}}.to_json, url: autocomplete_tags_path }, class: 'autocomplete-tags' }
 
           .usr-action-top.btn-clear
             =button_tag(type: :submit, class: 'btn btn-lg btn-gry visible col-xs-11 ml-3') do
