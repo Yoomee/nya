@@ -11,5 +11,4 @@ Feature: Helping on projects
     And I click on the "link-help-1" link
     When I submit the contact form
     Then I should see the thank you message
-    And it should send an "Offer to help" email to the project creator
-    Then the project should have a helper
+    And the project should have a helper

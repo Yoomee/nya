@@ -3,10 +3,6 @@ Then(/^I should see the thank you message$/) do
   page.should have_content('Thank you')
 end
 
-Then(/^it should send an "(.*?)" email to the project creator$/) do |arg1|
-  pending # TODO: how to test emails
-end
-
-Then(/^the project should have a helper$/) do
-  pending # express the regexp above with the code you wish you had
+And(/^the project should have a helper$/) do
+  @project.helpers.count.should eq(1)
 end
