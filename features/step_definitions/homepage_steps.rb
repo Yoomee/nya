@@ -17,7 +17,7 @@ Then(/^I should see the most recent projects on the homepage$/) do
   category = @project_categories.first
   @project_categories.each do |category|
     within("##{category.to_param}") do
-      category.projects.recent.each do |project|
+      category.projects.recent(3).each do |project|
         page.should have_content(project.title)
       end
     end

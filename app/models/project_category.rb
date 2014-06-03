@@ -1,5 +1,6 @@
 class ProjectCategory < ActiveRecord::Base
 
+  has_one :forum
   has_many :projects, dependent: :restrict_with_error
 
   validates :name, :slug, presence: true

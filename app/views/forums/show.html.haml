@@ -48,32 +48,12 @@
         .col-md-12.col-sm-12.col-xs-12.photo.card.pb-3
           =render 'posts/posts', posts: @forum.posts.paginate(page: params[:page])
 
-.section
-  .container
-    .col-md-8.col-md-offset-2.p-0
-      .col-md-12
-        %h3 Latest projects in sports
-      -2.times do
-        .col-md-6.col-sm-12.col-xs-12.project.card.pb-3
-          .card-wrap
-            .image-wrapper
-              =link_to 'project' do
-                =image_tag('http://www.lorempixum.com/g/600/400/sports')
-            .card-info.col-md-12
-              %h3.project-title
-                =link_to('Project Name', 'project')
-              %span.author 
-                by
-                =link_to('User', 'profile')
-              .card-tags.col-md-10.col-xs-9.p-0
-                %ul.tags
-                  %li=link_to('Breakdancing', 'category')
-                  %li=link_to('Zumba', 'category')
-              .card-likes.col-md-2.col-xs-3.right.p-0
-                =link_to('3', '#', :class => 'likes', :icon => 'heart')
-            .card-footer
-              .foot-link.location.col-md-6.col-xs-6
-                =link_to('Birmingham', 'category', :icon => 'map-marker')
-              .foot-link.helpers.col-md-6.right
-                =link_to('2 helpers', 'category', :icon => 'users') 
-
+-if @forum.project_category.try(:projects).present?
+  .section
+    .container
+      .col-md-8.col-md-offset-2.p-0
+        .col-md-12
+          %h3
+            Latest projects in
+            =@forum
+        =render @forum.project_category.projects.recent(2)

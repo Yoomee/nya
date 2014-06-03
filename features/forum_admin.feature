@@ -30,3 +30,11 @@ Feature: Forums
     And there are 3 forums
     When I go to manage the forums
     Then I should see all the forums
+
+    Scenario: Adding a project_category to a forum
+    Given that I am logged in as an admin
+    And there is a "sport" forum
+    And there are 5 projects in a project category
+    When I go to edit the "sport" forum
+    And I add the project category to the forum
+    Then the forum should show the latest projects from the project category

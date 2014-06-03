@@ -18,7 +18,7 @@ class Project < ActiveRecord::Base
 
   scope :community_homepage, -> { where(feature_on_community_homepage: true) }
   scope :homepage, -> { where(feature_on_homepage: true) }
-  scope :recent, -> { order(created_at: :desc).limit(3) }
+  scope :recent, ->(num) { order(created_at: :desc).limit(num) }
 
   # will_paginate default page number
   self.per_page = 9

@@ -1,6 +1,7 @@
 =semantic_form_for(@forum) do |form|
   =form.inputs do
     =form.input :name
+    =form.input :project_category, collection: ProjectCategory.order(:name), hint: 'The latest projects from this category will be shown on the forum'
     =form.input :description, as: :redactor
     =form.input :image, as: :image
   =form.actions do

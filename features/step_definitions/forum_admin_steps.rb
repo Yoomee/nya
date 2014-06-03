@@ -8,6 +8,11 @@ Given(/^there is a "(.*?)" forum$/) do |name|
 end
 
 # WHEN
+When(/^I add the project category to the forum$/) do
+  select(@project_category.name, from: 'Project category')
+  click_button 'Save'
+end
+
 When(/^I click on the forum 'delete' link$/) do
   click_link 'Delete'
 end
@@ -76,5 +81,13 @@ end
 Then(/^I should see all the forums$/) do
   Forum.all.each do |forum|
     page.should have_content(forum.name)
+  end
+end
+
+Then(/^the forum should show the latest projects from the project category$/) do
+  @forum = Forum.find_by_name('sport')
+  visit forum_path(@forum)
+  @forum.project_category.projects.recent(2).each do |project|
+    page.should have_content(project.title)
   end
 end

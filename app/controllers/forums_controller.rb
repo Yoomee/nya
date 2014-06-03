@@ -36,7 +36,7 @@ class ForumsController < ApplicationController
 
   private
   def forum_params
-    params.require(:forum).permit(:name, :description, :image, :remove_image)
+    params.require(:forum).permit(:name, :description, :image, :remove_image, :project_category_id)
   end
 
 end

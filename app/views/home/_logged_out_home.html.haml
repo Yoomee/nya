@@ -42,7 +42,7 @@
                 projects yet
                 =link_to 'Start the first project', new_project_path, class: 'btn btn-lg btn-gry ml-6'
             -else
-              =render category.projects.recent
+              =render category.projects.recent(3)
               =link_to("Show all #{category.projects.count} projects in #{category.name}", 'category', :class => 'all-link pull-right')
 
 #benefits.p-tb.section
