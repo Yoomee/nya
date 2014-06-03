@@ -2,8 +2,6 @@ class UsersController < ApplicationController
   include YmUsers::UsersController
   load_and_authorize_resource
 
-  autocomplete :user, :full_name, full: true
-
   def update
     respond_to do |format|
       if @user.update(user_params)

@@ -24,7 +24,7 @@ class Ability
       can [:create], Comment
       can :manage, User, :id => user.id
       can [:create, :offer_help], Project
-      can [:edit, :update, :destroy], Project, :user_id => user.id
+      can [:edit, :update, :destroy, :owners], Project, :user_id => user.id
       can :create, Tag
     end
 

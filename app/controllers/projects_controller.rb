@@ -3,8 +3,6 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!, :only => [:destroy, :new]
   load_and_authorize_resource
 
-  def add_owners
-  end
 
   def show
     @project = Project.find(params[:id])
@@ -54,6 +52,9 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def owners
+  end
+
   private
 
   def project_params
@@ -70,7 +71,8 @@ class ProjectsController < ApplicationController
       :project_category_id,
       :retained_image,
       :removed_image,
-      :tag_list
+      :tag_list,
+      owner_ids: []
     )
   end
 

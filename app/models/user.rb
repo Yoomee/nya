@@ -2,9 +2,12 @@ class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :full_name, use: :slugged
 
+  include YmCore::Model
   include YmUsers::User
 
   has_many :projects
+  has_many :project_owners, foreign_key: :owner_id
+  has_many :owned_projects, through: :project_owners, source: :project
   has_many :user_interests, dependent: :destroy
   has_many :interests, -> { uniq }, through: :user_interests, source: :project_category, class_name: 'ProjectCategory'
 
