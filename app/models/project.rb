@@ -4,6 +4,10 @@ class Project < ActiveRecord::Base
 
   has_many :project_owners, dependent: :destroy
   has_many :owners, through: :project_owners, class_name: 'User'
+
+  has_many :project_help_offers, dependent: :destroy
+  has_many :helpers, through: :project_help_offers, source: :user
+
   has_many :posts, :as => :target, :dependent => :destroy
   has_many :project_comments, -> { where(context: 'project_comment') }, class_name: 'Post', :as => :target, :dependent => :destroy
   has_many :project_blogs, -> { where(context: 'project_blog') }, class_name: 'Post', :as => :target, :dependent => :destroy
