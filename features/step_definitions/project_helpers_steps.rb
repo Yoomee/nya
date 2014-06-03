@@ -4,7 +4,7 @@ Then(/^I should see the thank you message$/) do
 end
 
 Then(/^it should send an "(.*?)" email to the project creator$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+  pending # TODO: how to test emails
 end
 
 Then(/^the project should have a helper$/) do
