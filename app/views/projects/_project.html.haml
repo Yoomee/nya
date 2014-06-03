@@ -22,4 +22,4 @@
       .foot-link.location.col-md-6.col-xs-6
         =link_to(project.city, '#', :icon => 'map-marker')
       .foot-link.helpers.col-md-6.col-xs-6.right
-        =link_to('2 helpers', '#', :icon => 'users')
+        =link_to(pluralize(project.helpers.length, 'helper'), project, :icon => 'users')
