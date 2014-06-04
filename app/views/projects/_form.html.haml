@@ -13,10 +13,14 @@
       .next-btn-container
         =link_to 'Next', '#', class: "form-input-btn btn-block next-btn", data: { :current_group => '1', :next_group => '2' }
     .group2.hidden
-      =f.input :description, label: "Description", hint: "Tell us what your project is about"
-      =f.input :purpose, label: "Purpose", hint: "What do you want to achieve with your project?"
+      =f.input :description, label: "Description", hint: "Tell us what your project is about", input_html: { data: { parsley_group: "group2", parsley_required: "true" } }
+      =f.input :purpose, label: "Purpose", hint: "What do you want to achieve with your project?", input_html: { data: { parsley_group: "group2", parsley_required: "true" } }
+      .next-btn-container
+        =link_to 'Next', '#', class: "form-input-btn btn-block next-btn", data: { :current_group => '2', :next_group => '3' }
     .group3.hidden
-      =f.input :help_needed, label: "Help needed", hint: "What kind of help do you need to make this work?"
+      =f.input :help_needed, label: "Help needed", hint: "What kind of help do you need to make this work?", input_html: { data: { parsley_group: "group3", parsley_required: "true" } }
+      .next-btn-container
+        =link_to 'Next', '#', class: "form-input-btn btn-block next-btn", data: { :current_group => '3', :next_group => '4' }
     .group4.hidden
       =f.input :deadline, as: :string, label: "Deadline", input_html: { class: "form-text hasdatepicker" }
       =f.input :city, label: "The city or town where this project is based"
