@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   get 'login' => 'registrations#new', :login => true, :as => 'new_user_session'
 
   ym_users_routes(:devise => false)
+  resources :users, only: [] do
+    get :autocomplete_user_full_name, on: :collection, as: :autocomplete
+  end
 
   resources :users, only: [] do
     get :autocomplete_user_full_name, on: :collection, as: :autocomplete

@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(version: 20140603145139) do
 
   add_index "project_categories", ["slug"], name: "index_project_categories_on_slug", unique: true, using: :btree
 
+<<<<<<< Updated upstream
   create_table "project_help_offers", force: true do |t|
     t.integer  "project_id"
     t.integer  "user_id"
@@ -116,6 +117,8 @@ ActiveRecord::Schema.define(version: 20140603145139) do
   add_index "project_help_offers", ["project_id"], name: "index_project_help_offers_on_project_id", using: :btree
   add_index "project_help_offers", ["user_id"], name: "index_project_help_offers_on_user_id", using: :btree
 
+=======
+>>>>>>> Stashed changes
   create_table "project_owners", force: true do |t|
     t.integer  "project_id"
     t.integer  "owner_id"
