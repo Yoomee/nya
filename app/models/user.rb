@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :owned_projects, through: :project_owners, source: :project
   has_many :user_interests, dependent: :destroy
   has_many :interests, -> { uniq }, through: :user_interests, source: :project_category, class_name: 'ProjectCategory'
+  has_many :likes, dependent: :destroy
 
   has_many :project_help_offers, dependent: :destroy
   has_many :projects_helping, through: :project_help_offers, source: :project

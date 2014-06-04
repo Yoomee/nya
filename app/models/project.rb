@@ -2,6 +2,8 @@ class Project < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: :slugged
 
+  include YmLikes::Likeable
+
   include PgSearch
   pg_search_scope :search,
                   against: [
