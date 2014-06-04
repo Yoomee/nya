@@ -5,11 +5,13 @@
         .modal-header
           %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} &#215;
           %h4#help-title.modal-title
-            Help request
+            =modal_title || 'Help request'
         .modal-body
+          %p
+            =modal_text
           =f.inputs do
-            =f.input :name
-            =f.input :email
+            =f.input :name, as: :hidden
+            =f.input :email, label: 'Your email'
             =f.input :message, as: :text, input_html: { class: "form-textarea", rows: 10 }
         .modal-footer
           =f.actions do
@@ -18,7 +20,7 @@
             %strong
               Thank you
             %span
-              Your message has been sent to the project creator
+              Your message has been sent
           .alert.alert-danger
             %strong
               Oops

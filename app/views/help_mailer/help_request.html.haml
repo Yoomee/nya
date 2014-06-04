@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %meta{:content => 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type'}/
+  %body
+    %p
+      Somebody has asked you for help via the NYA site
+    %p
+      You have a message from
+      =@requesting_user.full_name
+      =mail_to @requesting_user.email
+    %p
+      %h2 Message
+      %hr
+      =@contact_enquiry.message
+      %hr
+    %p
+      Get in touch with them via email if you are interested
+      %br
+      =Settings.site_name
+      Team

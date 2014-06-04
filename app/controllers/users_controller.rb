@@ -4,6 +4,13 @@ class UsersController < ApplicationController
 
   autocomplete :user, :full_name, full: true
 
+  def show
+    @contact_enquiry = ContactEnquiry.new(
+      email: current_user.try(:email),
+      name: current_user.try(:full_name)
+    )
+  end
+
   def update
     respond_to do |format|
       if @user.update(user_params)
@@ -12,6 +19,16 @@ class UsersController < ApplicationController
       else
         format.html { render :edit }
       end
+    end
+  end
+
+  def request_help
+    @contact_enquiry = ContactEnquiry.new(params[:contact_enquiry])
+    if @contact_enquiry.valid?
+      HelpMailer.help_request(@contact_enquiry, @user, current_user).deliver
+      render :json => @contact_enquiry.to_json
+    else
+      render :json => { :errors => @contact_enquiry.errors.full_messages }, :status => 422
     end
   end
 

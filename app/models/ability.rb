@@ -22,6 +22,7 @@ class Ability
       can [:read, :create, :file], Post
       can [:update, :destroy], Post, :user_id => user.id
       can [:create], Comment
+      can :request_help, User
       can :manage, User, :id => user.id
       can [:create, :offer_help], Project
       can [:edit, :update, :destroy], Project, :user_id => user.id

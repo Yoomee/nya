@@ -32,7 +32,7 @@
               -@user.tags.each do |interest|
                 %li=link_to(interest, 'category')
       .usr-action-top
-        =link_to('Request help', '',  :class => 'btn btn-lg btn-gry visible', :icon => 'hand-o-up')
+        =link_to('Request help', '#help-modal', :class => 'btn btn-lg btn-gry visible', :icon => 'hand-o-up', id: 'request-link', data: {toggle: "modal"})
         -if can?(:edit, @user)
           =link_to('', '',  :class => 'btn btn-lg btn-gry visible dropdown', :icon => 'cog', 'data-toggle' => 'dropdown')
           %ul.dropdown-menu.settings
@@ -339,3 +339,8 @@
 
   #image-modal.modal.fade
     =render 'users/image_modal', user: @user
+
+=render 'projects/help_modal',
+   help_post_path: request_help_user_path(@user),
+   modal_title: 'Request help',
+   modal_text: 'This form will email this person with your message and your email address so they can contact you.'

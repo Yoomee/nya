@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   ym_users_routes(:devise => false)
   resources :users, only: [] do
     get :autocomplete_user_full_name, on: :collection, as: :autocomplete
+    member do
+      post 'request_help', to: 'users#request_help'
+    end
   end
 
   resources :projects, except: :index do

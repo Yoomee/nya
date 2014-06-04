@@ -91,4 +91,7 @@
         .row
           =render 'posts/posts', posts: @project.project_comments.paginate(page: params[:page])
 
-=render 'help_modal', help_post_path: offer_help_project_path(@project)
+=render 'help_modal',
+   help_post_path: offer_help_project_path(@project),
+   modal_title: 'Offer help',
+   modal_text: 'This form will email the project creator with your message and your email address so they can contact you.'

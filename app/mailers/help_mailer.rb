@@ -8,14 +8,18 @@ class HelpMailer < ActionMailer::Base
     @project = project
     mail(
       :to => @project.user.email,
-      :from => @contact_enquiry.email,
       :subject => "#{Settings.site_name} - an offer to help on #{@project.title}"
     )
   end
 
-  def help_request(contact_enquiry, potential_helper)
-    # TODO: handle user asking another user to help
-
+  def help_request(contact_enquiry, potential_helper, requesting_user)
+    @contact_enquiry = contact_enquiry
+    @potential_helper = potential_helper
+    @requesting_user = requesting_user
+    mail(
+      :to => @potential_helper.email,
+      :subject => "#{Settings.site_name} - can you help?"
+    )
   end
 
 end
