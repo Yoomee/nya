@@ -21,12 +21,6 @@ $(document).ready(function() {
   $('a[data-toggle=tab]').on('shown.bs.tab', masonryUpdate);
 
   // handle project help form
-  // $(document).ready ->
-  //   $("#new_post").on("ajax:success", (e, data, status, xhr) ->
-  //     $("#new_post").append xhr.responseText
-  //   ).on "ajax:error", (e, xhr, status, error) ->
-  //     $("#new_post").append "<p>ERROR</p>"
-
   $('#project-help').on('ajax:success', function(event, xhr, status) {
     $('#help-modal .form-actions').hide();
     $('#help-modal .alert-danger').hide();
@@ -37,6 +31,9 @@ $(document).ready(function() {
     $('#help-modal .alert-danger').show();
     $('#help-modal .form-actions input').removeClass('disabled').val('Send');
   });
+
+  // activate any tooltips
+  $('.help-tooltip').tooltip()
 
 //
 //   /* Update masonry on change tab  */
