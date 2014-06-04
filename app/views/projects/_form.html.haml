@@ -22,8 +22,8 @@
       .next-btn-container
         =link_to 'Next', '#', class: "form-input-btn btn-block next-btn", data: { :current_group => '3', :next_group => '4' }
     .group4.hidden
-      =f.input :deadline, as: :string, label: "Deadline", input_html: { class: "form-text hasdatepicker" }
-      =f.input :city, label: "The city or town where this project is based"
+      =f.input :deadline, as: :string, label: "Deadline", input_html: { class: "form-text hasdatepicker", data: { parsley_group: "group4", parsley_required: "true" } }
+      =f.input :city, label: "The city or town where this project is based", input_html: { data: { parsley_group: "group4", parsley_required: "true" } }
       =f.input :image, as: :image
       =f.actions do
-        =f.action :submit, label: button_label, button_html: { class: 'form-input-btn btn-block' }
+        =f.action :submit, label: button_label, button_html: { class: 'form-input-btn btn-block', id: 'create-submit-btn' }

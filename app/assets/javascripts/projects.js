@@ -10,8 +10,11 @@ $(document).ready(function() {
 
     // validate ony going forward through the form
     if (next > current)
-      if (false === $('#project-create').parsley().validate('group' + current))
+      if (false === $('#project-create').parsley().validate('group' + current)) {
+        // make sure final submit button is reset to default state
+        $('#create-submit-btn').removeClass('disabled').val('Create your project');
         return;
+      }
 
     // move to next step when valid
     $('.group' + current)
