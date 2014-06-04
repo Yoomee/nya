@@ -1,4 +1,4 @@
-Feature: Project posts
+Feature: Add project owners
   As project creator
   I want to add and remove owners of my project
   In order to allow other people to help with my project
