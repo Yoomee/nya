@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140603145139) do
+ActiveRecord::Schema.define(version: 20140604131007) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -143,6 +143,7 @@ ActiveRecord::Schema.define(version: 20140603145139) do
     t.integer  "project_category_id"
     t.boolean  "feature_on_homepage"
     t.boolean  "feature_on_community_homepage"
+    t.string   "slug"
   end
 
   add_index "projects", ["feature_on_community_homepage"], name: "index_projects_on_feature_on_community_homepage", using: :btree
