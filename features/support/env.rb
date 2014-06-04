@@ -6,6 +6,7 @@
 
 require 'cucumber/rails'
 require_relative 'wait_for_ajax'
+require_relative 'webmock'
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
@@ -62,3 +63,4 @@ World(FactoryGirl::Syntax::Methods)
 # helpers
 World(ApplicationHelper)
 World(WaitForAjax)
+World(WebMockStubs) 
