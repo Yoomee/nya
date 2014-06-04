@@ -15,16 +15,7 @@
     .col-md-8.col-md-offset-2.p-0
       %h3.col-md-12.pb-3.m-0 Say hello to new members of the community
       .col-md-12.col-sm-12.col-xs-12
-        %ul.new-members
-          -3.times do
-            %li.col-md-4.col-sm-6.col-xs-12.mb-3.relative
-              .col-lg-3.col-md-4.col-sm-3.col-xs-3.avatar
-                .avatar-wrap
-                  =image_tag("profile-thumb.png")
-              .col-md-8.col-lg-9
-                =link_to('User', 'profile', :class=> 'large-txt')
-                %p Joined 1st April 2014
-                =link_to('Sheffield','category', :icon => 'map-marker')
+        =render 'users/new_members', users: User.recent
 
 .section.pt-0
   .container

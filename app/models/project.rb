@@ -1,4 +1,7 @@
 class Project < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   belongs_to :user
   belongs_to :project_category
 
@@ -37,12 +40,13 @@ class Project < ActiveRecord::Base
     "#{city}, UK"
   end
 
-  def to_param
-    "#{id} #{title}".parameterize
-  end
-
   def add_helper(helper)
     self.helpers << helper
+  end
+
+  private
+  def should_generate_new_friendly_id?
+    slug.blank? || title_changed?
   end
 
 end

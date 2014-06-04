@@ -4,7 +4,6 @@ class ProjectsController < ApplicationController
   load_and_authorize_resource
 
   def show
-    @project = Project.find(params[:id])
     @contact_enquiry = ContactEnquiry.new(
       email: current_user.try(:email),
       name: current_user.try(:full_name)

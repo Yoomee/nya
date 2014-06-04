@@ -32,6 +32,7 @@ gem 'geocoder', '~> 1.2.1'
 gem 'will_paginate'
 gem 'select2-rails', '~> 3.5.7'
 gem 'parsley-rails', '~> 2.0.0'
+gem 'stamp'
 
 # development and test gems
 group :development do
