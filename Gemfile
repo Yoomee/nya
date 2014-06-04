@@ -28,10 +28,10 @@ gem 'ym_posts', :git => 'git@gitlab.yoomee.com:yoomee/ym_posts.git', :branch => 
 
 # Extra gems
 gem 'friendly_id', '~> 5.0.0'
-gem 'geocoder'
+gem 'geocoder', '~> 1.2.1'
 gem 'will_paginate'
-gem 'select2-rails'
-gem 'parsley-rails'
+gem 'select2-rails', '~> 3.5.7'
+gem 'parsley-rails', '~> 2.0.0'
 
 # development and test gems
 group :development do
@@ -53,6 +53,7 @@ group :test do
   gem 'launchy'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
+  gem 'webmock'
 end
 
 # heroku gem
