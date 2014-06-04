@@ -1,5 +1,16 @@
-%h1
-  Searching for
-  %em=params[:term]
+.container
+.strip.strip-hero.relative
+  .container.hero-discover.hero-holder.relative
+    %h1.pt-3.center
+      Searching for
+      %em=params[:q]
 
-=render @projects
+.section
+  .container
+    -if @projects.to_a.count.zero?
+      .row
+        .col-md-12
+          %p.lead.center Sorry no projects found
+    -else
+      .row.js-masonry{ id: "projects-container", data: { masonry_options: { itemSelector: '.project-card' }}}
+        =render @projects
