@@ -36,3 +36,7 @@ end
 Then(/^I can see a link to add owners$/) do
   page.should have_link('Add & remove owners')
 end
+
+Then(/^my project should be deleted$/) do
+  Project.all.include?(@project).should eq(false)
+end
