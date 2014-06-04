@@ -18,6 +18,7 @@ class Ability
       # admin ability
     elsif user
       # user ability
+      can :manage, Like, :user_id => user.id
       can :index, Notification
       can [:read, :create, :file], Post
       can [:update, :destroy], Post, :user_id => user.id

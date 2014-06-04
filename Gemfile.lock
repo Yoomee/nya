@@ -22,6 +22,13 @@ GIT
       will_paginate (~> 3.0.3)
 
 GIT
+  remote: git@gitlab.yoomee.com:yoomee/ym_likes.git
+  revision: 65abef4247384f6948999c8716da8979b13df5fe
+  branch: rails-4
+  specs:
+    ym_likes (0.2.2)
+
+GIT
   remote: git@gitlab.yoomee.com:yoomee/ym_notifications.git
   revision: a4ad9d79d01763497e08e8d645fb8ed079fc34a0
   branch: rails-4
@@ -368,6 +375,7 @@ DEPENDENCIES
   webmock
   will_paginate
   ym_core!
+  ym_likes!
   ym_notifications!
   ym_posts!
   ym_tags!
