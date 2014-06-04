@@ -11,6 +11,7 @@
  *= require ym_notifications
  *= require select2
  *= require select2-bootstrap
+ *= require parsley
 
 
 */
@@ -33,5 +34,4 @@
 @import 'sass/forum';
 @import 'sass/type';
 @import 'sass/forms';
-
 @import 'ym_posts';

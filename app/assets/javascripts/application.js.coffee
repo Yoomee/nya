@@ -8,13 +8,15 @@
 #= require jquery_ujs
 #= require masonry-min
 #= require imagesloaded
-#= require jquery-custom
 #= require ym_core
 #= require ym_posts
 #= require ym_tags
 #= require redactor
 #= require select2
 #= require autocomplete
+#= require parsley
+#= require jquery-custom
+#= require projects
 
 $ ->
   YmComments.Form.init({submitOnEnter: true})

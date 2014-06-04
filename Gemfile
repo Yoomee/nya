@@ -31,6 +31,7 @@ gem 'friendly_id', '~> 5.0.0'
 gem 'geocoder'
 gem 'will_paginate'
 gem 'select2-rails'
+gem 'parsley-rails'
 
 # development and test gems
 group :development do
