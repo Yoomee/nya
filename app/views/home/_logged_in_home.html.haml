@@ -14,16 +14,7 @@
     .col-md-8.col-md-offset-2
       %h3.col-md-12.pb-3.mt-0 Say hello to new members
       .col-md-12.col-sm-12.col-xs-12
-        %ul.new-members
-          -User.recent.each do |user|
-            %li.col-md-4.col-sm-6.col-xs-12.mb-3.relative
-              .col-lg-3.col-md-4.col-sm-3.col-xs-3.avatar
-                .avatar-wrap
-                  =image_for(user, '50x50#')
-              .col-md-8.col-lg-9
-                =link_to_self(user, :class=> 'large-txt')
-                %p Joined 1st April 2014
-                =link_to(user.city, 'category', :icon => 'map-marker') if user.city?
+        =render 'users/new_members', users: User.recent
 
 
 .section.pt-0

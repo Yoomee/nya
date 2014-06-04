@@ -3,6 +3,9 @@ class ProjectCategory < ActiveRecord::Base
   has_one :forum
   has_many :projects, dependent: :restrict_with_error
 
+  has_many :user_interests
+  has_many :users, through: :user_interests
+
   validates :name, :slug, presence: true
   validates :slug, uniqueness: true
 
