@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :project do
-    title "Example project title"
+    sequence(:title) { |n| "Example project title#{n}" }
     description "Example project description"
     latitude 1.5
     longitude 1.5

@@ -178,6 +178,12 @@
     outline: none;
   }
 }
+#search-form button#submit-search {
+  padding-top: 9px;
+  background: #B5B4B0;
+  font-size: 15px;
+  height: 44px;
+}
 .navbar-spacer {
   height: 80px;
   @media (max-width: 767px) {

@@ -16,8 +16,11 @@
         %li=link_to('Discover', discover_path, :class => 'nav-text-link')
         %li=link_to('Community', forums_path, :class => 'nav-text-link')
         %li
-          %input.global-search{'placeholder' => 'Search projects'}
-          =link_to('', 'search', :class => 'btn', :icon => 'search')
+          =form_tag search_projects_path, id: 'search-form', method: :get do
+            =text_field_tag :q, params[:q], class: 'global-search', placeholder: 'Type here and press enter to search...'
+            %button.btn#submit-search
+              %i.fa.fa-search
+            =#submit_tag("<i class='fa fa-search'></i>".html_safe, class: 'btn', id: 'submit-search')
         -if current_user
           %li.sm-float=link_to(image_for(current_user, '40x40#'), current_user, :class => 'nav-avatar')
           %li.dropdown
@@ -40,4 +43,5 @@
   .container
     .row
       .col-sm-12.text-center
-        %input.global-search{'placeholder' => 'Type here and press enter to search...'}
+        =form_tag search_projects_path
+          =text_field_tag :q, params[:q], class: 'global-search', placeholder: 'Type here and press enter to search...'

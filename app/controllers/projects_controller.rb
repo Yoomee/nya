@@ -3,6 +3,10 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!, :only => [:destroy, :new]
   load_and_authorize_resource
 
+  def search
+    @projects = Project.search(params[:q])
+  end
+
   def show
     @contact_enquiry = ContactEnquiry.new(
       email: current_user.try(:email),

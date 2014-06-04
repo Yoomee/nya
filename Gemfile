@@ -33,6 +33,7 @@ gem 'will_paginate'
 gem 'select2-rails', '~> 3.5.7'
 gem 'parsley-rails', '~> 2.0.0'
 gem 'stamp'
+gem 'pg_search'
 
 # development and test gems
 group :development do

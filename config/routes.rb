@@ -27,6 +27,9 @@ Rails.application.routes.draw do
       post 'offer_help', to: 'projects#offer_help'
       get :owners
     end
+    collection do
+      get :search
+    end
   end
   get '/discover' => 'project_categories#index', as: :discover
   get '/discover/:slug' => 'project_categories#show', as: :discover_project_category

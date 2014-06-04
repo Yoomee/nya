@@ -2,6 +2,22 @@ class Project < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: :slugged
 
+  include PgSearch
+  pg_search_scope :search,
+                  against: [
+                    [:title, 'A'],
+                    [:city, 'A'],
+                    [:description, 'B'],
+                    [:help_needed, 'B'],
+                    [:purpose, 'B']
+                  ],
+                  using: {
+                    tsearch: {
+                      prefix: true,
+                      dictionary: 'english'
+                    }
+                  }
+
   belongs_to :user
   belongs_to :project_category
 
