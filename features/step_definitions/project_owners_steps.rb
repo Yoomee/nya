@@ -1,4 +1,7 @@
-Given(/^there is a project I am an owner of$/) do
-  pending # express the regexp above with the code you wish you had
+Given(/^that I am an owner of a project$/) do
+  @project = create(:project, owners: [@user])
 end
 
+Then(/^I cannot see a link to delete the project$/) do
+  page.should_not have_link('Delete')
+end

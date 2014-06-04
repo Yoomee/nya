@@ -12,13 +12,13 @@ Then(/^I am on the owners page for my project$/) do
 end
 
 Then(/^I can add a user to my project$/) do
-  @new_owner = User.without(@user).first
+  @new_owner = User.without([@user, @project.owners]).first
   select(@new_owner.full_name, from: 'Owners')
   click_button 'Save'
 end
 
 Then(/^that user is an owner of my project$/) do
-  @project.owners.include?(@new_owner).should eq(true)
+  @new_owner.owned_projects.include?(@project).should eq(true)
 end
 
 Then(/^I can remove the user from my project$/) do
@@ -27,8 +27,6 @@ Then(/^I can remove the user from my project$/) do
 end
 
 Then(/^that user is no longer an owner of my project$/) do
-  # @project = Project.last
-  puts @project.inspect
   @project_owner.owned_projects.include?(@project).should eq(false)
   @project.owners.include?(@new_owner).should eq(false)
 end

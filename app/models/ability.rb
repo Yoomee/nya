@@ -26,6 +26,9 @@ class Ability
       can :manage, User, :id => user.id
       can [:create, :offer_help], Project
       can [:edit, :update, :destroy, :owners], Project, :user_id => user.id
+      can [:edit, :update, :owners], Project do |project|
+        project.owners.include?(user)
+      end
       can :create, Tag
     end
 
