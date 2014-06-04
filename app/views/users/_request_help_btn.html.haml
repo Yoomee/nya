@@ -1,0 +1,4 @@
+-if user_signed_in?
+  =link_to('Request help', '#help-modal', :class => 'btn btn-lg btn-gry visible', :icon => 'hand-o-up', id: 'request-link', data: {toggle: "modal"})
+-else
+  =link_to('Request help', sign_up_path, :class => 'btn btn-lg btn-gry visible help-tooltip', :icon => 'hand-o-up',  data: { toggle: "tooltip", placement: "top", title: "Sign up to use this feature" })

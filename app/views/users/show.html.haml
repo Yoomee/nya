@@ -33,7 +33,7 @@
                 %li=link_to(interest, 'category')
       .usr-action-top
         -if not_current_user(@user)
-          =link_to('Request help', '#help-modal', :class => 'btn btn-lg btn-gry visible', :icon => 'hand-o-up', id: 'request-link', data: {toggle: "modal"})
+          =render 'request_help_btn'
         -if can?(:edit, @user)
           =link_to('', '',  :class => 'btn btn-lg btn-gry visible dropdown', :icon => 'cog', 'data-toggle' => 'dropdown')
           %ul.dropdown-menu.settings
