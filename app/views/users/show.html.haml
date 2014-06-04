@@ -32,7 +32,8 @@
               -@user.tags.each do |interest|
                 %li=link_to(interest, 'category')
       .usr-action-top
-        =link_to('Request help', '#help-modal', :class => 'btn btn-lg btn-gry visible', :icon => 'hand-o-up', id: 'request-link', data: {toggle: "modal"})
+        -if not_current_user(@user)
+          =link_to('Request help', '#help-modal', :class => 'btn btn-lg btn-gry visible', :icon => 'hand-o-up', id: 'request-link', data: {toggle: "modal"})
         -if can?(:edit, @user)
           =link_to('', '',  :class => 'btn btn-lg btn-gry visible dropdown', :icon => 'cog', 'data-toggle' => 'dropdown')
           %ul.dropdown-menu.settings

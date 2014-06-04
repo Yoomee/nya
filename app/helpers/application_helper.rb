@@ -7,5 +7,9 @@ module ApplicationHelper
   def long_date(dt)
     dt.strftime("#{dt.day.ordinalize} %B %Y")
   end
-  
+
+  def not_current_user(user)
+    current_user != user
+  end
+
 end
