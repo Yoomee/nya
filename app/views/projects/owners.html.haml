@@ -1,0 +1,18 @@
+=content_for :head do
+  :coffeescript
+    $ ->
+      $('#project_owner_ids').select2
+        placeholder: "Type someone's name"
+        minimumInputLength: 3
+
+%h1
+  Add owners to
+  =@project
+  %small
+    created by
+    =@project.user
+=semantic_form_for @project do |form|
+  =form.inputs do
+    =form.input :owners, as: :select, multiple: true, collection: User.without(@project.user)
+  =form.actions do
+    =form.action :submit, label: 'Save'

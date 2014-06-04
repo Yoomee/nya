@@ -32,3 +32,7 @@ Then(/^I see the project details$/) do
     page.should have_content(tag)
   end
 end
+
+Then(/^I can see a link to add owners$/) do
+  page.should have_link('Add & remove owners')
+end

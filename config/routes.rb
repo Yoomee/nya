@@ -13,18 +13,20 @@ Rails.application.routes.draw do
   get 'sign-up' => 'registrations#new', :as => 'sign_up'
   get 'login' => 'registrations#new', :login => true, :as => 'sign_in'
   get 'login' => 'registrations#new', :login => true, :as => 'new_user_session'
+
   ym_users_routes(:devise => false)
+
   resources :users, only: [] do
     get :autocomplete_user_full_name, on: :collection, as: :autocomplete
     member do
       post 'request_help', to: 'users#request_help'
     end
   end
-
+  
   resources :projects, except: :index do
     member do
       post 'offer_help', to: 'projects#offer_help'
-      get :add_owners
+      get :owners
     end
   end
   get '/discover' => 'project_categories#index', as: :discover

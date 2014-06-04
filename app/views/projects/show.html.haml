@@ -19,6 +19,9 @@
           -if can? :edit, @project
             %li=link_to('Edit', edit_project_path(@project), :icon => 'pencil')
           -# %li=link_to('Pin', 'profile#projects', :icon => 'thumb-tack')
+          -if can? :owners, @project
+            %li=link_to('Add & remove owners', owners_project_path(@project), icon: 'group')
+          %li=link_to('Pin', 'profile#projects', :icon => 'thumb-tack')
           %li=link_to('Delete', '#', :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
     %ul.nav.nav-tabs.main-tabs
       %li.active
