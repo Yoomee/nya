@@ -2,8 +2,6 @@ class UsersController < ApplicationController
   include YmUsers::UsersController
   load_and_authorize_resource
 
-  autocomplete :user, :full_name, full: true
-
   def show
     @contact_enquiry = ContactEnquiry.new(
       email: current_user.try(:email),
