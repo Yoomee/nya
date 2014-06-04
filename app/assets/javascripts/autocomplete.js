@@ -1,3 +1,4 @@
+// provides autocomplete functionality for tags
 $(document).ready(function() {
     $('.autocomplete-tags').each(function() {
         var placeholder = $(this).data('placeholder');

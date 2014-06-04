@@ -1,3 +1,4 @@
+// application specific javascript
 $(document).ready(function() {
 
   $('#projects-container').imagesLoaded()
