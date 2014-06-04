@@ -29,6 +29,10 @@ class Project < ActiveRecord::Base
   # will_paginate default page number
   self.per_page = 9
 
+  def can_blog?(user)
+    [Project.user + Project.owners].include?(user)
+  end
+
   def city_with_uk
     "#{city}, UK"
   end

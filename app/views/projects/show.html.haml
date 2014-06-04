@@ -83,7 +83,7 @@
     #blog.tab-pane.fade.in
       .col-md-8.col-md-offset-2
         .row
-          -if current_user == @project.user
+          -if @project.can_blog?(current_user)
             =render 'posts/remote_form', post: @project.project_blogs.build
         .row
           =render 'posts/posts', posts: @project.project_blogs.paginate(page: params[:page])
