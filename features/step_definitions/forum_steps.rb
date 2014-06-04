@@ -20,7 +20,7 @@ Then(/^I should be able to post a message$/) do
   post_count = @forum.posts.count
   @message = 'A new special message for testing'
   fill_in 'post_text', with: @message
-  click_button 'Post'
+  page.execute_script("$('form#new_post').submit()")
   wait_for_ajax
   @forum.posts.count.should eq(post_count + 1)
 end
