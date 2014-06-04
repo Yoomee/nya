@@ -47,7 +47,7 @@ class ProjectsController < ApplicationController
     @contact_enquiry = ContactEnquiry.new(params[:contact_enquiry])
     if @contact_enquiry.valid?
       HelpMailer.help_offer(@contact_enquiry, @project).deliver
-      @project.helpers << current_user
+      @project.add_helper(current_user)
       render :json => @contact_enquiry.to_json
     else
       render :json => { :errors => @contact_enquiry.errors.full_messages }, :status => 422

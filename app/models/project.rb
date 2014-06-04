@@ -37,4 +37,8 @@ class Project < ActiveRecord::Base
     "#{id} #{title}".parameterize
   end
 
+  def add_helper(helper)
+    self.helpers << helper
+  end
+
 end
