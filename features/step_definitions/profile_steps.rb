@@ -1,5 +1,9 @@
-Given(/^the user has (\d+) projects$/) do |x|
-  @user.projects = create_list(:project, x.to_i, user: @user)
+Given(/^the user has (\d+) created projects$/) do |x|
+  @user.created_projects = create_list(:project, x.to_i, user: @user)
+end
+
+Given(/^the user has (\d+) owned projects$/) do |x|
+  @user.created_projects = create_list(:project, x.to_i, owners: [@user])
 end
 
 Then(/^I see the user's projects$/) do

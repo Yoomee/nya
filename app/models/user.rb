@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   include YmCore::Model
   include YmUsers::User
 
-  has_many :projects
+  has_many :created_projects, class_name: 'Project'
   has_many :project_owners, foreign_key: :owner_id
   has_many :owned_projects, through: :project_owners, source: :project
   has_many :user_interests, dependent: :destroy
@@ -31,6 +31,10 @@ class User < ActiveRecord::Base
   def city_with_uk
     return '' unless city?
     "#{city}, UK"
+  end
+
+  def projects
+    created_projects + owned_projects
   end
 
   private
