@@ -24,14 +24,14 @@ $(document).ready(function() {
         }
 
       // move to next step when valid
-      $('.group' + current)
-        .removeClass('show')
-        .addClass('hidden');
-      $('.group' + next)
-        .removeClass('hidden')
-        .addClass('show');
-
-      // TODO: do we need a back button
+      $('.group' + next).fadeIn("fast", function() {
+        $(this).addClass("show");
+        $(this).removeClass("hidden");
+      });
+      $('.group' + current).fadeOut("fast", function() {
+        $(this).removeClass("show");
+        $(this).addClass("hidden");
+      });
     });
   }
 });
