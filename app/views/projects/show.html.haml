@@ -45,9 +45,10 @@
           %h3 ThinkBig can help fund your project
       .col-md-8.col-md-offset-2.pb-10
         .row.usr-action.col-md-offset-2
-          =link_to('#',  :class => 'btn btn-lg btn-gry like-us col-md-5 mb-1 col-xs-12 mr-1') do
-            %span.pull-left 37 like us
-            %i.fa.fa-heart.pull-right
+          =like_link_with_count(@project,
+                     like_text: @project.likings.size,
+                     unlike_text: @project.likings.size,
+                     class: 'btn btn-lg btn-gry like-us col-md-5 mb-1 col-xs-12 mr-1 like-link-button')
           =render 'help_button', link_id: 'link-help-1'
           .row
             .project-image

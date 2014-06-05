@@ -6,14 +6,20 @@ $(document).ready(function() {
       $('#projects-container').masonry();
   });
 
-  // increment like count on like/dislike
+  // adjust like count on like/dislike for link and button
   $('a.like-link').live('ajax:success', function(event, xhr, status) {
-    // adjust count depending on removal
-    var icon = "<i class=\"fa fa-heart\"></i> ";
+    new_count = 0
     if (xhr.removed_at) {
-      $(this).html(icon + (parseInt(this.text) - 1));
+      new_count = parseInt(this.text) - 1
     } else {
-      $(this).html(icon + (parseInt(this.text) + 1));
+      new_count = parseInt(this.text) + 1
+    }
+    if ($(this).hasClass('like-link-button')) {
+      $(this).children('span').html(new_count + " like us");
+    } else {
+      // it is the standard link
+      var icon = "<i class=\"fa fa-heart\"></i> ";
+      $(this).html(icon + new_count);
     }
   });
 

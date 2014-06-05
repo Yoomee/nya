@@ -10,3 +10,10 @@ Feature: Users can like projects
     When I go to the list of projects
     And I click on the project like link
     Then the project like count is increased by one
+
+  Scenario: Liking a project on the project page
+    Given that I am logged in
+    And a project
+    When I go to the project
+    And I click on the project like link
+    Then the project like count is increased by one
