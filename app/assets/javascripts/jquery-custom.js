@@ -1,6 +1,7 @@
 // application specific javascript
 $(document).ready(function() {
 
+  // only run masonry on projects when images are loaded
   $('#projects-container').imagesLoaded()
     .always( function( instance ) {
       $('#projects-container').masonry();
@@ -35,6 +36,7 @@ $(document).ready(function() {
      }, 0);
   }
 
+  // update masonry on tab swicth
   $('a[data-toggle=tab]').on('shown.bs.tab', masonryUpdate);
 
   // handle project help form
@@ -44,6 +46,7 @@ $(document).ready(function() {
     $('#help-modal .alert-success').show();
   });
 
+  // handle errors on project help modal
   $('#project-help').on('ajax:error', function(event, xhr, status) {
     $('#help-modal .alert-danger').show();
     $('#help-modal .form-actions input').removeClass('disabled').val('Send');
