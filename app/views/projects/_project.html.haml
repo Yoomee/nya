@@ -17,7 +17,10 @@
         %ul.tags
           =render :partial => 'tags/tag', :collection => project.tags
       .card-likes.col-md-2.right.p-0
-        =link_to('3', '#', :class => 'likes', :icon => 'heart')
+        =like_link(project,
+                   like_text: project.likings.size,
+                   unlike_text: project.likings.size,
+                   class: 'likes')
     .card-footer
       .foot-link.location.col-md-6.col-xs-6
         =link_to(project.city, '#', :icon => 'map-marker')

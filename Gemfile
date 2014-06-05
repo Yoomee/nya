@@ -27,7 +27,6 @@ gem 'ym_posts', :git => 'git@gitlab.yoomee.com:yoomee/ym_posts.git', :branch => 
 # gem 'ym_posts', :path => '~/Rails/Gems/ym_posts'
 gem 'ym_likes', :git => 'git@gitlab.yoomee.com:yoomee/ym_likes.git', :branch => 'rails-4'
 # gem 'ym_likes', :path => '~/Rails/Gems/ym_likes'
-# gem 'ym_likes', :path => '/Users/vs/projects/yoomee/ym_likes'
 
 # Extra gems
 gem 'friendly_id', '~> 5.0.0'

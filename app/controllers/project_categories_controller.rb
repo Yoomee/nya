@@ -4,7 +4,7 @@ class ProjectCategoriesController < ApplicationController
 
   def index
     @project_categories = ProjectCategory.all
-    @projects = Project.includes(:tags, :helpers, :user).paginate(page: params[:page]).order('created_at DESC')
+    @projects = Project.includes(:tags, :helpers, :user, :likings).paginate(page: params[:page]).order('created_at DESC')
     respond_to do |format|
       format.html
       format.js
@@ -13,7 +13,8 @@ class ProjectCategoriesController < ApplicationController
 
   def show
     @project_category = ProjectCategory.includes(:projects).find_by_slug(params[:slug])
-    @projects = @project_category.projects.includes(:tags, :helpers, :user).paginate(page: params[:page]).order('created_at DESC')
+    @projects = @project_category.projects.includes(:tags, :helpers, :user, :likings).
+      paginate(page: params[:page]).order('created_at DESC')
     respond_to do |format|
       format.html
       format.js

@@ -11,6 +11,7 @@
 #= require ym_core
 #= require ym_posts
 #= require ym_tags
+#= require ym_likes
 #= require redactor
 #= require select2
 #= require autocomplete

@@ -23,7 +23,7 @@ GIT
 
 GIT
   remote: git@gitlab.yoomee.com:yoomee/ym_likes.git
-  revision: 65abef4247384f6948999c8716da8979b13df5fe
+  revision: d330dada49022ded50c4a55d18ce978657e93a51
   branch: rails-4
   specs:
     ym_likes (0.2.2)

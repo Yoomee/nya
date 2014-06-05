@@ -6,6 +6,17 @@ $(document).ready(function() {
       $('#projects-container').masonry();
   });
 
+  // increment like count on like/dislike
+  $('a.like-link').on('ajax:success', function(event, xhr, status) {
+    // adjust count depending on removal
+    var icon = "<i class=\"fa fa-heart\"></i> ";
+    if (xhr.removed_at) {
+      $(this).html(icon + (parseInt(this.text) - 1));
+    } else {
+      $(this).html(icon + (parseInt(this.text) + 1));
+    }
+  });
+
   // activate datepickers
   $('.hasdatepicker').datepicker(
     { dateFormat: "dd-mm-yy" }
