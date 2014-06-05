@@ -11,9 +11,10 @@ Feature: Users can like projects
     And I click on the project like link
     Then the project like count is increased by one
 
+  @javascript
   Scenario: Liking a project on the project page
     Given that I am logged in
     And a project
     When I go to the project
-    And I click on the project like link
-    Then the project like count is increased by one
+    And I click on the "like-us-button" link
+    Then the project page like count is increased by one
