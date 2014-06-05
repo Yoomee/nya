@@ -4,6 +4,8 @@ $(document).ready(function() {
   if ($('form#project-create').length) {
     $('form#project-create').parsley();
 
+    var total_steps = 4;
+
     // work around for parsley / ujs issue: https://github.com/guillaumepotier/Parsley.js/issues/561
     $('#project-create').parsley().subscribe('parsley:field:error', function (formInstance) {
       // make sure final submit button is reset to default state
@@ -22,6 +24,10 @@ $(document).ready(function() {
           $('#create-submit-btn').removeClass('disabled').val('Create your project');
           return;
         }
+
+      // update progress bar width
+      var width = (current/total_steps) * 100;
+      $('div.progress-bar').css("width", width + "%");
 
       // move to next step when valid
       $('.group' + next).fadeIn("fast", function() {
