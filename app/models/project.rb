@@ -6,19 +6,19 @@ class Project < ActiveRecord::Base
 
   include PgSearch
   pg_search_scope :search,
-                  against: [
-                    [:title, 'A'],
-                    [:city, 'A'],
-                    [:description, 'B'],
-                    [:help_needed, 'B'],
-                    [:purpose, 'B']
-                  ],
-                  using: {
-                    tsearch: {
-                      prefix: true,
-                      dictionary: 'english'
+                    against: [
+                      [:title, 'A'],
+                      [:city, 'A'],
+                      [:description, 'B'],
+                      [:help_needed, 'B'],
+                      [:purpose, 'B']
+                    ],
+                    using: {
+                      tsearch: {
+                        prefix: true,
+                        dictionary: 'english'
+                      }
                     }
-                  }
 
   belongs_to :user
   belongs_to :project_category

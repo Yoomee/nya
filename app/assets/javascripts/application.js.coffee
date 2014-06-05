@@ -17,7 +17,9 @@
 #= require autocomplete
 #= require parsley
 #= require jquery-custom
+#= require search
 #= require projects
+#= require isotope.pkgd.min
 
 $ ->
   YmComments.Form.init({submitOnEnter: true})

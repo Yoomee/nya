@@ -1,16 +1,33 @@
+=content_for :head do
+  :coffeescript
+    $ ->
+      Search.init()
+
 .container
 .strip.strip-hero.relative
   .container.hero-discover.hero-holder.relative
     %h1.pt-3.center
-      Searching for
-      %em=params[:q]
+      -if @query.present?
+        Searching for
+        %em=@query
+      -else
+        All projects
 
 .section
   .container
-    -if @projects.to_a.count.zero?
-      .row
-        .col-md-12
+    .row
+      .col-md-2#tags
+        %h3 Tags
+        =link_to_all_tag
+        -Tag.order(:name).each do |tag|
+          =link_to_search_tag(tag)
+        .clear
+        =link_to('Clear search', search_projects_path, class: 'btn btn-primary btn-block mt-4')
+
+      -if @projects.to_a.count.zero?
+        .col-md-8
           %p.lead.center Sorry no projects found
-    -else
-      .row.js-masonry{ id: "projects-container", data: { masonry_options: { itemSelector: '.project-card' }}}
-        =render @projects
+      -else
+        .col-md-10
+          .row.js-isotope{ id: 'projects-container', data: { isotope_options: { itemSelector: '.project-card' }}}
+            =render @projects

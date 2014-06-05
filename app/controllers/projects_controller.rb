@@ -4,7 +4,8 @@ class ProjectsController < ApplicationController
   load_and_authorize_resource
 
   def search
-    @projects = Project.search(params[:q])
+    @query = params[:q]
+    @projects = @query.present? ? Project.search(@query) : Project.all
   end
 
   def show
