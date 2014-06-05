@@ -7,7 +7,7 @@ $(document).ready(function() {
   });
 
   // increment like count on like/dislike
-  $('a.like-link').on('ajax:success', function(event, xhr, status) {
+  $('a.like-link').live('ajax:success', function(event, xhr, status) {
     // adjust count depending on removal
     var icon = "<i class=\"fa fa-heart\"></i> ";
     if (xhr.removed_at) {
