@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140604161439) do
+ActiveRecord::Schema.define(version: 20140606110330) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,16 @@ ActiveRecord::Schema.define(version: 20140604161439) do
   end
 
   add_index "content_pages", ["slug"], name: "index_content_pages_on_slug", unique: true, using: :btree
+
+  create_table "forum_users", force: true do |t|
+    t.integer  "forum_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "forum_users", ["forum_id"], name: "index_forum_users_on_forum_id", using: :btree
+  add_index "forum_users", ["user_id"], name: "index_forum_users_on_user_id", using: :btree
 
   create_table "forums", force: true do |t|
     t.string   "name"

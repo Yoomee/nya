@@ -3,7 +3,7 @@
   .container.hero-discover.hero-holder.relative
     .col-md-8.col-md-offset-2.relative
       .usr-action-top
-        =link_to('Follow', '#',  :class => 'btn btn-lg btn-gry btn-follow mr-3')
+        =follow_link
         -if can?(:edit, @forum)
           =link_to('', '',  :class => 'btn btn-lg btn-gry visible dropdown', :icon => 'cog', 'data-toggle' => 'dropdown')
           %ul.dropdown-menu.settings
@@ -11,7 +11,7 @@
             %li=link_if_can('Delete', [:destroy, @forum], method: :delete, confirm: 'Are you sure?', icon: 'trash-o')
       %h1.pt-4.center=@forum.name
       %p.col-md-8.col-md-offset-2.center=raw(@forum.description)
--if @forum.users.recent.present?
+-if @forum.followers.recent.present?
   .split.section
     .container
       .col-md-8.col-md-offset-2.p-0
@@ -20,7 +20,7 @@
           =@forum.name.downcase
           community
         .col-md-12.col-sm-12.col-xs-12
-          =render 'users/new_members', users: @forum.users.recent
+          =render 'users/new_members', users: @forum.followers.recent
 .section
   .container
     .col-md-8.col-md-offset-2

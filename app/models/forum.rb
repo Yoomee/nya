@@ -4,9 +4,11 @@ class Forum < ActiveRecord::Base
   friendly_id :name, use: :slugged
 
   belongs_to :project_category
-  has_many :users, through: :project_category
 
-  has_many :posts, :as => :target, :dependent => :destroy
+  has_many :posts, as: :target, dependent: :destroy
+
+  has_many :forum_users, dependent: :destroy
+  has_many :followers, through: :forum_users, source: :user
 
   image_accessor :image
 

@@ -72,10 +72,8 @@
         .col-md-12
           %h2.heading.col-md-6 Forums you're following
           %ul.tags.right.pr-2
-            %li=link_to('Food', 'forum')
-            %li=link_to('Sport', 'forum')
-            %li=link_to('Technology', 'forum')
-            %li=link_to('Space & Exploration', 'forum')
+            -@user.followed_forums.each do |forum|
+              %li=link_to_self(forum)
 
       .row
         .col-md-12.main-input.pb-3

@@ -43,6 +43,10 @@ Rails.application.routes.draw do
 
   resources :forums, path: 'forum' do
     get :manage, on: :collection
+    member do
+      post :follow, to: 'forum_users#create'
+      delete :unfollow, to: 'forum_users#destroy'
+    end
   end
 
   get ':id', to: 'content_pages#show'

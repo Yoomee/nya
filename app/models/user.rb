@@ -15,6 +15,11 @@ class User < ActiveRecord::Base
   has_many :project_help_offers, dependent: :destroy
   has_many :projects_helping, through: :project_help_offers, source: :project
 
+  has_many :forum_users, dependent: :destroy
+  has_many :followed_forums, through: :forum_users, source: :forum
+
+
+
   validates :first_name, :last_name, presence: true
   validates :email, email: true, presence: true, uniqueness: true
   validates :website, url: true
@@ -32,6 +37,10 @@ class User < ActiveRecord::Base
   def city_with_uk
     return '' unless city?
     "#{city}, UK"
+  end
+
+  def posts_from_followed_forums
+    Post.where(target_type: 'Forum', target_id: followed_forums.collect(&:id))
   end
 
   def projects

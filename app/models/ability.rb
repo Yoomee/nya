@@ -31,6 +31,10 @@ class Ability
         project.owners.include?(user)
       end
       can :create, Tag
+      can :follow, Forum
+      can :unfollow, Forum do |forum|
+        forum.followers.include?(user)
+      end
     end
 
   end
