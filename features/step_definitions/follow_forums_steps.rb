@@ -3,6 +3,7 @@ Then(/^I should be see a "(.*?)" link$/) do |link|
 end
 
 Then(/^I will follow the forum$/) do
+  wait_for_ajax
   @user.followed_forums.include?(@forum).should eq(true)
 end
 
