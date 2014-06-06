@@ -24,6 +24,12 @@ class ProjectsController < ApplicationController
       email: current_user.try(:email),
       name: current_user.try(:full_name)
     )
+    @project_blogs = @project.project_blogs.paginate(page: params[:project_blogs_page])
+    @project_comments = @project.project_comments.paginate(page: params[:project_blogs_page])
+    respond_to do |format|
+      format.html {}
+      format.js {}
+    end
   end
 
   def new

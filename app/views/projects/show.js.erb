@@ -1,0 +1,3 @@
+$('#blog .posts').html('<%=j (render('posts/posts', :posts => @project_blogs)) %>').removeClass('loading');
+$('#comments .posts').html('<%=j (render('posts/posts', :posts => @project_comments)) %>').removeClass('loading');
+

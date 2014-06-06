@@ -1,0 +1,11 @@
+<%=remotipart_response do%>
+  $('form#new_post').replaceWith('<%=j (render('posts/remote_form', :post => (@new_post || @post))) %>');
+  <%if @post.valid?%>
+    $('div.posts').prepend('<%=j (render('posts/post', :post => @post)) %>');
+    $(".comment-form textarea").autogrow();
+    <% if @post.target.is_a?(Project) %>
+      $('#js-comment-count').html('<%=j "#{@post.target.project_comments.count}" %>');
+    <% end %>
+  <%end%>
+
+<%end%>

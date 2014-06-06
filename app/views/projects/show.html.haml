@@ -33,7 +33,7 @@
           Blog
       %li
         =link_to('#comments', 'data-toggle' => 'tab') do
-          %span.badge.pull-right.ml-6
+          %span.badge.pull-right.ml-6#js-comment-count
             =@project.project_comments.count
           Comments
 
@@ -84,18 +84,18 @@
           =render 'help_button', link_id: 'link-help-2'
     #blog.tab-pane.fade.in
       .col-md-8.col-md-offset-2
-        .row
+        .row.mb-2
           -if @project.can_blog?(current_user)
             =render 'posts/remote_form', post: @project.project_blogs.build
         .row
-          =render 'posts/posts', posts: @project.project_blogs.paginate(page: params[:page])
+          =render 'posts/posts', posts: @project_blogs
 
     #comments.tab-pane.fade.in
       .col-md-8.col-md-offset-2
-        .row
+        .row.mb-2
           =render 'posts/remote_form', post: @project.project_comments.build
         .row
-          =render 'posts/posts', posts: @project.project_comments.paginate(page: params[:page])
+          =render 'posts/posts', posts: @project_comments
 
 =render 'help_modal',
    help_post_path: offer_help_project_path(@project),
