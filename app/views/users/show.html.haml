@@ -79,24 +79,6 @@
         .col-md-12.main-input.pb-3
           =render 'posts/posts', posts: @posts
     #projects.tab-pane.fade.in
-      .row
-        .col-md-6.pb-3
-          .top-cta.alert.fade.in
-            %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", type: "button"}
-              %i.fa.fa-times-circle
-            %strong You haven't added your location yet
-            %em Enter your location below
-            %form.form-inline{role: "form"}
-              .form-group
-                %label.sr-only{for: "location"} Enter your location below
-                %input.form-control{placeholder: "Enter location", type: "text"}
-                %button.btn.btn-lg.btn-gry{type: "button"} Okay
-        .col-md-6.pb-2
-          .top-cta.promo
-            %h3 ThinkBig can help fund your project
-            =link_to('Learn more about ThinkBig', 'about',  :class => 'btn btn-lg btn-gry')
-
-
       .row.js-isotope{ :data => { :isotope_options => { :itemSelector => '.col-md-4' }}}
         =render @user.projects
 
@@ -106,7 +88,6 @@
               .add-project
                 %i.fa.fa-plus-circle
                 .text Add a new project
-
 
       .row.mt-10
         %h2.heading.pb-3 Projects you're helping out on
@@ -173,25 +154,7 @@
                 .foot-link.helpers.col-md-6.right
                   =link_to('2 helpers', 'search', :icon => 'users')
 
-
-
     #rewards.tab-pane.fade.in
-      .row
-        .col-md-6.pb-3
-          .top-cta.alert.fade.in
-            %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", type: "button"}
-              %i.fa.fa-times-circle
-            %strong You haven't added your location yet
-            %em Enter your location below
-            %form.form-inline{role: "form"}
-              .form-group
-                %label.sr-only{for: "location"} Enter your location below
-                %input.form-control{placeholder: "Enter location", type: "text"}
-                %button.btn.btn-lg.btn-gry{type: "button"} Okay
-        .col-md-6.pb-2
-          .top-cta.promo
-            %h3 ThinkBig can help fund your project
-            =link_to('Learn more about ThinkBig', 'about',  :class => 'btn btn-lg btn-gry')
       .row#badges.mb-10
         %h2.heading Badges
         %ul.pt-3
