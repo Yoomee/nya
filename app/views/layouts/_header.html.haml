@@ -17,7 +17,7 @@
         %li=link_to('Community', forums_path, :class => 'nav-text-link')
         %li
           =form_tag search_projects_path, id: 'search-form', method: :get do
-            =text_field_tag :q, params[:q], class: 'global-search', placeholder: 'Type here and press enter to search...'
+            =text_field_tag :q, params[:q], class: 'global-search', placeholder: 'Project search...'
             %button.btn#submit-search
               %i.fa.fa-search
             =#submit_tag("<i class='fa fa-search'></i>".html_safe, class: 'btn', id: 'submit-search')
