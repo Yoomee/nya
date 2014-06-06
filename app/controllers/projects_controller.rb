@@ -11,10 +11,8 @@ class ProjectsController < ApplicationController
   def near
     distance = 15
     if @project.geocoded?
-      puts 'GEOCODED'
       @projects = @project.nearbys(distance)
     else
-      puts 'NOT GEOCODED'
       @projects = Project.near(@project.city_with_uk, distance)
     end
     render 'search'
