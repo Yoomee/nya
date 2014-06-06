@@ -41,7 +41,7 @@ class Project < ActiveRecord::Base
   validates :title, :description, :user_id, :project_category_id, :help_needed, :purpose, :deadline, :city, presence: true
 
   geocoded_by :city_with_uk
-  after_validation :geocode
+  after_validation :geocode, if: ->(project) { project.city.present? and project.city_changed? }
 
   scope :community_homepage, -> { where(feature_on_community_homepage: true) }
   scope :homepage, -> { where(feature_on_homepage: true) }
