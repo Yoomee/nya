@@ -7,6 +7,11 @@ class UsersController < ApplicationController
       email: current_user.try(:email),
       name: current_user.try(:full_name)
     )
+    @posts = @user.posts.paginate(page: params[:page])
+    respond_to do |format|
+      format.html {}
+      format.js {}
+    end
   end
 
   def update
