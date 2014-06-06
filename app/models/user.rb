@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   acts_as_taggable
 
   geocoded_by :city_with_uk
-  after_validation :geocode
+  after_validation :geocode, if: ->(user) { user.city.present? and user.city_changed? }
 
   accepts_nested_attributes_for :interests
 
