@@ -9,6 +9,6 @@ Feature: Helping on projects
     And a project
     When I go to the project
     And I click on the "link-help-1" link
-    When I submit the contact form
+    When I submit the help form
     Then I should see the thank you message
     And the project should have a helper

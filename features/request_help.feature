@@ -10,5 +10,5 @@ Feature: Requesting help from a user
     And a user
     When I go to the user profile
     And I click on the "request-link" link
-    When I submit the contact form
+    When I submit the help form
     Then I should see the thank you message
