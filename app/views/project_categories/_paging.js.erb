@@ -1,11 +1,15 @@
 // append projects with isotope
 var $new_projects = $("<%= escape_javascript(render @projects) %>");
-$('#projects-container').append($new_projects).isotope('appended', $new_projects);
-$('#projects-container').imagesLoaded()
-  .always( function( instance ) {
-    $('#projects-container').isotope();
-  })
-
+$('#projects-container')
+  .append($new_projects)
+  .isotope('appended', $new_projects, function() {
+    // layout after items appended
+    $('#projects-container').isotope('layout');
+  });
+$('#projects-container').imagesLoaded(function() {
+  // layout after images loaded
+  $('#projects-container').isotope('layout');
+});
 // Hide link if it is last page otherwise update link
 <% if @projects.total_pages == @projects.current_page %>
     $("#show_more_link").hide();
