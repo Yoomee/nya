@@ -4,8 +4,8 @@ FactoryGirl.define do
   factory :project do
     sequence(:title) { |n| "Example project title#{n}" }
     description "Example project description"
-    latitude 1.5
-    longitude 1.5
+    latitude 53.95996510000001
+    longitude -1.0872979
     city 'York'
     image_uid "MyString"
     image_name "MyString"

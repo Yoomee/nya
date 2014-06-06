@@ -93,9 +93,9 @@ case Rails.env
       Project.create(
         title: "Example project #{i}",
         description: "Example project description",
-        latitude: 1.5,
-        longitude: 1.5,
-        city: 'Sheffield',
+        latitude: 53.95996510000001,
+        longitude: -1.0872979,
+        city: 'York',
         user: User.find_by(email: 'david@yoomee.com'),
         project_category: ProjectCategory.first,
         help_needed: "Example help needed text",

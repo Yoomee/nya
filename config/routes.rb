@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     member do
       post 'offer_help', to: 'projects#offer_help'
       get :owners
+      get :near
     end
     collection do
       get :search

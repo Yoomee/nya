@@ -9,7 +9,7 @@
         by
         =link_to(@project.user.full_name, user_path(@project.user))
       .location.meta
-        =link_to(@project.city, '#', :icon => 'map-marker')
+        =link_to(@project.city, near_project_path(@project), icon: 'map-marker', id: 'location-search-link')
       .time.meta
         %time{datetime: short_date(@project.created_at)}
           =long_date(@project.created_at)
@@ -21,7 +21,7 @@
           -# %li=link_to('Pin', 'profile#projects', :icon => 'thumb-tack')
           -if can? :owners, @project
             %li=link_to('Add & remove owners', owners_project_path(@project), icon: 'group')
-          %li=link_to('Pin', 'profile#projects', :icon => 'thumb-tack')
+          -# %li=link_to('Pin', 'profile#projects', :icon => 'thumb-tack')
           -if can? :destroy, @project
             %li=link_to('Delete', @project, :method => :delete, :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
     %ul.nav.nav-tabs.main-tabs

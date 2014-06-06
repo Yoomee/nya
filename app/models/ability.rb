@@ -8,7 +8,7 @@ class Ability
     # open ability
     can :show, ContentPage
     can :read, Forum
-    can [:search, :show], Project
+    can [:search, :show, :near], Project
     can [:index, :show], ProjectCategory
     can :show, User
     can :show, Tag
