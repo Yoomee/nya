@@ -36,7 +36,7 @@
           %h3 Activity feed
       .row
         .col-md-12.col-sm-12.col-xs-12.photo.card.pb-3
-          =render 'posts/posts', posts: @forum.posts.paginate(page: params[:page])
+          =render 'posts/posts', posts: @posts
 
 -if @forum.project_category.try(:projects).present?
   .section
