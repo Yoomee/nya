@@ -35,7 +35,7 @@ window.Search =
 
   showAll: ->
     $('.js-projects-all').addClass('label-primary')
-    $('.js-project-filter').removeClass('label-primary')
+    $('.js-project-filter').removeClass('label-primary').data('selected', false)
     window.location.replace('#')
     $('#projects-container').isotope(filter: '*' )
 
