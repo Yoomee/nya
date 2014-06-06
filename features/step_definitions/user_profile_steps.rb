@@ -3,17 +3,19 @@ Given(/^my user profile has no location$/) do
 end
 
 Given(/^my user profile has a location$/) do
-  pending # express the regexp above with the code you wish you had
+  @user.city = 'Exeter'
+  @user.save
 end
 
 When(/^complete the add location form$/) do
-  pending # express the regexp above with the code you wish you had
+  fill_in 'user_city', with: 'Exeter'
+  click_button 'location-form-btn'
 end
 
 Then(/^my location is displayed on my profile page$/) do
-  pending # express the regexp above with the code you wish you had
+  page.should have_content('Exeter')
 end
 
 Then(/^there is no add location form$/) do
-  pending # express the regexp above with the code you wish you had
+  page.should_not have_css('#profile-location-form')
 end

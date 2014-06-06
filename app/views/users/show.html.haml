@@ -61,7 +61,8 @@
     #home.tab-pane.active.fade.in
       .row
         .col-md-6.pb-3
-          =render 'location_form'
+          -if @user.city.nil?
+            =render 'location_form'
         .col-md-6.pb-2
           .top-cta.promo
             %h3 ThinkBig can help fund your project
