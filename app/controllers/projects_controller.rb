@@ -10,6 +10,7 @@ class ProjectsController < ApplicationController
 
   def near
     distance = 15
+    @query = "projects near #{@project.city}"
     if @project.geocoded?
       @projects = @project.nearbys(distance)
     else
