@@ -15,7 +15,7 @@
 
 .section
   .container
-    .row.js-masonry{ id: "projects-container", data: { masonry_options: { itemSelector: '.project-card' }}}
+    .row.js-isotope{ id: "projects-container", data: { isotope_options: { itemSelector: '.project-card' }}}
       =render @projects
 
 =render 'paging_controls', path: discover_project_category_path(@project_category, :page => 2)

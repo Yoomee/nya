@@ -1,9 +1,10 @@
-// append projects with masonry
+// append projects with isotope
 var $new_projects = $("<%= escape_javascript(render @projects) %>");
-$('#projects-container').append($new_projects).masonry('appended', $new_projects);
+$('#projects-container').append($new_projects).isotope('appended', $new_projects);
 $('#projects-container').imagesLoaded()
   .always( function( instance ) {
-    $('#projects-container').masonry();
+    console.log('hello');
+    $('#projects-container').isotope();
   })
 
 // Hide link if it is last page otherwise update link

@@ -6,7 +6,6 @@
 
 #= require jquery
 #= require jquery_ujs
-#= require masonry-min
 #= require imagesloaded
 #= require ym_core
 #= require ym_posts

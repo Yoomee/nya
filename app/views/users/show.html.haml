@@ -127,7 +127,7 @@
                   %label.sr-only{for: "comment"} What happened? What is going to happen?
                   %input.form-control.event{placeholder: "What happened? What is going to happen?", :id => 'datepicker', type: "text"}
 
-      .row.js-masonry{ :data => { :masonry_options => { :itemSelector => '.col-md-6' }}}
+      .row.js-isotope{ :data => { :isotope_options => { :itemSelector => '.col-md-6' }}}
         .col-md-6.col-sm-12.col-xs-12.photo.card.pb-3
           .card-wrap
             .card-top
@@ -232,7 +232,7 @@
             =link_to('Learn more about ThinkBig', 'about',  :class => 'btn btn-lg btn-gry')
 
 
-      .row.js-masonry{ :data => { :masonry_options => { :itemSelector => '.col-md-4' }}}
+      .row.js-isotope{ :data => { :isotope_options => { :itemSelector => '.col-md-4' }}}
         =render @user.projects
 
         .col-md-4.col-sm-12.col-xs-12.card-add.pb-3
@@ -245,7 +245,7 @@
 
       .row.mt-10
         %h2.heading.pb-3 Projects you're helping out on
-      .row.js-masonry{ :data => { :masonry_options => { :itemSelector => '.col-md-4' }}}
+      .row.js-isotope{ :data => { :isotope_options => { :itemSelector => '.col-md-4' }}}
         -3.times do
           .col-md-4.col-sm-12.col-xs-12.card.pb-3
             .card-wrap
@@ -278,7 +278,7 @@
 
       .row.mt-10
         %h2.heading.pb-3 Projects you have liked
-      .row.js-masonry{ :data => { :masonry_options => { :itemSelector => '.col-md-4' }}}
+      .row.js-isotope{ :data => { :isotope_options => { :itemSelector => '.col-md-4' }}}
         -3.times do
           .col-md-4.col-sm-12.col-xs-12.card.pb-3
             .card-wrap
