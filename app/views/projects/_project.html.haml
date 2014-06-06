@@ -23,6 +23,6 @@
                    class: 'likes')
     .card-footer
       .foot-link.location.col-md-6.col-xs-6
-        =link_to(project.city, '#', :icon => 'map-marker')
+        =link_to(project.city, near_project_path(project), :icon => 'map-marker')
       .foot-link.helpers.col-md-6.col-xs-6.right
         =link_to(pluralize(project.helpers.length, 'helper'), project, :icon => 'users')
