@@ -54,8 +54,7 @@ end
 group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
-  gem 'launchy'
-  gem 'selenium-webdriver'
+  gem 'poltergeist'
   gem 'shoulda-matchers'
   gem 'webmock'
 end

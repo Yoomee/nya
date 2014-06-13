@@ -30,8 +30,9 @@ rake db:setup
 
 ## Tests
 
-Tests using selenium require a driver. We use firefox which is available to download
-from http://www.mozilla.org/
+Tests using poltergeist require phantomjs.
+
+Install with: ```brew install phantomjs```
 
 Run cucumber tests with spring using:
 
