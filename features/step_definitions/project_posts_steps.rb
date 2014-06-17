@@ -48,7 +48,7 @@ Then(/^I should be able to comment on a post$/) do
     click_link 'Write the first comment'
     fill_in 'comment[text]', with: @message
     # form has no submit button - submit by pressing enter
-    find_field('comment[text]').native.send_key("\n")
+    find_field('comment[text]').native.send_key(:Enter)
   end
   wait_for_ajax
 end
