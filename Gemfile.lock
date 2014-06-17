@@ -63,7 +63,7 @@ GIT
 
 GIT
   remote: git@gitlab.yoomee.com:yoomee/ym_test.git
-  revision: 113ad657614e01c55661fe34d7ab7c4070f71c83
+  revision: 887b5b86ea69f2329ef618ac688779f7850628d0
   specs:
     ym_test (0.0.1)
       capybara-webkit

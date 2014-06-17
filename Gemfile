@@ -51,7 +51,6 @@ end
 
 group :test do
   gem 'ym_test', :git => 'git@gitlab.yoomee.com:yoomee/ym_test.git'
-  # gem 'ym_test', :path => '~/Rails/Gems/ym_test'
 end
 
 # heroku gem
