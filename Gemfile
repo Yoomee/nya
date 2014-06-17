@@ -47,16 +47,11 @@ end
 
 group :development, :test do
   gem 'debugger'
-  gem 'rspec-rails', '~> 2.0'
-  gem 'factory_girl_rails'
 end
 
 group :test do
-  gem 'cucumber-rails', require: false
-  gem 'database_cleaner'
-  gem 'poltergeist'
-  gem 'shoulda-matchers'
-  gem 'webmock'
+  gem 'ym_test', :git => 'git@gitlab.yoomee.com:yoomee/ym_test.git'
+  # gem 'ym_test', :path => '~/Rails/Gems/ym_test'
 end
 
 # heroku gem

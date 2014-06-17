@@ -62,6 +62,22 @@ GIT
       ym_core (~> 1.0)
 
 GIT
+  remote: git@gitlab.yoomee.com:yoomee/ym_test.git
+  revision: 113ad657614e01c55661fe34d7ab7c4070f71c83
+  specs:
+    ym_test (0.0.1)
+      capybara-webkit
+      cucumber-rails
+      database_cleaner
+      factory_girl_rails
+      jquery-rails
+      poltergeist
+      rails (~> 4.1.1)
+      rspec-rails (~> 2.0)
+      shoulda-matchers
+      webmock
+
+GIT
   remote: git@gitlab.yoomee.com:yoomee/ym_users.git
   revision: d0d7fbe4470cdf73e093c5376bd66652aec39ab8
   branch: rails-4
@@ -122,12 +138,15 @@ GEM
       will_paginate
     builder (3.2.2)
     cancancan (1.8.1)
-    capybara (2.2.1)
+    capybara (2.3.0)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-webkit (1.1.0)
+      capybara (~> 2.0, >= 2.0.2)
+      json
     cliver (0.3.2)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -151,7 +170,7 @@ GEM
       mime-types (~> 1.16)
       nokogiri (~> 1.5)
       rails (>= 3, < 5)
-    database_cleaner (1.2.0)
+    database_cleaner (1.3.0)
     debugger (1.6.6)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.2.0)
@@ -271,18 +290,21 @@ GEM
       json (~> 1.4)
     remotipart (1.2.1)
     rinku (1.7.3)
-    rspec-core (2.14.8)
-    rspec-expectations (2.14.5)
+    rspec-collection_matchers (1.0.0)
+      rspec-expectations (>= 2.99.0.beta1)
+    rspec-core (2.99.0)
+    rspec-expectations (2.99.0)
       diff-lcs (>= 1.1.3, < 2.0)
-    rspec-mocks (2.14.6)
-    rspec-rails (2.14.2)
+    rspec-mocks (2.99.1)
+    rspec-rails (2.99.0)
       actionpack (>= 3.0)
       activemodel (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
-      rspec-core (~> 2.14.0)
-      rspec-expectations (~> 2.14.0)
-      rspec-mocks (~> 2.14.0)
+      rspec-collection_matchers
+      rspec-core (~> 2.99.0)
+      rspec-expectations (~> 2.99.0)
+      rspec-mocks (~> 2.99.0)
     safe_yaml (1.0.3)
     sass (3.2.19)
     sass-rails (4.0.3)
@@ -342,10 +364,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
-  cucumber-rails
-  database_cleaner
   debugger
-  factory_girl_rails
   friendly_id (~> 5.0.0)
   geocoder (~> 1.2.1)
   jbuilder (~> 2.0)
@@ -354,26 +373,23 @@ DEPENDENCIES
   parsley-rails (~> 2.0.0)
   pg
   pg_search
-  poltergeist
   rails (= 4.1.1)
   rails_12factor
-  rspec-rails (~> 2.0)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   select2-rails (~> 3.5.7)
-  shoulda-matchers
   spring
   spring-commands-cucumber
   spring-commands-rspec
   stamp
   turbolinks
   uglifier (>= 1.3.0)
-  webmock
   will_paginate
   ym_core!
   ym_likes!
   ym_notifications!
   ym_posts!
   ym_tags!
+  ym_test!
   ym_users!
   ym_videos!
