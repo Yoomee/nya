@@ -1,9 +1,9 @@
 -if user_signed_in?
   -link_id ||= ''
-  =link_to('#help-modal', :class => 'btn btn-lg btn-gry col-md-5 col-xs-12', id: link_id, data: {toggle: "modal"}) do
+  =link_to('#help-modal', :class => 'btn btn-secondary btn-lg half-button mb-2', id: link_id, data: {toggle: "modal"}) do
     %span.pull-left Help us
     %i.fa.fa-hand-o-up.pull-right
 -else
-  =link_to(sign_up_path, :class => 'btn btn-lg btn-gry col-md-5 col-xs-12 help-tooltip', data: { toggle: "tooltip", placement: "top", title: "Sign up to use this feature" }) do
+  =link_to(sign_up_path, :class => 'btn btn-secondary btn-lg half-button mb-2 help-tooltip', data: { toggle: "tooltip", placement: "top", title: "Sign up to use this feature" }) do
     %span.pull-left Help us
     %i.fa.fa-hand-o-up.pull-right

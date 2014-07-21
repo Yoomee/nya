@@ -1,49 +1,59 @@
 .container
-.strip.strip-smll.relative
-  .container.hero-discover.hero-holder.relative
-    .col-md-8.col-md-offset-2.relative
-      .usr-action-top
-        =follow_link
-        -if can?(:edit, @forum)
-          =link_to('', '',  :class => 'btn btn-lg btn-gry visible dropdown', :icon => 'cog', 'data-toggle' => 'dropdown')
-          %ul.dropdown-menu.settings
-            %li=link_if_can('Edit', [:edit, @forum], :icon => 'pencil')
-            %li=link_if_can('Delete', [:destroy, @forum], method: :delete, confirm: 'Are you sure?', icon: 'trash-o')
-      %h1.pt-4.center=@forum.name
-      %p.col-md-8.col-md-offset-2.center=raw(@forum.description)
--if @forum.followers.recent.present?
-  .split.section
-    .container
-      .col-md-8.col-md-offset-2.p-0
-        %h3.col-md-12.pb-3.m-0
-          Say hello to new members of the
-          =@forum.name.downcase
-          community
-        .col-md-12.col-sm-12.col-xs-12
-          =render 'users/new_members', users: @forum.followers.recent
-.section
+.section-pattern.pv-6
   .container
-    .col-md-8.col-md-offset-2
-      .row.pb-3
-        .col-md-12
-          %h3
-            Write something about
-            =@forum.name
-        .col-md-12.main-input
-          =render 'posts/remote_form', post: @forum.posts.build
-      .row
-        .col-md-12
-          %h3 Activity feed
-      .row
-        .col-md-12.col-sm-12.col-xs-12.photo.card.pb-3
-          =render 'posts/posts', posts: @posts
+    .row
+      .col-md-8.col-lg-6.col-md-offset-2.col-lg-offset-3.center
+        .usr-action-top
+          =follow_link
+          -if can?(:edit, @forum)
+            =link_to('', '',  :class => 'btn btn-lg btn-gry visible dropdown', :icon => 'cog', 'data-toggle' => 'dropdown')
+            %ul.dropdown-menu.settings
+              %li=link_if_can('Edit', [:edit, @forum], :icon => 'pencil')
+              %li=link_if_can('Delete', [:destroy, @forum], method: :delete, confirm: 'Are you sure?', icon: 'trash-o')
+          =link_to('Follow', '#',  :class => 'btn btn-lg btn-primary btn-follow mr-3')
+        %h1=@forum.name
+        %p.pb-3=raw(@forum.description)
 
--if @forum.project_category.try(:projects).present?
-  .section
+-if @forum.followers.recent.present?
+  .section-dark.pv-4
     .container
-      .col-md-8.col-md-offset-2.p-0
-        .col-md-12
-          %h3
-            Latest projects in
-            =@forum
-        =render @forum.project_category.projects.recent(2)
+      .row
+        .col-md-8.col-md-offset-2
+          %h3.pb-3.m0
+            Say hello to new members of the
+            =@forum.name.downcase
+            community
+          -3.times do
+            =render 'users/new_members', users: @forum.followers.recent
+
+
+.section-white
+  .container
+    .row
+      .col-md-8.col-md-offset-2.pv-4
+        .row
+          .col-md-12
+            %h3.mt-0
+              Write something about
+              =@forum.name
+        .row
+          .col-md-12.main-input
+            =render 'posts/remote_form', post: @forum.posts.build
+
+.section-light.pv-4
+  .container
+    .row
+      .col-md-8.col-md-offset-2
+        %h3 Activity feed
+    .row
+      .col-md-8.col-md-offset-2.pb-3
+        =render 'posts/posts', posts: @posts
+    
+    -if @forum.project_category.try(:projects).present?
+      .row
+        .col-md-6.col-sm-12.col-xs-12.mb-3
+          =render @forum.project_category.projects.recent(2)
+  
+
+  
+

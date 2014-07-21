@@ -1,118 +1,43 @@
 .container
-.strip.strip-hero.relative
-  .container.hero-discover.hero-holder.relative
-    %h1.center Community
-    %p.col-md-8.col-lg-6.col-md-offset-2.col-lg-offset-3.center.pb-3
-      The forums area gives young people the opportunity to talk about their projects with other people with similar interests. Join in the community and get your idea started!
-    %p.col-md-8.col-lg-6.col-md-offset-2.col-lg-offset-3.center.pb-3
-      To get started click on a skill or something that interests you below:
-    %ul.lrg-tags.col-md-8.col-lg-6.col-md-offset-2.col-lg-offset-3.center
-      %li.active=link_to('All', forums_path)
-      -Forum.all.each do |forum|
-        %li=link_to_self forum
-.split.section
+.section-pattern.pv-6
   .container
-    .col-md-8.col-md-offset-2.p-0
-      %h3.col-md-12.pb-3.m-0 Say hello to new members of the community
-      .col-md-12.col-sm-12.col-xs-12
+    .row
+      .col-md-8.col-lg-6.col-md-offset-2.col-lg-offset-3.center
+        %h1 Community
+        %p The forums area gives young people the opportunity to talk about their journeys with other people with similar interests. Join in the community and get your idea started!
+        %p.pb-3 To get started click on a skill or something that interests you below:
+        %ul.lg-tags.list-unstyled
+          %li.active=link_to('All', forums_path)
+          -Forum.all.each do |forum|
+            %li=link_to_self forum
+
+.section-dark.pv-4
+  .container
+    .row
+      .col-md-8.col-md-offset-2
+        %h3.pb-3.m0 Say hello to new members of the community
         =render 'users/new_members', users: User.recent
 
-.section.pt-0
+.section-white.pv-4
   .container
-    .col-md-8.col-md-offset-2
-      .row
-        .col-md-12
-          %h3 Activity feed
-      .row
-        .col-md-12.col-sm-12.col-xs-12.photo.card.pb-3
-          .card-wrap
-            .card-top
-              %time{datetime: "2009-03-29"}
-              29
-              %sup th
-              March 2014
-            .image-wrapper
-              =image_tag('http://www.lorempixum.com/g/600/400/fashion')
-            .card-comments.card-info.col-md-6.col-xs-9
-              =link_to('2 users commented','#', :class => 'comments', :icon => 'comments')
-            .card-likes.col-md-6.col-xs-3.right.pt-2
-              =link_to('3', '#', :class => 'likes', :icon => 'heart')
-            .comment-input
-              %form.form-inline{role: "form"}
-              .form-group.col-md-12
-                %label.sr-only{for: "comment"} Write your comment
-                %input.form-control{placeholder: "Write your comment", type: "text"}
-              %ul.user-comment
-                -3.times do
-                  %li.col-md-12.relative
-                    .col-md-1.col-sm-2.avatar
-                      .avatar-wrap
-                        =image_tag("profile-thumb.png")
-                    %h3.profile-name.mb-0
-                      =link_to('User', 'profile')
-                    =link_to('<span>Trash</span>'.html_safe,'#', :class => 'usr-link', :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
-                    .time
-                      replied
-                      %time{datetime: "2009-03-29"}
-                      30
-                      %sup th
-                      March 2014
-                    %p That photo is really cool
-      .row
-        -2.times do
-          .col-md-12.col-sm-12.col-xs-12.text.card.pb-3
-            .card-wrap
-              .card-top
-                %time{datetime: "2009-03-29"}
-                29
-                %sup th
-                March 2014
-                =link_to('<span>Trash</span>'.html_safe,'#', :class => 'usr-link', :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
-              .text-comment.col-md-12.p-2
-                %p
-                  My dance project went really well, didn’t get the funding but thanks to all those that helped. I’m thinking of starting another project along the same lines, but getting involved with younger people this time. What do you think?
-              .card-comments.card-info.col-md-10.col-xs-9
-                =link_to('Write the first comment', '#', :class => 'comments', :icon => 'comments')
-              .card-likes.col-md-2.col-xs-3.right.pt-2
-                =link_to('3', '#', :class => 'likes', :icon => 'heart')
-              .comment-input
-                %form.form-inline{role: "form"}
-                .form-group.col-md-12
-                  %label.sr-only{for: "comment"} Write your comment
-                  %input.form-control{placeholder: "Write your comment", type: "text"}
-
-.section
-  .container
-    .col-md-8.col-md-offset-2.p-0
-      .col-md-12
-        %h3 Projects featured by NYA
-      =render Project.community_homepage
-
-.section
-  .container
-    .col-md-8.col-md-offset-2
-      .row
-        -2.times do
-          .col-md-12.col-sm-12.col-xs-12.text.card.pb-3
-            .card-wrap
-              .card-top
-                %time{datetime: "2009-03-29"}
-                29
-                %sup th
-                March 2014
-                =link_to('<span>Trash</span>'.html_safe,'#', :class => 'usr-link', :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
-              .text-comment.col-md-12.p-2
-                %p
-                  My dance project went really well, didn’t get the funding but thanks to all those that helped. I’m thinking of starting another project along the same lines, but getting involved with younger people this time. What do you think?
-              .card-comments.card-info.col-md-10.col-xs-9
-                =link_to('Write the first comment', '#', :class => 'comments', :icon => 'comments')
-              .card-likes.col-md-2.col-xs-3.right.pt-2
-                =link_to('3', '#', :class => 'likes', :icon => 'heart')
-              .comment-input
-                %form.form-inline{role: "form"}
-                .form-group.col-md-12
-                  %label.sr-only{for: "comment"} Write your comment
-                  %input.form-control{placeholder: "Write your comment", type: "text"}
-
-
+    .row
+      .col-md-8.col-md-offset-2
+        %h3 Activity feed
+    .row
+      .col-md-8.col-md-offset-2.pb-3
+        =render 'hardcode/img_post.html'
+    .row
+      -2.times do
+        .col-md-8.col-md-offset-2.pb-3
+          =render 'hardcode/post.html'
+    .row
+      .col-md-8.col-md-offset-2
+        .row
+          -2.times do
+            .col-md-6.col-sm-12.col-xs-12.mb-3
+              =render Project.community_homepage
+    .row
+      -2.times do
+        .col-md-8.col-md-offset-2.pb-3
+          =render 'hardcode/post.html'
 

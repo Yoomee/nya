@@ -1,95 +1,16 @@
-.project-card {
-  float:left;
-}
+/* =======================================================================
 
-.project-image{
-  padding:30px 0;
-  img{
-    width: 100%;
-  }
-}
-#project .tags li{
-  float:left;
-}
-.author.meta{
-  float: left;
-  margin-right: 30px;
-}
-.time.meta{
-  display: block;
-  clear: both;
-  color:#ccc;
-}
-.promotion-lrg{
-  background: $g-1;
-  border-radius: 5px;
-  margin: 0 0 30px 0;
-  height: 90px;
-  border:1px solig $g-3;
-  h3 {
-    float: left;
-    line-height: 0.2em;
-  }
-}
-.usr-action-top{
-  position: absolute;
-  top: 0px;
-  right:0px;
-  .btn-gry{
-    @include media-query (xs-max){
-      display: none;
-    }
-  }
-  .btn-gry.visible{
-    @include media-query (xs-max){
-      display: block;
-    }
-  }
-}
-.footer
-  h4{
-    float: left;
-  }
-.soc-link{
-  float: right;
-  a{
-    color:#fff;
-    margin: 0 5px;
-    span{
-      display: none;
-    }
-  }
-}
-#project #home .share-btn{
-  height: 48px;
-  p{
-    float: left;
-    color: #fff;
-  }
-}
-#project #home .project-tags  {
-  .tags{
-    margin-top:-7px;
-    display: inline-block;
-    a{
-    margin-right: 5px;
-    }
-  }
-  a{
-  float: left;
-  margin-right: 20px;
-  }
-}
-#project #home ul{
-  list-style: disc;
-}
-#project #home a.liked,
-.project-head a.liked{
-  background:#d5571d;
-  color:#fff;
-}
+                                  Projects
 
-/* Dropdown */
+   ======================================================================= */
+
+
+
+
+
+/* =======================================================================
+  Header section
+======================================================================= */
 
 .project-head .dropdown-menu.settings a{
   font-size: 1.3em;
@@ -116,9 +37,51 @@
     width: 0;
   }
 }
+.promo-container {
+  border-radius: 4px;
+  border: 1px solid #E5E5E5;
+  padding: 40px 0px;
+  text-align: center;
+  p {
+    margin: 0;
+    color: #CACACA;
+  }
+}
+
+
+
+
 
 /* =======================================================================
-Comments
+  Home tab
+======================================================================= */
+
+.soc-link{
+  float: right;
+  a{
+    font-size: 22px;
+    margin: -5px 5px 0;
+    display: inline-block;
+    color: #CACACA;
+    span{
+      display: none;
+    }
+  }
+}
+.project-details {
+  p, ul:not(.tags) {
+    margin-bottom: 30px;
+    color: lighten(#5C5C5C, 10%);
+    line-height: 24px;
+  }
+}
+
+
+
+
+
+/* =======================================================================
+  Comments tab
 ======================================================================= */
 
 .helper-comment {
@@ -157,6 +120,9 @@ Comments
     margin-right: 5px;
   }
 }
+.tall-input {
+  min-height: 100px;
+}
 .tri-top:after {
   border-bottom: 10px solid rgba(0, 0, 0, 0);
   border-right: 10px solid $g-1;
@@ -169,8 +135,12 @@ Comments
   width: 0;
 }
 
+
+
+
+
 /* =======================================================================
-Timeline
+  Timeline tab
 ======================================================================= */
 
 .circle {

@@ -1,28 +1,28 @@
-.col-md-4.mb-3.project-card{ class: project.tag_list.join(' ') }
-  .card-wrap
-    .image-wrapper
+.col-md-4.col-sm-12.mb-3
+  .card.project-card{ class: project.tag_list.join(' ') }
+    .card-img
       =link_to project do
         %span.feat-star
         -if project.image
           =image_for(project, '360x')
         -else
-          =image_tag('http://lorempixel.com/360/180/')
-    .card-info.col-md-12
-      %h3.project-title
-        =link_to(project.title, project)
-      %span.author
+          =image_tag("http://lorempixel.com/360/180/?#{rand(10000)}")
+    .card-info
+      %h3.project-title=link_to(project.title, project)
+      .sub-text.pb-1
         by
         =link_to(project.user.full_name, user_path(project.user))
-      .card-tags.col-md-10.p-0
-        %ul.tags
-          =render :partial => 'tags/tag', :collection => project.tags
-      .card-likes.col-md-2.right.p-0
-        =like_link(project,
-                   like_text: project.likings.size,
-                   unlike_text: project.likings.size,
-                   class: 'likes')
+      %p This is an excerpt of the journey maximum of 150 chars
+      .mt-2
+        .col-xs-10.p0
+          %ul.tags.m0
+            =render :partial => 'tags/tag', :collection => project.tags
+        .col-xs-2.p0.right
+          =like_link(project,
+                     like_text: project.likings.size,
+                     unlike_text: project.likings.size,
+                     class: 'likes')
+      .clearfix
     .card-footer
-      .foot-link.location.col-md-6.col-xs-6
-        =link_to(project.city, near_project_path(project), :icon => 'map-marker')
-      .foot-link.helpers.col-md-6.col-xs-6.right
-        =link_to(pluralize(project.helpers.length, 'helper'), project, :icon => 'users')
+      =link_to(project.city, near_project_path(project), :icon => 'map-marker', :class => 'col-xs-6')
+      =link_to(pluralize(project.helpers.length, 'helper'), project, :icon => 'users', :class => 'col-xs-6')

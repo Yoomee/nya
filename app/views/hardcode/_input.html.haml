@@ -1,0 +1,33 @@
+%ul.nav.nav-tabs
+  %li.active=link_to('', '#write', :icon => 'pencil', 'data-toggle' => 'tab')
+  %li=link_to('','#image', :icon => 'camera', 'data-toggle' => 'tab')
+  %li=link_to('', '#promote', :icon => 'share', 'data-toggle' => 'tab')
+  %li=link_to('', '#link', :icon => 'link', 'data-toggle' => 'tab')
+  %li=link_to('', '#event', :icon => 'calendar', 'data-toggle' => 'tab')          
+.tab-content
+  #write.tab-pane.fade.in.active
+    %form.form-inline{role: "form"}
+      .form-group
+        %label.sr-only{for: "comment"} What do you want to talk about?
+        %input.form-control{placeholder: "What do you want to talk about?", type: "text"}
+
+  #image.tab-pane.fade.in
+    %form.form-inline{role: "form"}
+      .form-group
+        %label.sr-only{for: "comment"} Drag and drop an image
+        %input.form-control{placeholder: "Drag and drop an image into this area", type: "text"}
+  #promote.tab-pane.fade.in
+    %form.form-inline{role: "form"}
+      .form-group
+        %label.sr-only{for: "comment"} Start typing the name of the journey you want to promote
+        %input.form-control{placeholder: "Start typing the name of the journey you want to promote", type: "text"}
+  #link.tab-pane.fade.in
+    %form.form-inline{role: "form"}
+      .form-group
+        %label.sr-only{for: "comment"} Paste a link into this area
+        %input.form-control{placeholder: "Paste a link into this area", type: "text"}
+  #event.tab-pane.fade.in
+    %form.form-inline{role: "form"}
+      .form-group
+        %label.sr-only{for: "comment"} What happened? What is going to happen?
+        %input.form-control.event{placeholder: "What happened? What is going to happen?", :id => 'datepicker', type: "text"}

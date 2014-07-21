@@ -9,4 +9,4 @@
       =form.input :remember_me, as: :boolean
       =hidden_field_tag :return_to, params[:return_to] if params[:return_to]
     =form.actions do
-      =form.action :submit, label: 'Sign up', button_html: { class: 'form-input-btn btn-block', data: { loading_text: 'Signing up...' }}
+      =form.action :submit, label: 'Sign up', button_html: { class: 'form-input-btn btn-block btn-primary', data: { loading_text: 'Signing up...' }}

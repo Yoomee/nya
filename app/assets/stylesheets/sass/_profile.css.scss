@@ -1,117 +1,32 @@
 /* =======================================================================
-Profile header
+
+                                  Profile
+
+   ======================================================================= */
+
+
+
+
+
+/* =======================================================================
+  Profile header
 ======================================================================= */
 
-#personal-header{
-  background: $g-1;
-  position: relative;
-  min-height: 400px;
-  .personal-inner{
-    @include media-query (sm-max){
-      margin-left:15px;
-    }
-
+.user-avatar-lg {
+  img {
+    width: 100%;
+    max-height: 250px;
   }
-  .personal-name{
-    font-size: 2.7em;
-    color:$g-4;
-    margin:0 0 10px 0;
-    font-weight: bold;
-  }
-}
-.avatar {
-    border-radius: 5px;
-    display: inline-block;
-    margin: 0 20px 0 0;
-    padding: 0;
-    max-width: 220px;
-    overflow: hidden;
-    @include media-query (sm-max){
-      display:none;
-    }
-    @include media-query (md-max){
-      margin: 0;
-    }
-    .add-image,
-    .edit-image,
-    .remove-image {
-      color: $g-2;
-      background: $g-4;
-      font-size: 1.5em;
-      height: 44px;
-      line-height: 40px;
-      position: absolute;
-      right: 0;
-      text-align: center;
-      top: 0;
-      width: 45px;
-    }
-    .add-image,
-    .remove-image {
-      border-radius: 0 0 0 5px;
-    }
-    .remove-image {
-      right: 45px;
-    }
-    img{
-      width:100%;
-    }
-}
-.location{
-  float: left;
-  margin-right:20px;
-}
-.meta{
-  font-size: 1.2em;
 }
 .profile-info .fa-circle{
   float: left;
   margin: 4px 25px;
-}
-.social{
-  a{
-    background: $g-2;
-    border-radius: 5px;
-    display: inline-block;
-    font-size: 2em;
-    height: 44px;
-    line-height: 48px;
-    margin: 10px 5px 10px 0;
-    text-align: center;
-    width: 44px;
-  }
 }
 .rewards {
   background: #CCCCCC;
   color: #555555;
   padding: 11px;
   text-align: center;
-}
-#personal-header .tags,
-#forums-following .tags,
-#project #home .tags{
-  list-style: none;
-  padding: 0;
-  li{
-    display: inline-block;
-  }
-  a{
-    background: $g-4;
-    color: #fff;
-    border-radius: 5px;
-    clear: both;
-    display: inline-block;
-    padding: 4px 8px;
-    margin:3px 0;
-  }
-  a.checked{
-    background: $g-4;
-    color:#fff;
-  }
-}
-.tags.interests{
-  display: inline-block;
-  margin: 10px 0 0 0;
 }
 .fa-circle {
   font-size: 0.5em;
@@ -121,10 +36,11 @@ Profile header
 
 
 
-/* =======================================================================
-Rotating modules
-======================================================================= */
 
+
+/* =======================================================================
+  Rotating modules
+======================================================================= */
 
 .top-cta{
   background:$g-5;
@@ -175,10 +91,12 @@ Rotating modules
 }
 
 
-/* =======================================================================
-rewards tab
-======================================================================= */
 
+
+
+/* =======================================================================
+  Rewards tab
+======================================================================= */
 
 #badges ul{
   list-style-type: none;
@@ -187,7 +105,6 @@ rewards tab
     text-align:center;
   }
 }
-
 #rewards{
   .block{
     background: $g-0;
@@ -209,8 +126,10 @@ rewards tab
 
 
 
+
+
 /* =======================================================================
-Profile edit
+  Profile edit
 ======================================================================= */
 
 .profile-info.edit{
@@ -218,10 +137,7 @@ Profile edit
     margin:0 0 10px 0;
   }
 }
-.formtastic .form-group{
-  .input-group-addon {
-    padding: 0;
-  }
+.i-input{
   input{
     padding:10px;
     width: 80%;
@@ -241,7 +157,7 @@ Profile edit
     width: 50px;
   }
 }
-.formtastic .form-group.half{
+.i-input.half{
   input{
     width: 70%;
     @include media-query (sm-max){
@@ -249,15 +165,9 @@ Profile edit
     }
   }
 }
-.formtastic .form-group.pull{
+.i-input.pull{
   margin-left:-60px;
   @include media-query (sm-max){
     margin: 10px 0;
   }
-}
-#user_interests_input .checkbox {
-  @extend .checkbox-inline;
-}
-#user_interests_input .checkbox + .checkbox {
-  margin-top: 10px
 }

@@ -1,33 +1,34 @@
 .container
-.strip.strip-hero.relative
-  .container.hero-discover.hero-holder.relative
-    %h1.pt-3.center Discover projects
-    %p.col-md-8.col-lg-6.col-md-offset-2.col-lg-offset-3.center.pb-3
-      Even if you havent got any ideas of your own, pick a subject that interests you and help out other like-minded people on ther projects. You never know where it could lead.
-    %ul.lrg-tags.col-md-8.col-lg-6.col-md-offset-2.col-lg-offset-3.center
-      =render @project_categories
-.section
+.section-pattern.pv-6
+  .container
+    .row
+      .col-md-8.col-lg-6.col-md-offset-2.col-lg-offset-3.center
+        %h1 Discover
+        %p.pb-3 Even if you havent got any ideas of your own, pick a subject that interests you and help out other like-minded people on ther journeys. You never know where it could lead.
+        %ul.lg-tags.list-unstyled
+          =render @project_categories
+      
+.section-white.border-top.pv-4
   .container
     .row.js-isotope{ id: "projects-container", data: { isotope_options: { itemSelector: '.project-card' }}}
       =render @projects
+    .row
+      .col-xs-12
+        =render 'paging_controls', path: discover_path(:page => 2)
 
-=render 'paging_controls', path: discover_path(:page => 2)
-
-#action-quote.pt-10.section
+#action-quote.section-white
   .container
-    .row.relative
-      .col-md-5
-        =image_tag('testimonial-figure.png', :class => 'pull-left testimonial-figure')
-      %blockquote.col-md-7.pull-right
-        =image_tag('quote-l.png', :class => 'pull-left')
-        %p
-          Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla vitae elit libero, a pharetra augue.
-        =image_tag('quote-r.png', :class => 'pull-right')
-      =link_to('Start your own', new_project_path,  :class => 'btn btn-lg btn-gry pull-right col-md-3')
+    .row
+      .col-sm-4.col-sm-offset-1
 
+      .col-sm-6.mt-3.pl-5
+        %blockquote
+          .quote-mark "
+          %p Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nulla vitae elit libero, a pharetra augue.
+        =link_to('Start your own', new_project_path, :class => 'btn btn-primary pull-right')
 
-#discover-action.p-tb.section
+#discover-action.section-dark.pv-6
   .container
     .row
       .col-md-12.center
-        =link_to('Start your project', new_project_path,  :class => 'btn btn-lg btn-gry')
+        =link_to('Start your project', new_project_path, :class => 'btn btn-primary')

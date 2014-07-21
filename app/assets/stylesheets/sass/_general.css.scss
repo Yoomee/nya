@@ -7,62 +7,47 @@
 
 
 
+
 /* =======================================================================
-NYA
-Site wide styles
+  Site wide styles
 ======================================================================= */
 
 html, body, p {
   height: 100%;
-  font-family: 'Helvetica', Helvetica, Verdana, sans-serif;
+  font-family: 'Varela Round', Verdana, sans-serif;
   font-size: 16px;
   font-style: normal;
-  color: $g-4;
-  background: $g-0;
+  color: #4f5357;
+  -webkit-font-smoothing: antialiased;
 }
-p{
-  background: transparent;
-}
-h2.heading{
+h2.heading {
   font-size: 24px;
   padding:0 15px;
 }
-h3{
+h3 {
   font-size: 20px;
 }
-a{
-  color:$g-4;
+a {
+  color: $brand-primary;
   outline: none !important;
   &:hover{
     text-decoration:none;
   }
 }
-.strip-header {
-  background: $g-2;
-}
-.strip-smll{
-  min-height: 340px;
-  background: $g-2;
-}
-.strip{
-  h1 {
-    font-size: 3em;
-    font-weight: bold;
-  }
-  p{
-    font-size: 1.2em;
-  }
+img {
+  max-width: 100%;
 }
 .arrow-up {
 	width: 0; 
 	height: 0; 
 	border-left: 20px solid transparent;
 	border-right: 20px solid transparent;	
-	border-bottom: 10px solid $g-0;
+	border-bottom: 10px solid #EDF7FD;
 	position: absolute;
 	left: 50%;
 	margin-left: -20px;
 	bottom: 0;
+	z-index: 1;
 }
 .negative-top {
   margin-top: -35px;
@@ -73,101 +58,167 @@ hr {
   border: 0;
   border-top: 1px solid #BEBEBE;
 }
-.section{
+.section-dark,
+.section-light,
+.section-white {
   position: relative;
   z-index: 15;
-  background: $g-0;
-  float: left;
-  display: block;
-  width: 100%;
-  padding:40px 0;
+  background: #C8E7F9;
 }
-.split{
-  background: $g-1;
+.section-light {
+  background: #EFF6FC;
+  border-top: 1px solid #C8E7F9;
 }
-.container .large-txt{
-  font-size: 1.1em;
+.section-white {
+  background: white;
 }
-.p-tb{ padding:80px 0;}
-.p-tb-2{ padding:20px 0;}
-
-
-/* =======================================================================
-Button styles
-======================================================================= */
-
-.btn-gry{
-  background:$g-4;
-  color:#fff;
-  -webkit-transition: transform 0.1s ease 0s;
-  -moz-transition: transform 0.1s ease 0s;
-  transition: transform 0.1s ease 0s;
+.section-pattern {
+  background: url('/assets/triangle-tile.jpg') repeat;
+}
+.strip-fixed {
+  padding: 60px 0px;
   position: relative;
-  &:hover{
-    color:#fff;
-    transform:translateY(-4px);
-    background: #727272;
+  height: 420px;
+  .container {
+    position: fixed;
+    width: 100%;
+    @include media-query (sm-max){
+      position: static;
+    }
   }
 }
-.btn-l-gry{
-  background:$g-6;
-  color:#fff;
-  &:hover{
-    color:#fff;
-    background: #727272;
+.strip-small,
+.strip-search {
+  height: 200px;
+}
+.strip-home {
+  height: 280px;
+}
+.new-member {
+  img {
+    width: 100%;
+    margin-bottom: 10px;
   }
 }
-.btn.visible:hover i.fa-cog{
-  -webkit-transition-duration: 0.8s;
-  -moz-transition-duration: 0.8s;
-  transition-duration: 0.8s;
-  -webkit-transition-property: -webkit-transform;
-  -moz-transition-property: -moz-transform;
-  transition-property: transform;
-  -webkit-transform:rotate(360deg);
-  -moz-transform:rotate(180deg);
-}  
-.share-btn{
-  text-align: left;
+.sub-text {
+  font-size: 14px;
+  color: #bababa;
+  a {
+    color: #bababa;
+  }
 }
-.btn-clear{
+.top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  .btn {
+    margin-left: 10px;
+    @include media-query (sm-max){
+      margin-left: 0px;
+    }
+  }
+  .dropdown-menu {
+    right: 0;
+    left: auto;
+    z-index: 998;
+    min-width: 100px;
+    padding: 0px;
+    margin: 10px 0 0;
+    list-style: none;
+    font-size: 14px;
+    text-align: left;
+    background-color: white;
+    border: 1px solid #cccccc;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    background-clip: padding-box;
+    font-family: "jaf-domus-titling-web";
+    li > a {
+      display: block;
+      padding: 10px 10px;
+      clear: both;
+      font-weight: normal;
+      line-height: 1.428571429;
+      color: #24216D;
+      white-space: normal;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      font-weight: 600;
+    }
+    .arrow {
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 5px solid #24216d;
+      position: absolute;
+      right: 16px;
+      top: -5px;
+      z-index: 1;
+    }
+  }
+}
+
+#action-quote {
+  padding: 60px 0px;
+  background: url('/assets/triangle-tile.jpg') repeat;
   @include media-query (sm-max){
-    position: static;
+    padding-bottom: 80px;
+  }
+  blockquote {
+    background: white;
+    border: 1px solid $brand-primary;
+    padding: 30px;
+    border-radius: 10px;
+    position: relative;
+    font-size: 16px;
+    line-height: 28px;
+    .quote-mark {
+      position: absolute;
+      top: 10px;
+      left: -30px;
+      background: transparent;
+      font-size: 160px;
+      font-family: "jaf-domus-titling-web";
+      color: $brand-primary;
+    }
+    &:after, &:before {
+    	top: 100%;
+    	left: 15%;
+    	border: solid transparent;
+    	content: " ";
+    	height: 0;
+    	width: 0;
+    	position: absolute;
+    	pointer-events: none;
+    }
+    &:after {
+    	border-color: rgba(255, 255, 255, 0);
+    	border-top-color: #ffffff;
+    	border-width: 25px;
+    	margin-left: -30px;
+    }
+    &:before {
+    	border-color: rgba(36, 33, 109, 0);
+    	border-top-color: #24216D;
+    	border-width: 26px;
+    	margin-left: -31px;
+    }
   }
 }
-
-.footer {
-  background:  #989898;
-  height: 500px;
-  position: relative;
-  z-index: 20;
-  .section {
-    background:  #989898;
-  }
-  a{
-    padding:6px 0;
-    display: block;
-  }
+.border-top {
+  border-top: 1px solid #C3D7D9;
 }
-/* =======================================================================
-Sidebar widget styles
-======================================================================= */
-.widget-wrap{
-  background: #FFFFFF;
-  display: inline-block;
-  padding: 20px;
-  width: 100%;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.1), 0 -1px 1px rgba(0, 0, 0, 0.1);
-  border-radius: 0px 0px 5px 5px;
-  margin: 10px 0;
-  border-top:5px solid $g-2;
-  h3{
-    margin-top:0;
-  }
-}
-/* =======================================================================
-Admin styles
-======================================================================= */
-.admin .well {
-  min-height: 150px;
+.add-image {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  background: #27A537;
+  text-align: center;
+  padding-top: 10px;
+  color: white;
 }

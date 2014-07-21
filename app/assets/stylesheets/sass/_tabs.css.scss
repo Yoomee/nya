@@ -1,58 +1,80 @@
-#personal-header  .main-tabs{
-  position: absolute;
-  bottom: 0;
-  margin-left:0px;
-  a{
-    padding: 20px 98px 20px 17px;
-    text-align: left;
-    color:$g-4;
-    background: $g-1;
-    @include media-query (xs-max){
-      padding: 12px 15px;
-    }
-    .badge{
-      position: absolute;
-      right:15px;
-      @include media-query (xs-max){
-      display:none;
-      }
-    }
-  }
-  .active a{
-    background: $g-0;
-  }
-}
-.nav-tabs{
-  border:0;
-}
-.main-input{
-  .nav-tabs{
-    background: $g-5;
+/* =======================================================================
+
+                                    Tabs
+
+   ======================================================================= */
+
+
+
+
+
+/* =======================================================================
+  Site wide tabs
+======================================================================= */
+
+.main-input {
+  .nav-tabs {
     a{
-      padding:15px 20px;
+      padding: 15px 20px;
       @include media-query (xs-max){
         font-size: 1em;
       }
     }
+  }
+  .form-group{
+    border: 1px solid $g-5;
+    border-radius: 0px  4px 4px 4px;
+  }
+  input.form-control{
+    width: 100%;
+    height: 60px;
+    border: 0;
+    box-shadow: none;
     @include media-query (xs-max){
-      span{
-        display: none;
+      font-size: 0.9em;
+    }
+  }
+}
+.nav-tabs {
+  border-bottom: none;
+  li {
+    margin-bottom: 0px;
+    z-index: 20;
+    a {
+      background: #F0F0F0;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-bottom: none;
+      padding: 16px 40px;
+      &:hover {
+        background: white;
+      }
+    }
+    &.active {
+      margin-bottom: -1px;
+      a {
+        background: white;
+        border: 1px solid rgba(0,0,0,0.1);
+        border-bottom: 1px solid white !important;
+        &:hover {
+          background: white;
+          border: 1px solid rgba(0,0,0,0.1);
+          border-bottom: 1px solid white !important; 
+        }
       }
     }
   }
-  .form-group{
-    border:1px solid $g-5;
-    border-top:0;
-  }
-  input.form-control,
-  input[type='file']{
-    width:100%;
-    height:60px;
-    font-size: 1.3em;
-    border:0;
-    box-shadow: 0 0 0;
-    @include media-query (xs-max){
-      font-size: 0.9em;
+}
+.form-tabs {
+  li {
+    display: block;
+    float: left;
+    width: 50%;
+    text-align: center;
+    a {
+      display: block;
+      padding: 20px 5px;
+      border: 1px solid #C3D7D9;
+      border-bottom: none;
     }
   }
 }

@@ -1,27 +1,30 @@
 .container
-.strip.strip-smll.relative
-  .container.hero-holder.relative
-    %h1.pt-3.center
-      Discover
-      =@project_category.name
-    -if admin_logged_in?
-      %p.col-md-8.col-md-offset-2.center.pb-3
-        =link_to 'edit', edit_project_category_path(@project_category)
-    %p.col-md-8.col-md-offset-2.center.pb-3
-      Discover, and help out on projects tagged with
-      =@project_category.name
-      , or
-      =link_to('start your own.', new_project_path)
+.section-pattern.pv-6
+  .container
+    .row
+      .col-md-8.col-lg-6.col-md-offset-2.col-lg-offset-3.center
+        %h1
+          Discover
+          =@project_category.name
+        -if admin_logged_in?
+          %p.col-md-8.col-md-offset-2.center.pb-3
+            =link_to 'edit', edit_project_category_path(@project_category)     
+        %p
+          Discover, and help out on projects tagged with
+          =@project_category.name
+          , or
+          =link_to('start your own.', new_project_path)
 
-.section
+.section-white.border-top.pv-4
   .container
     .row.js-isotope{ id: "projects-container", data: { isotope_options: { itemSelector: '.project-card' }}}
       =render @projects
+    .row
+      .col-xs-12
+        =render 'paging_controls', path: discover_project_category_path(@project_category, :page => 2)
 
-=render 'paging_controls', path: discover_project_category_path(@project_category, :page => 2)
-
-#discover-action.p-tb.section
+#discover-action.section-dark.pv-6
   .container
     .row
       .col-md-12.center
-        =link_to('Start your project', new_project_path,  :class => 'btn btn-lg btn-gry')
+        =link_to('Start your project', new_project_path, :class => 'btn btn-primary')

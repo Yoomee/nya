@@ -1,47 +1,31 @@
 .container
-%nav.navbar.navbar-default{role: "navigation"}
+%nav.navbar{role: "navigation"}
   .container
-
     .navbar-header
-      %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", type: "button"}
+      %button.navbar-toggle{"data-target" => "#site-nav-collapse", "data-toggle" => "collapse", type: "button"}
         %span.sr-only Toggle navigation
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      =link_to('NYA', root_path, :class => 'navbar-brand')
-
-    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        %i.fa.fa-bars
+      =link_to('SAJ', '/', :class => 'navbar-brand')
+    #site-nav-collapse.collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-right
         %li=link_to('Home', root_path, :class => 'nav-text-link')
         %li=link_to('Discover', discover_path, :class => 'nav-text-link')
         %li=link_to('Community', forums_path, :class => 'nav-text-link')
-        %li
-          =form_tag search_projects_path, id: 'search-form', method: :get do
-            =text_field_tag :q, params[:q], class: 'global-search', placeholder: 'Project search...'
-            %button.btn#submit-search
-              %i.fa.fa-search
-            =#submit_tag("<i class='fa fa-search'></i>".html_safe, class: 'btn', id: 'submit-search')
+        %li=link_to('Search', 'search', :class => 'nav-text-link')    
         -if current_user
-          %li.sm-float=link_to(image_for(current_user, '40x40#'), current_user, :class => 'nav-avatar')
           %li.dropdown
-            =link_to('', '#', 'data-toggle' => 'dropdown', :class => 'dropdown-toggle', :icon => 'chevron-down')
-            %ul.dropdown-menu.settings.col-xs-8
+            =link_to('#', 'data-toggle' => 'dropdown', :class => 'nav-avatar nav-dropdown-toggle') do
+              =image_for(current_user)
+              .navbar-down-arrow
+                %i.fa.fa-caret-down        
+            %ul.dropdown-menu.settings
               -if current_user.admin?
                 %li=link_to('Admin', admin_path)
               %li=link_to('View profile', current_user)
               %li=link_to('Account settings', edit_user_path(current_user))
               %li=link_to('Change password', change_password_path)
-              %li.divider
               %li=link_to('Sign out', sign_out_path, :method => :delete)
         -else
           %li=link_to('Sign in', sign_in_path, :class => 'nav-text-link')
           %li=link_to('Sign up', sign_up_path, :class => 'nav-text-link')
-
 .navbar-spacer
-
--#searchStrip.collapse
-  .container
-    .row
-      .col-sm-12.text-center
-        =form_tag search_projects_path
-          =text_field_tag :q, params[:q], class: 'global-search', placeholder: 'Type here and press enter to search...'

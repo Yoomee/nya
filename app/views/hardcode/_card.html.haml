@@ -1,0 +1,19 @@
+.card
+  .card-img
+    =link_to(image_tag("http://lorempixel.com/360/207/?#{rand(10000)}"), 'project')
+  .card-info
+    %h3.project-title=link_to('This is the title of a journey it can go on two lines', 'project')
+    .sub-text.pb-1
+      by
+      =link_to('User', 'profile')
+    %p This is an excerpt of the journey maximum of 150 chars
+    .mt-2
+      .col-xs-10.p0
+        %ul.tags.m0
+          %li=link_to('Cake decoration', 'category')
+          %li=link_to('Baking', 'category')
+      .col-xs-2.p0.right=link_to('3', '#', :class => 'likes')
+    .clearfix
+  .card-footer
+    =link_to('Sheffield', 'category', :icon => 'map-marker', :class => 'col-xs-6')
+    =link_to('2 helpers', 'category', :icon => 'users', :class => 'col-xs-6')

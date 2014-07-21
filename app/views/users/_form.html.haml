@@ -1,44 +1,63 @@
 .container
-  %section#profile
-#personal-header.pb-10.pt-10
-  .container
-    .personal-inner.col-md-12.pl-0
-      .col-md-3.col-sm-3.col-xs-3.avatar
-        -unless @user.new_record?
-          .avatar-wrap#user-image
+.section-pattern
+  .container.pv-6
+    .row
+      .col-sm-3
+        .user-avatar-lg
+          -unless @user.new_record?
             =render 'image', user: @user
           .rewards
             %span 8 badges
-      .col-md-9.profile-info.edit
+      .col-sm-9.relative
         =semantic_form_for(@user, user_url_and_method_create_edit(@user)) do |form|
           =form.inputs do
             .row
-              =form.input :first_name, label: false, placeholder: 'First name', prepend: '<i class="fa fa-user"></i>'.html_safe, wrapper_html: { class: 'col-md-6 half' }
-              =form.input :last_name, label: false, placeholder: 'Last name', prepend: '<i class="fa fa-user"></i>'.html_safe, wrapper_html: { class: 'col-md-6 half pull' }
+              .i-input.col-md-6
+                %i.fa.fa-user
+                =form.input :first_name, label: false, placeholder: 'First name'
+              .i-input.col-md-6
+                %i.fa.fa-user
+                =form.input :last_name, label: false, placeholder: 'Last name'
+    
             .row
-              =form.input :email, label: false, placeholder: 'email', prepend: '<i class="fa fa-envelope"></i>'.html_safe, wrapper_html: { class: 'col-md-6 half' }
+              .i-input.col-md-6
+                %i.fa.fa-envelope
+                =form.input :email, label: false, placeholder: 'email'
               -if @user.new_record?
-                =form.input :password, label: false, placeholder: 'password', prepend: '<i class="fa fa-key"></i>'.html_safe, wrapper_html: { class: 'col-md-6 half pull' }
+                .i-input.col-md-6
+                  %i.fa.fa-key
+                  =form.input :password, label: false, placeholder: 'password'
+
             .row
-              =form.input :city, label: false, placeholder: 'Location', prepend: '<i class="fa fa-map-marker"></i>'.html_safe, wrapper_html: { class: 'col-md-6 half' }
-              -if @user.new_record?
-                =form.input :role, :label => 'Admin?', :as => :boolean, :checked_value => 'admin', :unchecked_value => ''
+              .i-input.col-md-6
+                %i.fa.fa-map-marker
+                =form.input :city, label: false, placeholder: 'Location'
+              .i-input.col-md-6
+                -if @user.new_record?
+                  =form.input :role, :label => 'Admin?', :as => :boolean, :checked_value => 'admin', :unchecked_value => ''
+
             .row
-              =form.input :twitter, label: false, placeholder: '@username', prepend: '<i class="fa fa-twitter"></i>'.html_safe, wrapper_html: { class: 'col-md-6 half' }
-              =form.input :facebook, label: false, placeholder: 'facebook url', prepend: '<i class="fa fa-facebook"></i>'.html_safe, wrapper_html: { class: 'col-md-6 half pull' }
-            .row
-              =form.input :website, label: false, placeholder: 'Website url', prepend: '<i class="fa fa-globe"></i>'.html_safe, wrapper_html: { class: 'col-md-6 half' }
-            .row
-              .col-md-8
+              .i-input.col-md-4
+                %i.fa.fa-twitter
+                =form.input :twitter, label: false, placeholder: '@username'
+              .i-input.col-md-4
+                %i.fa.fa-facebook
+                =form.input :facebook, label: false, placeholder: 'facebook url'
+              .i-input.col-md-4
+                %i.fa.fa-globe
+                =form.input :website, label: false, placeholder: 'Website url'
+
+            .row.mb-4
+              .col-xs-12
                 %h3 Interests
                 =form.input :interests, as: :check_boxes, label: false, collection: ProjectCategory.order(:name), class: 'checkbox-inline'
                 %h3 Skills
-                =form.input :tag_list, label: false, input_html: { data: { placeholder: "Enter tags", saved: form.object.tags.map{|t| {id: t.name, name: t.name}}.to_json, url: autocomplete_tags_path }, class: 'autocomplete-tags' }
+                =form.input :tag_list, label: false, input_html: { data: { placeholder: "Enter tags", saved: form.object.tags.map{|t| {id: t.name, name: t.name}}.to_json, url: autocomplete_tags_path }, class: 'autocomplete-tags col-xs-12' }
+            .row
+              .col-xs-12
+                =button_tag(type: :submit, class: 'btn btn-sm col-xs-12 btn-primary btn-confirm') do
+                  Done editing
+                  %i.fa.fa-check
 
-          .usr-action-top.btn-clear
-            =button_tag(type: :submit, class: 'btn btn-lg btn-gry visible col-xs-11 ml-3') do
-              %i.fa.fa-check
-              Done editing
-
-  #image-modal.modal.fade
-    =render 'users/image_modal', user: @user
+#image-modal.modal.fade
+  =render 'users/image_modal', user: @user

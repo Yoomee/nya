@@ -1,20 +1,23 @@
-.big-input,
-.big-input-btn {
+/* =======================================================================
+
+                                Search Page
+
+   ======================================================================= */
+
+
+
+
+
+/* =======================================================================
+  General search styles
+======================================================================= */
+
+.big-input {
   display: inline-block;
   height: 80px;
   border-radius: 4px;
   outline: none;
-  border: none;
-  float: left;
-  width: 76%;
+  border: 1px solid $brand-primary;
+  width: 100%;
   padding: 30px;
-  margin-right: 2%;
-}
-.big-input-btn {
-  width: 22%;
-  background: #d1d1d1;
-  text-align: center;
-  padding: 27px 10px;
-  font-size: 20px;
-  margin-right: 0;
 }

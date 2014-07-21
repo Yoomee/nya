@@ -1,50 +1,54 @@
 .container
-  %section#profile
 =semantic_form_for @project do |f|
   =f.inputs do
-    #personal-header.pb-10.pt-10.mb-3
+    .section-pattern
       .container
-        .personal-inner.col-md-12.pl-0
-          .col-md-9.profile-info.edit
+        .row.pv-10
+          .col-sm-12.relative
             .row
-              =f.input :title, label: false, placeholder: 'Project name', prepend: '<i class="fa fa-book"></i>'.html_safe, wrapper_html: { class: 'i-input col-md-8' }
+              .col-md-8
+                %h3.mt-0 Journey name
+                %p Enter a catchy title for your Journey.
+              .i-input.col-md-8
+                %i.fa.fa-book
+                =f.input :title, label: false, placeholder: 'Project name'
             .row
-              %h3.col-md-8 Project location
-              %p.col-md-8 Enter the city/town where your project is happening.
-              =f.input :city, label: false, placeholder: 'Location', prepend: '<i class="fa fa-map-marker"></i>'.html_safe, wrapper_html: { class: 'i-input col-md-6 half' }
-          .usr-action-top.btn-clear
-            =button_tag(type: :submit, class: 'btn btn-lg btn-gry visible col-xs-11 ml-3') do
-              %i.fa.fa-check
-              Done editing
-    .container#project
-      #home.tab-pane.active.fade.in
-        .col-md-8.col-md-offset-2.pb-10
-          .row
-            .project-image
-              =f.input :image, as: :image
-          .row.project-tags
+              .col-md-8
+                %h3 Journey location
+                %p Enter the city/town where your journey is happening.
+              .i-input.col-md-8
+                %i.fa.fa-map-marker
+                =f.input :city, label: false, placeholder: 'Location'
+            .top-right
+              =button_tag(type: :submit, class: 'btn btn-sm btn-primary btn-confirm') do
+                Done editing
+                %i.fa.fa-check
+
+    .section-white.border-top.pv-4
+      .container
+        .row
+          .col-md-8.col-md-offset-2
+            =f.input :image, as: :image, :class => 'mb-1'
             =f.input :tag_list, label: "Tags",
              input_html: { data: { placeholder: "Enter tags",
               saved: f.object.tags.map{|t| {id: t.name,
               name: t.name}}.to_json,
               url: autocomplete_tags_path },
               class: 'autocomplete-tags' }
-          .row
-            %h3 Project description
-            =f.input :description, label: false, placeholder: "Tell us what your project is about", input_html: { class: "col-md-12 form-textarea", cols: 50, rows: 10 }
-          .row
+            %h3 Journey description
+            =f.input :description, label: false, placeholder: "Tell us what your project is about", input_html: { class: "col-xs-12 form-textarea mb-3", cols: 50, rows: 10 }
             %h3 Things I need help with
-            =f.input :help_needed, label: false, input_html: { class: "col-md-12 form-textarea", cols: 50, rows: 10 }
-            -# -10.times do
-            -#   %input.form-text{:placeholder => 'This is a list item', :class => 'form-text col-md-9 mb-1'}
-          .row
-            %h3 Purpose of the project
-            =f.input :purpose, label: false, input_html: { class: "col-md-12 form-textarea", cols: 50, rows: 8 }
-          .row
-            %h3 Project deadline
-            =f.input :deadline, as: :string, label: false, input_html: { class: "form-text hasdatepicker" }
-          -if current_user.admin?
-            .row
-              %h3 Featured?
-              =f.input :feature_on_homepage
-              =f.input :feature_on_community_homepage
+            =f.input :help_needed, label: false, input_html: { class: "col-xs-12 form-textarea mb-3", cols: 50, rows: 10 }
+            %h3 Purpose of the journey
+            =f.input :purpose, label: false, input_html: { class: "col-xs-12 form-textarea mb-3", cols: 50, rows: 5 }
+            %h3 Journey deadline
+            =f.input :deadline, as: :string, label: false, input_html: { class: "form-text hasdatepicker col-xs-12 mb-4" }
+            -if current_user.admin?
+              .mb-4
+                %h3 Featured?
+                =f.input :feature_on_homepage
+                =f.input :feature_on_community_homepage
+
+            =button_tag(type: :submit, class: 'btn btn-sm col-xs-12 btn-primary btn-confirm') do
+              Done editing
+              %i.fa.fa-check

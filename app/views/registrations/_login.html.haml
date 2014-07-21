@@ -7,4 +7,4 @@
       =hidden_field_tag :return_to, params[:return_to] if params[:return_to]
       =link_to 'Forgotten your password?', reset_password_path, class: 'small pull-right mb-2'
     =form.actions do
-      =form.action :submit, label: 'Sign in', button_html: { class: 'form-input-btn btn-block', data: { loading_text: 'Signing in...' }}
+      =form.action :submit, label: 'Sign in', button_html: { class: 'btn btn-sm btn-primary btn-confirm btn-block', data: { loading_text: 'Signing in...' }}

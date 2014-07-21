@@ -1,170 +1,116 @@
 .container
-  %section#profile
-#personal-header.pb-10.pt-10.mb-3
-  .container
-    .personal-inner.col-md-12.pl-0
-      .col-md-3.col-sm-3.col-xs-3.avatar
-        .avatar-wrap#user-image
+.section-pattern
+  .container.pv-6
+    .row
+      .col-sm-3
+        .user-avatar-lg
           =render 'image', user: @user
-        .rewards
-          %span 8 badges
-      .col-md-9.profile-info
-        .row
-          .col-md-12
-            %h1.personal-name=@user.full_name
+          .rewards
+            %span 8 badges
+      .col-sm-9.relative
+        %h1=@user.full_name   
         -if @user.city?
-          .row
-            .col-md-12
-              .location.meta
-                =link_to(@user.city, 'search', :icon => 'map-marker')
+          %p.sub-text=link_to(@user.city, 'search', :icon => 'map-marker')
+        %p.mb-4
+          =link_to_twitter(@user)
+          =link_to_facebook(@user)
+          =link_to_website(@user)
+        %ul.tags
+          -@user.interests.each do |interest|
+            %li=link_to(interest, 'category')
+        %ul.tags
+          -@user.tags.each do |interest|
+            %li=link_to(interest, 'category')
+        .top-right
+          -if not_current_user(@user)
+            =render 'request_help_btn'
+          -if can?(:edit, @user)
+            =link_to('', '',  :class => 'btn btn-success btn-sm visible dropdown', :icon => 'cog', 'data-toggle' => 'dropdown')
+            %ul.dropdown-menu.settings
+              %li=link_if_can('Edit', [:edit, @user], :icon => 'pencil')
+              %li=link_if_can('Delete', [:destroy, @user], method: :delete, confirm: 'Are you sure?', icon: 'trash-o')
+              -if (Rails.env.development? || current_user.try(:yoomee_staff?)) && current_user != @user
+                %li=link_to 'Super', super_morph_path(:user_id => @user.id), :method => :post, icon: 'empire'
+
+  .container
+    .row
+      .col-xs-12
+        %ul.nav.nav-tabs
+          %li.active
+            =link_to('#home', 'data-toggle' => 'tab') do
+              Home
+          %li
+            =link_to('#journeys', 'data-toggle' => 'tab') do
+              %span.badge.pull-right.ml-1
+                =@user.projects.count
+              Projects
+          %li
+            =link_to('#rewards', 'data-toggle' => 'tab') do
+              Rewards
+
+.section-white.border-top.pv-4
+  .container
+    .tab-content
+      #home.tab-pane.active.fade.in
         .row
+          .col-md-6.pb-3
+            -if @user.city.nil?
+              =render 'location_form'
+          .col-md-6.pb-2
+            .top-cta.promo
+              %h3 ThinkBig can help fund your journey
+              =link_to('Learn more about ThinkBig', '',  :class => 'btn btn-primary')
+        .row.pb-3.pt-3
           .col-md-12
-            .social
-              =link_to_twitter(@user)
-              =link_to_facebook(@user)
-              =link_to_website(@user)
+            %h2.heading.col-md-6 Forums you're following
+            %ul.tags.right.pl-2
+              -@user.followed_forums.each do |forum|
+                %li=link_to_self(forum)
         .row
-          .col-md-12
-            %ul.tags.interests
-              -@user.interests.each do |interest|
-                %li=link_to(interest, 'category')
-            %ul.tags.skills
-              -@user.tags.each do |interest|
-                %li=link_to(interest, 'category')
-      .usr-action-top
-        -if not_current_user(@user)
-          =render 'request_help_btn'
-        -if can?(:edit, @user)
-          =link_to('', '',  :class => 'btn btn-lg btn-gry visible dropdown', :icon => 'cog', 'data-toggle' => 'dropdown')
-          %ul.dropdown-menu.settings
-            %li=link_if_can('Edit', [:edit, @user], :icon => 'pencil')
-            %li=link_if_can('Delete', [:destroy, @user], method: :delete, confirm: 'Are you sure?', icon: 'trash-o')
-            -if (Rails.env.development? || current_user.try(:yoomee_staff?)) && current_user != @user
-              %li=link_to 'Super', super_morph_path(:user_id => @user.id), :method => :post, icon: 'empire'
+          .col-md-12.main-input.pb-3
+            =render 'posts/posts', posts: @posts
+      
+      #journeys.tab-pane.fade.in
+        .row.js-isotope{ :data => { :isotope_options => { :itemSelector => '.col-md-4' }}}
+          =render @user.projects
+          .col-md-4.col-sm-12.col-xs-12.card-add.pb-3
+            =link_to(new_project_path) do
+              .card-wrap.col-md-12
+                .add-project
+                  %i.fa.fa-plus-circle
+                  .text Add a new journey
+        .row
+          %h2.heading.pb-3 Journeys you're helping out on
+        .row
+          %h2.heading.pb-3 Journeys you have liked
 
-
-    %ul.nav.nav-tabs.main-tabs
-      %li.active
-        =link_to('#home', 'data-toggle' => 'tab') do
-          Home
-      %li
-        =link_to('#projects', 'data-toggle' => 'tab') do
-          %span.badge.pull-right.ml-6
-            =@user.projects.count
-          Projects
-      %li
-        =link_to('#rewards', 'data-toggle' => 'tab') do
-          Rewards
-
-.container
-  .tab-content
-    #home.tab-pane.active.fade.in
-      .row
-        .col-md-6.pb-3
-          -if @user.city.nil?
-            =render 'location_form'
-        .col-md-6.pb-2
-          .top-cta.promo
-            %h3 ThinkBig can help fund your project
-            =link_to('Learn more about ThinkBig', '',  :class => 'btn btn-lg btn-gry')
-
-      .row.pb-3.pt-3#forums-following
-        .col-md-12
-          %h2.heading.col-md-6 Forums you're following
-          %ul.tags.right.pr-2
-            -@user.followed_forums.each do |forum|
-              %li=link_to_self(forum)
-
-      .row
-        .col-md-12.main-input.pb-3
-          =render 'posts/posts', posts: @posts
-    #projects.tab-pane.fade.in
-      .row.js-isotope{ :data => { :isotope_options => { :itemSelector => '.col-md-4' }}}
-        =render @user.projects
-
-        .col-md-4.col-sm-12.col-xs-12.card-add.pb-3
-          =link_to(new_project_path) do
-            .card-wrap.col-md-12
-              .add-project
-                %i.fa.fa-plus-circle
-                .text Add a new project
-
-      .row.mt-10
-        %h2.heading.pb-3 Projects you're helping out on
-      .row.js-isotope{ :data => { :isotope_options => { :itemSelector => '.col-md-4' }}}
-        -3.times do
-          .col-md-4.col-sm-12.col-xs-12.card.pb-3
-            .card-wrap
-              .card-top
-                %time{datetime: "2009-11-13"}
-                13
-                %sup th
-                November 2014
-                =link_to('<span>Trash</span>'.html_safe,'#', :class => 'usr-link', :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
-                =link_to('<span>Pin</span>'.html_safe,'#', :class => 'usr-link pin-it', :icon => 'thumb-tack')
-              .image-wrapper
-                =link_to 'project' do
-                  =image_placeholder('360x207#')
-              .card-info.col-md-12
-                %h3.project-title
-                  =link_to('Project Name', 'project')
-                by Another person
-                .card-tags.col-md-10.p-0
-                  %ul.tags
-                    %li=link_to('Breakdancing', 'category')
-                    %li=link_to('Space & Exploration', 'category')
-                .card-likes.col-md-2.right.p-0
-                  =link_to('3', '#', :class => 'likes', :icon => 'heart')
-              .card-footer
-                .foot-link.location.col-md-6.col-xs-6
-                  =link_to('Birmingham', 'search', :icon => 'map-marker')
-                .foot-link.helpers.col-md-6.right
-                  =link_to('2 helpers', 'search', :icon => 'users')
-
-
-      .row.mt-10
-        %h2.heading.pb-3 Projects you have liked
-      .row.js-isotope{ :data => { :isotope_options => { :itemSelector => '.col-md-4' }}}
-        -3.times do
-          .col-md-4.col-sm-12.col-xs-12.card.pb-3
-            .card-wrap
-              .card-top
-                %time{datetime: "2009-11-13"}
-                13
-                %sup th
-                November 2014
-                =link_to('<span>Trash</span>'.html_safe,'#', :class => 'usr-link', :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
-                =link_to('<span>Pin</span>'.html_safe,'#', :class => 'usr-link pin-it', :icon => 'thumb-tack')
-              .image-wrapper
-                =link_to 'project' do
-                  =image_placeholder('360x207#')
-              .card-info.col-md-12
-                %h3.project-title
-                  =link_to('Project Name', 'project')
-                by Another person
-                .card-tags.col-md-10.p-0
-                  %ul.tags
-                    %li=link_to('Breakdancing', 'category')
-                    %li=link_to('Space & Exploration', 'category')
-                .card-likes.col-md-2.right.p-0
-                  =link_to('3', '#', :class => 'likes', :icon => 'heart')
-              .card-footer
-                .foot-link.location.col-md-6.col-xs-6
-                  =link_to('Birmingham', 'search', :icon => 'map-marker')
-                .foot-link.helpers.col-md-6.right
-                  =link_to('2 helpers', 'search', :icon => 'users')
-
-    #rewards.tab-pane.fade.in
-      .row#badges.mb-10
-        %h2.heading Badges
-        %ul.pt-3
-          %li.col-md-2.col-sm-2
-            =image_tag("scholar-badge.png")
-            %p Profile 100% complete
-          -11.times do
-            %li.col-md-2
-              =image_tag("badge-slot.png")
-              %p Helped out on a project
+      #rewards.tab-pane.fade.in
+        .row
+          .col-md-6.pb-3
+            .top-cta.alert.fade.in
+              %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", type: "button"}
+                %i.fa.fa-times-circle
+              %strong You haven't added your location yet
+              %em Enter your location below
+              %form.form-inline{role: "form"}
+                .form-group
+                  %label.sr-only{for: "location"} Enter your location below
+                  %input.form-control{placeholder: "Enter location", type: "text"}
+                  %button.btn.btn-lg.btn-primary{type: "button"} Okay
+          .col-md-6.pb-2
+            .top-cta.promo
+              %h3 ThinkBig can help fund your journey
+              =link_to('Learn more about ThinkBig', 'about',  :class => 'btn btn-lg btn-primary')
+        .row#badges.mb-10
+          %h2.heading Badges
+          %ul.pt-3
+            %li.col-md-2.col-sm-2
+              =image_tag("scholar-badge.png")
+              %p Profile 100% complete
+            -11.times do
+              %li.col-md-2
+                =image_tag("badge-slot.png")
+                %p Helped out on a journey
 
   #image-modal.modal.fade
     =render 'users/image_modal', user: @user
@@ -173,3 +119,10 @@
    help_post_path: request_help_user_path(@user),
    modal_title: 'Request help',
    modal_text: 'This form will email this person with your message and your email address so they can contact you.'
+
+
+
+
+
+
+
