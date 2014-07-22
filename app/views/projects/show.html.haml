@@ -13,19 +13,22 @@
           %i.fa.fa-circle
           =link_to(@project.city, near_project_path(@project), icon: 'map-marker', id: 'location-search-link')
         .top-right
-          =link_to('37 Like us', '#',  :class => 'btn btn-secondary btn-sm like-us', :icon => 'heart-o', :icon_last => 'true')
-          =link_to('Help us', '#',  :class => 'btn btn-secondary btn-sm right', :icon => 'hand-o-up', :icon_last => 'true')
-          =link_to('', '',  :class => 'btn btn-success btn-sm visible dropdown', :icon => 'cog', 'data-toggle' => 'dropdown')
-          %ul.dropdown-menu.settings
-            .arrow
-            -if can? :edit, @project
-              %li=link_to('Edit', edit_project_path(@project), :icon => 'pencil')
-            -# %li=link_to('Pin', 'profile#projects', :icon => 'thumb-tack')
-            -if can? :owners, @project
-              %li=link_to('Add & remove owners', owners_project_path(@project), icon: 'group')
-            -# %li=link_to('Pin', 'profile#projects', :icon => 'thumb-tack')
-            -if can? :destroy, @project
-              %li=link_to('Delete', @project, :method => :delete, :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
+          =like_link_with_count(@project,
+                     like_text: @project.likings.size,
+                     unlike_text: @project.likings.size,
+                     class: 'btn btn-secondary btn-sm like-us',
+                     id: 'like-us-button')
+          =render 'help_button', link_id: 'link-help-1'
+          -if can? :edit, @project
+            =link_to('', '',  :class => 'btn btn-success btn-sm visible dropdown', :icon => 'cog', 'data-toggle' => 'dropdown')
+            %ul.dropdown-menu.settings
+              .arrow
+              -if can? :edit, @project
+                %li=link_to('Edit', edit_project_path(@project), :icon => 'pencil')
+              -if can? :owners, @project
+                %li=link_to('Add & remove owners', owners_project_path(@project), icon: 'group')
+              -if can? :destroy, @project
+                %li=link_to('Delete', @project, :method => :delete, :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
 
     %ul.nav.nav-tabs
       %li.active=link_to('Home', '#home', 'data-toggle' => 'tab')
@@ -44,7 +47,7 @@
           %p Funding ad space
       .col-md-8.col-md-offset-2
         .tab-content
-          #home.tab-pane.active.fade.in        
+          #home.tab-pane.active.fade.in
             =like_link_with_count(@project,
                        like_text: @project.likings.size,
                        unlike_text: @project.likings.size,
@@ -58,7 +61,7 @@
                 =image_tag('http://lorempixel.com/760/307/', :class => 'mb-1')
               %ul.tags.mb-3
                 =render :partial => 'tags/tag', :collection => @project.tags
-              
+
               %h3 Journey description
               %p=@project.description
               %p=@project.help_needed
@@ -66,7 +69,7 @@
               %p=@project.purpose
               %h3 Journey deadline
               %p=long_date(@project.deadline)
-            
+
             .row
               .col-xs-12
                 =like_link_with_count(@project,
@@ -81,7 +84,7 @@
               =link_to('<span>Twitter</span>'.html_safe,'#', :icon => 'twitter-square', :class => 'twitter')
               =link_to('<span>Facebook</span>'.html_safe,'#', :icon => 'facebook-square', :class => 'facebook')
               =link_to('<span>Pinterest</span>'.html_safe,'#', :icon => 'pinterest-square', :class => 'pinterest')
-          
+
           #blog.tab-pane.fade.in
             .main-input.mb-4
               -if @project.can_blog?(current_user)
