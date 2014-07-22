@@ -11,13 +11,13 @@
         %li=link_to('Home', root_path, :class => 'nav-text-link')
         %li=link_to('Discover', discover_path, :class => 'nav-text-link')
         %li=link_to('Community', forums_path, :class => 'nav-text-link')
-        %li=link_to('Search', 'search', :class => 'nav-text-link')    
+        %li=link_to('Search', search_projects_path, :class => 'nav-text-link')
         -if current_user
           %li.dropdown
             =link_to('#', 'data-toggle' => 'dropdown', :class => 'nav-avatar nav-dropdown-toggle') do
               =image_for(current_user)
               .navbar-down-arrow
-                %i.fa.fa-caret-down        
+                %i.fa.fa-caret-down
             %ul.dropdown-menu.settings
               -if current_user.admin?
                 %li=link_to('Admin', admin_path)
