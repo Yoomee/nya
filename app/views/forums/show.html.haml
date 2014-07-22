@@ -10,7 +10,6 @@
             %ul.dropdown-menu.settings
               %li=link_if_can('Edit', [:edit, @forum], :icon => 'pencil')
               %li=link_if_can('Delete', [:destroy, @forum], method: :delete, confirm: 'Are you sure?', icon: 'trash-o')
-          =link_to('Follow', '#',  :class => 'btn btn-lg btn-primary btn-follow mr-3')
         %h1=@forum.name
         %p.pb-3=raw(@forum.description)
 
@@ -23,8 +22,8 @@
             Say hello to new members of the
             =@forum.name.downcase
             community
-          -3.times do
-            =render 'users/new_members', users: @forum.followers.recent
+
+          =render 'users/new_members', users: @forum.followers.recent
 
 
 .section-white
@@ -48,12 +47,12 @@
     .row
       .col-md-8.col-md-offset-2.pb-3
         =render 'posts/posts', posts: @posts
-    
+
     -if @forum.project_category.try(:projects).present?
       .row
         .col-md-6.col-sm-12.col-xs-12.mb-3
           =render @forum.project_category.projects.recent(2)
-  
 
-  
+
+
 
