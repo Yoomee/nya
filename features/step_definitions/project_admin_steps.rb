@@ -16,7 +16,7 @@ When(/^I update the project$/) do
   fill_in 'project_help_needed', :with => @project.help_needed
   fill_in 'project_deadline', :with => @project.deadline
   fill_in 'project_city', :with => @project.city
-  click_button 'Done editing'
+  click_button 'Done editing', match: :first
 end
 
 Then(/^I should be able to edit the project$/) do

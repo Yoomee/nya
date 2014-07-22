@@ -1,10 +1,10 @@
-When(/^I click on the project like link$/) do
-  page.first('.card-likes > a').click
+When(/^I click on the like link for the project$/) do
+  page.first('.like-link').click
 end
 
 Then(/^the project like count is increased by one$/) do
   wait_for_ajax
-  page.first('.card-likes > a').should have_content(@project.likings.count)
+  page.first('.like-link').should have_content(@project.likings.count)
   @project.likings.count.should equal(1)
 end
 
