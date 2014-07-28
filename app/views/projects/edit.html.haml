@@ -7,15 +7,17 @@
           .col-sm-12.relative
             .row
               .col-md-8
-                %h3.mt-0 Journey name
-                %p Enter a catchy title for your Journey.
+                %h3.m0 Journey name
+                %p
+                  %em.small Enter a catchy title for your Journey.
               .i-input.col-md-8
                 %i.fa.fa-book
                 =f.input :title, label: false, placeholder: 'Project name'
             .row
               .col-md-8
-                %h3 Journey location
-                %p Enter the city/town where your journey is happening.
+                %h3.mb-0 Journey location
+                %p 
+                  %em.small Enter the city/town where your journey is happening.
               .i-input.col-md-8
                 %i.fa.fa-map-marker
                 =f.input :city, label: false, placeholder: 'Location'

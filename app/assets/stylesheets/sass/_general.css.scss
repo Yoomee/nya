@@ -63,7 +63,7 @@ hr {
 .section-white {
   position: relative;
   z-index: 15;
-  background: #C8E7F9;
+  background: $brand-primary;
 }
 .section-light {
   background: #EFF6FC;
@@ -221,4 +221,8 @@ hr {
   text-align: center;
   padding-top: 10px;
   color: white;
+  border-radius: 0px 0px 0px 4px;
+  &:hover {
+    color: white;
+  }
 }

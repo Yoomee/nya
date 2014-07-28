@@ -52,11 +52,32 @@ a {
 .btn-confirm {
   border: 1px solid #27A537;
   background: #27A537;
+  color: white;
   &:hover {
     border: 1px solid #27A537;
     background: transparent;
     color: #27A537;
   }  
+}
+.btn-block-form {
+  border-radius: 0px 0px 4px 4px;
+  border: 1px solid #27A537;
+  background: #27A537;
+  color: white;
+  -webkit-transition: all 0.1s ease 0s;
+  -moz-transition: all 0.1s ease 0s;
+  transition: all 0.1s ease 0s;
+  padding: 20px;
+  font-size: 18px;
+  &:hover {
+    border: 1px solid #27A537;
+    background: lighten(#27A537, 2%);
+    color: white;
+  }
+}
+.btn-block-form-half {
+  @extend .btn-block-form;
+  width: 50%;
 }
 .btn-lg {
   font-size: 18px;
@@ -177,6 +198,21 @@ a.pinterest {
   }
 }
 
+a.tags {
+  background: $brand-primary;
+  font-family: "jaf-domus-titling-web";
+  font-size: 12px;
+  border: 1px solid $brand-primary;
+  font-weight: 600;
+  color: white;
+  padding: 1px 10px 4px;
+  border-radius: 14px;
+  display: block;
+  &:hover {
+    background: transparent;
+    color: $brand-primary;
+  }
+}
 
 
 

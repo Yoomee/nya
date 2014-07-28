@@ -7,7 +7,7 @@ module ForumHelper
     else
       text, url, method, remote = ['Follow', sign_up_path(return_to: forum_path(@forum)), :get, false]
     end
-    link_to(text, url, method: method, remote: remote, class: 'btn btn-lg btn-primary btn-follow mr-3', id: 'follow-link')
+    link_to(text, url, method: method, remote: remote, class: 'btn btn-lg btn-primary btn-follow', id: 'follow-link')
   end
 
 end

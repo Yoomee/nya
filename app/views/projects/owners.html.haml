@@ -5,14 +5,26 @@
         placeholder: "Type someone's name"
         minimumInputLength: 3
 
-%h1
-  Add owners to
-  =@project
-  %small
-    created by
-    =@project.user
-=semantic_form_for @project do |form|
-  =form.inputs do
-    =form.input :owners, as: :select, multiple: true, collection: User.without(@project.user)
-  =form.actions do
-    =form.action :submit, label: 'Save'
+.container
+.section-pattern
+  .container
+    .row.pv-4
+      .col-sm-12.relative
+        %h1
+          Add owners to
+          =@project
+        %small
+          created by
+          =@project.user
+
+.section-white.border-top.pv-4
+  .container
+    .row
+      .col-sm-6
+        =semantic_form_for @project do |form|
+          =form.inputs do
+            =form.input :owners, as: :select, multiple: true, collection: User.without(@project.user)
+          =form.actions do
+            =form.action :submit, label: 'Save', :button_html => { :class => 'btn pull-right btn-sm btn-primary btn-confirm' }
+          .clearfix
+            

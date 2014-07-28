@@ -3,10 +3,10 @@
     =semantic_form_for(user, remote: true) do |form|
       .modal-header
         %button.close{ aria: { hidden: true }, data: { dismiss: :modal }, type: 'button' } &times;
-        %h4.modal-title Image
+        %h4.modal-title Change your profile picture
       .modal-body
         =form.input :image, as: :file, label: false
       .modal-footer
         %button.btn.btn-default{ data: { dismiss: :modal }, type: 'button' } Cancel
-        =form.action :submit, label: 'Save', button_html: { class: 'btn btn-primary' }
+        =form.action :submit, label: 'Save'
 

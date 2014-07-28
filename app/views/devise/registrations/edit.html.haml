@@ -1,0 +1,19 @@
+.container
+.section-pattern.pv-6
+  .container
+    .row
+      .col-md-8.col-lg-6.col-md-offset-2.col-lg-offset-3.center
+        %h1.m0 Change your password
+
+.section-white.border-top.pv-4
+  .container
+    .row
+      .col-sm-8.col-sm-offset-2
+        =semantic_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {:method => :put}) do |form|
+          =form.inputs do
+            =form.input :reset_password_token, :as => :hidden
+            =form.input :password, :label => 'New password'
+            =form.input :password_confirmation, :label => 'Confirm new password'
+          =form.actions do
+            =form.action :submit, :label => 'Change my password', :button_html => {:class => 'btn btn-primary btn-confirm btn-sm pull-right'}
+          .clearfix

@@ -7,10 +7,10 @@
       =form.hidden_field :retained_file
       =form.hidden_field :context
       %ul.nav.nav-tabs
-        %li.active=link_to('Write', '#write', data: { toggle: :tab }, icon: 'pencil')
-        %li=link_to('Image', '#image', data: { toggle: :tab }, icon: 'camera')
-        %li=link_to('Video', '#video', data: { toggle: :tab }, icon: 'video-camera')
-        %li=link_to('File', '#file', data: { toggle: :tab }, icon: 'file')
+        %li.active=link_to('', '#write', data: { toggle: :tab }, icon: 'pencil')
+        %li=link_to('', '#image', data: { toggle: :tab }, icon: 'camera')
+        %li=link_to('', '#video', data: { toggle: :tab }, icon: 'video-camera')
+        %li=link_to('', '#file', data: { toggle: :tab }, icon: 'file')
       .tab-content
         #write.tab-pane.fade.in.active
           =form.input :text, label: false, input_html: { rows: 3, placeholder: 'Post something' }, class: 'mb-0'
@@ -22,4 +22,4 @@
           =form.input :file, as: :file, label: false
       .not-expanded
         =form.input :tag_list, label: false, input_html: { placeholder: 'Tags', data: { autocomplete: autocomplete_tags_path, delimiter: ', ' }}
-        =form.action :submit, label: 'Post', button_html: { class: 'btn btn-primary pull-right mb-1', data: { loading_text: 'Posting...' }}
+        =form.action :submit, label: 'Post', button_html: { class: 'btn btn-primary btn-confirm btn-sm pull-right mb-1', data: { loading_text: 'Posting...' }}

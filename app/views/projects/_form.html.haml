@@ -1,29 +1,32 @@
-
 =semantic_form_for @project, html: { id: 'project-create' } do |f|
   =f.inputs do
     .group1.show
-      =f.input :title, label: "Project name", hint: "What is your project called?", input_html: { data: { parsley_group: "group1", parsley_required: "true" } }
-      =f.input :project_category, include_blank: false, label: "Category", hint: "Choose a category for your project"
-      =f.input :tag_list, label: "Tags", hint: "Tag your project",
-       input_html: { data: { placeholder: "Enter tags",
-        saved: f.object.tags.map{|t| {id: t.name,
-        name: t.name}}.to_json,
-        url: autocomplete_tags_path },
-        class: 'autocomplete-tags' }
+      .ph-3.pb-1
+        =f.input :title, label: "Project name", hint: "What is your project called?", input_html: { data: { parsley_group: "group1", parsley_required: "true" } }
+        =f.input :project_category, include_blank: false, label: "Category", hint: "Choose a category for your project"
+        =f.input :tag_list, label: "Tags", hint: "Tag your project",
+         input_html: { data: { placeholder: "Enter tags",
+          saved: f.object.tags.map{|t| {id: t.name,
+          name: t.name}}.to_json,
+          url: autocomplete_tags_path },
+          class: 'autocomplete-tags' }
       .next-btn-container
-        =link_to 'Next', '#', class: "form-input-btn btn-block next-btn", data: { :current_group => '1', :next_group => '2' }
+        =link_to 'Next', '#', class: "btn btn-block btn-block-form next-btn", data: { :current_group => '1', :next_group => '2' }
     .group2.hidden
-      =f.input :description, label: "Description", hint: "Tell us what your project is about", input_html: { data: { parsley_group: "group2", parsley_required: "true" }, :rows => 8 }
-      =f.input :purpose, label: "Purpose", hint: "What do you want to achieve with your project?", input_html: { data: { parsley_group: "group2", parsley_required: "true" }, :rows => 8 }
+      .ph-3.pb-1
+        =f.input :description, label: "Description", hint: "Tell us what your project is about", input_html: { data: { parsley_group: "group2", parsley_required: "true" }, :rows => 8 }
+        =f.input :purpose, label: "Purpose", hint: "What do you want to achieve with your project?", input_html: { data: { parsley_group: "group2", parsley_required: "true" }, :rows => 8 }
       .next-btn-container
-        =link_to 'Next', '#', class: "form-input-btn btn-block next-btn", data: { :current_group => '2', :next_group => '3' }
+        =link_to 'Next', '#', class: "btn btn-block btn-block-form next-btn", data: { :current_group => '2', :next_group => '3' }
     .group3.hidden
-      =f.input :help_needed, label: "Help needed", hint: "What kind of help do you need to make this work?", input_html: { data: { parsley_group: "group3", parsley_required: "true" }, :rows => 8 }
+      .ph-3.pb-1
+        =f.input :help_needed, label: "Help needed", hint: "What kind of help do you need to make this work?", input_html: { data: { parsley_group: "group3", parsley_required: "true" }, :rows => 8 }
       .next-btn-container
-        =link_to 'Next', '#', class: "form-input-btn btn-block next-btn", data: { :current_group => '3', :next_group => '4' }
+        =link_to 'Next', '#', class: "btn btn-block btn-block-form next-btn", data: { :current_group => '3', :next_group => '4' }
     .group4.hidden
-      =f.input :deadline, as: :string, label: "Deadline", input_html: { class: "form-text hasdatepicker", data: { parsley_group: "group4", parsley_required: "true" } }
-      =f.input :city, label: "The city or town where this project is based", input_html: { data: { parsley_group: "group4", parsley_required: "true" } }
-      =f.input :image, as: :image
+      .ph-3.pb-1
+        =f.input :deadline, as: :string, label: "Deadline", input_html: { class: "form-text hasdatepicker", data: { parsley_group: "group4", parsley_required: "true" } }
+        =f.input :city, label: "The city or town where this project is based", input_html: { data: { parsley_group: "group4", parsley_required: "true" } }
+        =f.input :image, as: :image
       =f.actions do
-        =f.action :submit, label: button_label, button_html: { class: 'form-input-btn btn-block', id: 'create-submit-btn' }
+        =f.action :submit, label: button_label, button_html: { class: 'btn btn-block btn-block-form', id: 'create-submit-btn' }

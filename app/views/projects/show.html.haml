@@ -94,7 +94,7 @@
                 .col-md-12.col-sm-12.col-xs-12.pb-3
                   =render 'posts/posts', posts: @project_blogs
 
-          #comments.tab-pane.fade.in
+          #comments.tab-pane.fade.in.main-input
             =render 'posts/remote_form', post: @project.project_comments.build
             =render 'posts/posts', posts: @project_comments
 

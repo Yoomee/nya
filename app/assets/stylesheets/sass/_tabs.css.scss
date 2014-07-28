@@ -22,8 +22,8 @@
     }
   }
   .form-group{
-    border: 1px solid $g-5;
-    border-radius: 0px  4px 4px 4px;
+    border: 1px solid #C3D7D9;
+    border-radius: 0px 4px 4px 4px;
   }
   input.form-control{
     width: 100%;
@@ -33,6 +33,13 @@
     @include media-query (xs-max){
       font-size: 0.9em;
     }
+  }
+  input[type=file] {
+    padding: 20px;
+  }
+  .form-control {
+    box-shadow: none;
+    border: none;  
   }
 }
 .nav-tabs {
@@ -53,11 +60,11 @@
       margin-bottom: -1px;
       a {
         background: white;
-        border: 1px solid rgba(0,0,0,0.1);
+        border: 1px solid #C3D7D9;
         border-bottom: 1px solid white !important;
         &:hover {
           background: white;
-          border: 1px solid rgba(0,0,0,0.1);
+          border: 1px solid #C3D7D9;
           border-bottom: 1px solid white !important; 
         }
       }

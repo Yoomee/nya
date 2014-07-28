@@ -4,25 +4,27 @@
       Search.init()
 
 .container
-.strip.strip-hero.relative
-  .container.hero-discover.hero-holder.relative
-    %h1.pt-3.center
-      -if @query.present?
-        Searching for
-        %strong=@query
-      -else
-        All projects
+.section-pattern.pv-6
+  .container
+    .row
+      .col-md-8.col-lg-6.col-md-offset-2.col-lg-offset-3.center
+        %h1
+          -if @query.present?
+            Searching for
+            %strong=@query
+          -else
+            All projects
 
-.section
+.section-white.pv-4.border-top
   .container
     .row
       .col-md-2#tags
-        %h3 Tags
+        %h3.mt-0 Tags
         =link_to_all_tag
         -Tag.order(:name).each do |tag|
           =link_to_search_tag(tag)
         .clear
-        =link_to('Clear search', search_projects_path, class: 'btn btn-primary btn-block mt-4')
+        =link_to('Clear search', search_projects_path, class: 'btn btn-primary btn-confirm btn-sm btn-block mv-4')
 
       -if @projects.to_a.count.zero?
         .col-md-8

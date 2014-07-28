@@ -2,42 +2,42 @@
 .section-pattern.pv-6
   .container
     .row
-      .col-md-8.col-lg-6.col-md-offset-2.col-lg-offset-3.center
-        .usr-action-top
-          =follow_link
+      .col-sm-8.col-sm-offset-2.center
+        .top-right
           -if can?(:edit, @forum)
-            =link_to('', '',  :class => 'btn btn-lg btn-gry visible dropdown', :icon => 'cog', 'data-toggle' => 'dropdown')
+            =link_to('', '',  :class => 'btn btn-lg btn-confirm visible dropdown', :icon => 'cog', 'data-toggle' => 'dropdown')
             %ul.dropdown-menu.settings
               %li=link_if_can('Edit', [:edit, @forum], :icon => 'pencil')
               %li=link_if_can('Delete', [:destroy, @forum], method: :delete, confirm: 'Are you sure?', icon: 'trash-o')
         %h1=@forum.name
         %p.pb-3=raw(@forum.description)
+        =follow_link
 
 -if @forum.followers.recent.present?
   .section-dark.pv-4
     .container
       .row
-        .col-md-8.col-md-offset-2
-          %h3.pb-3.m0
+        .col-md-8.col-md-offset-2.white
+          %h3.pb-4.m0.center
             Say hello to new members of the
             =@forum.name.downcase
             community
 
           =render 'users/new_members', users: @forum.followers.recent
 
-
-.section-white
-  .container
-    .row
-      .col-md-8.col-md-offset-2.pv-4
-        .row
-          .col-md-12
-            %h3.mt-0
-              Write something about
-              =@forum.name
-        .row
-          .col-md-12.main-input
-            =render 'posts/remote_form', post: @forum.posts.build
+-if current_user.present?
+  .section-white.border-top
+    .container
+      .row
+        .col-md-8.col-md-offset-2.pv-4
+          .row
+            .col-md-12
+              %h3.mt-0
+                Write something about
+                =@forum.name
+          .row
+            .col-md-12.main-input
+              =render 'posts/remote_form', post: @forum.posts.build
 
 .section-light.pv-4
   .container

@@ -1,12 +1,15 @@
-.p3
-  =semantic_form_for(@user, url: user_registration_path) do |form|
+=semantic_form_for(@user, url: user_registration_path) do |form|
+  .ph-3.pt-5.pb-4
     =form.inputs do
       =form.input :email, label: false, placeholder: 'Email'
-      =form.input :first_name, label: false, placeholder: 'First name'
-      =form.input :last_name, label: false, placeholder: 'Last name'
+      .row
+        .col-sm-6
+          =form.input :first_name, label: false, placeholder: 'First name'
+        .col-sm-6
+          =form.input :last_name, label: false, placeholder: 'Last name'
       =form.input :password, label: false, placeholder: 'Password'
       =form.input :password_confirmation, label: false, placeholder: 'Repeat password'
-      =form.input :remember_me, as: :boolean
+      =form.input :remember_me, as: :boolean, :wrapper_html => { :class => 'small' }
       =hidden_field_tag :return_to, params[:return_to] if params[:return_to]
-    =form.actions do
-      =form.action :submit, label: 'Sign up', button_html: { class: 'form-input-btn btn-block btn-primary', data: { loading_text: 'Signing up...' }}
+  =form.actions do
+    =form.action :submit, label: 'Sign up', button_html: { class: 'btn btn-block btn-block-form', data: { loading_text: 'Signing up...' }}

@@ -1,10 +1,13 @@
-.p3
-  =semantic_form_for(@user, :url => user_session_path) do |form|
+=semantic_form_for(@user, :url => user_session_path) do |form|
+  .ph-3.pt-5.pb-4
     =form.inputs do
       =form.input :email, label: false, placeholder: 'Email'
       =form.input :password, label: false, placeholder: 'Password'
-      =form.input :remember_me, as: :boolean
-      =hidden_field_tag :return_to, params[:return_to] if params[:return_to]
-      =link_to 'Forgotten your password?', reset_password_path, class: 'small pull-right mb-2'
-    =form.actions do
-      =form.action :submit, label: 'Sign in', button_html: { class: 'btn btn-sm btn-primary btn-confirm btn-block', data: { loading_text: 'Signing in...' }}
+      .row
+        .col-sm-6
+          =form.input :remember_me, as: :boolean, :wrapper_html => { :class => 'small m-0'}
+          =hidden_field_tag :return_to, params[:return_to] if params[:return_to]
+        .col-sm-6  
+          =link_to 'Forgotten your password?', reset_password_path, class: 'small pull-right'
+  =form.actions do
+    =form.action :submit, label: 'Sign in', button_html: { class: 'btn btn-block btn-block-form', data: { loading_text: 'Signing in...' }}
