@@ -6,11 +6,13 @@
     =image_tag('cloud3.png', :class => 'home-cloud cloud3')
     =image_tag('cloud4.png', :class => 'home-cloud cloud4')
     .row
-      .col-xs-8.col-xs-offset-2.center.zi-high
+      .col-sm-6.zi-high.center.pt-5
+        =image_tag('nya-homepage.png')
+      .col-sm-5.zi-high
         %h1.homepage-title Make a Difference
         %p.mb-4 From small actions to larger projects – everyone can make a difference! What have you done? What’s your idea? You can help your community and gain valuable skills – you might even have fun! Explore what others have done and have a go!
-        =link_to('Discover', discover_path,  :class => 'btn btn-secondary mr-2')
-        =link_to('Start a project', new_project_path,  :class => 'btn btn-primary')
+        =link_to('Discover journeys', discover_path,  :class => 'btn btn-secondary mr-2')
+        =link_to('Start your journey', new_project_path,  :class => 'btn btn-primary')
 
 #action-quote
   .container
@@ -73,7 +75,7 @@
   .col-md-6.p-10.start-tab
     %h1.pb-2 Have an idea?
     %p.mb-2 Create a profile and record your actions – even if they are small things you have done to help 1 person. Get feedback from others and plan a larger project.
-    =link_to('Start a project', new_project_path, :class => 'btn btn-primary')
+    =link_to('Start your journey', new_project_path, :class => 'btn btn-primary')
   .col-md-6.p-10
     %h1.pb-2 Need inspiration?
     %p.mb-2 From DJ workshops to community festivals! Explore what other young people have done. Get inspired for your journey!
