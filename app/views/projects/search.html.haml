@@ -13,7 +13,7 @@
             Searching for
             %strong=@query
           -else
-            All projects
+            All journeys
 
 .section-white.pv-4.border-top
   .container
@@ -28,7 +28,7 @@
 
       -if @projects.to_a.count.zero?
         .col-md-8
-          %p.lead.center Sorry no projects found
+          %p.lead.center Sorry no journeys found
       -else
         .col-md-10
           .row.js-isotope{ id: 'projects-container', data: { isotope_options: { itemSelector: '.project-card' }}}

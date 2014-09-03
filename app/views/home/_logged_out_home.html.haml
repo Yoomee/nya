@@ -6,12 +6,12 @@
     =image_tag('cloud3.png', :class => 'home-cloud cloud3')
     =image_tag('cloud4.png', :class => 'home-cloud cloud4')
     .row
-      .col-sm-6.zi-high.center.pt-5
+      .col-sm-6.zi-high.center.pt-2
         =image_tag('nya-homepage.png')
       .col-sm-5.zi-high
         %h1.homepage-title Make a Difference
         %p.mb-4 From small actions to larger projects – everyone can make a difference! What have you done? What’s your idea? You can help your community and gain valuable skills – you might even have fun! Explore what others have done and have a go!
-        =link_to('Discover journeys', discover_path,  :class => 'btn btn-secondary mr-2')
+        =link_to('Discover', discover_path,  :class => 'btn btn-secondary mr-2')
         =link_to('Start your journey', new_project_path,  :class => 'btn btn-primary')
 
 #action-quote
@@ -54,7 +54,7 @@
 #benefits.section-light.pv-6
   .container
     .row
-      %h1.center.pb-5 How SAJ can benefit me
+      %h1.center.pb-5 How can being involved in social action benefit me
       %ul.col-md-12.list-unstyled.m0.center
         %li.col-md-3.col-xs-6
           =image_tag("home-skills.png", :class => 'mb-2')
@@ -67,7 +67,7 @@
           %p Be part of something
         %li.col-md-3.col-xs-6
           =image_tag("home-funding.png", :class => 'mb-2')
-          %p Get funding
+          %p Make positive change
       .col-xs-12
         =link_to('Read more about SAJ', 'about', :class => 'pull-right mt-3')
 
