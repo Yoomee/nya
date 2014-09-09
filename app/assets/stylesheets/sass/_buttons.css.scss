@@ -49,6 +49,15 @@ a {
     color: white;
   }
 }
+.section-dark .btn-primary {
+  background: #CDE9F9;
+  color: $brand-primary;
+}
+.section-dark .btn-secondary {
+  border: 1px solid #CDE9F9;
+  color: #CDE9F9;
+}
+
 .btn-confirm {
   border: 1px solid #27A537;
   background: #27A537;

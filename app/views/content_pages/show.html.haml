@@ -1,6 +1,6 @@
 .container
 .strip.strip-hero.relative
-  .container.hero-discover.hero-holder.relative.pt-10
+  .container.hero-holder.relative
     .col-md-8.col-md-offset-2.relative
       .usr-action-top
         -if can?(:edit, @content_page)
@@ -8,12 +8,17 @@
           %ul.dropdown-menu.settings
             %li=link_if_can('Edit', [:edit, @content_page], :icon => 'pencil')
             %li=link_if_can('Delete', [:destroy, @content_page], method: :delete, confirm: 'Are you sure?', icon: 'trash-o')
-    %h1.pt-10.center=@content_page.title
-    %p.col-md-6.col-md-offset-3.center.pb-3
+    .row.center
+      .col-sm-4.col-sm-offset-2.col-xs-6
+        =image_tag('nya-logo.png')
+      .col-sm-4.col-xs-6
+        =image_tag('think-big-logo.png')
+    %h1.pt-7.center=@content_page.title
+    %p.col-md-6.col-md-offset-3.center.p0
       =@content_page.subtitle.html_safe
 .container.section.pb-10
   .col-md-8.col-md-offset-2
-    .row.p-tb-3
+    .row.pv-6
       =raw @content_page.text
       -if @content_page.slug == 'contact'
         %h4 Send us a message
