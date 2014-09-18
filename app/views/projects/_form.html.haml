@@ -2,7 +2,10 @@
   =f.inputs do
     .group1.show
       .ph-3.pb-1
-        =f.input :title, label: "Project name", hint: "What is your project called?", input_html: { data: { parsley_group: "group1", parsley_required: "true" } }
+        =f.input :title, label: "Journey name", hint: "What would you like to call your journey?", input_html: { data: { parsley_group: "group1", parsley_required: "true" }, :rows => 8 }
+        =f.input :inspiration, label: 'What is the inspiration for your journey?', hint: 'What is the issue or problem you are looking to change?', input_html: { data: { parsley_group: "group1", parsley_required: "true" }, :rows => 8 }
+        =f.input :who_helping, label: 'Who will you be helping?', hint: 'What community are you hoping to assist with your idea', input_html: { data: { parsley_group: "group1", parsley_required: "true" }, :rows => 8 }
+        =f.input :how_helping, label: 'How will you help?', hint: 'Describe the activities you are planning to make the change happen', input_html: { data: { parsley_group: "group1", parsley_required: "true" }, :rows => 8 }
         =f.input :project_category, include_blank: false, label: "Category", hint: "Choose a category for your project"
         =f.input :tag_list, label: "Tags", hint: "Tag your project",
          input_html: { data: { placeholder: "Enter tags",
@@ -14,13 +17,17 @@
         =link_to 'Next', '#', class: "btn btn-block btn-block-form next-btn", data: { :current_group => '1', :next_group => '2' }
     .group2.hidden
       .ph-3.pb-1
-        =f.input :description, label: "Description", hint: "Tell us what your project is about", input_html: { data: { parsley_group: "group2", parsley_required: "true" }, :rows => 8 }
-        =f.input :purpose, label: "Purpose", hint: "What do you want to achieve with your project?", input_html: { data: { parsley_group: "group2", parsley_required: "true" }, :rows => 8 }
+        =f.input :step1, label: 'What are the steps you will take?', hint: 'Step 1', input_html: { data: { parsley_group: "group2", parsley_required: "true" }, :rows => 1 }
+        =f.input :step2, label: false, hint: 'Step 2', input_html: { :rows => 1 }
+        =f.input :step3, label: false, hint: 'Step 3', input_html: { :rows => 1 }
+        =f.input :step4, label: false, hint: 'Step 4', input_html: { :rows => 1 }
+        =f.input :step5, label: false, hint: 'Step 5', input_html: { :rows => 1 }
       .next-btn-container
         =link_to 'Next', '#', class: "btn btn-block btn-block-form next-btn", data: { :current_group => '2', :next_group => '3' }
     .group3.hidden
       .ph-3.pb-1
-        =f.input :help_needed, label: "Help needed", hint: "What kind of help do you need to make this work?", input_html: { data: { parsley_group: "group3", parsley_required: "true" }, :rows => 8 }
+        =f.input :skills_have, label: "What skills do you already have?", hint: "List the skills and resources that you already have to use", input_html: { data: { parsley_group: "group3", parsley_required: "true" }, :rows => 8 }
+        =f.input :skills_needed, label: "What skills do you need help with?", hint: "List the skills and resources that you need help with", input_html: { data: { parsley_group: "group3", parsley_required: "true" }, :rows => 8 }
       .next-btn-container
         =link_to 'Next', '#', class: "btn btn-block btn-block-form next-btn", data: { :current_group => '3', :next_group => '4' }
     .group4.hidden

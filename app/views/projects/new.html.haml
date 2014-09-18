@@ -10,7 +10,7 @@
     .row.negative-top.mb-6
       .col-sm-6.col-sm-offset-3
         %ul.nav.nav-tabs.form-tabs
-          %li.active=link_to('My project', '#myproject', 'data-toggle' => 'tab')
+          %li.active=link_to('My journey', '#myproject', 'data-toggle' => 'tab')
           -# %li=link_to('Preview', '#preview', 'data-toggle' => 'tab')
 
 
@@ -21,11 +21,11 @@
                 .progress.mb-0
                   .progress-bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "1", role: "progressbar", style: "width: 1%;"}
                     %span.sr-only 1% Complete
-  
+
               =render 'form', button_label: 'Create your project'
-  
+
               -# =link_to('Next', '#', :class => 'form-input-btn btn-block')
-  
+
             #preview.tab-pane
               .p3
                 %h1 Project Name
@@ -38,7 +38,7 @@
                   %span.label.label-default Art
                 %h2 Project description
                 %p.mb-2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae metus diam. Sed ut risus nec nunc interdum sollicitudin. Suspendisse eu quam lectus. Integer nec posuere leo, ut pretium risus. Cras gravida malesuada egestas. Donec consequat risus eu erat aliquet, eget dictum arcu vestibulum. Nam eget lobortis eros, et mollis nibh. Duis ullamcorper, velit vitae lacinia tristique, quam dui dictum massa, in tincidunt urna lacus in neque. Quisque suscipit odio quis nunc sollicitudin varius. Praesent risus felis, tristique sed lobortis at, suscipit eu nisl. Donec suscipit magna a odio accumsan, non dignissim ipsum dictum. Morbi ut arcu eu nibh blandit venenatis et id mi. Aliquam rhoncus in metus sit amet laoreet. Vestibulum cursus, libero sit amet cursus porta, arcu elit tempor sapien, ac feugiat sapien quam in nibh. Proin imperdiet ut ligula at venenati
-  
+
                 %h2 Things I need help with
                 %ul.mb-2
                   %li List item
@@ -46,14 +46,14 @@
                   %li List item
                   %li List item
                   %li List item
-  
+
                 %h2 Purpose of the project
                 %p.mb-2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae metus diam. Sed ut risus nec nunc interdum sollicitudin. Suspendisse eu quam lectus.
-  
+
                 %h2 People working on the project
                 %ul.mb-2
                   %li Person 1
                   %li Person 2
-  
+
                 %h2 Project deadline
                 %p 23rd september 2014

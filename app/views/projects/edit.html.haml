@@ -16,7 +16,7 @@
             .row
               .col-md-8
                 %h3.mb-0 Journey location
-                %p 
+                %p
                   %em.small Enter the city/town where your journey is happening.
               .i-input.col-md-8
                 %i.fa.fa-map-marker
@@ -37,12 +37,22 @@
               name: t.name}}.to_json,
               url: autocomplete_tags_path },
               class: 'autocomplete-tags' }
-            %h3 Journey description
-            =f.input :description, label: false, placeholder: "Tell us what your project is about", input_html: { class: "col-xs-12 form-textarea mb-3", cols: 50, rows: 10 }
-            %h3 Things I need help with
-            =f.input :help_needed, label: false, input_html: { class: "col-xs-12 form-textarea mb-3", cols: 50, rows: 10 }
-            %h3 Purpose of the journey
-            =f.input :purpose, label: false, input_html: { class: "col-xs-12 form-textarea mb-3", cols: 50, rows: 5 }
+            %h3 What is the inspiration for your journey?
+            =f.input :inspiration, label: false, hint: 'What is the issue or problem you are looking to change?', input_html: { class: "col-xs-12 form-textarea mb-3", cols: 50, rows: 10 }
+            %h3 Who will you be helping?
+            =f.input :who_helping, label: false, hint: 'What community are you hoping to assist with your idea', input_html: { class: "col-xs-12 form-textarea mb-3", cols: 50, rows: 10 }
+            %h3 How will you help?
+            =f.input :how_helping, label: false, hint: 'Describe the activities you are planning to make the change happen', input_html: { class: "col-xs-12 form-textarea mb-3", cols: 50, rows: 10 }
+            %h3 What skills do you already have?
+            =f.input :skills_have, label: false, hint: "List the skills and resources that you already have to use", input_html: { class: "col-xs-12 form-textarea mb-3", cols: 50, rows: 10 }
+            %h3 What skills do you need help with?
+            =f.input :skills_needed, label: false, hint: "List the skills and resources that you need help with", input_html: { class: "col-xs-12 form-textarea mb-3", cols: 50, rows: 10 }
+            %h3 What are the steps you will take?'
+            =f.input :step1, label: false, hint: 'Step 1'
+            =f.input :step2, label: false, hint: 'Step 2'
+            =f.input :step3, label: false, hint: 'Step 3'
+            =f.input :step4, label: false, hint: 'Step 4'
+            =f.input :step5, label: false, hint: 'Step 5'
             %h3 Journey deadline
             =f.input :deadline, as: :string, label: false, input_html: { class: "form-text hasdatepicker col-xs-12 mb-4" }
             -if current_user.admin?

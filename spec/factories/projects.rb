@@ -3,7 +3,9 @@
 FactoryGirl.define do
   factory :project do
     sequence(:title) { |n| "Example project title#{n}" }
-    description "Example project description"
+    inspiration "Example project inspiration"
+    who_helping 'who helping'
+    how_helping 'how helping'
     latitude 53.95996510000001
     longitude -1.0872979
     city 'York'
@@ -11,8 +13,9 @@ FactoryGirl.define do
     image_name "MyString"
     user
     project_category
-    help_needed "Example help needed text"
-    purpose "Example purpose text"
+    step1 'step 1'
+    skills_have "Example skills have text"
+    skills_needed "Example skills needed text"
     deadline "2014-05-22"
     tag_list "breakdancing, micropayments, app"
   end

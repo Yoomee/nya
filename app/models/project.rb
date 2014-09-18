@@ -9,9 +9,16 @@ class Project < ActiveRecord::Base
                     against: [
                       [:title, 'A'],
                       [:city, 'A'],
-                      [:description, 'B'],
-                      [:help_needed, 'B'],
-                      [:purpose, 'B']
+                      [:inspiration, 'B'],
+                      [:who_helping, 'B'],
+                      [:how_helping, 'B'],
+                      [:skills_have, 'B'],
+                      [:skills_needed, 'B'],
+                      [:step1, 'C'],
+                      [:step2, 'C'],
+                      [:step3, 'C'],
+                      [:step4, 'C'],
+                      [:step5, 'C']
                     ],
                     using: {
                       tsearch: {
@@ -38,7 +45,7 @@ class Project < ActiveRecord::Base
 
   image_accessor :image
 
-  validates :title, :description, :user_id, :project_category_id, :help_needed, :purpose, :deadline, :city, presence: true
+  validates :title, :inspiration, :who_helping, :how_helping, :user_id, :project_category_id, :deadline, :city, :step1, :skills_have, :skills_needed, presence: true
 
   geocoded_by :city_with_uk
   after_validation :geocode, if: ->(project) { project.city.present? and project.city_changed? }

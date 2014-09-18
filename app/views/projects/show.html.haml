@@ -61,14 +61,26 @@
                 =image_tag('http://lorempixel.com/760/307/', :class => 'mb-1')
               %ul.tags.mb-3
                 =render :partial => 'tags/tag', :collection => @project.tags
-
-              %h3 Journey description
-              %p=@project.description
-              %p=@project.help_needed
-              %h3 Purpose of the journey
-              %p=@project.purpose
-              %h3 Journey deadline
-              %p=long_date(@project.deadline)
+              .row
+                .col-md-8
+                  %h3 Journey inspiration
+                  %p=@project.inspiration
+                  %h3 Skills I have
+                  %p=@project.skills_have
+                  %h3 Skills needed
+                  %p=@project.skills_needed
+                  %h3 Who the journey will be helping
+                  %p=@project.who_helping
+                  %h3 How the journey will be helping
+                  %p=@project.how_helping
+                  %h3 Journey deadline
+                  %p=long_date(@project.deadline)
+                .col-md-4
+                  %h3 Steps
+                  %ol
+                    -%w(step1 step2 step3 step4 step5).each do |step|
+                      -if @project.send(step).present?
+                        %li=@project.send(step)
 
             .row
               .col-xs-12

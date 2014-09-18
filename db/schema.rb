@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140606110330) do
+ActiveRecord::Schema.define(version: 20140918063509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -150,14 +150,14 @@ ActiveRecord::Schema.define(version: 20140606110330) do
 
   create_table "projects", force: true do |t|
     t.string   "title"
-    t.text     "description"
+    t.text     "inspiration"
     t.float    "latitude"
     t.float    "longitude"
     t.string   "image_uid"
     t.string   "image_name"
     t.integer  "user_id"
-    t.text     "help_needed"
-    t.text     "purpose"
+    t.text     "skills_needed"
+    t.text     "who_helping"
     t.date     "deadline"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -166,6 +166,13 @@ ActiveRecord::Schema.define(version: 20140606110330) do
     t.boolean  "feature_on_homepage"
     t.boolean  "feature_on_community_homepage"
     t.string   "slug"
+    t.text     "how_helping"
+    t.text     "step1"
+    t.text     "step2"
+    t.text     "step3"
+    t.text     "step4"
+    t.text     "step5"
+    t.text     "skills_have"
   end
 
   add_index "projects", ["feature_on_community_homepage"], name: "index_projects_on_feature_on_community_homepage", using: :btree
