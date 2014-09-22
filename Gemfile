@@ -36,6 +36,8 @@ gem 'select2-rails', '~> 3.5.7'
 gem 'parsley-rails', '~> 2.0.0'
 gem 'stamp'
 gem 'pg_search'
+gem 'nokogiri', '~> 1.5.0'
+gem 'fog', '~> 1.9.0'
 
 # development and test gems
 group :development do
