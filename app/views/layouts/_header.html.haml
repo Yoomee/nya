@@ -12,6 +12,8 @@
         %li=link_to('Home', root_path, :class => 'nav-text-link')
         %li=link_to('Discover', discover_path, :class => 'nav-text-link')
         %li=link_to('Community', forums_path, :class => 'nav-text-link')
+        -if BlogPost.all.present?
+          %li=link_to('Blog', blog_posts_path, :class => 'nav-text-link')
         %li=link_to('Search', search_projects_path, :class => 'nav-text-link')
         -if current_user
           %li.dropdown

@@ -49,6 +49,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :blog_posts, path: 'blog'
+
   get ':id', to: 'content_pages#show'
 
 end

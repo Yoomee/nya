@@ -26,6 +26,13 @@
       .col-md-4
         .well
           %h2
+            %i.fa.fa-files-o
+            Blog posts
+          %ul.list-unstyled
+            %li=link_to 'New blog post', new_blog_post_path
+      .col-md-4
+        .well
+          %h2
             %i.fa.fa-folder-open-o
             Project Categories
           %ul.list-unstyled

@@ -10,6 +10,7 @@ class Ability
     can :read, Forum
     can [:search, :show, :near], Project
     can [:index, :show], ProjectCategory
+    can [:index, :show], BlogPost
     can :show, User
     can :show, Tag
 
