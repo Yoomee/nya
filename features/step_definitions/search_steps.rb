@@ -1,5 +1,5 @@
 When(/^I enter "(.*?)" in the search box$/) do |query|
-  visit forums_path
+  visit search_projects_path
   fill_in 'q', with: query
   click_button('submit-search')
 end

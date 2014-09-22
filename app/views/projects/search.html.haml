@@ -14,6 +14,14 @@
             %strong=@query
           -else
             All journeys
+      .col-md-8.col-lg-6.col-md-offset-2.col-lg-offset-3.center
+        =form_tag search_projects_path, id: 'search-form', method: :get do
+          .row
+            .col-lg-8.col-md-8.col-md-offset-2.col-lg-offset-2
+              =text_field_tag :q, params[:q], class: 'form-control', placeholder: 'Project search...'
+            .col-md-4.col-lg-2
+              %button.btn.pull-left#submit-search
+                %i.fa.fa-search
 
 .section-white.pv-4.border-top
   .container
