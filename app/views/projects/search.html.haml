@@ -18,7 +18,7 @@
         =form_tag search_projects_path, id: 'search-form', method: :get do
           .row
             .col-lg-8.col-md-8.col-md-offset-2.col-lg-offset-2
-              =text_field_tag :q, params[:q], class: 'form-control', placeholder: 'Project search...'
+              =text_field_tag :q, params[:q], class: 'form-control', placeholder: 'Search journeys...'
             .col-md-4.col-lg-2
               %button.btn.pull-left#submit-search
                 %i.fa.fa-search
