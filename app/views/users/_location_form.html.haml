@@ -1,13 +1,15 @@
 .section-light.alert.fade.in.pt-3
   %p
-    %strong You haven't added your location yet  
+    %strong You haven't added your location yet
   %p.pb-2
     %em Enter your location below
   =semantic_form_for(@user, html: { id: 'profile-location-form' }) do |f|
-    .form-group
-      %label.sr-only{for: "location"} Enter your location below
-      =f.input :city, label: false, placeholder: 'Enter location', class: 'form-control'
--#
-      =button_tag(type: :submit, class: 'btn btn-sm btn-confirm pull-right', id: 'location-form-btn') do
-        Save
+    .row
+      .col-lg-10
+        .form-group
+          %label.sr-only{for: "location"} Enter your location below
+          =f.input :city, label: false, placeholder: 'Enter location', class: 'form-control'
+      .col-lg-2
+        =button_tag(type: :submit, class: 'btn btn-sm btn-confirm pull-right', id: 'location-form-btn') do
+          Save
       .clearfix

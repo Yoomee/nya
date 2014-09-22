@@ -8,7 +8,7 @@
           .rewards
             %span 8 badges
       .col-sm-9.relative
-        %h1=@user.full_name   
+        %h1=@user.full_name
         -if @user.city?
           %p.sub-text=link_to(@user.city, 'search', :icon => 'map-marker')
         %p.mb-4
@@ -69,7 +69,7 @@
         .row
           .col-md-12.main-input.pb-3
             =render 'posts/posts', posts: @posts
-      
+
       #journeys.tab-pane.fade.in
         .row.js-isotope{ :data => { :isotope_options => { :itemSelector => '.col-md-4' }}}
           =render @user.projects
