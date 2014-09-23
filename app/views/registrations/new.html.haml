@@ -18,11 +18,11 @@
           %li{class: signup_class }
             =link_to('Sign up', '#signup', 'data-toggle' => 'tab')
           .clearfix
-  
+
         .form-container
           .tab-content
             #login.tab-pane{class: login_class }
               =render 'registrations/login'
-  
+
             #signup.tab-pane{class: signup_class }
               =render 'signup'

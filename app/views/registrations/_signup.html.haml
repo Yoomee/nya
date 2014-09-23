@@ -12,4 +12,37 @@
       =form.input :remember_me, as: :boolean, :wrapper_html => { :class => 'small' }
       =hidden_field_tag :return_to, params[:return_to] if params[:return_to]
   =form.actions do
-    =form.action :submit, label: 'Sign up', button_html: { class: 'btn btn-block btn-block-form', data: { loading_text: 'Signing up...' }}
+    =form.action :submit, label: 'Next', button_html: { class: 'btn btn-block btn-block-form', data: { loading_text: 'Signing up...' }}
+
+-# TODO - Text for '/sign-up-step-2' link
+  %h4 SAJF Site User Sign Up Agreement
+
+  %p
+    Before completing the sign up process we need for you to understand and agree to the site rules below:
+    %ul
+      %li I am a young person aged 13 – 25
+      %li I will only use this site to help me plan social action activities and gain and provide feedback from and to others who are also using the site
+      %li I will not share any personal contact details or links to personal social media sites on this site
+    %strong I will not post content that :
+    %ul
+      %li breaks any relevant local, national or international law or which incites or encourages others to break any such law;
+      %li is racist, sexist or homophobic or otherwise discriminatory;
+      %li is pornographic, obscene, profane, vulgar, or contains swearing (including words which use * or any other symbols instead of a letter to make the profanity less obvious);
+      %li is defamatory of any person, entity or organisation;
+      %li is persistently abusive, threatening, bullying, repeatedly a cause of nuisance or annoyance or otherwise illegal towards other users, our staff or our property or that of our agents;
+      %li is otherwise offensive in our reasonable opinion;
+      %li Infringes the rights (including but not limited to the intellectual property rights) of any person or legal entity;
+      %li relates to the conduct of a business;
+      %li includes advertising, or is soliciting business;
+      %li impersonates, or attempts to impersonate another person, whether or not that person is a user of this site;
+      %li infringes the privacy of an individual or company, including (but not limited to) posting location and/or contact details of another person.
+  %p
+    Tick to confirm you agree with the rules and have also read and understood the wider
+    =link_to('Terms and Conditions', '/terms')
+    -# TODO make this a '=form.input' thing
+    #user_remember_me_input.small.boolean.input.optional.checkbox
+      %input{:name => "user[remember_me]", :type => "hidden", :value => "0"}
+      %label.control-label{:for => "user_remember_me"}
+        %input#user_remember_me{:name => "user[remember_me]", :type => "checkbox", :value => "1"}
+        I confirm that I have read and understood the
+        =link_to('user sign up agreement', '/sign-up-step-2')
