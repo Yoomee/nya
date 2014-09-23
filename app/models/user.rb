@@ -24,6 +24,7 @@ class User < ActiveRecord::Base
   validates :email, email: true, presence: true, uniqueness: true
   validates :website, url: true
   validates_presence_of :password, on: :create
+  validates :accepted_terms, inclusion: { in: [1, true, 'true'] }, on: :create
 
   acts_as_taggable
 

@@ -1,0 +1,23 @@
+.container
+.section-pattern.pv-6
+  .container
+    .row
+      .col-md-8.col-lg-6.col-md-offset-2.col-lg-offset-3.center
+        %h1.mb-3 Welcome
+
+.section-white.border-top.pb-4
+  .container
+    .row.negative-top.mb-6
+      .col-sm-6.col-sm-offset-3
+        %ul.nav.nav-tabs.form-tabs
+          %li
+            =link_to('Sign in', sign_in_path)
+          %li.active
+            =link_to('Sign up', '#')
+          .clearfix
+
+        .form-container
+          .tab-content
+            #login.tab-pane
+            #signup.tab-pane.active
+              =render 'registrations/signup'
