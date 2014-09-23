@@ -36,8 +36,8 @@
               =form.input :first_name, label: false, placeholder: 'First name', input_html: { data: { parsley_group: 'block1', parsley_required: true }}
             .col-sm-6
               =form.input :last_name, label: false, placeholder: 'Last name', input_html: { data: { parsley_group: 'block1', parsley_required: true }}
-          =form.input :password, label: false, placeholder: 'Password', input_html: { data: { parsley_group: 'block1', parsley_required: true }}
-          =form.input :password_confirmation, label: false, placeholder: 'Repeat password', input_html: { data: { parsley_group: 'block1', parsley_required: true, parsley_equalto: '#user_password' }}
+          =form.input :password, label: false, placeholder: 'Password', input_html: { id: 'sign-up-password', data: { parsley_group: 'block1', parsley_required: true }}
+          =form.input :password_confirmation, label: false, placeholder: 'Repeat password', input_html: { data: { parsley_group: 'block1', parsley_required: true, parsley_equalto: '#sign-up-password' }}
           =form.input :remember_me, as: :boolean, :wrapper_html => { :class => 'small' }
           =hidden_field_tag :return_to, params[:return_to] if params[:return_to]
       =link_to('Next', '#', class: 'btn btn-block btn-block-form next', data: { current_block: 1, next_block: 2 })
