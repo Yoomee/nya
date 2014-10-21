@@ -1,19 +1,14 @@
 .container
 .strip.strip-hero.relative
   .container.hero-holder.relative
+    .top-right
+      -if can?(:new, BlogPost.new)
+        =link_to('', '',  :class => 'btn btn-lg btn-primary visible dropdown', :icon => 'cog', 'data-toggle' => 'dropdown')
+        %ul.dropdown-menu.settings
+          %li=link_if_can('New blog post', [:new, BlogPost.new], :icon => 'pencil')
     .col-md-8.col-md-offset-2.relative
-      .usr-action-top
-        -if can?(:new, BlogPost.new)
-          =link_to('', '',  :class => 'btn btn-lg btn-gry visible dropdown', :icon => 'cog', 'data-toggle' => 'dropdown')
-          %ul.dropdown-menu.settings
-            %li=link_if_can('New blog_post', [:new, BlogPost.new], :icon => 'pencil')
-    .row.center
-      .col-sm-4.col-sm-offset-2.col-xs-6
-        =image_tag('nya-logo.png')
-      .col-sm-4.col-xs-6
-        =image_tag('think-big-logo.png')
-    %h1.pt-7.center Blog
-.container.section.pb-10
+      %h1.m0.center Blog
+.container.section.pv-6
   .col-md-8.col-md-offset-2
     -@blog_posts.each do |post|
       .row.pt-2.pb-2
