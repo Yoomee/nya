@@ -11,25 +11,22 @@
                 %li=link_to('Home', root_path)
                 %li=link_to('Discover', discover_path)
                 %li=link_to('Community', forums_path)
-                %li=link_to('Search','search')
+                %li=link_to('Search','projects/search')
+                %li=link_to('Blog','/blog')
+
             .col-md-4.col-xs-6
               %h4 Help & Support
               %ul.p-0.clear.list-unstyled
                 %li=link_to_slug('about')
                 %li=link_to_slug('faq')
                 %li=link_to_slug('contact')
+                %li=link_to('Terms & Conditions', '/terms')
         .col-sm-6
           .row
             .col-sm-6.col-sm-offset-6
               %p.light-text.mb-2.small The Social Action Journey Fund programme is supported and funded by The Cabinet Office
               =image_tag('cabinet-office-logo.png', :class => 'mb-2')
               =image_tag('step-up-logo.png')
-              
-          
-          
-          
-                
-
 #myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
   .modal-dialog
     .modal-content
