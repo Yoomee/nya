@@ -12,7 +12,7 @@
       .sub-text.pb-1
         by
         =link_to(project.user.full_name, user_path(project.user))
-      %p This is an excerpt of the journey maximum of 150 chars
+      %p=truncate(project.inspiration, length: 150)
       .mt-2
         .col-xs-10.p0
           %ul.tags.m0
