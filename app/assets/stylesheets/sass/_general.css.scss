@@ -14,7 +14,7 @@
 
 html, body, p {
   height: 100%;
-  font-family: 'Varela Round', Verdana, sans-serif;
+  font-family: Tahoma, Verdana, sans-serif;
   font-size: 16px;
   font-style: normal;
   color: #4f5357;
@@ -38,10 +38,10 @@ img {
   max-width: 100%;
 }
 .arrow-up {
-	width: 0; 
-	height: 0; 
+	width: 0;
+	height: 0;
 	border-left: 20px solid transparent;
-	border-right: 20px solid transparent;	
+	border-right: 20px solid transparent;
 	border-bottom: 10px solid #EDF7FD;
 	position: absolute;
 	left: 50%;
@@ -134,7 +134,6 @@ hr {
     -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
     background-clip: padding-box;
-    font-family: "jaf-domus-titling-web";
     li > a {
       display: block;
       padding: 10px 10px;
@@ -180,7 +179,6 @@ hr {
       left: -30px;
       background: transparent;
       font-size: 160px;
-      font-family: "jaf-domus-titling-web";
       color: $brand-primary;
     }
     &:after, &:before {
