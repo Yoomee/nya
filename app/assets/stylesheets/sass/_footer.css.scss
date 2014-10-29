@@ -28,7 +28,14 @@ $footer-height: 80px; /* Set size of sticky footer in the variable: */
 	clear: both;
 	min-height: $footer-height; /* Set height and min height for responsive stacking / IE fix */
 	padding-bottom: 0px;
-	background: #1c2021;
+  background: #17123c;
+  background: -moz-linear-gradient(top,  #17123c 0%, #79b9dc 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#17123c), color-stop(100%,#79b9dc));
+  background: -webkit-linear-gradient(top,  #17123c 0%,#79b9dc 100%);
+  background: -o-linear-gradient(top,  #17123c 0%,#79b9dc 100%);
+  background: -ms-linear-gradient(top,  #17123c 0%,#79b9dc 100%);
+  background: linear-gradient(to bottom,  #17123c 0%,#79b9dc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#17123c', endColorstr='#79b9dc',GradientType=0 );
 	padding: 15px 0px 0px;
 }
 .footer {

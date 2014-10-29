@@ -13,7 +13,6 @@
 ======================================================================= */
 
 .homepage-title {
-  font-family: "jaf-domus-titling-web";
   font-size: 75px;
   font-weight: 800;
   color: white;
@@ -45,14 +44,14 @@
 }
 .strip-hero {
   z-index: 1;
-  background: #69b4e5;
-  background: -moz-linear-gradient(top,  #daeffc 0%, #69b4e5 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#daeffc), color-stop(100%,#69b4e5));
-  background: -webkit-linear-gradient(top,  #daeffc 0%,#69b4e5 100%);
-  background: -o-linear-gradient(top,  #daeffc 0%,#69b4e5 100%);
-  background: -ms-linear-gradient(top,  #daeffc 0%,#69b4e5 100%);
-  background: linear-gradient(to bottom,  #daeffc 0%,#69b4e5 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#daeffc', endColorstr='#69b4e5',GradientType=0 );
+  background: #17123c;
+  background: -moz-linear-gradient(top,  #17123c 0%, #79b9dc 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#17123c), color-stop(100%,#79b9dc));
+  background: -webkit-linear-gradient(top,  #17123c 0%,#79b9dc 100%);
+  background: -o-linear-gradient(top,  #17123c 0%,#79b9dc 100%);
+  background: -ms-linear-gradient(top,  #17123c 0%,#79b9dc 100%);
+  background: linear-gradient(to bottom,  #17123c 0%,#79b9dc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#17123c', endColorstr='#79b9dc',GradientType=0 );
   padding: 80px 0px 100px;
 }
 #project-tabs-content {
@@ -60,7 +59,6 @@
 }
 #project-tabs {
   background: #EDF7FD;
-  font-family: "jaf-domus-titling-web";
   font-weight: 600;
   li a{
     font-size: 20px;
@@ -69,8 +67,8 @@
     border:0px;
     color: #6F6F71;
     border-radius: 0;
-    -webkit-transform: skewX(-20deg); 
-    -moz-transform: skewX(-20deg); 
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
     transform: skewX(-20deg);
     background: transparent;
     @include media-query (md-max){
@@ -87,9 +85,9 @@
       color: #654192;
     }
     span{
-      -webkit-transform: skewX(20deg); 
-      -moz-transform: skewX(20deg); 
-      transform: skewX(20deg); 
+      -webkit-transform: skewX(20deg);
+      -moz-transform: skewX(20deg);
+      transform: skewX(20deg);
       display: block;
     }
   }
