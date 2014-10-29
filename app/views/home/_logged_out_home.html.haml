@@ -1,16 +1,13 @@
 .container
 .strip-hero
-  .container.relative
-    =image_tag('cloud1.png', :class => 'home-cloud cloud1')
-    =image_tag('cloud2.png', :class => 'home-cloud cloud2')
-    =image_tag('cloud3.png', :class => 'home-cloud cloud3')
-    =image_tag('cloud4.png', :class => 'home-cloud cloud4')
+  .container.relative.text-center
     .row
-      .col-sm-6.zi-high.center.pt-2
+      .col-sm-4.col-sm-offset-4.col-xs-8.col-xs-offset-2.mb-3
         =image_tag('nya-homepage.png')
-      .col-sm-5.zi-high
+    .row
+      .col-sm-8.col-sm-offset-2
         %h1.homepage-title Make a Difference
-        %p.mb-4 From small actions to larger projects – everyone can make a difference! What have you done? What’s your idea? You can help your community and gain valuable skills – you might even have fun! Explore what others have done and have a go!
+        %p.mb-4.white From small actions to larger projects – everyone can make a difference! What have you done? What’s your idea? You can help your community and gain valuable skills – you might even have fun! Explore what others have done and have a go!
         =link_to('Discover', discover_path,  :class => 'btn btn-secondary mr-2')
         =link_to('Start your journey', new_project_path,  :class => 'btn btn-primary')
 
@@ -23,7 +20,11 @@
         %blockquote
           .quote-mark "
           %p I would describe the programme as a fantastic opportunity for the NUH young people to come together as a community and to be able to take charge on building a project for the future. The most positive thing to come from the O2 Think Big Project is seeing the young people getting into the spirit of building something positive.
-        =link_to('Start your own', new_project_path, :class => 'btn btn-primary pull-right')
+        .row.text-center
+          .col-md-8
+            %p.small.mv-2 Laura, Youth Worker, National Youth Agency.
+          .col-md-4
+            =link_to('Start your own', new_project_path, :class => 'btn btn-primary')
 
 #project-tabs
   .container
@@ -47,7 +48,7 @@
                 =category.name
                 projects yet
                 =link_to 'Start the first project', new_project_path, class: 'btn btn-lg btn-gry ml-6'
-            -else              
+            -else
               =render category.projects.recent(3)
               =link_to("Show all #{category.projects.count} projects in #{category.name}", discover_project_category_path(category), :class => 'all-link pull-right')
 

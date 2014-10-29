@@ -13,34 +13,13 @@
 ======================================================================= */
 
 .homepage-title {
-  font-size: 75px;
+  font-size: 45px;
   font-weight: 800;
   color: white;
-  margin-bottom: 30px;
-  text-shadow: 7px 7px 0px #0090d5;
-}
-.home-cloud {
-  position: absolute;
-  z-index: 3;
-}
-.cloud1 {
-  top: 70px;
-  right: 1%;
-}
-.cloud2 {
-  top: 30px;
-  left: 5%;
-}
-.cloud3 {
-  bottom: 20px;
-  left: 12%;
-}
-.cloud4 {
-  bottom: 100px;
-  right: 11%;
-}
-.zi-high {
-  z-index: 10;
+  margin-bottom: 20px;
+  @include media-query (sm){
+    font-size: 60px;
+  }
 }
 .strip-hero {
   z-index: 1;
@@ -60,6 +39,7 @@
 #project-tabs {
   background: #EDF7FD;
   font-weight: 600;
+  border-top: 1px solid #D4DDE3;
   li a{
     font-size: 20px;
     padding: 34px 63px;

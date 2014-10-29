@@ -40,7 +40,11 @@ $footer-height: 80px; /* Set size of sticky footer in the variable: */
 }
 .footer {
   padding: 50px 0px;
+  h4 {
+    color: white;
+    font-weight: bold;
+  }
   ul li a {
-    color: $g-3;
+    color: white;
   }
 }
