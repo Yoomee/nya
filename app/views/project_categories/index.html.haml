@@ -7,7 +7,7 @@
         %p.pb-3 Even if you havent got any ideas of your own, pick a subject that interests you and help out other like-minded people on ther journeys. You never know where it could lead.
         %ul.lg-tags.list-unstyled
           =render @project_categories
-      
+
 .section-white.border-top.pv-4
   .container
     .row.js-isotope{ id: "projects-container", data: { isotope_options: { itemSelector: '.project-card' }}}
@@ -16,7 +16,7 @@
       .col-xs-12
         =render 'paging_controls', path: discover_path(:page => 2)
 
-#action-quote.section-white
+#action-quote
   .container
     .row
       .col-sm-4.col-sm-offset-1
@@ -25,7 +25,11 @@
         %blockquote
           .quote-mark "
           %p I would describe the programme as a fantastic opportunity for the NUH young people to come together as a community and to be able to take charge on building a project for the future. The most positive thing to come from the O2 Think Big Project is seeing the young people getting into the spirit of building something positive.
-        =link_to('Start your own', new_project_path, :class => 'btn btn-primary pull-right')
+        .row.text-center
+          .col-md-8
+            %p.small.mv-2 Laura, Youth Worker, National Youth Agency.
+          .col-md-4
+            =link_to('Start your own', new_project_path, :class => 'btn btn-primary')
 
 #discover-action.section-dark.pv-6
   .container
