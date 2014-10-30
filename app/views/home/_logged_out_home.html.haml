@@ -15,14 +15,15 @@
   .container
     .row
       .col-sm-4.col-sm-offset-1
-        =image_tag('testimonial.png')
+        .blockquote-image
+          =image_tag('testimonial.png')
       .col-sm-6.mt-3.pl-5
         %blockquote
           .quote-mark "
           %p I would describe the programme as a fantastic opportunity for the NUH young people to come together as a community and to be able to take charge on building a project for the future. The most positive thing to come from the O2 Think Big Project is seeing the young people getting into the spirit of building something positive.
         .row.text-center
           .col-md-8
-            %p.small.mv-2 Laura, Youth Worker, National Youth Agency.
+            %p.small.mv-2 Charleen, young person, Nottingham University Hospital Youth Service (NUH)
           .col-md-4
             =link_to('Start your own', new_project_path, :class => 'btn btn-primary')
 
@@ -70,7 +71,7 @@
           =image_tag("home-funding.png", :class => 'mb-2')
           %p Make positive change
       .col-xs-12
-        =link_to('Read more about SAJ', 'about', :class => 'pull-right mt-3')
+        =link_to('Read more about My Big Idea', 'about', :class => 'pull-right mt-3')
 
 #action.center
   .col-md-6.p-10.start-tab
