@@ -1,8 +1,8 @@
 .container
-.section-pattern
+.section-pattern.project-head
   .container
     .row.pv-10
-      .col-sm-12.relative
+      .col-sm-8.relative
         %h1.lg-title=@project.title
         %p.md-text
           by
@@ -12,23 +12,25 @@
             =long_date(@project.created_at)
           %i.fa.fa-circle
           =link_to(@project.city, near_project_path(@project), icon: 'map-marker', id: 'location-search-link')
-        .top-right
-          =like_link_with_count(@project,
-                     like_text: @project.likings.size,
-                     unlike_text: @project.likings.size,
-                     class: 'btn btn-secondary btn-sm like-us',
-                     id: 'like-us-button')
-          =render 'help_button', link_id: 'link-help-1'
-          -if can? :edit, @project
-            =link_to('', '',  :class => 'btn btn-success btn-sm visible dropdown', :icon => 'cog', 'data-toggle' => 'dropdown')
-            %ul.dropdown-menu.settings
-              .arrow
-              -if can? :edit, @project
-                %li=link_to('Edit', edit_project_path(@project), :icon => 'pencil')
-              -if can? :owners, @project
-                %li=link_to('Add & remove owners', owners_project_path(@project), icon: 'group')
-              -if can? :destroy, @project
-                %li=link_to('Delete', @project, :method => :delete, :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
+      .col-sm-4
+        =like_link_with_count(@project,
+                   like_text: @project.likings.size,
+                   unlike_text: @project.likings.size,
+                   class: 'btn btn-secondary btn-lg like-us half-button',
+                   id: 'like-us-button')
+        =render 'help_button', link_id: 'link-help-1'
+        .row
+          .col-xs-12.text-right
+            -if can? :edit, @project
+              =link_to('', '',  :class => 'btn btn-success btn-sm visible dropdown', :icon => 'cog', 'data-toggle' => 'dropdown')
+              %ul.dropdown-menu.settings
+                .arrow
+                -if can? :edit, @project
+                  %li=link_to('Edit', edit_project_path(@project), :icon => 'pencil')
+                -if can? :owners, @project
+                  %li=link_to('Add & remove owners', owners_project_path(@project), icon: 'group')
+                -if can? :destroy, @project
+                  %li=link_to('Delete', @project, :method => :delete, :icon => 'trash-o', "data-target" => "#myModal", "data-toggle" => "modal")
 
     %ul.nav.nav-tabs
       %li.active=link_to('Home', '#home', 'data-toggle' => 'tab')

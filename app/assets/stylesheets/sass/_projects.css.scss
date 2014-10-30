@@ -21,20 +21,24 @@
   }
 }
 .project-head .dropdown-menu.settings{
-  background: #333333;
-  border: 0 none;
+  padding: 0;
+  right: 0;
+  left: auto;
   margin-top: 10px;
-  left:-56px;
-  &:after{
-    border-bottom: 5px solid #333;
-    border-left: 5px solid rgba(0, 0, 0, 0);
-    border-right: 5px solid rgba(0, 0, 0, 0);
-    content: "";
-    height: 0;
-    left: 76px;
-    position: absolute;
-    top: -5px;
-    width: 0;
+  > li > a {
+    display: block;
+    padding: 10px 10px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.428571429;
+    color: #24216D;
+    white-space: normal;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+    font-size: 14px;
+    &:hover {
+      background: #F0F0F0;
+    }
   }
 }
 .promo-container {
