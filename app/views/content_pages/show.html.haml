@@ -9,10 +9,8 @@
             %li=link_if_can('Edit', [:edit, @content_page], :icon => 'pencil')
             %li=link_if_can('Delete', [:destroy, @content_page], method: :delete, confirm: 'Are you sure?', icon: 'trash-o')
     .row.center
-      .col-sm-4.col-sm-offset-2.col-xs-6
-        =image_tag('nya-logo.png')
-      .col-sm-4.col-xs-6
-        =image_tag('think-big-logo.png')
+      .col-sm-4.col-sm-offset-4.col-xs-8.col-xs-offset-2.mb-3
+        =image_tag('nya-homepage.png')
     %h1.pt-7.center=@content_page.title
     %p.col-md-6.col-md-offset-3.center.p0
       =@content_page.subtitle.html_safe
