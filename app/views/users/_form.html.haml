@@ -18,7 +18,7 @@
               .i-input.col-md-6
                 %i.fa.fa-user
                 =form.input :last_name, label: false, placeholder: 'Last name'
-    
+
             .row
               .i-input.col-md-6
                 %i.fa.fa-envelope
@@ -32,8 +32,8 @@
               .i-input.col-md-6
                 %i.fa.fa-map-marker
                 =form.input :city, label: false, placeholder: 'Location'
-              .i-input.col-md-6
-                -if @user.new_record?
+              .col-md-6
+                -if @user.new_record? || current_user.admin?
                   =form.input :role, :label => 'Admin?', :as => :boolean, :checked_value => 'admin', :unchecked_value => ''
 
             .row
