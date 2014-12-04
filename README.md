@@ -46,64 +46,23 @@ If the project requires a restart do:
 ./bin/spring stop
 ```
 
-## Stage
+## Production
 
-The staging site is hosted on heroku under the developer@yoomee.com account.
+The production site is hosted on heroku under the developer@yoomee.com account. The url is http://www.mybigidea.org.uk
 
-**To set up your dev environment to deploy to stage:**
-
+### Git remotes for heroku
+When you are first getting set up to develop or deploy this app, you will need to add git remotes for heroku. Deploying instrutions in this readme assume that they are set up as follows
 ```
-heroku git:remote -a nya-stage
-```
-
-Login when prompted.
-
-**Deploying to stage from master branch**
-
-If you don't have it, you will need to install the heroku toolbelt - https://toolbelt.heroku.com/
-
-Checkout the heroku branch
-```
-git checkout heroku
+git remote add heroku git@heroku.com:nya-stage.git
 ```
 
-Merge your changes from master
-```
-git merge master
-```
+###Deploying to heroku
 
-Bundle again, commit and push
 ```
-bundle
-git add .
-git commit -m 'Bundled'
-git push origin heroku
-```
-
-Deploy to heroku
-```
-git push heroku heroku:master
+git push heroku master
 ```
 
 If there are any migrations
 ```
 heroku run rake db:migrate
-```
-
-Don't forget to change back to your master branch!
-```
-git checkout master
-```
-
-
-***Dev notes***
-To package the default gems, the bundler version needs to be at least 1.6.2. If not -
-```
-gem update bundler
-```
-To stop the bundle being packaged into /vendor/cache once the yoomee gems are available on gems.yoomee.com
-```
-rm -rf .bundle
-rm -rf vendor/cache
-bundle
 ```
