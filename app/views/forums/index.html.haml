@@ -17,26 +17,4 @@
         %h3.pb-4.m0.center.white Say hello to new members of the community
         =render 'users/new_members', users: User.recent
 
-.section-white.pv-4
-  .container
-    .row
-      .col-md-8.col-md-offset-2
-        %h3 Activity feed
-    .row
-      .col-md-8.col-md-offset-2.pb-3
-        =render 'hardcode/img_post.html'
-    .row
-      -2.times do
-        .col-md-8.col-md-offset-2.pb-3
-          =render 'hardcode/post.html'
-    .row
-      .col-md-8.col-md-offset-2
-        .row
-          -2.times do
-            .col-md-6.col-sm-12.col-xs-12.mb-3
-              =render Project.community_homepage
-    .row
-      -2.times do
-        .col-md-8.col-md-offset-2.pb-3
-          =render 'hardcode/post.html'
 
