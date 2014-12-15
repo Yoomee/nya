@@ -1,6 +1,6 @@
 source "https://yoomee:wLjuGMTu30AvxVyIrq3datc73LVUkvo@gems.yoomee.com"
 source 'https://rubygems.org'
-
+ruby '2.1.1'
 
 gem 'rails', '4.1.1'
 gem 'pg'
