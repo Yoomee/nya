@@ -5,8 +5,6 @@
       .col-sm-3
         .user-avatar-lg
           =render 'image', user: @user
-          .rewards
-            %span 8 badges
       .col-sm-9.relative
         %h1=@user.full_name
         -if current_user.try(:admin?)
