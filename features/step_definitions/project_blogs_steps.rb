@@ -15,7 +15,9 @@ end
 
 Then(/^I can post a blog post on the project$/) do
   @message = 'A new special message for testing a project'
-  click_link('Blog')
+  within('.project-head') do
+    click_link('Blog')
+  end
   within('#blog') do
     fill_in 'post_text', with: @message
     page.execute_script("$('form#new_post').submit()")
@@ -42,7 +44,9 @@ end
 
 Then(/^I should be able to delete my blog post$/) do
   @posts_count = @project.posts.count
-  click_link('Blog')
+  within('.project-head') do
+    click_link('Blog')
+  end
   within("#post#{@post.id}") do
     click_link '', href: post_path(@post)
   end
