@@ -230,3 +230,6 @@ hr {
     color: white;
   }
 }
+a[disabled] {
+  pointer-events: none;
+}
