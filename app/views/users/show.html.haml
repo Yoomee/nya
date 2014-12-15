@@ -9,6 +9,8 @@
             %span 8 badges
       .col-sm-9.relative
         %h1=@user.full_name
+        -if current_user.try(:admin?)
+          %p.sub-text=mail_to(@user.email)
         -if @user.city?
           %p.sub-text=link_to(@user.city, 'search', :icon => 'map-marker')
         %p.mb-4
