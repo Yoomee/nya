@@ -54,10 +54,7 @@
                        id: 'like-us-button')
             =render 'help_button', link_id: 'link-help-1'
             .project-details.mb-4
-              -if @project.image
-                =image_for(@project, '760x', :class => 'mb-1')
-              -else
-                =image_tag('http://lorempixel.com/760/307/', :class => 'mb-1')
+              =image_for(@project, '760x', :class => 'mb-1')
               %ul.tags.mb-3
                 =render :partial => 'tags/tag', :collection => @project.tags
               .row

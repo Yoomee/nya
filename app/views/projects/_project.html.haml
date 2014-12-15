@@ -3,10 +3,7 @@
     .card-img
       =link_to project do
         %span.feat-star
-        -if project.image
-          =image_for(project, '360x')
-        -else
-          =image_tag("http://lorempixel.com/360/180/?#{rand(10000)}")
+        =image_for(project, '360x')
     .card-info
       %h3.project-title=link_to(project.title, project)
       .sub-text.pb-1
