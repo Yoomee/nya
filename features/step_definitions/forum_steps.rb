@@ -32,7 +32,7 @@ end
 Then(/^I should be able to delete my message$/) do
   @posts_count = @forum.posts.count
   within("#post#{@post.id}") do
-    click_link '', href: post_path(@post)
+    find_link('', href: post_path(@post)).trigger('click')
   end
   wait_for_ajax
 end
