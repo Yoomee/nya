@@ -30,6 +30,7 @@ class User < ActiveRecord::Base
 
   geocoded_by :city_with_uk
   after_validation :geocode, if: ->(user) { user.city.present? and user.city_changed? }
+  after_create :send_new_signup_mail
 
   accepts_nested_attributes_for :interests
 
@@ -51,6 +52,10 @@ class User < ActiveRecord::Base
   private
   def should_generate_new_friendly_id?
     slug.blank? || first_name_changed? || last_name_changed?
+  end
+
+  def send_new_signup_mail
+    NewSignupMailer.new_signup(self).deliver
   end
 
 end
