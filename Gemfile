@@ -39,6 +39,7 @@ gem 'pg_search'
 gem 'nokogiri', '~> 1.5.0'
 gem 'fog', '~> 1.9.0'
 gem 'unicorn'
+gem 'newrelic_rpm'
 
 # specify versions of gems from ym_core
 gem 'cancancan', '~> 1.8.0'
