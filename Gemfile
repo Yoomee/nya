@@ -25,8 +25,8 @@ gem 'ym_tags', :git => "https://deploy:#{ENV['GITLAB_AUTH_TOKEN']}@gitlab.yoomee
 # gem 'ym_tags', :path => '~/Rails/Gems/ym_tags'
 gem 'ym_posts', :git => "https://deploy:#{ENV['GITLAB_AUTH_TOKEN']}@gitlab.yoomee.com/yoomee/ym_posts.git", :branch => 'rails-4'
 # gem 'ym_posts', :path => '~/Rails/Gems/ym_posts'
-gem 'ym_likes', :git => "https://deploy:#{ENV['GITLAB_AUTH_TOKEN']}@gitlab.yoomee.com/yoomee/ym_likes.git", :branch => 'rails-4'
-# gem 'ym_likes', :path => '~/Rails/Gems/ym_likes'
+# gem 'ym_likes', :git => "https://deploy:#{ENV['GITLAB_AUTH_TOKEN']}@gitlab.yoomee.com/yoomee/ym_likes.git", :branch => 'rails-4'
+gem 'ym_likes', :path => '~/Rails/Gems/ym_likes'
 
 # Extra gems
 gem 'friendly_id', '~> 5.0.0'
