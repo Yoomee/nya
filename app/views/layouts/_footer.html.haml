@@ -21,20 +21,18 @@
                 %li=link_to_slug('faq')
                 %li=link_to_slug('contact')
                 %li=link_to('Terms & Conditions', '/terms')
-        .col-sm-4.mt-2
-          %p.light-text.mb-3.small The Social Action Journey Fund programme is supported and funded by The Cabinet Office
-          =image_tag('cabinet-office-logo.png', :class => 'mb-2')
+        .col-sm-4.mt-1
+          %p.light-text.mb-3.small The Social Action Journey Fund programme is delivered by The National Youth Agency, in partnership with Think Big and supported and funded by The Cabinet Office
+          =link_to(image_tag('nya-logo2.png', :class => 'mb-2'), 'http://www.nya.org.uk')
         .col-sm-4.mt-2
           .row.mb-2.text-center
-            .col-xs-4
-              =image_tag('nya-logo2.png')
-            .col-xs-4
+            .col-xs-6
               =image_tag('o2-logo.png')
-            .col-xs-4
+            .col-xs-6
               =image_tag('telefonica-logo.png', :class => 'mt-1')
           .row
-            .col-xs-12
-              =image_tag('step-up-logo.png')
+            .col-xs-12.text-center
+              =image_tag('cabinet-office-logo.png', :class => 'mt-2')
 
 #myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
   .modal-dialog
