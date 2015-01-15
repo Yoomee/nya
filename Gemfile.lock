@@ -39,6 +39,13 @@ GIT
       will_paginate (~> 3.0.3)
 
 GIT
+  remote: https://deploy:LuYWriTWj8zHKjGwqgfmo9xqQHuXeVLE@gitlab.yoomee.com/yoomee/ym_likes.git
+  revision: a1864c5993b2f99b1de2467a2d33b00ccb47ea85
+  branch: rails-4
+  specs:
+    ym_likes (0.2.2)
+
+GIT
   remote: https://deploy:LuYWriTWj8zHKjGwqgfmo9xqQHuXeVLE@gitlab.yoomee.com/yoomee/ym_notifications.git
   revision: 9f0597b591e24a5017d0ad18ef5f55dc6f490799
   branch: rails-4
@@ -90,11 +97,6 @@ GIT
     ym_videos (2.0.0)
       rails (~> 4.1.1)
       video_info (~> 0.4.0)
-
-PATH
-  remote: ~/Rails/Gems/ym_likes
-  specs:
-    ym_likes (0.2.2)
 
 GEM
   remote: https://yoomee:wLjuGMTu30AvxVyIrq3datc73LVUkvo@gems.yoomee.com/
